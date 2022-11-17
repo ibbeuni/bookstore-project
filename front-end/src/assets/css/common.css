@@ -20,7 +20,7 @@ h1 {
     font-size: 2.375rem;
     /* 38px */
     line-height: 55px;
-    font-family: 'Genseki-H';
+    font-family: 'Genseki-R', Sans-Serif;
 }
 
 /* 區塊標題 */
@@ -28,46 +28,46 @@ h2 {
     font-size: 1.875rem;
     /* 30px */
     line-height: 40px;
-    font-family: 'Genseki-B';
+    font-family: 'Genseki-R', Sans-Serif;
 }
 
 h3 {
     font-size: 1.75rem;
     /* 28px */
-    font-family: 'Genseki-M';
+    font-family: 'Genseki-R', Sans-Serif;
 }
 
 h4 {
     font-size: 1.5rem;
     /* 24px */
-    font-family: 'Genseki-M';
+    font-family: 'Genseki-R', Sans-Serif;
 }
 
 h5 {
     font-size: 1.25rem;
     /* 20px */
-    font-family: 'Genseki-R';
+    font-family: 'Genseki-R', Sans-Serif;
 }
 
 /* 大小與<p>相同，字體為非襯線字體 */
 h6 {
     font-size: 1rem;
     /* 16px */
-    font-family: 'Genseki-R';
+    font-family: 'Genseki-R', Sans-Serif;
 }
 
 /* 適用於內文，字體為襯線字體 */
 p {
     font-size: 1rem;
     /* 16px */
-    font-family: 'Genseki-R';
+    font-family: 'Genseki-R', Sans-Serif;
     /* //TODO 改安裝襯線字體 */
 }
 
 small {
     font-size: 0.875rem;
-    /* 12px */
-    font-family: 'Genseki-L';
+    /* 14px */
+    font-family: 'Genseki-R', Sans-Serif;
 }
 
 /* BODY_WRAPPER */
