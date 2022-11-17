@@ -642,7 +642,7 @@ a {
     background-color: none;
     margin: 0px 20px;
     border: 0px;
-    background-color: var(--background-color);
+    background-color: transparent;
 }
 
 /* .welcome-marketing-list {

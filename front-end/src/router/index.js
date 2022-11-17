@@ -4,6 +4,11 @@ import VueRouter from 'vue-router';
 import HomePage from '../views/HomePage.vue';
 import TestPage from '../views/TestPage.vue';
 import HomePageSample from '../views/HomePageSample.vue';
+import LoginPage from '../views/LoginPage';
+import MemberHomePage from '../views/MemberHomePage';
+import OrderListPage from '../views/OrderListPage';
+import ShoppingCartPage from '../views/ShoppingCartPage';
+import RegisterPage from '../views/RegisterPage';
 
 Vue.use(VueRouter);
 
@@ -26,6 +31,31 @@ const routes = [
         path: '/sample',
         name: 'HomePageSample',
         component: HomePageSample
+    },
+    {
+        path: '/login',
+        name: 'LoginPage',
+        component: LoginPage
+    },
+    {
+        path: '/member',
+        name: 'MemberHomePage',
+        component: MemberHomePage
+    },
+    {
+        path: '/orderlist',
+        name: 'OrderListPage',
+        component: OrderListPage
+    },
+    {
+        path: '/shoppingcart',
+        name: 'ShoppingCartPage',
+        component: ShoppingCartPage
+    },
+    {
+        path: '/register',
+        name: 'RegisterPage',
+        component: RegisterPage
     }
 ]
 
