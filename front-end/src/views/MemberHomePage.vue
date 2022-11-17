@@ -1,23 +1,32 @@
 <template>
 
-    <div class="container">
-        <div class="upper_box">header下面的藍色長條
-            <div class="sideProfile">
+    <div class="wrap">
+        <section>
+            <div class="container"> 
+                <div class="upper_box">header下面的藍色長條
+              
+            <div class="sideProfile"></div>
                 <div class="profile_pic">PIC</div>
                 <p >會員姓名</p>
             </div>
-        </div>
-
-
-        <div class="side_bar">左邊的選單欄位
+        </div></div>
+        </section>
+        
+     <div class="main_contents">  
+        <section>
+        <div>
+            <div class="side_bar">左邊的選單欄位
             <p>會員資料</p>
             <p>會員訂單</p>
             <p>歷史訂單查詢</p>
             <p>追蹤清單</p>
             <p>貨到通知</p>
             <p>訂閱/取消電子報</p>
-
-            <div class="main_box">
+            </div>
+       </section>
+       <section>
+    <div>
+        <div class="main_box">
             <h1>會員資料設定</h1>
             <h3>會員資料</h3>
             <hr>
@@ -46,63 +55,72 @@
             <hr>
             <button>清除</button>
             <button>確認</button>
-
-
         </div>
-        </div>
+
+</div>
+</section>
+       
+      
+       
 
         
         
-    </div>
+
 
   
    
 </template>
 
 <style scoped>
-.container{
-    background-color: chartreuse;
-    margin: 0 auto;
-    padding-inline-start: 30%;
-    width:700px;
+.wrap {
+  /* 網頁內容最大寬度 */
+  /* max-width: 1920px; */
+  min-width: 1440px;
+  overflow: hidden;
+  min-height: 100vh;
+  /* 測試用 */
+  background-color: var(--primary-color);
+}
+.container {
+  width: 100vw;
+  /*  */
 }
 
-.upper_box{
-    width:50%;
-    height:30vh;
-    background-color: lightblue;
-    padding-right: 10px;
-    
+.upper_box {
+  width: 100%;
+  height: 30vh;
+  background-color: lightblue;
 }
-.sideProfile{
-    background-color: bisque;
-    border-radius: 20px;
-    color:black;
-    padding-right: 20px;
-    margin-inline-start: 100px;
-    margin-top: 20px;
-    width:100px;
-    height:150px;
+.main_contents {
+  display: flex;
+  justify-content: center;
 }
-.sideProfile .profile_pic{
-    background-color: darkcyan;
-    width:40px;
-    height:40px;
-    margin-inline-start: 35px;
-  
-
+.sideProfile {
+  background-color: bisque;
+  border-radius: 20px;
+  color: black;
+  padding-right: 20px;
+  margin-inline-start: 100px;
+  margin-top: 20px;
+  width: 100px;
+  height: 150px;
 }
-.side_bar{
-    border:2px solid lightseagreen;
-    width:30vh;
-    height:80vh;
+.sideProfile .profile_pic {
+  background-color: darkcyan;
+  width: 40px;
+  height: 40px;
+  margin-inline-start: 35px;
 }
-.main_box{
-    border:4px solid lightsalmon;
-    width:70vh;
-    height:90vh;
-    margin-inline-start: 200px;
-    margin-top: -195px
-    
+.side_bar {
+  border: 2px solid lightseagreen;
+  width: 30vh;
+  height: 80vh;
+}
+.main_box {
+  border: 4px solid lightsalmon;
+  width: 70vh;
+  height: 90vh;
+  margin-inline-start: 200px;
+  margin-top: -195px;
 }
 </style>
