@@ -76,8 +76,8 @@
 
 .login_btn {
   color:white;
-  background: #5055b1;
-  border: 1px solid #5055b1; 
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color); 
   width:250px;
   height:30px;
   border-radius: 6px;

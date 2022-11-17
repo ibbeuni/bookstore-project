@@ -1,15 +1,16 @@
 <template>
 
     <div class="wrap">
+
         <section>
             <div class="container"> 
                 <div class="upper_box">header下面的藍色長條
               
-            <div class="sideProfile"></div>
+                <div class="sideProfile"></div>
                 <div class="profile_pic">PIC</div>
                 <p >會員姓名</p>
             </div>
-        </div></div>
+        </div>
         </section>
         
      <div class="main_contents">  
@@ -23,9 +24,11 @@
             <p>貨到通知</p>
             <p>訂閱/取消電子報</p>
             </div>
+          </div>
        </section>
+
        <section>
-    <div>
+        <div>
         <div class="main_box">
             <h1>會員資料設定</h1>
             <h3>會員資料</h3>
@@ -55,15 +58,13 @@
             <hr>
             <button>清除</button>
             <button>確認</button>
-        </div>
+    </div>
+         </section>
 
 </div>
-</section>
        
       
-       
-
-        
+    
         
 
 
