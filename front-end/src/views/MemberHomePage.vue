@@ -1,32 +1,33 @@
 <template>
 
-    <div class="wrap">
-        <section>
-            <div class="container"> 
-                <div class="upper_box">header下面的藍色長條
-              
-            <div class="sideProfile"></div>
-                <div class="profile_pic">PIC</div>
-                <p >會員姓名</p>
-            </div>
-        </div></div>
-        </section>
-        
-     <div class="main_contents">  
-        <section>
+  <div class="wrap">
+    <section>
+      <div class="container">
+        <div class="upper_box">header下面的藍色長條
+
+          <div class="sideProfile"></div>
+          <div class="profile_pic">PIC</div>
+          <p>會員姓名</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="main_contents">
+      <section>
         <div>
-            <div class="side_bar">左邊的選單欄位
+          <div class="side_bar">左邊的選單欄位
             <p>會員資料</p>
             <p>會員訂單</p>
             <p>歷史訂單查詢</p>
             <p>追蹤清單</p>
             <p>貨到通知</p>
             <p>訂閱/取消電子報</p>
-            </div>
-       </section>
-       <section>
-    <div>
-        <div class="main_box">
+          </div>
+        </div>
+      </section>
+      <section>
+        <div>
+          <div class="main_box">
             <h1>會員資料設定</h1>
             <h3>會員資料</h3>
             <hr>
@@ -55,20 +56,20 @@
             <hr>
             <button>清除</button>
             <button>確認</button>
+          </div>
+
         </div>
-
-</div>
-</section>
-       
-      
-       
-
-        
-        
+      </section>
+    </div>
+  </div>
 
 
-  
-   
+
+
+
+
+
+
 </template>
 
 <style scoped>
@@ -81,6 +82,7 @@
   /* 測試用 */
   background-color: var(--primary-color);
 }
+
 .container {
   width: 100vw;
   /*  */
@@ -91,10 +93,12 @@
   height: 30vh;
   background-color: lightblue;
 }
+
 .main_contents {
   display: flex;
   justify-content: center;
 }
+
 .sideProfile {
   background-color: bisque;
   border-radius: 20px;
@@ -105,17 +109,20 @@
   width: 100px;
   height: 150px;
 }
+
 .sideProfile .profile_pic {
   background-color: darkcyan;
   width: 40px;
   height: 40px;
   margin-inline-start: 35px;
 }
+
 .side_bar {
   border: 2px solid lightseagreen;
   width: 30vh;
   height: 80vh;
 }
+
 .main_box {
   border: 4px solid lightsalmon;
   width: 70vh;
