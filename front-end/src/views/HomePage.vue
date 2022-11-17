@@ -8,7 +8,7 @@
                 <div class="search-wrap">
                     <div class="logo-box">
                         <!-- TODO <a>首頁連結 -->
-                        <a href="/#/member">
+                        <a href="/#/login">
                             <img src="../assets/BookstoreLogo.png" alt="">
                         </a>
                     </div>
