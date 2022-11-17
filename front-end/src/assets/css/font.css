@@ -1,0 +1,23 @@
+/* 源石黑體-Regular */
+@font-face {
+    font-family: 'Genseki-R';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/GenSekiGothic-R.ttc'), url('https://cdn.jsdelivr.net/gh/ButTaiwan/genseki-font@master/TW/GenSekiGothicTW-Regular.ttf') format('truetype');
+}
+
+/* 源石黑體-Bold */
+@font-face {
+    font-family: 'Genseki-B';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/GenSekiGothic-B.ttc'), url('https://cdn.jsdelivr.net/gh/ButTaiwan/genseki-font@master/TW/GenSekiGothicTW-Regular.ttf') format('truetype');
+}
+
+/* 源石黑體-Light */
+@font-face {
+    font-family: 'Genseki-L';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/GenSekiGothic-L.ttc'), url('https://cdn.jsdelivr.net/gh/ButTaiwan/genseki-font@master/TW/GenSekiGothicTW-Regular.ttf') format('truetype');
+}

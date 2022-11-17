@@ -1,0 +1,6 @@
+HomePage.vue
+把banner_class的名字改掉
+select count(*) from welcome_banner_table
+
+今日選書
+select img_cover, product_name
