@@ -8,14 +8,14 @@
                 <div class="search-wrap">
                     <div class="logo-box">
                         <!-- TODO <a>首頁連結 -->
-                        <a href="/#/member">
+                        <a href="/#/home">
                             <img src="../assets/BookstoreLogo.png" alt="">
                         </a>
                     </div>
                     <div class="search-box">
                         <!-- 下拉式選單 -->
                         <div class="form-sel">
-                            <!-- // TODO 取消預設樣式 -->
+                            <!-- TODO 取消預設樣式 -->
                             <select title="選擇搜索類別" name="" id="">
                                 <option value="total">綜合檢索</option>
                                 <option value="painting">繪畫</option>
