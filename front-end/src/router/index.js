@@ -9,6 +9,10 @@ import MemberHomePage from '../views/MemberHomePage';
 import OrderListPage from '../views/OrderListPage';
 import ShoppingCartPage from '../views/ShoppingCartPage';
 import RegisterPage from '../views/RegisterPage';
+import AskedQ from '../views/AskedQ';
+import EventList from '../views/EventList';
+import ProductPage from '../views/ProductPage.vue';
+import VideoDetail from '../views/VideoDetail.vue';
 
 Vue.use(VueRouter);
 
@@ -56,6 +60,26 @@ const routes = [
         path: '/register',
         name: 'RegisterPage',
         component: RegisterPage
+    },
+    {
+        path: '/faq',
+        name: 'AskedQ',
+        component: AskedQ
+    },
+    {
+        path: '/event',
+        name: 'EventList',
+        component: EventList
+    },
+    {
+        path: '/product',
+        name: 'ProductPage',
+        component: ProductPage
+    },
+    {
+        path: '/videodetail',
+        name: 'VideoDetail',
+        component: VideoDetail
     }
 ]
 
