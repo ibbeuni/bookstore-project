@@ -10,7 +10,7 @@ import OrderListPage from '../views/OrderListPage';
 import ShoppingCartPage from '../views/ShoppingCartPage';
 import RegisterPage from '../views/RegisterPage';
 import AskedQ from '../views/AskedQ';
-import EventList from '../views/EventList';
+import EventDetail from '../views/EventDetail';
 import ProductPage from '../views/ProductPage.vue';
 import VideoDetail from '../views/VideoDetail.vue';
 
@@ -67,9 +67,9 @@ const routes = [
         component: AskedQ
     },
     {
-        path: '/event',
-        name: 'EventList',
-        component: EventList
+        path: '/eventdetail',
+        name: 'EventDetail',
+        component: EventDetail
     },
     {
         path: '/product',
