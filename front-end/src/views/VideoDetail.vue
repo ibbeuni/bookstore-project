@@ -8,7 +8,7 @@
         <div>
             <div>
                 <p class="nh1 nb">影片標題</p>
-                <p>上傳日期：2022 / 02 / 11</p>
+                <p>上日期：2022 / 02 / 11</p>
             </div>
             <div>
                 <iframe src="https://www.youtube.com/embed/LOxxhecSHQM" title="YouTube video player"
