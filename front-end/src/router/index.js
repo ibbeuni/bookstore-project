@@ -13,6 +13,7 @@ import AskedQ from '../views/AskedQ';
 import EventDetail from '../views/EventDetail';
 import ProductPage from '../views/ProductPage.vue';
 import VideoDetail from '../views/VideoDetail.vue';
+import VideoPage from '../views/VideoPage.vue';
 
 Vue.use(VueRouter);
 
@@ -80,7 +81,14 @@ const routes = [
         path: '/videodetail',
         name: 'VideoDetail',
         component: VideoDetail
+    },
+    {
+        path: '/videopage',
+        name: 'VideoPage',
+        component: VideoPage
     }
+  
+    
 ]
 
 const router = new VueRouter({
