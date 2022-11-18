@@ -64,4 +64,7 @@
 button {
     border-radius: 10px
 }
+li{
+    display: inline;
+}
 </style>
