@@ -7,7 +7,6 @@
             <div class="contents-inner">
                 <div class="search-wrap">
                     <div class="logo-box">
-                        <!-- TODO <a>首頁連結 -->
                         <a href="/#/home">
                             <img src="../assets/BookstoreLogo.png" alt="">
                         </a>
@@ -15,7 +14,7 @@
                     <div class="search-box">
                         <!-- 下拉式選單 -->
                         <div class="form-sel">
-                            <!-- TODO 取消預設樣式 -->
+                            <!-- TODO 取消下拉式選單預設樣式 -->
                             <select title="選擇搜索類別" name="" id="">
                                 <option value="total">綜合檢索</option>
                                 <option value="painting">繪畫</option>
@@ -99,7 +98,7 @@
         </header>
         <!-- 主要內容區 -->
         <main class="container-wrapper">
-            <!-- component -->
+            <!-- component: welcome-banner -->
             <section class="contents">
                 <div class="welcome-banner-wrapper">
                     <div class="welcome-banner-inner">
@@ -155,40 +154,44 @@
                                 <!-- TODO 跑迴圈顯示banner slider分類（目前先寫死，寫完刪除多的<li>） -->
                                 <ul class="banner-group-list">
                                     <li class="banner-group-item">
-                                        <button type="button" class="btn-banner-group">近期推薦</button>    
+                                        <button type="button" class="btn-banner-group">近期推薦</button>
                                     </li>
                                     <li class="banner-group-item">
-                                        <button type="button" class="btn-banner-group">熱門話題</button>    
+                                        <button type="button" class="btn-banner-group">熱門話題</button>
                                     </li>
                                     <li class="banner-group-item">
-                                        <button type="button" class="btn-banner-group">最新出版</button>    
+                                        <button type="button" class="btn-banner-group">最新出版</button>
                                     </li>
                                     <li class="banner-group-item">
-                                        <button type="button" class="btn-banner-group">主題企劃</button>    
+                                        <button type="button" class="btn-banner-group">主題企劃</button>
                                     </li>
                                     <li class="banner-group-item">
-                                        <button type="button" class="btn-banner-group">有聲書</button>    
+                                        <button type="button" class="btn-banner-group">有聲書</button>
                                     </li>
                                     <li class="banner-group-item">
-                                        <button type="button" class="btn-banner-group">本月主打</button>    
+                                        <button type="button" class="btn-banner-group">本月主打</button>
                                     </li>
                                     <li class="banner-group-item">
-                                        <button type="button" class="btn-banner-group">閱讀講座</button>    
+                                        <button type="button" class="btn-banner-group">閱讀講座</button>
                                     </li>
                                 </ul>
                                 <div class="divider">
                                     <font-awesome-icon icon="fa-solid fa-grip-lines-vertical" />
                                 </div>
                                 <div class="banner-btn-box">
-                                    <button type="button" class="swiper-button-prev"><font-awesome-icon icon="fa-solid fa-chevron-left" /></button>
-                                    <button type="button" class="swiper-button-next"><font-awesome-icon icon="fa-solid fa-chevron-right" /></button>
+                                    <button type="button" class="swiper-button-prev">
+                                        <font-awesome-icon icon="fa-solid fa-chevron-left" />
+                                    </button>
+                                    <button type="button" class="swiper-button-next">
+                                        <font-awesome-icon icon="fa-solid fa-chevron-right" />
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- APP按鈕區 -->
+            <!-- component: welcome-marketing -->
             <section class="contents">
                 <div class="contents-inner">
                     <div class="welcome-marketing-wrap">
@@ -278,6 +281,135 @@
                     </div>
                 </div>
             </section>
+            <!-- component: today-book -->
+            <section class="contents">
+                <div class="contents-inner">
+                    <div class="title-wrap">
+                        <h2 class="title-heading">今日選書</h2>
+                        <ul class="category-tag-list">
+                            <li class="category-item">
+                                <button type="button" class="btn-category"><span>全部</span></button>
+                            </li>
+                            <li class="category-item">
+                                <button type="button" class="btn-category"><span>繪畫</span></button>
+                            </li>
+                            <li class="category-item">
+                                <button type="button" class="btn-category"><span>攝影</span></button>
+                            </li>
+                            <li class="category-item">
+                                <button type="button" class="btn-category"><span>藝術</span></button>
+                            </li>
+                            <li class="category-item">
+                                <button type="button" class="btn-category"><span>鑑賞</span></button>
+                            </li>
+                        </ul>
+                        <div class="right-area">
+                            <!-- TODO 加上位址 -->
+                            <a href="" class="btn-more-plus">
+                                <span>看更多 </span>
+                                <font-awesome-icon icon="fa-solid fa-plus" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="template-row">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <div class="prod-area">
+                                    <!-- TODO 加入商品連結 -->
+                                    <a href="">
+                                        <div class="prod-box">
+                                            <!-- TODO 圖片連結用變數替換 -->
+                                            <img src="../assets/img/books/30101.png" alt="封面">
+                                        </div>
+                                    </a>
+                                    <div class="prod-info">
+                                        <!-- TODO 連結同.prod-img-box -->
+                                        <a href="">
+                                            <!-- 商品名稱 product_name -->
+                                            <h5>物見：四十八位物件的閱讀者，與他們所見的世界</h5>
+                                        </a>
+                                        <small>作者 auther</small>
+                                        <div class="prod-price">
+                                            <span class="percent">10
+                                                <font-awesome-icon icon="fa-solid fa-percent" />
+                                            </span>
+                                            <span class="price">價格</span>
+                                            <span class="unit">元</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="swiper-slide side-img">
+                                <a href="">
+                                    <div class="prod-box">
+                                        <!-- TODO 圖片連結用變數替換 -->
+                                        <img src="../assets/img/books/30201.png" alt="封面">
+                                        <!-- TODO 商品名稱 product_name -->
+                                        <small>藝術史的一千零一夜【暢銷經典插畫版】</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide side-img">
+                                <a href="">
+                                    <div class="prod-box">
+                                        <!-- TODO 圖片連結用變數替換 -->
+                                        <img src="../assets/img/books/30301.png" alt="封面">
+                                        <!-- TODO 商品名稱 product_name -->
+                                        <small>最後的秘境 東京藝大-天才們的華麗日常</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide side-img">
+                                <a href="">
+                                    <div class="prod-box">
+                                        <!-- TODO 圖片連結用變數替換 -->
+                                        <img src="../assets/img/books/30401.png" alt="封面">
+                                        <!-- TODO 商品名稱 product_name -->
+                                        <small>世界是什麼顏色？：橫跨千萬年的人類色彩文化史</small>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <button class="swiper-btn-prev">
+                            <font-awesome-icon icon="fa-solid fa-chevron-left" />
+                        </button>
+                        <button class="swiper-btn-next">
+                            <font-awesome-icon icon="fa-solid fa-chevron-right" />
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!-- component: picks -->
+            <section class="contents">
+                <div class="picks-wrap">
+                    <div class="contents-inner">
+                        <div class="picks-wrap-inner">
+                            <div class="title-wrap">
+                                <h2 class="title-heading">Picks</h2>
+                                <div class="right-area">
+                                    <!-- TODO 加上位址 -->
+                                    <a href="" class="btn-more-plus">
+                                        <span>看更多 </span>
+                                        <font-awesome-icon icon="fa-solid fa-plus" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="picks-contents">
+                                <div class="picks-left-area">
+                                    <div class="picks-info-box">
+                                        <small class="picks-desc">發現的喜悅是一種禮物</small>
+                                        <h4>我們記得您的口味，很樂意為您推薦合適的書！</h4>
+                                    </div>
+                                    <div class="picks-btn">
+                                        <a href="/#/login">登入並獲得更多推薦</a>
+                                    </div>
+                                </div>
+                                <div class="picks-right-area"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
         <footer></footer>
     </div>
@@ -287,7 +419,7 @@
 export default {
     data() {
         return {
-            a:''
+            a: ''
         }
     }
 }
@@ -305,6 +437,11 @@ a {
     cursor: default;
 }
 
+button {
+    border: 0;
+    background-color: none;
+}
+
 /* 每個section的上下間距 */
 .contents {
     margin: 60px 0px;
@@ -318,13 +455,14 @@ a {
     overflow: hidden;
     min-height: 100vh;
     /* 測試用 */
-    background-color: var(--primary-color);
+    /* background-color: var(--background-color); */
+    background-color: var(--neutral-color);
 }
 
 .header-wrapper {
     margin: auto;
     background-color: var(--background-color);
-    border-bottom:1px solid var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
 }
 
 /* 所有section wrap中的第一層 */
@@ -423,7 +561,7 @@ a {
 
 .user-icon {
     border-radius: 50%;
-    box-shadow:0px 3px 9px var(--accent-color);
+    box-shadow: 0px 3px 9px var(--accent-color);
     background-color: var(--accent-color);
     color: var(--background-color);
 }
@@ -474,14 +612,17 @@ a {
 .welcome-banner-inner {
     margin-left: calc((100% - 1200px) / 2 - 64px);
     position: relative;
-    height: 610.92px;    /* TODO 高度不知為什麼無法fit-content */
+    height: 610.92px;
+    /* TODO 高度不知為什麼無法fit-content */
 }
+
 /* 幻燈片區、搭配標題 */
 .swiper-container {
     margin: 0px auto;
     padding: 0px;
     background-color: var(--background-color);
 }
+
 /* 幻燈片區 */
 .swiper-wrapper {
     display: flex;
@@ -492,6 +633,7 @@ a {
 /* 幻燈片<li> */
 .swiper-slide {
     position: relative;
+    width: fit-content;
 }
 
 .banner-title {
@@ -605,7 +747,8 @@ a {
 .banner-group-item {
     height: 100%;
     box-sizing: border-box;
-    border-bottom: 2px solid transparent;  /* TODO 當輪播到的時候，加上.active 改為深色底線 */
+    border-bottom: 2px solid transparent;
+    /* TODO 當輪播到的時候，加上.active 改為深色底線 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -629,6 +772,7 @@ a {
     width: 30px;
     flex: 1;
 }
+
 .banner-btn-box {
     display: flex;
     justify-content: space-between;
@@ -671,8 +815,220 @@ a {
     font-size: 33px;
     margin-bottom: 10px;
     color: var(--primary-color);
-    /* font-size: x-large; */
-    /* background-color: rgba(228, 228, 228, 0.98); */
+    background-color: rgba(245, 245, 245, 0.98);
 }
+
+/* 今日選書 */
+/* section title */
+.title-wrap {
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.category-tag-list {
+    margin: 4px 0px 0px 30px;
+    padding-left: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.category-item {
+    display: inline-block;
+    margin-right: 30px;
+    /* vertical-align: top; */
+}
+
+.btn-category {
+    background-color: transparent;
+    color: var(--neutral-color);
+}
+
+/* TODO 按鈕點及後加上active class */
+.active {
+    color: var(--primary-color);
+    font-weight: 900;
+}
+
+.right-area {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: auto;
+    flex-direction: row;
+    font-size: 1rem;
+}
+
+.template-row {
+    display: flex;
+    position: relative;
+}
+
+.prod-area {
+    display: flex;
+    justify-content: center;
+}
+
+.prod-box {
+    height: 300px;
+    overflow: hidden;
+    display: block;
+    margin-left: 20px;
+}
+
+.prod-box img {
+    max-height: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+.prod-info {
+    margin: 50px 0px auto;
+}
+
+.prod-price {
+    display: flex;
+    margin: 20px 0px;
+    font-weight: 800;
+}
+
+.percent {
+    color: var(--accent-color);
+    margin-right: 8px;
+}
+
+.price {
+    margin-right: 5px;
+}
+
+.side-img {
+    width: 230px;
+}
+
+.swiper-btn-prev {
+    position: absolute;
+    top: 30%;
+    left: -50px;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--neutral-color);
+    border-radius: 50%;
+    background-color: var(--background-color);
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+.swiper-btn-next {
+    position: absolute;
+    top: 30%;
+    right: -50px;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--neutral-color);
+    border-radius: 50%;
+    background-color: var(--background-color);
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+/* Picks */
+.picks-wrap {
+    background-color: rgba(83, 146, 155, 0.38);
+}
+
+.picks-wrap-inner {
+    padding: 80px 0px;
+}
+
+.picks-contents {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.picks-left-area {
+    width: 327px;
+}
+
+.picks-desc {
+    color: var(--primary-color);
+}
+
+.picks-btn {
+    margin-top: 62px;
+    width: 250px;
+    height: 50px;
+    border-radius: 6px;
+    background-color: var(--accent-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.picks-btn a {
+    color: var(--background-color);
+    font-weight: 900;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </style>
