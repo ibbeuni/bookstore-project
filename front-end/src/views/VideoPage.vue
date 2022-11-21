@@ -3,8 +3,9 @@
         <div id="videoPage">
 
             <p>分類>分類>分類</p>
-            <div id="videoPlace" class="flex">
-                <div id="videoDiv" class="flex">
+            <br><br><br><br>
+            <div id="videoPlace" class="flex" style="background-color:white;">
+                <div class="videoDiv flex">
                     <div>
                         <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
                     </div>
@@ -14,7 +15,7 @@
                         <p>上傳日期：2200 / 2 / 31</p>
                     </div>
                 </div>
-                <div id="videoDiv" class="flex">
+                <div class="videoDiv flex">
                     <div>
                         <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
                     </div>
@@ -24,7 +25,7 @@
                         <p>上傳日期：2200 / 2 / 31</p>
                     </div>
                 </div>
-                <div id="videoDiv" class="flex">
+                <div class="videoDiv flex">
                     <div>
                         <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
                     </div>
@@ -34,7 +35,7 @@
                         <p>上傳日期：2200 / 2 / 31</p>
                     </div>
                 </div>
-                <div id="videoDiv" class="flex">
+                <div class="videoDiv flex">
                     <div>
                         <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
                     </div>
@@ -44,7 +45,7 @@
                         <p>上傳日期：2200 / 2 / 31</p>
                     </div>
                 </div>
-                <div id="videoDiv" class="flex">
+                <div class="videoDiv flex">
                     <div>
                         <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
                     </div>
@@ -54,7 +55,7 @@
                         <p>上傳日期：2200 / 2 / 31</p>
                     </div>
                 </div>
-                <div id="videoDiv" class="flex">
+                <div class="videoDiv flex">
                     <div>
                         <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
                     </div>
@@ -64,7 +65,7 @@
                         <p>上傳日期：2200 / 2 / 31</p>
                     </div>
                 </div>
-                <div id="videoDiv" class="flex">
+                <div class="videoDiv flex">
                     <div>
                         <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
                     </div>
@@ -74,7 +75,47 @@
                         <p>上傳日期：2200 / 2 / 31</p>
                     </div>
                 </div>
-                <div id="videoDiv" class="flex">
+                <div class="videoDiv flex">
+                    <div>
+                        <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
+                    </div>
+                    <div>
+                        <p>[影片名稱]影片名稱影片名稱影片名稱影片名稱</p>
+                        <p>分類</p>
+                        <p>上傳日期：2200 / 2 / 31</p>
+                    </div>
+                </div>
+                <div class="videoDiv flex">
+                    <div>
+                        <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
+                    </div>
+                    <div>
+                        <p>[影片名稱]影片名稱影片名稱影片名稱影片名稱</p>
+                        <p>分類</p>
+                        <p>上傳日期：2200 / 2 / 31</p>
+                    </div>
+                </div>
+                <div class="videoDiv flex">
+                    <div>
+                        <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
+                    </div>
+                    <div>
+                        <p>[影片名稱]影片名稱影片名稱影片名稱影片名稱</p>
+                        <p>分類</p>
+                        <p>上傳日期：2200 / 2 / 31</p>
+                    </div>
+                </div>
+                <div class="videoDiv flex">
+                    <div>
+                        <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
+                    </div>
+                    <div>
+                        <p>[影片名稱]影片名稱影片名稱影片名稱影片名稱</p>
+                        <p>分類</p>
+                        <p>上傳日期：2200 / 2 / 31</p>
+                    </div>
+                </div>
+                <div class="videoDiv flex">
                     <div>
                         <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
                     </div>
@@ -85,8 +126,18 @@
                     </div>
                 </div>
 
-                
 
+
+
+            </div>
+            <br><br>
+            <hr>
+            <div id="pageButton">
+                <a href="#" class="previous round">&#8249;</a>
+                <a href="#" class="numberRound">1</a>
+                <a href="#" class="numberRound">2</a>
+                <a href="#" class="numberRound">3</a>
+                <a href="#" class="next round">&#8250;</a>
             </div>
             <br><br><br><br><br><br><br><br><br><br>
         </div>
@@ -290,25 +341,78 @@ table {
 /* /歸零CSS */
 
 /* 主要內容 */
-#videoPage{
+#videoPage {
     width: 1200px;
     background-color: rgb(193, 227, 124);
     margin: 0 auto;
 }
 
-#videoPlace{
-    justify-content: start;
+#videoPlace {
+    justify-content: space-around;
     flex-wrap: wrap;
+
 }
-.videoImg{
-    width: 158px;
-    height: 158px;
+
+.videoImg {
+    width: 160px;
+    height: 160px;
     object-fit: cover;
-    
+
 }
-#videoDiv{
-    width: 358px;
-    
+
+.videoDiv {
+    width: 360px;
+    height: 160px;
+    margin-top: 20px;
 }
+
+
 /* /主要內容 */
+/* 換頁按鈕連結樣式 */
+#pageButton {
+    text-align: center;
+}
+
+
+
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.previous {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.next {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.pageNumber {
+    background-color: #04AA6D;
+    color:black;
+}
+
+.round {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 150%;
+}
+.numberRound{
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 150%;
+    margin: 0px 5px;
+
+    
+}
+
+
+
+
+/* /換頁按鈕連結樣式 */
 </style>

@@ -12,6 +12,7 @@ import RegisterPage from '../views/RegisterPage';
 import AskedQ from '../views/AskedQ';
 import EventDetail from '../views/EventDetail';
 import ProductPage from '../views/ProductPage.vue';
+import ProductBigImgs from '../views/ProductBigImgs.vue';
 import VideoDetail from '../views/VideoDetail.vue';
 import VideoPage from '../views/VideoPage.vue';
 
@@ -86,6 +87,11 @@ const routes = [
         path: '/videopage',
         name: 'VideoPage',
         component: VideoPage
+    },
+    {
+        path: '/productbigimgs',
+        name: 'ProductBigImgs',
+        component: ProductBigImgs
     }
   
     
