@@ -1,33 +1,98 @@
 <template>
-
   <div class="wrap">
-    <section>
-      <div class="container">
-        <div class="upper_box">header下面的藍色長條
-
-          <div class="sideProfile"></div>
-          <div class="profile_pic">PIC</div>
-          <p>會員姓名</p>
-        </div>
-      </div>
-    </section>
+    <div class="container">
+      <section class="coverSetting">
+        <div class="profilePic"></div>
+        <div class="profile_name">會員姓名</div>
+      </section>
+    </div>
 
     <div class="main_contents">
-      <section>
-        <div>
-          <div class="side_bar">左邊的選單欄位
-            <p>會員資料</p>
-            <p>會員訂單</p>
-            <p>歷史訂單查詢</p>
-            <p>追蹤清單</p>
-            <p>貨到通知</p>
-            <p>訂閱/取消電子報</p>
-          </div>
+      <section class="sidebarSetting">
+        <div class="side_bar">
+          <p class="listItem">會員資料</p>
+          <p class="listItem">會員訂單</p>
+          <p class="listItem">歷史訂單查詢</p>
+          <p class="listItem">追蹤清單</p>
+          <p class="listItem">貨到通知</p>
+          <p class="listItem">訂閱/取消電子報</p>
         </div>
       </section>
-      <section>
-        <div>
-          <div class="main_box">
+
+      <div class="main_box">
+        <section class="mainbox_inner">
+          <h1>會員資料設定</h1>
+          <h3>會員資料</h3>
+          <hr />
+          <p class="inner_title">
+            帳號 / ID &nbsp; 
+            <span>example@gmail.com</span>
+          </p>
+          <br />
+          <p class="inner_title">
+            修改密碼 / 新密碼 &nbsp;
+            <input
+              type="text"
+              placeholder="請重新輸入密碼"
+            />
+          </p>
+
+          <span class="notice">*至少八個字符, 包含大小寫英文字母、數字或特殊符號</span>
+          <span class="notice"> 不允許使用連續或重複的三個字節</span>
+          <br />
+          
+          <div class="inner_title_wrap">
+          <p class="inner_title">
+            姓名 &nbsp;
+            <span>小丸子 </span>&nbsp;&nbsp;&nbsp;
+            <button class="btn_change">變更</button>
+          </p>
+          </div>
+
+          <br />
+
+          <div class="inner_title_wrap">
+          <p class="inner_title">
+          出生日期&nbsp; 
+          <span>1988.1.12</span>
+          </p>
+          </div>
+
+          <br />
+
+          <div class="inner_title_wrap">
+          <p class="inner_title">
+            電子郵件&nbsp;
+            <span>example@gmail.com</span>
+            &nbsp;&nbsp;&nbsp;<button class="btn_change">
+              變更
+            </button>
+          </p>
+          </div>
+          
+          <br />
+          
+          <div class="inner_title_wrap">
+          <p class="inner_title">
+            手機號碼&nbsp;
+            <span>0988523645</span>
+             &nbsp;&nbsp;&nbsp; <button class="btn_change">
+              變更
+            </button>
+          </p>
+          </div>
+
+          <hr />
+          <div class='btn_setting'>
+          <button class="btn_grey_clear">清除</button>&nbsp;
+          <button class="btn_blue_confirm">確認</button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- <div class="main_box">
+            <section>
             <h1>會員資料設定</h1>
             <h3>會員資料</h3>
             <hr>
@@ -55,13 +120,10 @@
             <button>變更</button>
             <hr>
             <button>清除</button>
-            <button>確認</button>
-          </div>
-        </div>
-      </section>
-    </div>
+            <button>確認</button>  
+          </section>
+          </div> -->
   </div>
-
 </template>
 
 <style scoped>
@@ -72,54 +134,124 @@
   overflow: hidden;
   min-height: 100vh;
   /* 測試用 */
-  background-color: var(--primary-color);
+  background-color: white;
 }
-
+/* 最上面的漸層區塊 */
 .container {
-  width: 100vw;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(-5deg, #53929b, #e3d096);
   /*  */
 }
 
-.upper_box {
+.coverSetting {
   width: 100%;
-  height: 30vh;
-  background-color: lightblue;
+  margin: 0 auto;
+  justify-content: flex-start;
 }
 
+.coverSetting .profilePic {
+  margin-left: 180px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.coverSetting .profile_name {
+  margin-left: 200px;
+  padding-bottom: 20px;
+}
+.profilePic {
+  width: 100px;
+  font-size: 20px;
+  border-radius: 50%;
+  background-color: rgb(185, 187, 181);
+  padding-top: 120px;
+  padding-right: 20px;
+}
+.profile_name {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* 左邊sidebar區塊 */
 .main_contents {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
-.sideProfile {
-  background-color: bisque;
-  border-radius: 20px;
+.main_contents .sidebarSetting {
+  margin-left: 200px;
+  margin-top: 40px;
+}
+
+.side_bar .listItem {
   color: black;
-  padding-right: 20px;
-  margin-inline-start: 100px;
+  font-size: 20px;
+  font-family: "Genseki-R", Sans-Serif;
+}
+
+/* 中間會員資料區塊 */
+.main_contents .main_box {
+  display: inline-flex;
+  margin-left: 50px;
   margin-top: 20px;
-  width: 100px;
-  height: 150px;
+  justify-content: center;
+  width:60%
+  /* border: 4px solid lightsalmon; */
+}
+.mainbox_inner {
+  display: inline;
+  vertical-align: inherit;
+  width:100%;
+}
+.notice {
+  display: block;
+  justify-content: flex-start;
+  font-size: xx-small;
+  color: brown;
+}
+.mainbox_inner .inner_title {
+  display: inline;
+  line-height: 40px;
+  font-size: 10px;
+  font-weight: bold;
+  width: 100%;
+}
+.btn_change {
+  color: var(--primary-color);
+  background: white;
+  border: 1px solid var(--primary-color);
+  width: 50px;
+  height: 25px;
+  border-radius: 6px;
+}
+.mainbox_inner.inner_title_wrap .inner_title{
+  align-content:center;
 }
 
-.sideProfile .profile_pic {
-  background-color: darkcyan;
-  width: 40px;
-  height: 40px;
-  margin-inline-start: 35px;
+.btn_grey_clear {
+   color:white;
+  background: var(--neutral-color);
+  border: 1px solid var(--neutral-color); 
+  width:250px;
+  height:30px;
+  border-radius: 6px;
 }
 
-.side_bar {
-  border: 2px solid lightseagreen;
-  width: 30vh;
-  height: 80vh;
+.btn_blue_confirm{
+  color:white;
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color); 
+  width:250px;
+  height:30px;
+  border-radius: 6px;
+}
+.btn_setting {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-inline-start: 200px ;
 }
 
-.main_box {
-  border: 4px solid lightsalmon;
-  width: 70vh;
-  height: 90vh;
-  margin-inline-start: 200px;
-  margin-top: -195px;
-}
 </style>
