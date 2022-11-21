@@ -404,9 +404,133 @@
                                         <a href="/#/login">登入並獲得更多推薦</a>
                                     </div>
                                 </div>
-                                <div class="picks-right-area"></div>
+                                <div class="picks-right-area">
+                                    <ul class="picks-item-list">
+                                        <li class="picks-item">
+                                            <div class="picks-item-inner">
+                                                <div class="img-box">
+                                                    <img src="../assets/img/index/picks_item/img_welcome_picks_item_01.png" alt="">
+                                                </div>
+                                                <div class="picks-info">
+                                                    <p class="picks-info-title">綜合推薦</p>
+                                                    <p class="picks-info-desc">
+                                                        我們分析了的品味<br>
+                                                        來看看你朝思暮想的<br>
+                                                        那本書吧。
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="picks-item">
+                                            <div class="picks-item-inner">
+                                                <div class="img-box">
+                                                    <img src="../assets/img/index/picks_item/img_welcome_picks_item_02.png" alt="">
+                                                </div>
+                                                <div class="picks-info">
+                                                    <p class="picks-info-title">作家Picks</p>
+                                                    <p class="picks-info-desc">
+                                                        來認識看看，<br>
+                                                        與你喜歡的作家<br>
+                                                        相似的新作家！<br>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="picks-item">
+                                            <div class="picks-item-inner">
+                                                <div class="img-box">
+                                                    <img src="../assets/img/index/picks_item/img_welcome_picks_item_03.png" alt="">
+                                                </div>
+                                                <div class="picks-info">
+                                                    <p class="picks-info-title">隨心所欲Picks</p>
+                                                    <p class="picks-info-desc">
+                                                        今天<br>
+                                                        隨著自己的心情<br>
+                                                        挑一本書如何？
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="picks-item">
+                                            <div class="picks-item-inner">
+                                                <div class="img-box">
+                                                    <img src="../assets/img/index/picks_item/img_welcome_picks_item_01.png" alt="">
+                                                </div>
+                                                <div class="picks-info">
+                                                    <p class="picks-info-title">Soulmates Picks</p>
+                                                    <p class="picks-info-desc">
+                                                        與你取向相似的<br>
+                                                        靈魂伴侶們<br>
+                                                        都在讀什麼書呢？
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+            <!-- component: bestseller -->
+            <section class="contents">
+                <div class="contents-inner">
+                    <div class="title-wrap">
+                        <h2 class="title-heading">推薦書單</h2>
+                        <ul class="category-tag-list">
+                            <li class="category-item">
+                                <button type="button" class="btn-category"><span>全部</span></button>
+                            </li>
+                            <li class="category-item">
+                                <button type="button" class="btn-category"><span>繪畫</span></button>
+                            </li>
+                            <li class="category-item">
+                                <button type="button" class="btn-category"><span>攝影</span></button>
+                            </li>
+                            <li class="category-item">
+                                <button type="button" class="btn-category"><span>藝術</span></button>
+                            </li>
+                            <li class="category-item">
+                                <button type="button" class="btn-category"><span>鑑賞</span></button>
+                            </li>
+                        </ul>
+                        <div class="right-area">
+                            <!-- TODO 加上位址 -->
+                            <a href="" class="btn-more-plus">
+                                <span>看更多 </span>
+                                <font-awesome-icon icon="fa-solid fa-plus" />
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 設定暢銷排行與新進排行的區域 -->
+                    <div class="best-steady-wrap">
+                        <ul class="prod-list">
+                            <li class="prod-item">
+                                <div class="best-prod-area">
+                                    <div class="best-prod-head">
+                                        <div class="badge-flag">
+                                            <span>1</span>
+                                        </div>
+                                    </div>
+                                    <div class="prod-thumb-box">
+                                        <!-- TODO 設定書本商品詳情頁網址 -->
+                                        <a href="">
+                                            <div class="img-box">
+                                                <img src="../assets/img/books/30101.png" alt="">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="prod-info-box">
+                                        <!-- TODO 設定書本商品詳情頁網址 -->
+                                        <a href="">
+                                            <p class="prod-name">書籍名稱</p>
+                                        </a>
+                                        <small class="prod-author">作者名稱</small>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -429,6 +553,8 @@ export default {
 ul,
 li {
     list-style: none;
+    margin: 0;
+    padding: 0;
     display: inline;
     cursor: default;
 }
@@ -934,7 +1060,7 @@ button {
 
 /* Picks */
 .picks-wrap {
-    background-color: rgba(83, 146, 155, 0.38);
+    background-color: rgba(83, 146, 155, 0.18);
 }
 
 .picks-wrap-inner {
@@ -971,30 +1097,105 @@ button {
     font-weight: 900;
 }
 
+.picks-right-area {
+    flex: 1;
+    margin-left: 25px;
+}
 
+.picks-item-list {
+    display: flex;
+    justify-content: space-between;
+}
 
+.picks-item {
+    width: 200px;
+}
 
+.picks-item-inner {
+    width: 100%;
+    border-radius: 16px;
+}
 
+.img-box {
+    border-radius: 16px 16px 0px 0px;
+    overflow: hidden;
+    height: 180px;
+}
 
+.img-box img {
+    width: 100%;
+    vertical-align: middle;
+}
 
+.picks-info {
+    height: calc(100% - 180px);
+    border: 1px solid #EAEAEA;
+    border-radius: 0px 0px 16px 16px;
+    padding-top: 20px;
+    background-color: var(--background-color);
+    box-sizing: border-box;
+    text-align: center;
+}
 
+.picks-info-title {
+    font-weight: bolder;
+    margin: 0px;
+}
 
+.picks-info-desc {
+    font-size: 14px;
+    color: var(--neutral-color);
+}
 
+/* 暢銷排行 */
+.best-steady-wrap {
+    display: flex;
+}
 
+.best-prod-area {
+    display: block;
+}
 
+.best-prod-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    min-height: 26px;
+    margin-bottom: 10px;
+}
 
+.badge-flag {
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+    line-height: 26px;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: top;
+    border-radius: 6px 0px;
+    font-weight: 700;
+    background-color: var(--accent-color);
+}
 
+.img-box {
+    width: 211px;
+    box-sizing: border-box;
+    border: 1px solid #EAEAEA;
+    cursor: pointer;
+}
 
+.prod-info-box {
+    margin-top: 16px;
+}
 
-
-
-
-
-
-
-
-
-
+.prod-author {
+    margin-top: 5px;
+    max-height: 38px;
+    line-height: 19px;
+    overflow: hidden;
+}
 
 
 
