@@ -15,6 +15,7 @@ import ProductPage from '../views/ProductPage.vue';
 import ProductBigImgs from '../views/ProductBigImgs.vue';
 import VideoDetail from '../views/VideoDetail.vue';
 import VideoPage from '../views/VideoPage.vue';
+import EventPag from '../views/EventPag';
 
 Vue.use(VueRouter);
 
@@ -72,6 +73,11 @@ const routes = [
         path: '/eventdetail',
         name: 'EventDetail',
         component: EventDetail
+    },
+    {
+        path:'/eventpag',
+        name:'EventPag',
+        component:EventPag
     },
     {
         path: '/product',

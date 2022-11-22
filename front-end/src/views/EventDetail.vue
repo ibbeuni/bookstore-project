@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="bookimg">
-            <img src="../assets/event_img/event/event_101.jpeg" alt="">
+            <img src="../assets/img/event/event_info/event_101.jpeg" alt="">
         </div>
         <div class="bookname">
             <div>
@@ -33,7 +33,7 @@
                         <div>
                             <a href="">
                                 <div>
-                                        <img src="../assets/event_img/event_minicover/event_minicover_101.jpeg" alt="">
+                                        <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
                                 </div>
                             </a>
                         </div>
@@ -42,7 +42,7 @@
                         <div>
                             <a href="">
                                 <div>
-                                        <img src="../assets/event_img/event_minicover/event_minicover_101.jpeg" alt="">
+                                        <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
                                 </div>
                             </a>
                         </div>
@@ -51,7 +51,7 @@
                         <div>
                             <a href="">
                                 <div>
-                                        <img src="../assets/event_img/event_minicover/event_minicover_101.jpeg" alt="">
+                                        <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
                                 </div>
                             </a>
                         </div>
@@ -60,7 +60,7 @@
                         <div>
                             <a href="">
                                 <div>
-                                        <img src="../assets/event_img/event_minicover/event_minicover_101.jpeg" alt="">
+                                        <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
                                 </div>
                             </a>
                         </div>
@@ -79,14 +79,14 @@
 .header {
     width: 100%;
     height: 100px;
-    background-color: white;
+    /* background-color: white; */
     display: flex;
 }
 
 .footer {
     width: 100%;
     height: 100px;
-    background-color: blue;
+    /* background-color: blue; */
     display: margin-bottom;
 }
 
