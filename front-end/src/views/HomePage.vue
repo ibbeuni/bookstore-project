@@ -409,7 +409,8 @@
                                         <li class="picks-item">
                                             <div class="picks-item-inner">
                                                 <div class="img-box">
-                                                    <img src="../assets/img/index/picks_item/img_welcome_picks_item_01.png" alt="">
+                                                    <img src="../assets/img/index/picks_item/img_welcome_picks_item_01.png"
+                                                        alt="">
                                                 </div>
                                                 <div class="picks-info">
                                                     <p class="picks-info-title">綜合推薦</p>
@@ -424,7 +425,8 @@
                                         <li class="picks-item">
                                             <div class="picks-item-inner">
                                                 <div class="img-box">
-                                                    <img src="../assets/img/index/picks_item/img_welcome_picks_item_02.png" alt="">
+                                                    <img src="../assets/img/index/picks_item/img_welcome_picks_item_02.png"
+                                                        alt="">
                                                 </div>
                                                 <div class="picks-info">
                                                     <p class="picks-info-title">作家Picks</p>
@@ -439,7 +441,8 @@
                                         <li class="picks-item">
                                             <div class="picks-item-inner">
                                                 <div class="img-box">
-                                                    <img src="../assets/img/index/picks_item/img_welcome_picks_item_03.png" alt="">
+                                                    <img src="../assets/img/index/picks_item/img_welcome_picks_item_03.png"
+                                                        alt="">
                                                 </div>
                                                 <div class="picks-info">
                                                     <p class="picks-info-title">隨心所欲Picks</p>
@@ -454,7 +457,8 @@
                                         <li class="picks-item">
                                             <div class="picks-item-inner">
                                                 <div class="img-box">
-                                                    <img src="../assets/img/index/picks_item/img_welcome_picks_item_01.png" alt="">
+                                                    <img src="../assets/img/index/picks_item/img_welcome_picks_item_01.png"
+                                                        alt="">
                                                 </div>
                                                 <div class="picks-info">
                                                     <p class="picks-info-title">Soulmates Picks</p>
@@ -506,10 +510,12 @@
                     <!-- 設定暢銷排行與新進排行的區域 -->
                     <div class="best-steady-wrap">
                         <ul class="prod-list">
+                            <!-- TODO  跑迴圈，重複10次 -->
                             <li class="prod-item">
                                 <div class="best-prod-area">
                                     <div class="best-prod-head">
                                         <div class="badge-flag">
+                                            <!-- TODO 迴圈數字 +1 -->
                                             <span>1</span>
                                         </div>
                                     </div>
@@ -534,8 +540,175 @@
                     </div>
                 </div>
             </section>
+            <!-- component: video -->
+            <!-- TODO 改套用Vue幻燈片套件：vue-awesome-swiper -->
+            <section class="contents">
+                <div class="video-banner-wrap">
+                    <div class="contents-inner">
+                        <div class="contents-inner">
+                            <!-- 標題 -->
+                            <div class="title-wrap">
+                                <h2 class="title-heading">線上讀書會</h2>
+                                <div class="right-area">
+                                    <!-- TODO 加上位址 -->
+                                    <a href="" class="btn-more-plus">
+                                        <span>看更多 </span>
+                                        <font-awesome-icon icon="fa-solid fa-plus" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="video-swiper-container">
+                                <ul class="video-swiper-wrapper">
+                                    <li class="video-swiper-slide">
+                                        <div class="video-banner-area">
+                                            <div class="video-title-box">
+                                                <h2>我是影片的標題</h2>
+                                                <small>與談人姓名</small>
+                                            </div>
+                                            <div class="video-visual-box">
+                                                <div class="prod-area">
+                                                    <div class="prod-thumb-box">
+                                                        <a href="">
+                                                            <img src="../assets/img/books/30101.png" alt="">
+                                                        </a>
+                                                        <p>書籍名稱</p>
+                                                    </div>
+                                                </div>
+                                                <div class="video-frame-wrap">
+                                                    <iframe width="560" height="315"
+                                                        src="https://www.youtube.com/embed/K2vBHUUqWoI"
+                                                        title="YouTube video player" frameborder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                        allowfullscreen></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
-        <footer></footer>
+        <!-- FOOTER -->
+        <footer class="footer-wrapper">
+            <div class="contents-inner">
+                <div class="footer-inner">
+                    <div class="service-group-area">
+                        <div class="service-group-box">
+                            <small class="group-name">關於我們</small>
+                            <ul class="service-list">
+                                <li class="service-item">
+                                    <!-- TODO 如有連結補上 -->
+                                    <a href=""><small>品牌故事</small></a>
+                                </li>
+                                <li class="service-item">
+                                    <!-- TODO 如有連結補上 -->
+                                    <a href=""><small>服務條款</small></a>
+                                </li>
+                                <li class="service-item">
+                                    <!-- TODO 如有連結補上 -->
+                                    <a href=""><small>隱私政策</small></a>
+                                </li>
+                                <li class="service-item">
+                                    <!-- TODO 如有連結補上 -->
+                                    <a href=""><small>異業合作</small></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="service-group-box">
+                            <small class="group-name">購物指南</small>
+                            <ul class="service-list">
+                                <li class="service-item">
+                                    <!-- TODO 如有連結補上 -->
+                                    <a href=""><small>優惠券／商品券</small></a>
+                                </li>
+                                <li class="service-item">
+                                    <!-- TODO 如有連結補上 -->
+                                    <a href=""><small>書店禮品卡</small></a>
+                                </li>
+                                <li class="service-item">
+                                    <!-- TODO 如有連結補上 -->
+                                    <a href=""><small>企業採購</small></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="service-group-box">
+                            <small class="group-name">配送及退換貨</small>
+                            <ul class="service-list">
+                                <li class="service-item">
+                                    <!-- TODO 如有連結補上 -->
+                                    <a href=""><small>會員常見問題</small></a>
+                                </li>
+                                <li class="service-item">
+                                    <!-- TODO 如有連結補上 -->
+                                    <a href=""><small>購物常見問題</small></a>
+                                </li>
+                                <li class="service-item">
+                                    <!-- TODO 如有連結補上 -->
+                                    <a href=""><small>配送取貨時間</small></a>
+                                </li>
+                                <li class="service-item">
+                                    <!-- TODO 如有連結補上 -->
+                                    <a href=""><small>退換貨及退款</small></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="service-group-box">
+                            <small class="group-name">聯絡我們</small>
+                            <ul class="service-list">
+                                <li class="service-item">
+                                    <!-- TODO 如有連結補上 -->
+                                    <a href=""><small>營業時間：10:00-22:00</small></a>
+                                </li>
+                                <li class="service-item">
+                                    <!-- TODO 如有連結補上 -->
+                                    <a href=""><small>聯絡電話：04-12345678</small></a>
+                                </li>
+                                <li class="service-item">
+                                    <!-- TODO 如有連結補上 -->
+                                    <a href="xxx@ispan.com"><small>E-mail：xxx@ispan.com</small></a>
+                                </li>
+                                <li class="service-item">
+                                    <!-- TODO 如有連結補上 -->
+                                    <a href="https://goo.gl/maps/YazNrB8v4wqSpAqh8"><small>地址：台中市公益路二段51號</small></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="service-group-box footer-right">
+                            <small class="group-name">社群媒體</small>
+                            <div class="social-media">
+                                <a href="#" target="_blank">
+                                    <div class="social-media-icon facebook">
+                                        <font-awesome-icon icon="fa-brands fa-facebook-f" />
+                                    </div>
+                                </a>
+                                <a href="https://www.instagram.com/sweetspot920/" target="_blank">
+                                    <div class="social-media-icon instagram">
+                                        <font-awesome-icon icon="fa-brands fa-instagram" />
+                                    </div>
+                                </a>
+                                <a href="https://www.youtube.com/channel/UCwy3MJXaPj0de0p2cUn9HLw/featured"
+                                    target="_blank">
+                                    <div class="social-media-icon youtube">
+                                        <font-awesome-icon icon="fa-brands fa-youtube" />
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="find-us">
+                                <div class="find-us-icon">
+                                    <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
+                                </div>
+                                <div class="find-us-text">
+                                    <span>藝・Bookstore</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 </template>
 
@@ -582,7 +755,6 @@ button {
     min-height: 100vh;
     /* 測試用 */
     /* background-color: var(--background-color); */
-    background-color: var(--neutral-color);
 }
 
 .header-wrapper {
@@ -754,6 +926,7 @@ button {
     display: flex;
     padding-left: 0px;
     box-sizing: content-box;
+    width: 100%;
 }
 
 /* 幻燈片<li> */
@@ -1197,39 +1370,160 @@ button {
     overflow: hidden;
 }
 
+/* casting */
+.video-banner-wrap {
+    position: relative;
+    /* background-color: red; */
+}
+
+.video-swiper-container {
+    /* background-color: aqua; */
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    z-index: 99;
+}
+
+.video-swiper-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    box-sizing: content-box;
+}
+
+.video-swiper-slide {
+    height: 100%;
+    width: 100%;
+}
+
+.video-banner-area {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+}
+
+.video-title-box {
+    padding-right: 30px;
+}
+.video-visual-box {
+    display: flex;
+    margin-left: 30px;
+}
+
+.prod-thumb-box {
+    margin-top: auto;
+}
+.prod-thumb-box img {
+    width: 118px;
+}
 
 
+.video-frame-wrap {
+    border-radius: 18px;
+    overflow: hidden;
+    margin-left: 30px;
+}
 
+.footer-wrapper {
+    margin-top: 60px;
+    padding: 40px 0 50px;
+    border-top: 1px solid #EAEAEA;
+    background-color: #F7F7F7;
+}
 
+.footer-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.service-group-area {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+}
 
+.service-group-box {
+    flex: 1;
+    padding: 0px 15px;
+    border-right: 1px solid #EAEAEA;
+}
 
+.footer-right {
+    border-right: none;
+}
 
+.group-name {
+    font-weight: 900;
+}
 
+.service-list {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    /* padding-inline-start: 40px; */
+}
 
+.service-item {
+    display: list-item;
+    padding: 8px 0px;
+}
 
+.service-item a {
+    color: var(--neutral-color);
+}
 
+.social-media {
+    display: flex;
+    margin: 2rem 0px;
+}
 
+.social-media-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.3rem;
+    height: 3.3rem;
+    margin-right: 0.8rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--background-color);
+}
 
+.facebook {
+    background-color: #3C5996;
+}
 
+.instagram {
+    background-color: #D84A62;
+}
 
+.youtube {
+    background-color: #FE0000;
+}
 
+.find-us {
+    border: 1px solid;
+    border-radius: 10px;
+    width: 12rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    color: var(--neutral-color);
+}
 
+.find-us-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0.7rem;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.find-us-text {
+    letter-spacing: 2px;
+}
 </style>
