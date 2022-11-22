@@ -4,10 +4,12 @@
             <div class="list center">
             </div>
         </div>
+        <!-- 活動輪播圖 -->
         <div style="text-align:center">
-            <img width="1200" height="340" src="../assets/img/event/event_cover/event_cover001.jpeg" alt="">
+            <img style="border-radius: 30px;" width="1200" height="340" src="../assets/img/event/event_cover/event_cover001.jpeg" alt="">
         </div>
         <div class="bookname">
+            <!-- 分類按鈕 -->
             <div>
                 <ul>
                     <a href="" style="font-size: 25px">其他書籍活動</a><br><br>
@@ -18,6 +20,7 @@
                     <li><button><span>攝影</span></button></li>
                 </ul>
             </div>
+            <!-- 所有活動minicover圖片 -->
             <div>
                 <ul class="event_list col4">
                     <li class="event_item">
@@ -267,6 +270,7 @@
     /* background-color: blue; */
     display: margin-bottom;
 }
+/* li排列方式 */
 li {
     display: inline;
     margin-right: 10px;
@@ -282,7 +286,7 @@ li {
 .bookimg {
     text-align: center;
 }
-
+/* 按鈕樣式 */
 button {
     display: inline-block;
     text-align: center;
@@ -296,7 +300,7 @@ button {
     text-decoration: none;
     text-transform: uppercase
 }
-
+/* 按鈕觸碰及點擊後樣式 */
 button:hover,
 button:focus {
     background: #454545;
@@ -306,9 +310,11 @@ ul {
   display: block;
   margin-bottom: 20px;
 }
+/* ul排列 */
 .event_list{
     justify-content: center;
 }
+/* li排列與間隔 */
 .event_item {
   display: inline-block;
   list-style-type: none;
