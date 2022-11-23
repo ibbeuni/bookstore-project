@@ -10,7 +10,7 @@
             <div class="card">
                 <ul class="wordsize">
                     <li><a href="/Users/catmimi1212/Desktop/大專題/靜態畫面/accordion/zzz.html">關於我們</a></li>
-                    <li>會員常<font-awesome-icon icon="fa-solid fa-heart" />見問題</li>
+                    <li>會員常見問題</li>
                     <li>購物常見問題</li>
                     <li>配送取貨問題</li>
                     <li>退換貨及退款</li>
@@ -118,14 +118,14 @@ export default {
 .content {
     width: 100%;
     height: 600px;
-    background-color: gray;
+    /* background-color: gray; */
     display: flex;
 }
 
 .footer {
     width: 100%;
     height: 100px;
-    background-color: blue;
+    /* background-color: blue; */
 }
 
 .center {
@@ -146,7 +146,7 @@ export default {
     width: 25%;
     flex-wrap: wrap;
     height: 100%;
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
     margin-right: 5px;
 }
 
@@ -162,7 +162,7 @@ export default {
     width: 75%;
     flex-wrap: wrap;
     height: 100%;
-    background-color: green;
+    /* background-color: green; */
     margin-right: 5px;
 }
 </style>
