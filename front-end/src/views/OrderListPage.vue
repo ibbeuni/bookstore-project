@@ -72,55 +72,57 @@
         </ul>
 
       </div>
-      <div id="mainContentMid">
-        <p class="nh1">會員訂單</p>
-        <div id="sendTo">
-          <div>
-            <p>出貨地址：</p>
-            <br>
-            <p id="city">台中市(縣市)</p>
-            <p id="postalCode">407(郵遞區號)</p>
-            <p id="address">完整地址</p>
-          </div>
-        </div>
-        <div id="buyWhat">
-          <div>
-            <p>訂單編號：<span id="orderNumber">XXXXXXX</span></p>
-          </div>
-          <hr>
-          <div id="buyProduct">
-            這是訂單內容DIV
-          </div>
-          <br>
-          <br>
-        </div>
-      </div>
-      <div id="mainContentRight">
-        <div id="totalPrice">
-          <div id="totalPriceDiv">
+      <div id="canChangeDiv" class="flex">
+        <div id="mainContentMid">
+          <p class="nh1">會員訂單</p>
+          <div id="sendTo">
             <div>
-              <p id="aaa">商品價格</p>
-              <p>100元</p>
+              <p>出貨地址：</p>
+              <br>
+              <p id="city">台中市(縣市)</p>
+              <p id="postalCode">407(郵遞區號)</p>
+              <p id="address">完整地址</p>
             </div>
+          </div>
+          <div id="buyWhat">
             <div>
-              <p>運費</p>
-              <p>60元</p>
-            </div>
-            <div>
-              <p>折扣</p>
-              <p>20元</p>
+              <p>訂單編號：<span id="orderNumber">XXXXXXX</span></p>
             </div>
             <hr>
-            <div>
-              <p>總計金額</p>
-              <p id="lastTotalPrice">140 元</p>
+            <div id="buyProduct">
+              這是訂單內容DIV
             </div>
-
-            <br><br>
-            <button id="checOutButton">結帳</button>
+            <br>
+            <br>
           </div>
         </div>
+        <div id="mainContentRight">
+          <div id="totalPrice">
+            <div id="totalPriceDiv">
+              <div>
+                <p id="aaa">商品價格</p>
+                <p>100元</p>
+              </div>
+              <div>
+                <p>運費</p>
+                <p>60元</p>
+              </div>
+              <div>
+                <p>折扣</p>
+                <p>20元</p>
+              </div>
+              <hr>
+              <div>
+                <p>總計金額</p>
+                <p id="lastTotalPrice">140 元</p>
+              </div>
 
+              <br><br>
+              <button id="checOutButton">結帳</button>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
     <br><br><br><br><br><br><br><br><br><br>
