@@ -24,105 +24,79 @@
           <h1>會員資料設定</h1>
           <h3>會員資料</h3>
           <hr />
-          <p class="inner_title">
-            帳號 / ID &nbsp; 
-            <span>example@gmail.com</span>
-          </p>
+          <div class="inner_title">
+            帳號 / ID
+            <div class="inner_contents">
+              <span>example@gmail.com</span>
+            </div>
+          </div>
           <br />
-          <p class="inner_title">
-            修改密碼 / 新密碼 &nbsp;
-            <input
-              type="text"
-              placeholder="請重新輸入密碼"
-            />
-          </p>
+          <div class="inner_title">
+            修改密碼 / 新密碼
+           <input class="inner_contents" type="text" placeholder="請重新輸入密碼" /> 
+          </div>
 
-          <span class="notice">*至少八個字符, 包含大小寫英文字母、數字或特殊符號</span>
-          <span class="notice"> 不允許使用連續或重複的三個字節</span>
+          <span class="notice"
+            >*至少八個字符,
+            包含大小寫英文字母、數字或特殊符號，不允許使用連續或重複的三個字節</span
+          >
+
           <br />
-          
+
           <div class="inner_title_wrap">
-          <p class="inner_title">
-            姓名 &nbsp;
-            <span>小丸子 </span>&nbsp;&nbsp;&nbsp;
-            <button class="btn_change">變更</button>
-          </p>
+            <div class="inner_title">姓名 
+              <span class="inner_contents">小丸子 </span>
+              <div class="inner_btn">
+              <button class="btn_change">變更</button>
+            </div>
+            </div>
+           
+            
           </div>
 
           <br />
 
           <div class="inner_title_wrap">
-          <p class="inner_title">
-          出生日期&nbsp; 
-          <span>1988.1.12</span>
-          </p>
+            <div class="inner_title">出生日期
+              <span class="inner_contents">1988.1.12</span>
+            </div>
+            
           </div>
 
           <br />
 
           <div class="inner_title_wrap">
-          <p class="inner_title">
-            電子郵件&nbsp;
-            <span>example@gmail.com</span>
-            &nbsp;&nbsp;&nbsp;<button class="btn_change">
-              變更
-            </button>
-          </p>
+            <div class="inner_title">電子郵件
+              <span class="inner_contents">example@gmail.com</span>
+              <div class="inner_btn">
+              <button class="btn_change">變更</button>
+            </div>
+            </div>
+            
+           
           </div>
-          
+
           <br />
-          
+
           <div class="inner_title_wrap">
-          <p class="inner_title">
-            手機號碼&nbsp;
-            <span>0988523645</span>
-             &nbsp;&nbsp;&nbsp; <button class="btn_change">
-              變更
-            </button>
-          </p>
+            <div class="inner_title">手機號碼
+              <span class="inner_contents">0988523645</span>
+              <div class="inner_btn">
+              <button class="btn_change">變更</button>
+            </div>
+            </div>
+          
+            
           </div>
 
           <hr />
-          <div class='btn_setting'>
-          <button class="btn_grey_clear">清除</button>&nbsp;
-          <button class="btn_blue_confirm">確認</button>
+          <div class="btn_setting">
+            <button class="btn_grey_clear">清除</button>&nbsp;
+            <button class="btn_blue_confirm">確認</button>
           </div>
         </section>
       </div>
     </div>
-
-    <!-- <div class="main_box">
-            <section>
-            <h1>會員資料設定</h1>
-            <h3>會員資料</h3>
-            <hr>
-            <p>帳號 / ID</p>
-            <span>example@gmail.com</span>
-            <br>
-            <p>修改密碼 / 新密碼</p>
-            <input type="text" placeholder="請重新輸入密碼">
-            <p>至少八個字符, 包含大小寫英文字母、數字或特殊符號</p>
-            <p>不允許使用連續或重複的三個字節</p>
-            <br>
-            <p>姓名</p>
-            <span>小丸子</span>
-            <button>變更</button>
-            <hr>
-            <p>出生日期</p>
-            <span>1988.1.12</span>
-            <br>
-            <p>電子郵件</p>
-            <span>example@gmail.com</span>
-            <button>變更</button>
-            <br>
-            <p>手機號碼</p>
-            <span>0988523645</span>
-            <button>變更</button>
-            <hr>
-            <button>清除</button>
-            <button>確認</button>  
-          </section>
-          </div> -->
   </div>
 </template>
 
@@ -198,13 +172,13 @@
   margin-left: 50px;
   margin-top: 20px;
   justify-content: center;
-  width:60%
+  width: 60%;
   /* border: 4px solid lightsalmon; */
 }
 .mainbox_inner {
   display: inline;
   vertical-align: inherit;
-  width:100%;
+  width: 100%;
 }
 .notice {
   display: block;
@@ -226,32 +200,46 @@
   width: 50px;
   height: 25px;
   border-radius: 6px;
+
 }
-.mainbox_inner.inner_title_wrap .inner_title{
-  align-content:center;
+.mainbox_inner.inner_title_wrap .inner_title {
+  align-content: center;
+}
+.inner_contents{
+  display:inline-block;
+  margin-inline: 100px;
+  margin-left: 100px;
+  text-align: left;
+  
+  
 }
 
+.inner_btn{
+  display: flex;
+  justify-content: right;
+  margin-right:500px
+  
+}
 .btn_grey_clear {
-   color:white;
+  color: white;
   background: var(--neutral-color);
-  border: 1px solid var(--neutral-color); 
-  width:250px;
-  height:30px;
+  border: 1px solid var(--neutral-color);
+  width: 250px;
+  height: 30px;
   border-radius: 6px;
 }
 
-.btn_blue_confirm{
-  color:white;
+.btn_blue_confirm {
+  color: white;
   background: var(--primary-color);
-  border: 1px solid var(--primary-color); 
-  width:250px;
-  height:30px;
+  border: 1px solid var(--primary-color);
+  width: 250px;
+  height: 30px;
   border-radius: 6px;
 }
 .btn_setting {
   margin-top: 20px;
   margin-bottom: 20px;
-  padding-inline-start: 200px ;
+  padding-inline-start: 200px;
 }
-
 </style>

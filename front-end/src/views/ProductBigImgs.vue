@@ -24,7 +24,9 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <button>O</button>
+                                    <button>
+                                        <font-awesome-icon icon="fa-regular fa-heart" />
+                                    </button>
                                     <button>加入購物車</button>
                                     <br>
                                     <br>
@@ -75,11 +77,7 @@
                                                 <img class="allImg" src="../assets/img/product/40103.png" alt="">
                                             </button>
                                         </div>
-                                        <div class="allImgDiv">
-                                            <button>
-                                                <img class="allImg" src="../assets/img/product/40103.png" alt="">
-                                            </button>
-                                        </div>
+                                       
 
                                        
 
@@ -301,6 +299,7 @@ table {
     border: black solid 2px;
     width: 1050px;
     height: 650px;
+    margin: 0px auto;
 }
 
 #bigBookName{
