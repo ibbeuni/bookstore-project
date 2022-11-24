@@ -16,8 +16,8 @@ import ProductBigImgs from '../views/ProductBigImgs.vue';
 import VideoDetail from '../views/VideoDetail.vue';
 import VideoPage from '../views/VideoPage.vue';
 import EventPag from '../views/EventPag';
-import OrderDetail from '../views/OrderDetail.vue'
-import TrackList from '../views/TrackList.vue'
+import OrderDetail from '../views/OrderDetail.vue';
+import TrackList from '../views/TrackList.vue';
 
 
 Vue.use(VueRouter);
@@ -111,7 +111,7 @@ const routes = [
         path: '/tracklist',
         name: 'TrackList',
         component: TrackList
-    }
+    },
 
   
     
