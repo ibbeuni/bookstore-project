@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import HomePage from '../views/HomePage.vue';
+import BestList from '../views/BestList.vue';
 import TestPage from '../views/TestPage.vue';
 import HomePageSample from '../views/HomePageSample.vue';
 import LoginPage from '../views/LoginPage';
@@ -15,7 +16,7 @@ import ProductPage from '../views/ProductPage.vue';
 import ProductBigImgs from '../views/ProductBigImgs.vue';
 import VideoDetail from '../views/VideoDetail.vue';
 import VideoPage from '../views/VideoPage.vue';
-import EventPag from '../views/EventPag';
+import EventPage from '../views/EventPage';
 
 Vue.use(VueRouter);
 
@@ -28,6 +29,11 @@ const routes = [
         path: '/home',
         name: 'HomePage',
         component: HomePage
+    },
+    {
+        path: '/best',
+        name: 'BestList',
+        component: BestList
     },
     {
         path: '/test',
@@ -75,9 +81,9 @@ const routes = [
         component: EventDetail
     },
     {
-        path:'/eventpag',
-        name:'EventPag',
-        component:EventPag
+        path:'/eventpage',
+        name:'EventPage',
+        component:EventPage
     },
     {
         path: '/product',

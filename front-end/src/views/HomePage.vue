@@ -569,7 +569,7 @@
                                                 <div class="prod-area">
                                                     <div class="prod-thumb-box">
                                                         <a href="">
-                                                            <img src="../assets/img/books/30101.png" alt="">
+                                                            <img src="../assets/img/books/30101.png" alt="" class="prod-thumb-box">
                                                         </a>
                                                         <p>書籍名稱</p>
                                                     </div>
@@ -749,12 +749,15 @@ button {
 
 .wrap {
     /* 網頁內容最大寬度 */
-    /* max-width: 1920px; */
+    max-width: 1920px;
     min-width: 1440px;
     overflow: hidden;
     min-height: 100vh;
-    /* 測試用 */
-    /* background-color: var(--background-color); */
+    background-color: var(--background-color);
+}
+
+.container-wrapper {
+    min-height: calc(100vh - 80px);
 }
 
 .header-wrapper {
@@ -1287,6 +1290,8 @@ button {
 .picks-item-inner {
     width: 100%;
     border-radius: 16px;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .img-box {
@@ -1413,8 +1418,6 @@ button {
 
 .prod-thumb-box {
     margin-top: auto;
-}
-.prod-thumb-box img {
     width: 118px;
 }
 
@@ -1426,7 +1429,7 @@ button {
 }
 
 .footer-wrapper {
-    margin-top: 60px;
+    margin-top: 150px;
     padding: 40px 0 50px;
     border-top: 1px solid #EAEAEA;
     background-color: #F7F7F7;
@@ -1512,7 +1515,7 @@ button {
     height: 3rem;
     display: flex;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--neutral-color);
 }
 
