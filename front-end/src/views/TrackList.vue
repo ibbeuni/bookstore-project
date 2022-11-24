@@ -76,10 +76,39 @@
             </div>
             <!-- !可變換元件區域 -->
             <div id="canChangeDiv">
-                <p id="componenTtital" class="nh1 nb">追蹤清單</p>
-                <div id="trackContent">
-                    <br>
+                <div id="infoDiv">
+                    <p id="componenTtital" class="nh1 nb">追蹤清單</p>
+                    <div id="trackContent">
+                        <div class="trackBook flex">
+                            <div>
+                                <img src="../assets/img/product/41301.png" alt="">
+                            </div>
+                            <div class="bookInfo">
+                                <p class="nh3 nb">書名</p>
+                                <p class="nh4">作者</p>
+                                <p class="nh4 nb">價錢</p>
+                            </div>
+                            <div class="deleteTrackDiv">
+                                <button class="deleteTrack btn btn-outline-danger">取消追蹤</button>
+                            </div>
+                        </div>
+                        <div class="trackBook flex">
+                            <div>
+                                <img src="../assets/img/product/40201.png" alt="">
+                            </div>
+                            <div class="bookInfo">
+                                <p class="nh3 nb">書名</p>
+                                <p class="nh4">作者</p>
+                                <p class="nh4 nb">價錢</p>
+                            </div>
+                            <div class="deleteTrackDiv">
+                                <button class="deleteTrack btn btn-outline-danger">取消追蹤</button>
+                            </div>
+                        </div>
 
+
+                        <br><br><br><br>
+                    </div>
                 </div>
             </div>
             <!-- !/可變換元件區域 -->
@@ -94,9 +123,10 @@
   
 <style scoped>
 /* <共用CSS> */
-*{
+* {
     box-sizing: border-box;
 }
+
 .nh1 {
     font-size: 24px;
 }
@@ -372,6 +402,7 @@ table {
     /* background-color: rgb(171, 240, 201); */
     width: 1200px;
     box-sizing: border-box;
+
 }
 
 #navLeft {
@@ -386,20 +417,54 @@ table {
 
 #canChangeDiv {
     width: 1000px;
-    background-color: rgb(240, 133, 133);
+    /* background-color: rgb(240, 133, 133); */
+}
+
+#infoDiv{
+    background-color: white;
 }
 
 #componenTtital {
     margin: 20px 30px;
+    
 
 }
 
-#trackContent{
+#trackContent {
     margin: 0 auto;
     width: 700px;
-    background-color: rgb(167, 248, 198);
+    /* background-color: rgb(167, 248, 198); */
+    border: solid 1px black;
+    border-radius: 30px;
+}
+
+.trackBook {
+
+    height: 160px;
+    margin: 20px;
+    border-bottom: 2px solid black;
+
+
+}
+
+.trackBook img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+
+
+}
+
+.bookInfo {
+    margin: 20px;
+    width: 350px;
+    /* background-color: rgb(132, 78, 78); */
 }
 
 
+.deleteTrackDiv {
+    line-height: 140px;
+
+}
 </style>
   
