@@ -18,6 +18,7 @@ import VideoPage from '../views/VideoPage.vue';
 import EventPage from '../views/EventPage';
 import OrderDetail from '../views/OrderDetail.vue';
 import TrackList from '../views/TrackList.vue';
+import ZhengTingTest from '../views/ZhengTingTest.vue';
 
 
 Vue.use(VueRouter);
@@ -112,6 +113,11 @@ const routes = [
         name: 'TrackList',
         component: TrackList
     },
+    {
+        path: '/ZhengTingTest',
+        name: 'ZhengTingTest',
+        component: ZhengTingTest
+    }
    
 
   

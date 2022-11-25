@@ -1,7 +1,7 @@
 
 
 <template>
-  <div class="container">
+  <div id="pageContainer">
     <form class="userLogin">
       <h3>已經是書店的會員了?</h3>
 
@@ -52,10 +52,11 @@
 
 
 <style scoped>
-.container {
+#pageContainer {
   width: 100%;
   margin:auto;
   text-align: center;
+  margin-top: 100px;
 }
 
 .form-control {
