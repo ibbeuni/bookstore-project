@@ -18,7 +18,7 @@ import VideoPage from '../views/VideoPage.vue';
 import EventPage from '../views/EventPage';
 import OrderDetail from '../views/OrderDetail.vue';
 import TrackList from '../views/TrackList.vue';
-import BestList from '../views/BestList.vue'
+import ZhengTingTest from '../views/ZhengTingTest.vue';
 
 
 Vue.use(VueRouter);
@@ -114,10 +114,11 @@ const routes = [
         component: TrackList
     },
     {
-        path: '/best',
-        name: 'BestList',
-        component: BestList
-    },
+        path: '/ZhengTingTest',
+        name: 'ZhengTingTest',
+        component: ZhengTingTest
+    }
+   
 
   
     
