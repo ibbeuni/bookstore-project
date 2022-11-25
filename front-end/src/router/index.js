@@ -18,6 +18,7 @@ import VideoPage from '../views/VideoPage.vue';
 import EventPage from '../views/EventPage';
 import OrderDetail from '../views/OrderDetail.vue';
 import TrackList from '../views/TrackList.vue';
+import BestList from '../views/BestList.vue'
 
 
 Vue.use(VueRouter);
@@ -112,7 +113,11 @@ const routes = [
         name: 'TrackList',
         component: TrackList
     },
-   
+    {
+        path: '/best',
+        name: 'BestList',
+        component: BestList
+    },
 
   
     
