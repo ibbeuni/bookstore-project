@@ -103,7 +103,7 @@
 <style scoped>
 .wrap {
   /* 網頁內容最大寬度 */
-  /* max-width: 1920px; */
+  max-width: 1920px;
   min-width: 1440px;
   overflow: hidden;
   min-height: 100vh;
@@ -112,7 +112,7 @@
 }
 /* 最上面的漸層區塊 */
 .container {
-  width: 100%;
+  width: 1440px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -123,7 +123,7 @@
 .coverSetting {
   width: 100%;
   margin: 0 auto;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .coverSetting .profilePic {

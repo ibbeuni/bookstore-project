@@ -2,7 +2,10 @@
 
 <template>
   <div class="container">
+    
+    <section class="wrap_all">
     <form class="userLogin">
+      <img  class='imageSize' src="@/assets/BookstoreLogo.png">
       <h3>已經是書店的會員了?</h3>
 
       <div class="form-group">
@@ -37,6 +40,7 @@
         <router-link to="/forgot-password">忘記密碼?</router-link>
       </p>
     </form>
+    </section>
   </div>
 </template>
 
@@ -44,7 +48,7 @@
 // export default {
 //   data:{
 //     return: {
-//       imgUrl: "./src/assets/bookStore_logo.png"
+//     logo: require('../assets/BookstoreLogo.png'), 
 //     }
 //   }
 // }
@@ -53,11 +57,21 @@
 
 <style scoped>
 .container {
-  width: 100%;
   margin:auto;
   text-align: center;
 }
-
+.imageSize{
+  width:300px;
+  height:75px;
+  margin-bottom: 20px;
+}
+.wrap_all{
+  margin:center;
+  margin-top: 150px;
+}
+h3{
+  margin-bottom: 20px;
+}
 .form-control {
   display: inline-block;
   padding: 0 14px 2px;
