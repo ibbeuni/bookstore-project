@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import HomePage from '../views/HomePage.vue';
+import BestList from '../views/BestList.vue'
 import TestPage from '../views/TestPage.vue';
 import HomePageSample from '../views/HomePageSample.vue';
 import LoginPage from '../views/LoginPage';
@@ -32,6 +33,11 @@ const routes = [
         path: '/home',
         name: 'HomePage',
         component: HomePage
+    },
+    {
+        path: '/best',
+        name: 'BestList',
+        component: BestList
     },
     {
         path: '/test',
