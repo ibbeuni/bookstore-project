@@ -228,7 +228,7 @@ button {
 .nav-wrap {
     display: flex;
     align-items: center;
-    margin: 20px 0px;
+    padding: 20px 0px;
 }
 
 .nav-wrap a {
