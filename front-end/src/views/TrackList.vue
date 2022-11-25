@@ -66,8 +66,8 @@
             <div id="navLeft">
                 <ul class="nh3 nb">
                     <li><a href="">會員資料</a></li>
-                    <li><a href="">會員訂單</a></li>
-                    <li><a href="">歷史訂單查詢</a></li>
+                    <li><a href="">購物車</a></li>
+                    <li><a href="">訂單查詢</a></li>
                     <li><a href="">追蹤清單</a></li>
                     <li><a href="">貨到通知</a></li>
                     <li><a href="">訂閱/取消電子報</a></li>

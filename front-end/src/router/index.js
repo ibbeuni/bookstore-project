@@ -7,7 +7,6 @@ import TestPage from '../views/TestPage.vue';
 import HomePageSample from '../views/HomePageSample.vue';
 import LoginPage from '../views/LoginPage';
 import MemberHomePage from '../views/MemberHomePage';
-import OrderListPage from '../views/OrderListPage';
 import ShoppingCartPage from '../views/ShoppingCartPage';
 import RegisterPage from '../views/RegisterPage';
 import AskedQ from '../views/AskedQ';
@@ -58,11 +57,6 @@ const routes = [
         path: '/member',
         name: 'MemberHomePage',
         component: MemberHomePage
-    },
-    {
-        path: '/orderlist',
-        name: 'OrderListPage',
-        component: OrderListPage
     },
     {
         path: '/shoppingcart',
