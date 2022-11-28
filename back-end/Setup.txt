@@ -6,7 +6,7 @@
 
 2.  在router.js內新增路由
     範例：
-    et member = require('./API/member')
+    let member = require('./API/member')
     router.get('/member', member.get) 
 
 
