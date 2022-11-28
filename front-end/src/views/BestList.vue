@@ -1,7 +1,5 @@
 <template>
     <div class="wrap">
-        <!-- HEADER_COMPONENT -->
-        <full-header></full-header>
         <main>
             <!-- 導覽列 breadcrumb_wrap -->
             <section class="breadcrumb-wrap">
@@ -70,14 +68,7 @@
 </template>
 
 <script>
-import FullHeader from '../components/index/FullHeader.vue';
-import FullFooter from '../components/index/FullFooter.vue';
-
 export default {
-    components: {
-        'full-header': FullHeader,
-        'full-footer': FullFooter
-    },
     data() {
         return {
             a: ''
