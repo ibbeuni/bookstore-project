@@ -63,9 +63,9 @@ export default {
 }
 
 /* breadcrumb */
-ol, li {
+ol {
     list-style: none;
-    margin-right: 5px;
+    margin: 0;
     padding: 0;
     display: flex;
     /* margin-block-start: 1em;
@@ -73,5 +73,9 @@ ol, li {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     padding-inline-start: 40px; */
+}
+
+li {
+    padding: 0 10px;
 }
 </style>
