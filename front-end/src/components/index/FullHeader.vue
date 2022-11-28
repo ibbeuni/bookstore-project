@@ -52,7 +52,7 @@
                 </div>
                 <ul class="nav-list">
                     <li class="nav_item">
-                        <a href="">暢銷排行</a>
+                        <a href="/#/best">暢銷排行</a>
                     </li>
                     <li>・</li>
                     <li class="nav_item">

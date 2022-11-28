@@ -526,7 +526,7 @@ li {
     margin: 0;
     padding: 0;
     display: inline;
-    cursor: default;
+    /* cursor: default; */
 }
 
 a {

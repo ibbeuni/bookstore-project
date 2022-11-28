@@ -4,24 +4,11 @@
         <full-header></full-header>
         <main>
             <!-- 導覽列 breadcrumb_wrap -->
-            <section class="breadcrumb-wrap">
-                <div class="contents-inner">
-                    <ol class="breadcrumb-list">
-                        <li class="breadcrumb-item">
-                            <a href="#/home"><font-awesome-icon icon="fa-solid fa-house" /></a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a href="#/best">暢銷書單</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a href="#/best">綜合</a>
-                        </li>
-                    </ol>
-                </div>
-            </section>
-            <!-- 主要內容區 -->
+            <bread-crumb></bread-crumb>
+            <!-- contents_wrap -->
             <section class="contents-wrap">
                 <div class="contents-inner flex">
+                    <!-- LNB -->
                     <aside class="aside-wrap">
                         <div class="aside-header">
                             <div class="title-wrap">
@@ -35,28 +22,33 @@
                                 <ul class="snb-list">
                                     <li class="snb-item">
                                         <!-- TODO 加入連結 -->
-                                        <a href="" class="snb-line">綜合暢銷排行榜</a>
+                                        <a href="" class="snb-line">綜合</a>
                                     </li>
                                     <li class="snb-item">
                                         <!-- TODO 加入連結 -->
-                                        <a href="" class="snb-line">綜合暢銷排行榜</a>
+                                        <a href="" class="snb-line">繪畫</a>
                                     </li>
                                     <li class="snb-item">
                                         <!-- TODO 加入連結 -->
-                                        <a href="" class="snb-line">綜合暢銷排行榜</a>
+                                        <a href="" class="snb-line">攝影</a>
                                     </li>
                                     <li class="snb-item">
                                         <!-- TODO 加入連結 -->
-                                        <a href="" class="snb-line">綜合暢銷排行榜</a>
+                                        <a href="" class="snb-line">藝術</a>
                                     </li>
                                     <li class="snb-item">
                                         <!-- TODO 加入連結 -->
-                                        <a href="" class="snb-line">綜合暢銷排行榜</a>
+                                        <a href="" class="snb-line">鑑賞</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </aside>
+                    <!-- contents -->
+                    <section class="section-wrap">
+                        <!-- title 根據aside切換，更換內容 -->
+                        <h1 class="title-heading"></h1>
+                    </section>
                 </div>
             </section>
 
@@ -72,11 +64,13 @@
 <script>
 import FullHeader from '../components/index/FullHeader.vue';
 import FullFooter from '../components/index/FullFooter.vue';
+import BreadCrumb from '../components/best/BreadCrumb.vue'
 
 export default {
     components: {
         'full-header': FullHeader,
-        'full-footer': FullFooter
+        'full-footer': FullFooter,
+        'bread-crumb': BreadCrumb,
     },
     data() {
         return {
@@ -97,40 +91,10 @@ export default {
     background-color: var(--background-color);
 }
 
-.breadcrumb-wrap {
-    padding: 20px 0 0 ;
-}
-
 .contents-inner {
     /* position: relative; */
     width: 1200px;
     margin: 0 auto;
-}
-
-.flex {
-    display: flex;
-}
-
-/* breadcrumb */
-.breadcrumb-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    /* margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px; */
-}
-
-.breadcrumb-item {
-    padding: 0 12px 0 0;
-}
-
-.breadcrumb-item a {
-    padding: 0 0 0 12px;
-    color: var(--neutral-color);
 }
 
 /* 主要內容區 */
