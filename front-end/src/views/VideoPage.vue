@@ -3,128 +3,22 @@
         <div id="videoPage">
 
             <p>分類>分類>分類</p>
+            <button @click="get()">获取user表数据</button>
             <br><br><br><br>
             <div id="videoPlace" class="flex" style="background-color:white;">
-                <div class="videoDiv flex">
-                    <div>
-                        <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
+                <a class="block" href="">
+                    <div class="videoDiv flex">
+                        <div>
+                            <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
+                        </div>
+                        <div>
+                            <p>[影片名稱]影片名稱影片名稱影片名稱影片名稱</p>
+                            <p>分類</p>
+                            <p>上傳日期：2200 / 2 / 31</p>
+                        </div>
                     </div>
-                    <div>
-                        <p>[影片名稱]影片名稱影片名稱影片名稱影片名稱</p>
-                        <p>分類</p>
-                        <p>上傳日期：2200 / 2 / 31</p>
-                    </div>
-                </div>
-                <div class="videoDiv flex">
-                    <div>
-                        <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
-                    </div>
-                    <div>
-                        <p>[影片名稱]影片名稱影片名稱影片名稱影片名稱</p>
-                        <p>分類</p>
-                        <p>上傳日期：2200 / 2 / 31</p>
-                    </div>
-                </div>
-                <div class="videoDiv flex">
-                    <div>
-                        <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
-                    </div>
-                    <div>
-                        <p>[影片名稱]影片名稱影片名稱影片名稱影片名稱</p>
-                        <p>分類</p>
-                        <p>上傳日期：2200 / 2 / 31</p>
-                    </div>
-                </div>
-                <div class="videoDiv flex">
-                    <div>
-                        <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
-                    </div>
-                    <div>
-                        <p>[影片名稱]影片名稱影片名稱影片名稱影片名稱</p>
-                        <p>分類</p>
-                        <p>上傳日期：2200 / 2 / 31</p>
-                    </div>
-                </div>
-                <div class="videoDiv flex">
-                    <div>
-                        <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
-                    </div>
-                    <div>
-                        <p>[影片名稱]影片名稱影片名稱影片名稱影片名稱</p>
-                        <p>分類</p>
-                        <p>上傳日期：2200 / 2 / 31</p>
-                    </div>
-                </div>
-                <div class="videoDiv flex">
-                    <div>
-                        <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
-                    </div>
-                    <div>
-                        <p>[影片名稱]影片名稱影片名稱影片名稱影片名稱</p>
-                        <p>分類</p>
-                        <p>上傳日期：2200 / 2 / 31</p>
-                    </div>
-                </div>
-                <div class="videoDiv flex">
-                    <div>
-                        <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
-                    </div>
-                    <div>
-                        <p>[影片名稱]影片名稱影片名稱影片名稱影片名稱</p>
-                        <p>分類</p>
-                        <p>上傳日期：2200 / 2 / 31</p>
-                    </div>
-                </div>
-                <div class="videoDiv flex">
-                    <div>
-                        <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
-                    </div>
-                    <div>
-                        <p>[影片名稱]影片名稱影片名稱影片名稱影片名稱</p>
-                        <p>分類</p>
-                        <p>上傳日期：2200 / 2 / 31</p>
-                    </div>
-                </div>
-                <div class="videoDiv flex">
-                    <div>
-                        <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
-                    </div>
-                    <div>
-                        <p>[影片名稱]影片名稱影片名稱影片名稱影片名稱</p>
-                        <p>分類</p>
-                        <p>上傳日期：2200 / 2 / 31</p>
-                    </div>
-                </div>
-                <div class="videoDiv flex">
-                    <div>
-                        <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
-                    </div>
-                    <div>
-                        <p>[影片名稱]影片名稱影片名稱影片名稱影片名稱</p>
-                        <p>分類</p>
-                        <p>上傳日期：2200 / 2 / 31</p>
-                    </div>
-                </div>
-                <div class="videoDiv flex">
-                    <div>
-                        <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
-                    </div>
-                    <div>
-                        <p>[影片名稱]影片名稱影片名稱影片名稱影片名稱</p>
-                        <p>分類</p>
-                        <p>上傳日期：2200 / 2 / 31</p>
-                    </div>
-                </div>
-                <div class="videoDiv flex">
-                    <div>
-                        <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
-                    </div>
-                    <div>
-                        <p>[影片名稱]影片名稱影片名稱影片名稱影片名稱</p>
-                        <p>分類</p>
-                        <p>上傳日期：2200 / 2 / 31</p>
-                    </div>
-                </div>
+                </a>
+               
 
 
 
@@ -144,9 +38,27 @@
     </div>
 </template>
 
-<script>
 
+<script>
+import axios from "axios"
+export default {
+    data() {
+        return {
+        };
+    },
+
+    methods: {
+        get() {
+            axios.get('http://127.0.0.1:3000/VideoPage').then(res => {
+                console.log(res.data);
+            }).catch(err => {
+                console.log("获取数据失败" + err);
+            })
+        }
+    }
+}
 </script>
+
 
 <style scoped>
 /* <共用CSS> */
@@ -392,7 +304,7 @@ a:hover {
 
 .pageNumber {
     background-color: #04AA6D;
-    color:black;
+    color: black;
 }
 
 .round {
@@ -401,14 +313,15 @@ a:hover {
     padding: 8px 16px;
     border-radius: 150%;
 }
-.numberRound{
+
+.numberRound {
     text-decoration: none;
     display: inline-block;
     padding: 8px 14px;
     border-radius: 150%;
     margin: 0px 5px;
 
-    
+
 }
 
 
