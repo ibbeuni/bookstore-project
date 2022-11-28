@@ -56,6 +56,10 @@ export default {
     background-color: var(--background-color);
 }
 
+.breadcrumb-wrap {
+    padding: 20px 0 0 ;
+}
+
 .contents-inner {
     /* position: relative; */
     width: 1200px;
@@ -63,7 +67,7 @@ export default {
 }
 
 /* breadcrumb */
-ol {
+.breadcrumb-list {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -75,7 +79,14 @@ ol {
     padding-inline-start: 40px; */
 }
 
-li {
-    padding: 0 10px;
+.breadcrumb-item {
+    padding: 0 12px 0 0;
 }
+
+.breadcrumb-item a {
+    padding: 0 0 0 12px;
+    color: var(--neutral-color);
+}
+
+
 </style>
