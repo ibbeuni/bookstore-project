@@ -4,7 +4,7 @@
         <div class="contents-inner">
             <div class="search-wrap">
                 <div class="logo-box">
-                    <a href="/#/home">
+                    <a href="/#/home/HomePage2">
                         <img src="@/assets/BookstoreLogo.png" alt="">
                     </a>
                 </div>
@@ -33,11 +33,11 @@
                 <!-- 購物車、會員icon -->
                 <div class="user-menu-list">
                     <div class="user-menu-item">
-                        <font-awesome-icon icon="fa-solid fa-cart-shopping" size="2x" />
+                        <font-awesome-icon @click="toShoppingPage" icon="fa-solid fa-cart-shopping" size="2x" />
                     </div>
                     <!-- TODO LOGIN後，加上li.user_menu_item [login] class -->
                     <div class="user-menu-item user-icon">
-                        <font-awesome-icon icon="fa-solid fa-user" size="xl" />
+                        <font-awesome-icon @click="toMemberPage" icon="fa-solid fa-user" size="xl" />
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
                 </div>
                 <ul class="nav-list">
                     <li class="nav_item">
-                        <a href="/#/best">暢銷排行</a>
+                        <a href=""><router-link to="/home/best">暢銷排行</router-link></a>
                     </li>
                     <li>・</li>
                     <li class="nav_item">
@@ -60,7 +60,7 @@
                     </li>
                     <li>・</li>
                     <li class="nav_item">
-                        <a href="">活動公告</a>
+                        <a href=""><router-link to="/home/eventpage">活動公告</router-link></a>
                     </li>
                     <li>・</li>
                     <li class="nav_item">
@@ -74,19 +74,19 @@
                 <ul class="sub-list">
                     <li class="sub_item">
                         <a href="">
-                            <small>加入會員</small>
+                            <small><router-link to="/home/register">加入會員</router-link></small>
                         </a>
                     </li>
                     <li><small>・</small></li>
                     <li class="sub_item">
                         <a href="">
-                            <small>會員登入</small>
+                            <small><router-link to="/home/login">會員登入</router-link></small>
                         </a>
                     </li>
                     <li><small>・</small></li>
                     <li class="sub_item">
                         <a href="">
-                            <small>Q&A</small>
+                            <small><router-link to="/home/faq">Q&A</router-link></small>
                         </a>
                     </li>
                 </ul>
@@ -97,7 +97,15 @@
 
 <script>
 export default {
-    name: 'FullHeader'
+    name: 'FullHeader',
+    methods: {
+        toShoppingPage(){
+            this.$router.push("/home/shoppingcart");
+        },
+        toMemberPage(){
+             this.$router.push("/home/member");
+        },
+    },
 }
 </script>
 

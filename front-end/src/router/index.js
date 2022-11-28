@@ -20,6 +20,7 @@ import OrderDetail from '../views/OrderDetail.vue';
 import TrackList from '../views/TrackList.vue';
 import ZhengTingTest from '../views/ZhengTingTest.vue';
 import ZtTest from '../views/ZtTest.vue';
+import HomePage2 from '../views/HomePage2.vue';
 
 
 Vue.use(VueRouter);
@@ -27,107 +28,116 @@ Vue.use(VueRouter);
 const routes = [
     {
         path: '*',
-        redirect: '/home',
+        redirect: '/home/HomePage2',
     },
     {
         path: '/home',
         name: 'HomePage',
-        component: HomePage
+        component: HomePage,
+        children:[
+            {
+                path: 'HomePage2',
+                name: 'HomePage2',
+                component: HomePage2,
+            },
+            {
+                path: 'login',
+                name: 'LoginPage',
+                component: LoginPage,
+            },
+            {
+                path: 'best',
+                name: 'BestList',
+                component: BestList
+            },
+            {
+                path: 'test',
+                name: 'TestPage',
+                component: TestPage
+            },
+            {
+                path: 'sample',
+                name: 'HomePageSample',
+                component: HomePageSample
+            },
+            {
+                path: 'login',
+                name: 'LoginPage',
+                component: LoginPage
+            },
+            {
+                path: 'member',
+                name: 'MemberHomePage',
+                component: MemberHomePage
+            },
+            {
+                path: 'shoppingcart',
+                name: 'ShoppingCartPage',
+                component: ShoppingCartPage
+            },
+            {
+                path: 'register',
+                name: 'RegisterPage',
+                component: RegisterPage
+            },
+            {
+                path: 'faq',
+                name: 'AskedQ',
+                component: AskedQ
+            },
+            {
+                path: 'eventdetail',
+                name: 'EventDetail',
+                component: EventDetail
+            },
+            {
+                path:'eventpage',
+                name:'EventPage',
+                component:EventPage
+            },
+            {
+                path: 'product',
+                name: 'ProductPage',
+                component: ProductPage
+            },
+            {
+                path: 'videodetail',
+                name: 'VideoDetail',
+                component: VideoDetail
+            },
+            {
+                path: 'videopage',
+                name: 'VideoPage',
+                component: VideoPage
+            },
+            {
+                path: 'productbigimgs',
+                name: 'ProductBigImgs',
+                component: ProductBigImgs
+            },
+            {
+                path: 'orderdetail',
+                name: 'Orderdetail',
+                component: OrderDetail
+            },
+            {
+                path: 'tracklist',
+                name: 'TrackList',
+                component: TrackList
+            },
+            {
+                path: 'ZhengTingTest',
+                name: 'ZhengTingTest',
+                component: ZhengTingTest
+            }
+            ,
+            {
+                path: 'ZtTest',
+                name: 'ZtTest',
+                component: ZtTest
+            },
+        ],
     },
-    {
-        path: '/best',
-        name: 'BestList',
-        component: BestList
-    },
-    {
-        path: '/test',
-        name: 'TestPage',
-        component: TestPage
-    },
-    {
-        path: '/sample',
-        name: 'HomePageSample',
-        component: HomePageSample
-    },
-    {
-        path: '/login',
-        name: 'LoginPage',
-        component: LoginPage
-    },
-    {
-        path: '/member',
-        name: 'MemberHomePage',
-        component: MemberHomePage
-    },
-    {
-        path: '/shoppingcart',
-        name: 'ShoppingCartPage',
-        component: ShoppingCartPage
-    },
-    {
-        path: '/register',
-        name: 'RegisterPage',
-        component: RegisterPage
-    },
-    {
-        path: '/faq',
-        name: 'AskedQ',
-        component: AskedQ
-    },
-    {
-        path: '/eventdetail',
-        name: 'EventDetail',
-        component: EventDetail
-    },
-    {
-        path:'/eventpage',
-        name:'EventPage',
-        component:EventPage
-    },
-    {
-        path: '/product',
-        name: 'ProductPage',
-        component: ProductPage
-    },
-    {
-        path: '/videodetail',
-        name: 'VideoDetail',
-        component: VideoDetail
-    },
-    {
-        path: '/videopage',
-        name: 'VideoPage',
-        component: VideoPage
-    },
-    {
-        path: '/productbigimgs',
-        name: 'ProductBigImgs',
-        component: ProductBigImgs
-    },
-    {
-        path: '/orderdetail',
-        name: 'Orderdetail',
-        component: OrderDetail
-    },
-    {
-        path: '/tracklist',
-        name: 'TrackList',
-        component: TrackList
-    },
-    {
-        path: '/ZhengTingTest',
-        name: 'ZhengTingTest',
-        component: ZhengTingTest
-    }
-    ,
-    {
-        path: '/ZtTest',
-        name: 'ZtTest',
-        component: ZtTest
-    }
-   
-
-  
     
 ]
 

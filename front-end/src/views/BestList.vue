@@ -1,7 +1,5 @@
 <template>
     <div class="wrap">
-        <!-- HEADER_COMPONENT -->
-        <full-header></full-header>
         <main>
             <!-- 導覽列 breadcrumb_wrap -->
             <bread-crumb></bread-crumb>
