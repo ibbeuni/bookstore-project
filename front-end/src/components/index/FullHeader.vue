@@ -74,13 +74,13 @@
                 <ul class="sub-list">
                     <li class="sub_item">
                         <a href="">
-                            <small>加入會員</small>
+                            <small><router-link to="/home/register">加入會員</router-link></small>
                         </a>
                     </li>
                     <li><small>・</small></li>
                     <li class="sub_item">
                         <a href="">
-                            <small>會員登入</small>
+                            <small><router-link to="/home/login">會員登入</router-link></small>
                         </a>
                     </li>
                     <li><small>・</small></li>
