@@ -1,0 +1,11 @@
+新增API步驟
+1.  在 API 資料夾內新增js檔案（請以路由名稱命名）
+    撰寫內容可參考member.js
+
+2.  在router.js內新增路由
+    範例：
+    et member = require('./API/member')
+    router.get('/member', member.get) 
+    
+    注意：
+    dataBase 資料夾 和 app.js 請勿更動
