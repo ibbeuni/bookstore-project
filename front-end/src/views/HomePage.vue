@@ -551,7 +551,7 @@ button {
     overflow: hidden;
     min-height: 100vh;
     /* 測試用 */
-    /* background-color: var(--background-color); */
+    background-color: var(--background-color);
 }
 
 /* TODO 所有分頁適用：所有section wrap中的第一層 */
