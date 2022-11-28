@@ -19,6 +19,7 @@ import EventPage from '../views/EventPage';
 import OrderDetail from '../views/OrderDetail.vue';
 import TrackList from '../views/TrackList.vue';
 import ZhengTingTest from '../views/ZhengTingTest.vue';
+import ZtTest from '../views/ZtTest.vue';
 
 
 Vue.use(VueRouter);
@@ -117,6 +118,12 @@ const routes = [
         path: '/ZhengTingTest',
         name: 'ZhengTingTest',
         component: ZhengTingTest
+    }
+    ,
+    {
+        path: '/ZtTest',
+        name: 'ZtTest',
+        component: ZtTest
     }
    
 
