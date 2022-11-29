@@ -60,22 +60,22 @@
 </template>
 
 <script>
-import FullHeader from '../components/index/FullHeader.vue';
-import FullFooter from '../components/index/FullFooter.vue';
-import BreadCrumb from '../components/best/BreadCrumb.vue'
+// import FullHeader from '../components/index/FullHeader.vue';
+// import FullFooter from '../components/index/FullFooter.vue';
+// import BreadCrumb from '../components/best/BreadCrumb.vue'
 
-export default {
-    components: {
-        'full-header': FullHeader,
-        'full-footer': FullFooter,
-        'bread-crumb': BreadCrumb,
-    },
-    data() {
-        return {
-            a: ''
-        }
-    }
-}
+// export default {
+//     components: {
+//         'full-header': FullHeader,
+//         'full-footer': FullFooter,
+//         'bread-crumb': BreadCrumb,
+//     },
+//     data() {
+//         return {
+//             a: ''
+//         }
+//     }
+// }
 </script>
 
 <style scoped>
