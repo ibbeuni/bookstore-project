@@ -1,5 +1,8 @@
 <template>
     <div class="wrap">
+        <!-- HEADER_COMPONENT -->
+        <!-- <full-header></full-header> -->
+        
         <main>
             <!-- 導覽列 breadcrumb_wrap -->
             <bread-crumb></bread-crumb>
@@ -60,13 +63,13 @@
 </template>
 
 <script>
-import FullHeader from '../components/index/FullHeader.vue';
+// import FullHeader from '../components/index/FullHeader.vue';
 import FullFooter from '../components/index/FullFooter.vue';
 import BreadCrumb from '../components/best/BreadCrumb.vue'
 
 export default {
     components: {
-        'full-header': FullHeader,
+        // 'full-header': FullHeader,
         'full-footer': FullFooter,
         'bread-crumb': BreadCrumb,
     },
