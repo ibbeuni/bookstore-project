@@ -1,9 +1,9 @@
 <template>
   <div class="col-md-10" align="center">
-
-  <div>
-    <button @click="get()">获取user表数据</button>
-  </div>
+    <!-- <div id="app">{{data}}</div> -->
+    <div>
+      <button @click="get()">获取user表数据</button>
+    </div>
 
 
 
@@ -16,17 +16,18 @@
         <th> usermail ||</th>
       </tr>
       <!-- <tr v-for="users in alluser" :key="users.member_num"> -->
-        <tr>
-          <td>{{alluser}}</td>
-          <td>{{aaa}}</td>
-         
+      <tr v-for="(item, index) in alluser" :key="index">
+        <td>{{ alluser[index].member_num }}</td>
+        <td>{{ alluser[index].member_phone }}</td>
+        <td>{{ alluser[index].member_email }}</td>
 
-        </tr>
 
-      
-   
+      </tr>
+
+
+
     </table>
-   
+
   </div>
 </template>
 
@@ -35,34 +36,45 @@
 import axios from "axios"
 
 
-export default{
-  props:{
+
+
+export default {
+  props: {
     String
   },
-  data(){
-    return{
-      alluser:'',
-      
-      mounted(){
-        axios.get('http://127.0.0.1:3000/member').then(res => {
-          this.alluser = res.data;
-          console.log(res.data);
-        })
-      },
-
-      aaa:48984,
+  data() {
+    return {
+      alluser: '',
+      userName: '',
+      userPhone: '',
+      userAddress: '',
+      userMail: '',
     }
   },
+  mounted() {
+    axios.get('http://127.0.0.1:3000/member').then(res => {
+      this.alluser = res.data
+      console.log(res.data)
+    })
+  },
+
+
   methods: {
     get() {
-      axios.get('http://127.0.0.1:3000/member').then(res=>{
-          console.log(res.data);
-      }).catch(err=>{
-          console.log("获取数据失败" + err);
+      axios.get('http://127.0.0.1:3000/member').then(res => {
+        console.log(res.data);
+        // this.alluser = res.data;
+        // this.userName = this.alluser[0].member_num
+        // this.userPhone = this.alluser[0].member_phone
+        // this.userMail = this.alluser[0].member_email
+        // console.log(this.alluser)
+
+      }).catch(err => {
+        console.log("获取数据失败" + err);
       })
     }
   },
-  
+
 }
 
 </script>
