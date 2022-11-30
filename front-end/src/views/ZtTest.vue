@@ -1,27 +1,13 @@
 <template>
-    <div>
-      <button @click="get()">获取user表数据</button>
-    </div>
-  </template>
-  
-  <script>
-    import axios from "axios"
+  <div>
+   123
+  </div>
+</template>
 
-  export default {
-    data () {
-      return {
-      };
-    },
-  
-    methods: {
-      get() {
-        axios.get('http://127.0.0.1:3000/member').then(res=>{
-            console.log(res.data);
-        }).catch(err=>{
-            console.log("获取数据失败" + err);
-        })
-      }
-    }
-  }
-  </script>
-  
+<script>
+
+</script>
+
+<style scoped>
+
+</style>

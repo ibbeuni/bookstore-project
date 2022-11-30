@@ -3,7 +3,7 @@
         <div id="videoPage">
 
             <p>分類>分類>分類</p>
-            <button @click="get()">获取user表数据</button>
+            <!-- <button @click="get()">获取user表数据</button> -->
             <br><br><br><br>
             <div id="videoPlace" class="flex" style="background-color:white;">
                 <a class="block" href="">
@@ -12,7 +12,7 @@
                             <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
                         </div>
                         <div>
-                            <p>[影片名稱]影片名稱影片名稱影片名稱影片名稱</p>
+                            <p>影片名稱影片名稱影片名稱影片名稱</p>
                             <p>分類</p>
                             <p>上傳日期：2200 / 2 / 31</p>
                         </div>
@@ -40,7 +40,7 @@
 
 
 <script>
-import axios from "axios"
+// import axios from "axios"
 export default {
     data() {
         return {
@@ -48,13 +48,13 @@ export default {
     },
 
     methods: {
-        get() {
-            axios.get('http://127.0.0.1:3000/VideoPage').then(res => {
-                console.log(res.data);
-            }).catch(err => {
-                console.log("获取数据失败" + err);
-            })
-        }
+        // get() {
+        //     axios.get('http://127.0.0.1:3000/VideoPage').then(res => {
+        //         console.log(res.data);
+        //     }).catch(err => {
+        //         console.log("获取数据失败" + err);
+        //     })
+        // }
     }
 }
 </script>
@@ -287,7 +287,7 @@ table {
 
 
 
-a:hover {
+#pageButton>a:hover {
     background-color: #ddd;
     color: black;
 }
