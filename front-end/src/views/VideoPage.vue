@@ -3,20 +3,19 @@
         <div id="videoPage">
 
             <p>分類>分類>分類</p>
-            <button @click="get()">获取user表数据</button>
+            <!-- <button @click="get()">获取user表数据</button> -->
             <br><br><br><br>
             <div id="videoPlace" class="flex" style="background-color:white;">
 
                 <div class="videoDiv flex" v-for="(item, index) in allvideo" :key="index">
                     <a class="block flex" href="">
                         <div>
-                            <!-- <img class="videoImg" v-bind:src="allvideo[index].video_title_img" alt=""> -->
-                            <!-- <img class="videoImg" v-bind:src="'../assets/img/video/'+allvideo[index].video_title_img+'.jpg'" alt=""> -->
-                            <!-- <img class="videoImg" v-bind:src="imgSrc" alt=""> -->
-                            <img class="videoImg" src="'../../static/img/video/v10210.jpg'" alt="">
+                           
+                            <!-- <img class="videoImg" v-bind:src="allvideo[0].video_title_img" alt=""> -->
+                            <img class="videoImg" v-bind:src="'../../static/img/video/'+allvideo[index].video_title_img+'.jpg'" alt="">
                         </div>
                         <div>
-                            <p class="nb nh3">{{ allvideo[index].video_name }}</p>
+                            <p class="nb nh3">{{ allvideo[index].video_name  }}</p>
                             <p>{{ allvideo[index].video_class }}</p>
                             <p>上傳日期：{{ allvideo[index].video_upload_date }}</p>
                         </div>
@@ -52,7 +51,7 @@ export default {
     data() {
         return {
             allvideo: '',
-            imgSrc:require('../../static/img/video/v10210.jpg'),
+            // imgSrc:require('../../static/img/video/v10201.jpg'),
             
             
 
@@ -60,16 +59,14 @@ export default {
     },
     mounted() {
         axios.get('http://127.0.0.1:3000/videopage').then(res => {
-            this.allvideo = res.data
-            console.log(res.data)
+            this.allvideo = res.data;
+            console.log(res.data);
+            // console.log(this.imgSrc);
         })
     },
 
     methods: {
-    //    aa(){
-    //     let video = this.allvideo.prototype.slice(0,3)
-    //     console.log(video)
-    //    },
+  
         get() {
             axios.get('http://127.0.0.1:3000/VideoPage').then(res => {
                 console.log(res.data[0]);
