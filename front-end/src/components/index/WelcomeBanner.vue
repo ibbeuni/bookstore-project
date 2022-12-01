@@ -38,7 +38,9 @@
                     <!-- 與作家相遇BOX -->
                     <div class="banner-content-box">
                         <a href="">
-                            <img src="@/assets/img/index/welcome_writer/w01.jpeg" alt="作家照片">
+                            <div class="img-box">
+                                <img src="@/assets/img/index/welcome_writer/w02.jpeg" alt="作家照片">
+                            </div>
                             <div class="content-info-box">
                                 <p class="content-type">與作家相遇</p>
                                 <p class="content-title">講座標題</p>
@@ -101,6 +103,24 @@ export default {
 </script>
 
 <style scoped>
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    cursor: default;
+}
+
+a {
+    cursor: default;
+}
+
+button {
+    border: 0;
+    background-color: none;
+}
+
 .contents {
     margin: 60px 0px;
     background-color: var(--background-color);
@@ -204,6 +224,11 @@ export default {
     border-radius: 20px 0px 20px 20px;
     margin-left: 50px;
     overflow: hidden;
+}
+
+.img-box {
+    width: 273px;
+    height: 200px;
 }
 
 .content-info-box {
