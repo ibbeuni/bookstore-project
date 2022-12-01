@@ -2,7 +2,7 @@
     <div class="wrap">
         <!-- HEADER_COMPONENT -->
         <!-- <full-header></full-header> -->
-        
+
         <main>
             <!-- 導覽列 breadcrumb_wrap -->
             <bread-crumb></bread-crumb>
@@ -10,68 +10,37 @@
             <section class="contents-wrap">
                 <div class="contents-inner flex">
                     <!-- LNB -->
-                    <aside class="aside-wrap">
-                        <div class="aside-header">
-                            <div class="title-wrap">
-                                <h2 class="title-heading">
-                                    暢銷書單
-                                </h2>
-                            </div>
-                        </div>
-                        <div class="aside-body">
-                            <div class="snb-wrap">
-                                <ul class="snb-list">
-                                    <li class="snb-item">
-                                        <!-- TODO 加入連結 -->
-                                        <a href="" class="snb-line">綜合</a>
-                                    </li>
-                                    <li class="snb-item">
-                                        <!-- TODO 加入連結 -->
-                                        <a href="" class="snb-line">繪畫</a>
-                                    </li>
-                                    <li class="snb-item">
-                                        <!-- TODO 加入連結 -->
-                                        <a href="" class="snb-line">攝影</a>
-                                    </li>
-                                    <li class="snb-item">
-                                        <!-- TODO 加入連結 -->
-                                        <a href="" class="snb-line">藝術</a>
-                                    </li>
-                                    <li class="snb-item">
-                                        <!-- TODO 加入連結 -->
-                                        <a href="" class="snb-line">鑑賞</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </aside>
+                    <aside-nav></aside-nav>
                     <!-- contents -->
                     <section class="section-wrap">
                         <!-- title 根據aside切換，更換內容 -->
-                        <h1 class="title-heading"></h1>
+                        <section-title></section-title>
+                        <!-- list contents -->
+                        <div class="switch-prod-wrap">
+                            <!-- list -->
+                            <prod-list></prod-list>
+                        </div>
                     </section>
                 </div>
             </section>
 
         </main>
-
-
-        <!-- FOOTER -->
-        <full-footer></full-footer>
     </div>
 
 </template>
 
 <script>
-// import FullHeader from '../components/index/FullHeader.vue';
-import FullFooter from '../components/index/FullFooter.vue';
-import BreadCrumb from '../components/best/BreadCrumb.vue'
+import BreadCrumb from '../components/best/BreadCrumb.vue';
+import AsideNav from '../components/best/AsideNav.vue';
+import SectionTitle from '../components/best/SectionTitle.vue';
+import ProdList from '../components/best/ProdList.vue';
 
 export default {
     components: {
-        // 'full-header': FullHeader,
-        'full-footer': FullFooter,
         'bread-crumb': BreadCrumb,
+        'aside-nav': AsideNav,
+        'section-title': SectionTitle,
+        'prod-list': ProdList,
     },
     data() {
         return {
@@ -98,31 +67,18 @@ export default {
     margin: 0 auto;
 }
 
-/* 主要內容區 */
+.flex {
+    display: flex;
+}
+
+/* 主要內容區：aside+右側 */
 .contents-wrap {
     padding-top: 42px;
 }
 
-/* aside */
-.aside-wrap {
-    width: 170px;
-    padding-right: 46px;
-}
-
-.aside-header {
-    margin-bottom: 30px;
-}
-
-.title-wrap {
-    padding-bottom: 0;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: row;
-}
-
-.title-heading {
-    line-height: 30px;
+/* 右側顯示區 */
+.section-wrap {
+    width: calc(100% - 150px);
 }
 
 </style>

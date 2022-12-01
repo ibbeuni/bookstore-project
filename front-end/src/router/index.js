@@ -29,15 +29,16 @@ Vue.use(VueRouter);
 const routes = [
     {
         path: '*',
-        redirect: '/home/HomePage',
+        redirect: '/home/homepage',
     },
     {
         path: '/home',
+        redirect: '/home/homepage',
         name: 'IndexView',
         component: IndexView,
         children:[
             {
-                path: 'HomePage',
+                path: 'homepage',
                 name: 'HomePage',
                 component: HomePage,
             },

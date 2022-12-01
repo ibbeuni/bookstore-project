@@ -4,7 +4,7 @@
         <div class="contents-inner">
             <div class="search-wrap">
                 <div class="logo-box">
-                    <a href="/#/home/HomePage2">
+                    <a href="/#/home/homepage">
                         <img src="@/assets/BookstoreLogo.png" alt="">
                     </a>
                 </div>
@@ -52,7 +52,7 @@
                 </div>
                 <ul class="nav-list">
                     <li class="nav_item">
-                        <a href=""><router-link to="/home/best">暢銷排行</router-link></a>
+                        <router-link to="/home/best">暢銷排行</router-link>
                     </li>
                     <li>・</li>
                     <li class="nav_item">
@@ -60,7 +60,7 @@
                     </li>
                     <li>・</li>
                     <li class="nav_item">
-                        <a href=""><router-link to="/home/eventpage">活動公告</router-link></a>
+                        <router-link to="/home/eventpage">活動公告</router-link>
                     </li>
                     <li>・</li>
                     <li class="nav_item">
@@ -73,21 +73,15 @@
                 </ul>
                 <ul class="sub-list">
                     <li class="sub_item">
-                        <a href="">
-                            <small><router-link to="/home/register">加入會員</router-link></small>
-                        </a>
+                        <small><router-link to="/home/register">加入會員</router-link></small>
                     </li>
                     <li><small>・</small></li>
                     <li class="sub_item">
-                        <a href="">
-                            <small><router-link to="/home/login">會員登入</router-link></small>
-                        </a>
+                        <small><router-link to="/home/login">會員登入</router-link></small>
                     </li>
                     <li><small>・</small></li>
                     <li class="sub_item">
-                        <a href="">
-                            <small><router-link to="/home/faq">Q&A</router-link></small>
-                        </a>
+                        <small><router-link to="/home/faq">Q&A</router-link></small>
                     </li>
                 </ul>
             </nav>

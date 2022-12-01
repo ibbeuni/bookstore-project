@@ -3,7 +3,7 @@
         <div class="contents-inner">
             <ol class="breadcrumb-list">
                 <li class="breadcrumb-item">
-                    <a href="#/home">
+                    <a href="#/home/homepage">
                         <font-awesome-icon icon="fa-solid fa-house" />
                     </a>
                 </li>
