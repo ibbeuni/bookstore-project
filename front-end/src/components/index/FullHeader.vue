@@ -1,5 +1,5 @@
 <template>
-    <header class="header-wrapper">
+    <header class="header-wrapper" :class="{fixed:fixed}" id="header">
         <!-- HEADER_INNER 限制內容物最寬1200px，包住search和nav -->
         <div class="contents-inner">
             <div class="search-wrap">
@@ -92,6 +92,14 @@
 <script>
 export default {
     name: 'FullHeader',
+       created() {
+      window.addEventListener("scroll", this.handleScroll);
+    },
+    data() {
+        return {
+            fixed: false,
+        }
+    },
     methods: {
         toShoppingPage(){
             this.$router.push("/home/shoppingcart");
@@ -99,6 +107,10 @@ export default {
         toMemberPage(){
              this.$router.push("/home/member");
         },
+         handleScroll() {
+            let headerHight =  document.getElementById("header").offsetHeight
+            this.fixed = window.scrollY > headerHight ? true : false;
+      },
     },
 }
 </script>
@@ -263,5 +275,13 @@ button {
 .sub-list {
     margin-left: auto;
 }
+
+ .fixed {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+    /* background-color: #fffbe6; */
+  }
 
 </style>
