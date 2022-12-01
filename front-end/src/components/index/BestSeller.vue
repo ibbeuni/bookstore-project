@@ -1,14 +1,198 @@
 <template>
-
-
+    <section class="contents">
+        <div class="contents-inner">
+            <div class="title-wrap">
+                <h2 class="title-heading">推薦書單</h2>
+                <ul class="category-tag-list">
+                    <li class="category-item">
+                        <button type="button" class="btn-category"><span>全部</span></button>
+                    </li>
+                    <li class="category-item">
+                        <button type="button" class="btn-category"><span>繪畫</span></button>
+                    </li>
+                    <li class="category-item">
+                        <button type="button" class="btn-category"><span>攝影</span></button>
+                    </li>
+                    <li class="category-item">
+                        <button type="button" class="btn-category"><span>藝術</span></button>
+                    </li>
+                    <li class="category-item">
+                        <button type="button" class="btn-category"><span>鑑賞</span></button>
+                    </li>
+                </ul>
+                <div class="right-area">
+                    <!-- TODO 加上位址 -->
+                    <a href="" class="btn-more-plus">
+                        <span>看更多 </span>
+                        <font-awesome-icon icon="fa-solid fa-plus" />
+                    </a>
+                </div>
+            </div>
+            <!-- 設定暢銷排行與新進排行的區域 -->
+            <div class="best-steady-wrap">
+                <ul class="prod-list">
+                    <!-- TODO  跑迴圈，重複10次 -->
+                    <li class="prod-item">
+                        <div class="best-prod-area">
+                            <div class="best-prod-head">
+                                <div class="badge-flag">
+                                    <!-- TODO 迴圈數字 +1 -->
+                                    <span>1</span>
+                                </div>
+                            </div>
+                            <div class="prod-thumb-box">
+                                <!-- TODO 設定書本商品詳情頁網址 -->
+                                <a href="">
+                                    <div class="img-box">
+                                        <img src="@/assets/img/books/30101.png" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="prod-info-box">
+                                <!-- TODO 設定書本商品詳情頁網址 -->
+                                <a href="">
+                                    <p class="prod-name">書籍名稱</p>
+                                </a>
+                                <small class="prod-author">作者名稱</small>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script>
 export default {
-    
+    name: 'BestSeller'
 }
 </script>
 
 <style scoped>
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    cursor: default;
+}
 
+a {
+    cursor: default;
+}
+
+button {
+    border: 0;
+    background-color: none;
+}
+.contents {
+    margin: 60px 0px;
+    background-color: var(--background-color);
+}
+
+.contents-inner {
+    /* position: relative; */
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.title-wrap {
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.right-area {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: auto;
+    flex-direction: row;
+    font-size: 1rem;
+}
+
+.category-tag-list {
+    margin: 4px 0px 0px 30px;
+    padding-left: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.category-item {
+    display: inline-block;
+    margin-right: 30px;
+    /* vertical-align: top; */
+}
+
+.btn-category {
+    background-color: transparent;
+    color: var(--neutral-color);
+}
+
+.best-steady-wrap {
+    display: flex;
+}
+
+.best-prod-area {
+    display: block;
+}
+
+.best-prod-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    min-height: 26px;
+    margin-bottom: 10px;
+}
+/* 編號 */
+.badge-flag {
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+    line-height: 26px;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: top;
+    border-radius: 6px 0px;
+    font-weight: 700;
+    background-color: var(--accent-color);
+}
+
+.prod-thumb-box {
+    width: 211px;
+}
+
+.img-box {
+    width: 211px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid #EAEAEA;
+    cursor: pointer;
+}
+
+.img-box img {
+    width: 100%;
+    min-height: 50px;
+    vertical-align: middle;
+    border: 0;
+    max-height: 328px;
+}
+
+.prod-info-box {
+    margin-top: 16px;
+}
+
+.prod-author {
+    margin-top: 5px;
+    max-height: 38px;
+    line-height: 19px;
+    overflow: hidden;
+}
 </style>

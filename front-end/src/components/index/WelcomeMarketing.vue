@@ -114,6 +114,11 @@ button {
     border: 0;
     background-color: none;
 }
+
+.contents {
+    margin: 60px 0px;
+    background-color: var(--background-color);
+}
 .contents-inner {
     /* position: relative; */
     width: 1200px;
