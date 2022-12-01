@@ -6,19 +6,22 @@
             <!-- <button @click="get()">获取user表数据</button> -->
             <br><br><br><br>
             <div id="videoPlace" class="flex" style="background-color:white;">
-                <a class="block" href="">
-                    <div class="videoDiv flex">
+
+                <div class="videoDiv flex" v-for="(item, index) in allvideo" :key="index">
+                    <a class="block flex" href="">
                         <div>
                             <img class="videoImg" src="../assets/img/video/v20601.jpg" alt="">
                         </div>
                         <div>
-                            <p>影片名稱影片名稱影片名稱影片名稱</p>
-                            <p>分類</p>
-                            <p>上傳日期：2200 / 2 / 31</p>
+                            <p class="nb nh3">{{ allvideo[index].video_name }}</p>
+                            <p>{{ allvideo[index].video_class }}</p>
+                            <p>上傳日期：{{ allvideo[index].video_upload_date }}</p>
                         </div>
-                    </div>
-                </a>
-               
+                    </a>
+                </div>
+
+
+                <pre>{{ allvideo }}</pre>
 
 
 
@@ -40,11 +43,19 @@
 
 
 <script>
-// import axios from "axios"
+import axios from "axios"
 export default {
     data() {
         return {
+            allvideo: '',
+
         };
+    },
+    mounted() {
+        axios.get('http://127.0.0.1:3000/videopage').then(res => {
+            this.allvideo = res.data
+            console.log(res.data)
+        })
     },
 
     methods: {

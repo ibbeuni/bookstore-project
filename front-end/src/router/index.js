@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
+import IndexView from '../views/IndexView.vue';
 import HomePage from '../views/HomePage.vue';
 import BestList from '../views/BestList.vue'
 import TestPage from '../views/TestPage.vue';
@@ -20,7 +21,7 @@ import OrderDetail from '../views/OrderDetail.vue';
 import TrackList from '../views/TrackList.vue';
 import ZhengTingTest from '../views/ZhengTingTest.vue';
 import ZtTest from '../views/ZtTest.vue';
-import HomePage2 from '../views/HomePage2.vue';
+
 
 
 Vue.use(VueRouter);
@@ -28,17 +29,17 @@ Vue.use(VueRouter);
 const routes = [
     {
         path: '*',
-        redirect: '/home/HomePage2',
+        redirect: '/home/HomePage',
     },
     {
         path: '/home',
-        name: 'HomePage',
-        component: HomePage,
+        name: 'IndexView',
+        component: IndexView,
         children:[
             {
-                path: 'HomePage2',
-                name: 'HomePage2',
-                component: HomePage2,
+                path: 'HomePage',
+                name: 'HomePage',
+                component: HomePage,
             },
             {
                 path: 'login',
