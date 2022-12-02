@@ -30,7 +30,7 @@
             <!-- 設定暢銷排行與新進排行的區域 -->
             <div class="best-steady-wrap">
                 <div class="welcome-prod-wrap">
-                    <ul class="prod-list" v-for="(item, index) in art" :key="index">
+                    <ul class="prod-list" v-for="(item, index) in products" :key="index">
                         <li class="prod-item">
                             <div class="best-prod-area">
                                 <div class="best-prod-head">
@@ -41,16 +41,16 @@
                                 <div class="prod-thumb-box">
                                     <a href="">
                                         <div class="img-box">
-                                            <img v-bind:src="'http://localhost:3000/img/books/' + art[index].img_cover + '.png'" alt="">
+                                            <img v-bind:src="'http://127.0.0.1:3000/img/books/' + products[index].img_cover + '.png'" alt="">
                                         </div>
                                     </a>
                                 </div>
                                 <div class="prod-info-box">
                                     <!-- TODO 設定書本商品詳情頁網址 -->
                                     <a href="">
-                                        <p class="prod-name">{{art[index].product_name}}</p>
+                                        <p class="prod-name">{{products[index].product_name}}</p>
                                     </a>
-                                    <small class="prod-author">{{art[index].auther}}</small>
+                                    <small class="prod-author">{{products[index].auther}}</small>
                                 </div>
                             </div>
                         </li>
@@ -68,8 +68,8 @@ export default {
     name: 'BestSeller',
     data() {
         return {
-            products:'',        // 全部
-            all:'',
+            all:'',             // 全部
+            products:'',        // 隨機10筆
             appreciation: '',   // 鑑賞
             painting: '',       // 鑑賞
             art:'',             // 藝術
@@ -79,22 +79,28 @@ export default {
     },
     mounted() {
         axios.get('http://127.0.0.1:3000/booktable').then(res => {
-            this.products = res.data;
+            this.all = res.data;
+            this.appreciation = res.data.slice(0, 25);
+            this.painting = res.data.slice(25, 50);
             this.art = res.data.slice(50, 75);
-            // console.log(this.art)
+            this.photography = res.data.slice(75, 100);
+            var randomArray = this.all;
 
+            function shuffleArray(inputArray) {
+                inputArray.sort(() => Math.random() - 0.5);
+            }
+            shuffleArray(randomArray);
+            this.products = randomArray.slice(0,10);
 
 
         })
     },
     methods:{
-        getRandomArbitrary(min, max) {
-        return Math.random() * (max - min) + min;
-        },
         
         appreciationRandom(){
             axios.get('http://127.0.0.1:3000/booktable').then(res => {
             var r = Math.floor(Math.random()*30)+1; 
+            
             this.art = res.data.slice(r,r+10);
             // console.log(res.data);
          
