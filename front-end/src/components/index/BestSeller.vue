@@ -21,8 +21,7 @@
                     </li>
                 </ul>
                 <div class="right-area">
-                    <!-- TODO 加上位址 -->
-                    <a href="" class="btn-more-plus">
+                    <a href="/#/home/best" class="btn-more-plus">
                         <span>看更多 </span>
                         <font-awesome-icon icon="fa-solid fa-plus" />
                     </a>
@@ -30,32 +29,33 @@
             </div>
             <!-- 設定暢銷排行與新進排行的區域 -->
             <div class="best-steady-wrap">
-                <ul class="prod-list flex-wrap" v-for="(item, index) in art" :key="index">
-                    <!-- TODO  跑迴圈，重複10次 -->
-                    <li class="prod-item">
-                        <div class="best-prod-area">
-                            <div class="best-prod-head">
-                                <div class="badge-flag">
-                                    <span>{{index + 1}}</span>
+                <div class="welcome-prod-wrap">
+                    <ul class="prod-list" v-for="(item, index) in art" :key="index">
+                        <li class="prod-item">
+                            <div class="best-prod-area">
+                                <div class="best-prod-head">
+                                    <div class="badge-flag">
+                                        <span>{{index + 1}}</span>
+                                    </div>
+                                </div>
+                                <div class="prod-thumb-box">
+                                    <a href="">
+                                        <div class="img-box">
+                                            <img v-bind:src="'http://localhost:3000/img/books/' + art[index].img_cover + '.png'" alt="">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="prod-info-box">
+                                    <!-- TODO 設定書本商品詳情頁網址 -->
+                                    <a href="">
+                                        <p class="prod-name">{{art[index].product_name}}</p>
+                                    </a>
+                                    <small class="prod-author">{{art[index].auther}}</small>
                                 </div>
                             </div>
-                            <div class="prod-thumb-box">
-                                <a href="">
-                                    <div class="img-box">
-                                        <img v-bind:src="'http://localhost:3000/img/books/' + art[index].img_cover + '.png'" alt="">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="prod-info-box">
-                                <!-- TODO 設定書本商品詳情頁網址 -->
-                                <a href="">
-                                    <p class="prod-name">{{art[index].product_name}}</p>
-                                </a>
-                                <small class="prod-author">{{art[index].auther}}</small>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -151,13 +151,25 @@ button {
     display: flex;
 }
 
-.prod-list {
+.welcome-prod-wrap {
+    display: block;
+}
+
+/* .prod-list {
     display: flex;
     flex-direction: row;
+} */
+
+.prod-item {
+    margin: 0 15px;
+    width: 210px;
+    vertical-align: top;
+    display: inline-block;
 }
 
 .best-prod-area {
     display: block;
+    margin-bottom: 50px;
 }
 
 .best-prod-head {
@@ -180,7 +192,7 @@ button {
     vertical-align: top;
     border-radius: 6px 0px;
     font-weight: 700;
-    background-color: var(--accent-color);
+    background-color: var(--secondary-color);
 }
 
 .prod-thumb-box {
