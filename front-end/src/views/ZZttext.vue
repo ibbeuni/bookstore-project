@@ -5,19 +5,19 @@
                 <h2 class="title-heading">推薦書單</h2>
                 <ul class="category-tag-list">
                     <li class="category-item">
-                        <button type="button" class="btn-category" @click="allRandom"><span>全部</span></button>
+                        <button type="button" class="btn-category"><span>全部</span></button>
                     </li>
                     <li class="category-item">
-                        <button type="button" class="btn-category" @click="appreciationRandom"><span>鑑賞</span></button>
+                        <button type="button" class="btn-category" @click="appreciationRandom"><span>繪畫</span></button>
                     </li>
                     <li class="category-item">
-                        <button type="button" class="btn-category"><span>繪畫</span></button>
+                        <button type="button" class="btn-category"><span>攝影</span></button>
                     </li>
                     <li class="category-item">
                         <button type="button" class="btn-category"><span>藝術</span></button>
                     </li>
                     <li class="category-item">
-                        <button type="button" class="btn-category"><span>攝影</span></button>
+                        <button type="button" class="btn-category"><span>鑑賞</span></button>
                     </li>
                 </ul>
                 <div class="right-area">
@@ -35,22 +35,23 @@
                             <div class="best-prod-area">
                                 <div class="best-prod-head">
                                     <div class="badge-flag">
-                                        <span>{{index + 1}}</span>
+                                        <span>{{ index + 1 }}</span>
                                     </div>
                                 </div>
                                 <div class="prod-thumb-box">
                                     <a href="">
                                         <div class="img-box">
-                                            <img v-bind:src="'http://127.0.0.1:3000/img/books/' + products[index].img_cover + '.png'" alt="">
+                                            <img v-bind:src="'http://localhost:3000/img/books/' + products[index].img_cover + '.png'"
+                                                alt="">
                                         </div>
                                     </a>
                                 </div>
                                 <div class="prod-info-box">
                                     <!-- TODO 設定書本商品詳情頁網址 -->
                                     <a href="">
-                                        <p class="prod-name">{{products[index].product_name}}</p>
+                                        <p class="prod-name">{{ products[index].product_name }}</p>
                                     </a>
-                                    <small class="prod-author">{{products[index].auther}}</small>
+                                    <small class="prod-author">{{ products[index].auther }}</small>
                                 </div>
                             </div>
                         </li>
@@ -68,58 +69,47 @@ export default {
     name: 'BestSeller',
     data() {
         return {
-            all:'',             // 全部
-            products:'',        // 隨機10筆
+            products: '',        // 全部
+            all: '',
             appreciation: '',   // 鑑賞
             painting: '',       // 鑑賞
-            art:'',             // 藝術
-            photography:'',     // 攝影
+            art: '',             // 藝術
+            photography: '',     // 攝影
 
         }
     },
     mounted() {
         axios.get('http://127.0.0.1:3000/booktable').then(res => {
             this.all = res.data;
-            this.appreciation = res.data.slice(0, 25);
-            this.painting = res.data.slice(25, 50);
             this.art = res.data.slice(50, 75);
-            this.photography = res.data.slice(75, 100);
-            
-            // 全部隨機
-            let randomArray = this.all;
-            // 重新隨機排序陣列
+            var a = this.art;
+
             function shuffleArray(inputArray) {
                 inputArray.sort(() => Math.random() - 0.5);
             }
-            // 取隨機排序的前10筆
-            shuffleArray(randomArray);
-            this.products = randomArray.slice(0,10);
+            shuffleArray(a);
+            this.products = a.slice(0);
+
+
+
+            // console.log(this.art)
+
+
 
         })
     },
-    methods:{
-        
-        allRandom(){
-            // 全部隨機
-            let randomArray = this.all;
-            // 重新隨機排序陣列
-            function shuffleArray(inputArray) {
-                inputArray.sort(() => Math.random() - 0.5);
-            }
-            // 取隨機排序的前10筆
-            shuffleArray(randomArray);
-            this.products = randomArray.slice(0,10);
+    methods: {
+        getRandomArbitrary(min, max) {
+            return Math.random() * (max - min) + min;
         },
 
-        appreciationRandom(){
-            let randomArray = this.appreciation;
-            // 重新隨機排序陣列
-            function shuffleArray(inputArray) {
-                inputArray.sort(() => Math.random() - 0.5);
-            }
-            // 取隨機排序的前10筆
-            shuffleArray(randomArray);
-            this.products = randomArray.slice(0,10);
+        appreciationRandom() {
+            axios.get('http://127.0.0.1:3000/booktable').then(res => {
+                var r = Math.floor(Math.random() * 30) + 1;
+                this.art = res.data.slice(r, r + 10);
+                // console.log(res.data);
+
+            })
         }
     }
 }
@@ -143,6 +133,7 @@ button {
     border: 0;
     background-color: none;
 }
+
 .contents {
     margin: 60px 0px;
     background-color: var(--background-color);
@@ -220,6 +211,7 @@ button {
     min-height: 26px;
     margin-bottom: 10px;
 }
+
 /* 編號 */
 .badge-flag {
     width: 26px;
