@@ -8,7 +8,7 @@
                         <button type="button" class="btn-category"><span>全部</span></button>
                     </li>
                     <li class="category-item">
-                        <button type="button" class="btn-category"><span>繪畫</span></button>
+                        <button type="button" class="btn-category" @click="appreciationRandom"><span>繪畫</span></button>
                     </li>
                     <li class="category-item">
                         <button type="button" class="btn-category"><span>攝影</span></button>
@@ -68,18 +68,38 @@ export default {
     name: 'BestSeller',
     data() {
         return {
-            products:'',   // 全部
-            art:'',        // 藝術前10筆
+            products:'',        // 全部
+            all:'',
+            appreciation: '',   // 鑑賞
+            painting: '',       // 鑑賞
+            art:'',             // 藝術
+            photography:'',     // 攝影
 
         }
     },
     mounted() {
         axios.get('http://127.0.0.1:3000/booktable').then(res => {
             this.products = res.data;
-            // console.log(res.data);
-            this.art = res.data.slice(50, 60);
-            console.log(this.art)
+            this.art = res.data.slice(50, 75);
+            // console.log(this.art)
+
+
+
         })
+    },
+    methods:{
+        getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min;
+        },
+        
+        appreciationRandom(){
+            axios.get('http://127.0.0.1:3000/booktable').then(res => {
+            var r = Math.floor(Math.random()*30)+1; 
+            this.art = res.data.slice(r,r+10);
+            // console.log(res.data);
+         
+        })
+        }
     }
 }
 </script>
@@ -94,9 +114,9 @@ li {
     cursor: default;
 }
 
-a {
+/* a {
     cursor: default;
-}
+} */
 
 button {
     border: 0;
@@ -108,7 +128,6 @@ button {
 }
 
 .contents-inner {
-    /* position: relative; */
     width: 1200px;
     margin: 0 auto;
 }
