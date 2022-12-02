@@ -21,219 +21,8 @@
                 </ul>
             </div>
             <!-- 所有活動minicover圖片 -->
-            <div v-for="(item, index) in allevent" :key="index">
+            <div>
                 <ul class="event_list col4">
-                    <li class="event_item">
-                        <div class="event_area">
-                            <a href=""></a>
-                            <div class="event_thumb_box">
-                                <span class="img_box">
-                                    <!-- <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt=""> -->
-                                    <img class="" v-bind:src="'../../static/img/event/'+allevent[index].event_minicover+'.jpg'" alt="">
-                                </span>
-                            </div>
-                            <div class="event_info_box">
-                                <div class="event_name">《2022收藏圖鑑》</div>
-                                <div class="event_period">2022/11/22 ~ 2022/12/31</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="event_item">
-                        <div class="event_area">
-                            <a href=""></a>
-                            <div class="event_thumb_box">
-                                <span class="img_box">
-                                    <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
-                                </span>
-                            </div>
-                            <div class="event_info_box">
-                                <div class="event_name">《2022收藏圖鑑》</div>
-                                <div class="event_period">2022/11/22 ~ 2022/12/31</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="event_item">
-                        <div class="event_area">
-                            <a href=""></a>
-                            <div class="event_thumb_box">
-                                <span class="img_box">
-                                    <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
-                                </span>
-                            </div>
-                            <div class="event_info_box">
-                                <div class="event_name">《2022收藏圖鑑》</div>
-                                <div class="event_period">2022/11/22 ~ 2022/12/31</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="event_item">
-                        <div class="event_area">
-                            <a href=""></a>
-                            <div class="event_thumb_box">
-                                <span class="img_box">
-                                    <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
-                                </span>
-                            </div>
-                            <div class="event_info_box">
-                                <div class="event_name">《2022收藏圖鑑》</div>
-                                <div class="event_period">2022/11/22 ~ 2022/12/31</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="event_item">
-                        <div class="event_area">
-                            <a href=""></a>
-                            <div class="event_thumb_box">
-                                <span class="img_box">
-                                    <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
-                                </span>
-                            </div>
-                            <div class="event_info_box">
-                                <div class="event_name">《2022收藏圖鑑》</div>
-                                <div class="event_period">2022/11/22 ~ 2022/12/31</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="event_item">
-                        <div class="event_area">
-                            <a href=""></a>
-                            <div class="event_thumb_box">
-                                <span class="img_box">
-                                    <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
-                                </span>
-                            </div>
-                            <div class="event_info_box">
-                                <div class="event_name">《2022收藏圖鑑》</div>
-                                <div class="event_period">2022/11/22 ~ 2022/12/31</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="event_item">
-                        <div class="event_area">
-                            <a href=""></a>
-                            <div class="event_thumb_box">
-                                <span class="img_box">
-                                    <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
-                                </span>
-                            </div>
-                            <div class="event_info_box">
-                                <div class="event_name">《2022收藏圖鑑》</div>
-                                <div class="event_period">2022/11/22 ~ 2022/12/31</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="event_item">
-                        <div class="event_area">
-                            <a href=""></a>
-                            <div class="event_thumb_box">
-                                <span class="img_box">
-                                    <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
-                                </span>
-                            </div>
-                            <div class="event_info_box">
-                                <div class="event_name">《2022收藏圖鑑》</div>
-                                <div class="event_period">2022/11/22 ~ 2022/12/31</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="event_item">
-                        <div class="event_area">
-                            <a href=""></a>
-                            <div class="event_thumb_box">
-                                <span class="img_box">
-                                    <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
-                                </span>
-                            </div>
-                            <div class="event_info_box">
-                                <div class="event_name">《2022收藏圖鑑》</div>
-                                <div class="event_period">2022/11/22 ~ 2022/12/31</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="event_item">
-                        <div class="event_area">
-                            <a href=""></a>
-                            <div class="event_thumb_box">
-                                <span class="img_box">
-                                    <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
-                                </span>
-                            </div>
-                            <div class="event_info_box">
-                                <div class="event_name">《2022收藏圖鑑》</div>
-                                <div class="event_period">2022/11/22 ~ 2022/12/31</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="event_item">
-                        <div class="event_area">
-                            <a href=""></a>
-                            <div class="event_thumb_box">
-                                <span class="img_box">
-                                    <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
-                                </span>
-                            </div>
-                            <div class="event_info_box">
-                                <div class="event_name">《2022收藏圖鑑》</div>
-                                <div class="event_period">2022/11/22 ~ 2022/12/31</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="event_item">
-                        <div class="event_area">
-                            <a href=""></a>
-                            <div class="event_thumb_box">
-                                <span class="img_box">
-                                    <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
-                                </span>
-                            </div>
-                            <div class="event_info_box">
-                                <div class="event_name">《2022收藏圖鑑》</div>
-                                <div class="event_period">2022/11/22 ~ 2022/12/31</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="event_item">
-                        <div class="event_area">
-                            <a href=""></a>
-                            <div class="event_thumb_box">
-                                <span class="img_box">
-                                    <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
-                                </span>
-                            </div>
-                            <div class="event_info_box">
-                                <div class="event_name">《2022收藏圖鑑》</div>
-                                <div class="event_period">2022/11/22 ~ 2022/12/31</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="event_item">
-                        <div class="event_area">
-                            <a href=""></a>
-                            <div class="event_thumb_box">
-                                <span class="img_box">
-                                    <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
-                                </span>
-                            </div>
-                            <div class="event_info_box">
-                                <div class="event_name">《2022收藏圖鑑》</div>
-                                <div class="event_period">2022/11/22 ~ 2022/12/31</div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="event_item">
-                        <div class="event_area">
-                            <a href=""></a>
-                            <div class="event_thumb_box">
-                                <span class="img_box">
-                                    <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
-                                </span>
-                            </div>
-                            <div class="event_info_box">
-                                <div class="event_name">《2022收藏圖鑑》</div>
-                                <div class="event_period">2022/11/22 ~ 2022/12/31</div>
-                            </div>
-                        </div>
-                    </li>
                     <li class="event_item">
                         <div class="event_area">
                             <a href=""></a>
@@ -267,7 +56,7 @@ export default {
         };
     },
     mounted() {
-        axios.get('http://127.0.0.1:3000/allevent').then(res => {
+        axios.get('http://127.0.0.1:3000/event').then(res => {
             this.allevent = res.data;
             console.log(res.data);
             // console.log(this.imgSrc);
@@ -277,7 +66,7 @@ export default {
     methods: {
   
         get() {
-            axios.get('http://127.0.0.1:3000/allevent').then(res => {
+            axios.get('http://127.0.0.1:3000/event').then(res => {
                 console.log(res.data[0]);
             }).catch(err => {
                 console.log("獲取失敗" + err);
