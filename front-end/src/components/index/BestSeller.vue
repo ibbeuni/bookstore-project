@@ -5,19 +5,19 @@
                 <h2 class="title-heading">推薦書單</h2>
                 <ul class="category-tag-list">
                     <li class="category-item">
-                        <button type="button" class="btn-category" @click="allRandom"><span>全部</span></button>
+                        <button type="button" class="btn-category" @click="getAllRandom"><span>全部</span></button>
                     </li>
                     <li class="category-item">
-                        <button type="button" class="btn-category" @click="appreciationRandom"><span>鑑賞</span></button>
+                        <button type="button" class="btn-category" @click="getAppreciationRandom"><span>鑑賞</span></button>
                     </li>
                     <li class="category-item">
-                        <button type="button" class="btn-category"><span>繪畫</span></button>
+                        <button type="button" class="btn-category" @click="getPaintingRandom"><span>繪畫</span></button>
                     </li>
                     <li class="category-item">
-                        <button type="button" class="btn-category"><span>藝術</span></button>
+                        <button type="button" class="btn-category" @click="getArtRandom"><span>藝術</span></button>
                     </li>
                     <li class="category-item">
-                        <button type="button" class="btn-category"><span>攝影</span></button>
+                        <button type="button" class="btn-category" @click="getPhotographyRandom"><span>攝影</span></button>
                     </li>
                 </ul>
                 <div class="right-area">
@@ -98,8 +98,8 @@ export default {
         })
     },
     methods:{
-        
-        allRandom(){
+        // 全部隨機
+        getAllRandom(){
             // 全部隨機
             let randomArray = this.all;
             // 重新隨機排序陣列
@@ -110,9 +110,46 @@ export default {
             shuffleArray(randomArray);
             this.products = randomArray.slice(0,10);
         },
-
-        appreciationRandom(){
+        
+        // 鑑賞隨機
+        getAppreciationRandom(){
             let randomArray = this.appreciation;
+            // 重新隨機排序陣列
+            function shuffleArray(inputArray) {
+                inputArray.sort(() => Math.random() - 0.5);
+            }
+            // 取隨機排序的前10筆
+            shuffleArray(randomArray);
+            this.products = randomArray.slice(0,10);
+        },
+
+        // 繪畫隨機
+        getPaintingRandom(){
+            let randomArray = this.painting;
+            // 重新隨機排序陣列
+            function shuffleArray(inputArray) {
+                inputArray.sort(() => Math.random() - 0.5);
+            }
+            // 取隨機排序的前10筆
+            shuffleArray(randomArray);
+            this.products = randomArray.slice(0,10);
+        },
+
+        // 藝術隨機
+        getArtRandom(){
+            let randomArray = this.art;
+            // 重新隨機排序陣列
+            function shuffleArray(inputArray) {
+                inputArray.sort(() => Math.random() - 0.5);
+            }
+            // 取隨機排序的前10筆
+            shuffleArray(randomArray);
+            this.products = randomArray.slice(0,10);
+        },
+
+        // 攝影隨機
+        getPhotographyRandom(){
+            let randomArray = this.photography;
             // 重新隨機排序陣列
             function shuffleArray(inputArray) {
                 inputArray.sort(() => Math.random() - 0.5);
