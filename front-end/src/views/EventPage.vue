@@ -21,14 +21,15 @@
                 </ul>
             </div>
             <!-- 所有活動minicover圖片 -->
-            <div>
+            <div v-for="(item, index) in allevent" :key="index">
                 <ul class="event_list col4">
                     <li class="event_item">
                         <div class="event_area">
                             <a href=""></a>
                             <div class="event_thumb_box">
                                 <span class="img_box">
-                                    <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
+                                    <!-- <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt=""> -->
+                                    <img class="" v-bind:src="'../../static/img/event/'+allevent[index].event_minicover+'.jpg'" alt="">
                                 </span>
                             </div>
                             <div class="event_info_box">
@@ -256,6 +257,35 @@
         <div class="footer"></div>
     </div>
 </template>
+<script>
+import axios from "axios"
+
+export default {
+    data() {
+        return {
+            allevent: '',
+        };
+    },
+    mounted() {
+        axios.get('http://127.0.0.1:3000/allevent').then(res => {
+            this.allevent = res.data;
+            console.log(res.data);
+            // console.log(this.imgSrc);
+        })
+    },
+
+    methods: {
+  
+        get() {
+            axios.get('http://127.0.0.1:3000/allevent').then(res => {
+                console.log(res.data[0]);
+            }).catch(err => {
+                console.log("獲取失敗" + err);
+            })
+        }
+    }
+}
+</script>
 <style scoped>
 .header {
     width: 100%;
