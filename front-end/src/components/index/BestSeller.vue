@@ -5,19 +5,19 @@
                 <h2 class="title-heading">推薦書單</h2>
                 <ul class="category-tag-list">
                     <li class="category-item">
-                        <button type="button" class="btn-category"><span>全部</span></button>
+                        <button type="button" class="btn-category" @click="allRandom"><span>全部</span></button>
                     </li>
                     <li class="category-item">
-                        <button type="button" class="btn-category" @click="appreciationRandom"><span>繪畫</span></button>
+                        <button type="button" class="btn-category" @click="appreciationRandom"><span>鑑賞</span></button>
                     </li>
                     <li class="category-item">
-                        <button type="button" class="btn-category"><span>攝影</span></button>
+                        <button type="button" class="btn-category"><span>繪畫</span></button>
                     </li>
                     <li class="category-item">
                         <button type="button" class="btn-category"><span>藝術</span></button>
                     </li>
                     <li class="category-item">
-                        <button type="button" class="btn-category"><span>鑑賞</span></button>
+                        <button type="button" class="btn-category"><span>攝影</span></button>
                     </li>
                 </ul>
                 <div class="right-area">
@@ -84,27 +84,42 @@ export default {
             this.painting = res.data.slice(25, 50);
             this.art = res.data.slice(50, 75);
             this.photography = res.data.slice(75, 100);
-            var randomArray = this.all;
-
+            
+            // 全部隨機
+            let randomArray = this.all;
+            // 重新隨機排序陣列
             function shuffleArray(inputArray) {
                 inputArray.sort(() => Math.random() - 0.5);
             }
+            // 取隨機排序的前10筆
             shuffleArray(randomArray);
             this.products = randomArray.slice(0,10);
-
 
         })
     },
     methods:{
         
+        allRandom(){
+            // 全部隨機
+            let randomArray = this.all;
+            // 重新隨機排序陣列
+            function shuffleArray(inputArray) {
+                inputArray.sort(() => Math.random() - 0.5);
+            }
+            // 取隨機排序的前10筆
+            shuffleArray(randomArray);
+            this.products = randomArray.slice(0,10);
+        },
+
         appreciationRandom(){
-            axios.get('http://127.0.0.1:3000/booktable').then(res => {
-            var r = Math.floor(Math.random()*30)+1; 
-            
-            this.art = res.data.slice(r,r+10);
-            // console.log(res.data);
-         
-        })
+            let randomArray = this.appreciation;
+            // 重新隨機排序陣列
+            function shuffleArray(inputArray) {
+                inputArray.sort(() => Math.random() - 0.5);
+            }
+            // 取隨機排序的前10筆
+            shuffleArray(randomArray);
+            this.products = randomArray.slice(0,10);
         }
     }
 }
