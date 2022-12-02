@@ -30,30 +30,28 @@
             </div>
             <!-- 設定暢銷排行與新進排行的區域 -->
             <div class="best-steady-wrap">
-                <ul class="prod-list">
+                <ul class="prod-list flex-wrap" v-for="(item, index) in art" :key="index">
                     <!-- TODO  跑迴圈，重複10次 -->
                     <li class="prod-item">
                         <div class="best-prod-area">
                             <div class="best-prod-head">
                                 <div class="badge-flag">
-                                    <!-- TODO 迴圈數字 +1 -->
-                                    <span>1</span>
+                                    <span>{{index + 1}}</span>
                                 </div>
                             </div>
                             <div class="prod-thumb-box">
-                                <!-- TODO 設定書本商品詳情頁網址 -->
                                 <a href="">
                                     <div class="img-box">
-                                        <img src="@/assets/img/books/30101.png" alt="">
+                                        <img v-bind:src="'http://localhost:3000/img/books/' + art[index].img_cover + '.png'" alt="">
                                     </div>
                                 </a>
                             </div>
                             <div class="prod-info-box">
                                 <!-- TODO 設定書本商品詳情頁網址 -->
                                 <a href="">
-                                    <p class="prod-name">書籍名稱</p>
+                                    <p class="prod-name">{{art[index].product_name}}</p>
                                 </a>
-                                <small class="prod-author">作者名稱</small>
+                                <small class="prod-author">{{art[index].auther}}</small>
                             </div>
                         </div>
                     </li>
@@ -64,8 +62,25 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
-    name: 'BestSeller'
+    name: 'BestSeller',
+    data() {
+        return {
+            products:'',   // 全部
+            art:'',        // 藝術前10筆
+
+        }
+    },
+    mounted() {
+        axios.get('http://127.0.0.1:3000/booktable').then(res => {
+            this.products = res.data;
+            // console.log(res.data);
+            this.art = res.data.slice(50, 60);
+            console.log(this.art)
+        })
+    }
 }
 </script>
 
@@ -134,6 +149,11 @@ button {
 
 .best-steady-wrap {
     display: flex;
+}
+
+.prod-list {
+    display: flex;
+    flex-direction: row;
 }
 
 .best-prod-area {
