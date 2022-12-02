@@ -10,12 +10,15 @@
                 <div class="videoDiv flex" v-for="(item, index) in allvideo" :key="index">
                     <a class="block flex" href="">
                         <div>
-                           
-                            <!-- <img class="videoImg" v-bind:src="allvideo[0].video_title_img" alt=""> -->
-                            <img class="videoImg" v-bind:src="'../../static/img/video/'+allvideo[index].video_title_img+'.jpg'" alt="">
+                            <div class="videoImgOutDiv">
+                                <!-- <img class="videoImg" v-bind:src="allvideo[0].video_title_img" alt=""> -->
+                                <img class="videoImg"
+                                    v-bind:src="'http://127.0.0.1:3000/img/video/' + allvideo[index].video_title_img + '.jpg'"
+                                    alt="">
+                            </div>
                         </div>
                         <div>
-                            <p class="nb nh3">{{ allvideo[index].video_name  }}</p>
+                            <p class="nb nh3">{{ allvideo[index].video_name }}</p>
                             <p>{{ allvideo[index].video_class }}</p>
                             <p>上傳日期：{{ allvideo[index].video_upload_date }}</p>
                         </div>
@@ -23,7 +26,7 @@
                 </div>
 
 
-               
+
 
 
 
@@ -52,13 +55,13 @@ export default {
         return {
             allvideo: '',
             // imgSrc:require('../../static/img/video/v10201.jpg'),
-            
-            
+
+
 
         };
     },
     mounted() {
-        axios.get('http://127.0.0.1:3000/videopage').then(res => {
+        axios.get('http://127.0.0.1:3000/videotable').then(res => {
             this.allvideo = res.data;
             console.log(res.data);
             // console.log(this.imgSrc);
@@ -66,14 +69,14 @@ export default {
     },
 
     methods: {
-  
-        get() {
-            axios.get('http://127.0.0.1:3000/VideoPage').then(res => {
-                console.log(res.data[0]);
-            }).catch(err => {
-                console.log("获取数据失败" + err);
-            })
-        }
+
+        // get() {
+        //     axios.get('http://127.0.0.1:3000/videotable').then(res => {
+        //         console.log(res.data[0]);
+        //     }).catch(err => {
+        //         console.log("获取数据失败" + err);
+        //     })
+        // }
     }
 }
 </script>
@@ -284,9 +287,17 @@ table {
 
 }
 
+.videoImgOutDiv {
+    width: 180px;
+    height: 140px;
+    overflow: hidden;
+
+
+}
+
 .videoImg {
-    width: 160px;
-    height: 160px;
+    width: 180px;
+    height: 140px;
     object-fit: cover;
 
 }
@@ -295,6 +306,15 @@ table {
     width: 360px;
     height: 160px;
     margin-top: 20px;
+
+}
+
+.videoDiv:hover .videoImg {
+    transform: scale(1.2);
+    transition: .5s;
+
+
+
 }
 
 

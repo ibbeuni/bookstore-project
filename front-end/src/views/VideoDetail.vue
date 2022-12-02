@@ -20,76 +20,52 @@
 
                     </div>
                     <br><br><br><br><br>
+                    <!-- auther
+                    product_id
+                    product_name
+                    vedio_url
+                    video_class
+                    video_intro
+                    video_mouseon_img
+                    video_name
+                    video_title_img
+                    video_upload_date -->
                     <div>
                         <p class="nh2 nb">影片介紹</p>
                         <br>
-                        <p>
-                            這是影片介紹文章這是影片介紹文章這是影片介紹文章
-                            這是影片介紹文章這是影片介紹文章這是影片介紹文章
-                            這是影片介紹文章這是影片介紹文章這是影片介紹文章
-                            這是影片介紹文章這是影片介紹文章這是影片介紹文章
-                            這是影片介紹文章這是影片介紹文章這是影片介紹文章
-                            這是影片介紹文章這是影片介紹文章這是影片介紹文章
-                            這是影片介紹文章這是影片介紹文章這是影片介紹文章
-                            這是影片介紹文章這是影片介紹文章這是影片介紹文章
+                        <pre>
 
-                        </p>
+                        </pre>
                     </div>
                     <br><br><br><br><br>
                     <!-- 相關書籍產品 -->
                     <div id="relatedProductOutDiv">
-                    <p class="nh2">相關產品</p>
-                    <br>
-                    <div id="relatedProduct">
-                        <div class="relatedProductDiv">
-                            <a class="relatedProductTag_a" href="">
-                                <div>
+                        <p class="nh2">相關產品</p>
+                        <br>
+                        <div id="relatedProduct">
+                            <div class="relatedProductDiv">
+                                <a class="relatedProductTag_a" href="">
                                     <div>
-                                        <img class="relatedProductImg" src="../assets/img/product/9796074_R.webp" alt="">
+                                        <div>
+                                            <img class="relatedProductImg" src="../assets/img/product/9796074_R.webp"
+                                                alt="">
+                                        </div>
+                                        <div>
+                                            <p>書名</p>
+                                            <p>作者</p>
+                                            <p>NT 500</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <p>書名</p>
-                                        <p>作者</p>
-                                        <p>NT 500</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="relatedProductDiv">
-                            <a class="relatedProductTag_a" href="">
-                                <div>
-                                    <div>
-                                        <img class="relatedProductImg" src="../assets/img/product/9796074_R.webp" alt="">
-                                    </div>
-                                    <div>
-                                        <p>書名</p>
-                                        <p>作者</p>
-                                        <p>NT 500</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="relatedProductDiv">
-                            <a class="relatedProductTag_a" href="">
-                                <div>
-                                    <div>
-                                        <img class="relatedProductImg" src="../assets/img/product/9796074_R.webp" alt="">
-                                    </div>
-                                    <div>
-                                        <p>書名</p>
-                                        <p>作者</p>
-                                        <p>NT 500</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        
-                        
+                                </a>
+                            </div>
 
 
 
+
+
+
+                        </div>
                     </div>
-                </div>
 
                     <div>
 
@@ -106,56 +82,24 @@
 
                         <hr>
                     </div>
-                    <div>
-                        <div class="flex m20">
-                            <div class=""><img class="otherVideo" src="../assets/img/video/video_img.png" alt=""></div>
-                            <div class="m10">
-                                <p class="nh3 nb">影片名稱影片名稱影片名稱影片名稱影片名稱</p>
-                                <br>
-                                <p class="nh4 nb">影片分類</p>
+                    <div v-for="(item, index) in otherVideo" :key="index">
+                        <div class=" m20">
+                            <a class="block" href="">
+                                <div class="flex">
+                                <div class=""><img class="otherVideo"
+                                        v-bind:src="'http://127.0.0.1:3000/img/video/' + allvideo[index].video_title_img + '.jpg'"
+                                        alt="">
+                                </div>
+                                <div class="m10">
+                                    <p class="nh3 nb">{{ otherVideo[index].video_name }}</p>
+                                    <br>
+                                    <p class="nh4 nb">{{ otherVideo[index].video_class }}</p>
+                                </div>
                             </div>
+                            </a>
                         </div>
                     </div>
-                    <div>
-                        <div class="flex m20">
-                            <div class=""><img class="otherVideo" src="../assets/img/video/video_img.png" alt=""></div>
-                            <div class="m10">
-                                <p class="nh3 nb">影片名稱影片名稱影片名稱影片名稱影片名稱</p>
-                                <br>
-                                <p class="nh4 nb">影片分類</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex m20">
-                            <div class=""><img class="otherVideo" src="../assets/img/video/video_img.png" alt=""></div>
-                            <div class="m10">
-                                <p class="nh3 nb">影片名稱影片名稱影片名稱影片名稱影片名稱</p>
-                                <br>
-                                <p class="nh4 nb">影片分類</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex m20">
-                            <div class=""><img class="otherVideo" src="../assets/img/video/video_img.png" alt=""></div>
-                            <div class="m10">
-                                <p class="nh3 nb">影片名稱影片名稱影片名稱影片名稱影片名稱</p>
-                                <br>
-                                <p class="nh4 nb">影片分類</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex m20">
-                            <div class=""><img class="otherVideo" src="../assets/img/video/video_img.png" alt=""></div>
-                            <div class="m10">
-                                <p class="nh3 nb">影片名稱影片名稱影片名稱影片名稱影片名稱</p>
-                                <br>
-                                <p class="nh4 nb">影片分類</p>
-                            </div>
-                        </div>
-                    </div>
+
 
 
 
@@ -169,7 +113,33 @@
     </div>
 </template>
 <script>
+import axios from "axios"
 
+export default {
+    data() {
+        return {
+            allvideo: '',
+            // imgSrc:require('../../static/img/video/v10201.jpg'),
+            otherVideo: '',
+
+
+        };
+    },
+    mounted() {
+        axios.get('http://127.0.0.1:3000/videotable').then(res => {
+            this.allvideo = res.data;
+            this.otherVideo = res.data.slice(0, 5);
+            console.log(this.otherVideo);
+            console.log(res.data);
+
+            // console.log(this.imgSrc);
+        })
+    },
+
+    methods: {
+
+    }
+}
 
 </script>
 
@@ -375,7 +345,7 @@ table {
 
 #videoMainLeft {
     width: 814px;
-    background-color: rgb(216, 186, 146);
+    /* background-color: rgb(216, 186, 146); */
 
 }
 
@@ -389,7 +359,7 @@ table {
 
 #videoMainRight {
     width: 386px;
-    background-color: rgb(222, 165, 165);
+    /* background-color: rgb(222, 165, 165); */
 }
 
 iframe {
@@ -402,12 +372,13 @@ iframe {
 /* 內容右邊 */
 #videoMainRightDiv {
     margin: 40px auto 40px;
-    ;
     background-color: #fff;
     width: 350px;
-    height: 900px;
+    height: 940px;
     border-radius: 30px;
     overflow: auto;
+    box-shadow: 3px 3px 5px rgb(172, 164, 164);
+    border: 1px solid rgb(172, 164, 164);
 
 }
 
@@ -452,13 +423,14 @@ iframe {
     object-fit: cover;
 }
 
-#relatedProduct{
+#relatedProduct {
     display: flex;
     justify-content: start;
     background-color: #F7F7F7;
     overflow-x: auto;
 
 }
+
 /* /相關產品 */
 
 
