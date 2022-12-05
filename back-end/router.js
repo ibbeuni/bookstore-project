@@ -8,7 +8,11 @@ let salestable = require('./API/sales_table')
 let totaltable = require('./API/total_table')
 let logintable = require('./API/login_page')
 let registertable = require('./API/register_table')
-
+let random_all = require('./API/random_all')
+let random_appreciation = require('./API/random_appreciation')
+let random_painting = require('./API/random_painting')
+let random_art = require('./API/random_art')
+let random_photography = require('./API/random_photography')
 
 router.get('/member', member.get)
 router.get('/videotable', videotable.get)

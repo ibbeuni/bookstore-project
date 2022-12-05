@@ -30,7 +30,7 @@
                                 <div class="event_thumb_box">
                                     <span class="img_box">
                                         <img class=""
-                                            v-bind:src="'http://127.0.0.1:3000/img/event/event_minicover/' + allevent[index].event_minicover + '.jpeg'"
+                                            v-bind:src="'http://127.0.0.1:3000/img/event/event_minicover/' + allevent[index].event_minicover_ + '.jpeg'"
                                             alt="">
                                     </span>
                                 </div>
