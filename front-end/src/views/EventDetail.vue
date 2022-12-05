@@ -22,51 +22,30 @@
             <!-- 類別按鈕 -->
             <div>
                 <ul>
-                    <a href="" style="font-size: 25px">其他書籍活動</a><br><br>
-                    <li><button><span>所有活動</span></button></li>
-                    <li><button><span>收藏</span></button></li>
-                    <li><button><span>繪畫</span></button></li>
-                    <li><button><span>藝術</span></button></li>
-                    <li><button><span>攝影</span></button></li>
+                    <a href="http://localhost:8081/#/home/eventpage" style="font-size: 25px">其他書籍活動</a><br><br>
+                    <li class="linkLi"><button><span>所有活動</span></button></li>
+                    <li class="linkLi"><button><span>收藏</span></button></li>
+                    <li class="linkLi"><button><span>繪畫</span></button></li>
+                    <li class="linkLi"><button><span>藝術</span></button></li>
+                    <li class="linkLi"><button><span>攝影</span></button></li>
                 </ul>
             </div>
             <!-- 活動minicover -->
             <div>
-                <ul class="liflex" style="display:flex;">
-                    <li>
+                <ul class="event_list col4">
+                    <li class="event_item" v-for="(item, index) in allevent" :key="index">
                         <div>
                             <a href="">
                                 <div>
-                                        <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
+                                    <img class=""
+                                        v-bind:src="'http://127.0.0.1:3000/img/event/event_minicover/' + allevent[index].event_minicover + '.jpeg'"
+                                        alt="">
                                 </div>
                             </a>
                         </div>
-                    </li>
-                    <li>
-                        <div>
-                            <a href="">
-                                <div>
-                                        <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <a href="">
-                                <div>
-                                        <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <a href="">
-                                <div>
-                                        <img src="../assets/img/event/event_minicover/event_minicover_101.jpeg" alt="">
-                                </div>
-                            </a>
+                        <div class="event_info_box">
+                            <div class="event_period">活動時間{{ (allevent[index].date_start) }}</div>
+                            <div class="event_period">結束時間{{ (allevent[index].date_end) }}</div>
                         </div>
                     </li>
                 </ul>
@@ -79,6 +58,36 @@
     </div>
 
 </template>
+<script>
+import axios from "axios"
+
+export default {
+    data() {
+        return {
+            allevent: '',
+        };
+    },
+    mounted() {
+        axios.get('http://127.0.0.1:3000/eventtable').then(res => {
+            this.allevent = res.data;
+            console.log(res.data);
+            console.log(this.allevent[1].event_minicover + ".jpeg");
+            // console.log(this.imgSrc);
+        })
+    },
+
+    methods: {
+
+        // get() {
+        //     axios.get('http://127.0.0.1:3000/eventtable').then(res => {
+        //         console.log(res.data[0]);
+        //     }).catch(err => {
+        //         console.log("獲取失敗" + err);
+        //     })
+        // }
+    }
+}
+</script>
 <style scoped>
 .header {
     width: 100%;
@@ -102,9 +111,11 @@
     margin: 30px;
     /* text-align: center; */
 }
+
 .bookimg {
     text-align: center;
 }
+
 /* 按鈕樣式 */
 button {
     display: inline-block;
@@ -119,18 +130,39 @@ button {
     text-decoration: none;
     text-transform: uppercase
 }
+
 /* 按鈕觸碰與點擊後樣式 */
 button:hover,
 button:focus {
     background: #454545;
     color: #cfcece;
 }
+
 /* li編排方式 */
-li {
+.linkLi {
     display: inline;
     margin-right: 10px;
 }
-.liflex li{
-    flex: 25%;
+
+/* ul {
+  display: block;
+  margin-bottom: 20px;
+} */
+.event_list {
+    justify-content: center;
+}
+
+.event_item {
+    display: inline-block;
+    list-style-type: none;
+    padding: 25px;
+    /* border:1px solid #ccc ; */
+    position: relative;
+    overflow: hidden;
+    flex-wrap: wrap;
+    /* width: 273;
+  height: 148px; */
+    /* flex-basis: 60%; */
+    /* flex-wrap: wrap; */
 }
 </style>
