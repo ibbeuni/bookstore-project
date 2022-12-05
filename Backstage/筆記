@@ -1,0 +1,17 @@
+login.vue       初始登入頁
+dashboard       系統首頁
+table.vue       會員資料
+tabs.vue        tab選項卡
+form.vue        上架新書 
+charts.vue      schart圖表
+permission.vue  權限管理
+user.vue        個人中心
+
+
+
+
+
+ 
+
+
+
