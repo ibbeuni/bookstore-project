@@ -68,7 +68,7 @@
                     </li>
                     <li>・</li>
                     <li class="nav_item">
-                        <a href="">CONTENT</a>
+                        <router-link to="/home/videopage">線上讀書會</router-link>
                     </li>
                 </ul>
                 <ul class="sub-list">

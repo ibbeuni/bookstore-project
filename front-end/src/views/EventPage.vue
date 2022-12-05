@@ -6,7 +6,7 @@
         </div>
         <!-- 活動輪播圖 -->
         <div style="text-align:center">
-            <img style="border-radius: 30px;" width="1200" height="340" src="../assets/img/event/event_cover/event_cover001.jpeg" alt="">
+            <img style="border-radius: 30px;" width="1200" height="340" src="../assets/img/event/event_cover/event_cover004.jpeg" alt="">
         </div>
         <div class="bookname">
             <!-- 分類按鈕 -->
@@ -34,8 +34,8 @@
                                 </span>
                             </div>
                             <div class="event_info_box">
-                                <div class="event_name">《2022收藏圖鑑》</div>
-                                <div class="event_period">2022/11/22 ~ 2022/12/31</div>
+                                <div class="event_period">活動時間{{(allevent[index].date_start)}}</div>
+                                <div class="event_period">結束時間{{(allevent[index].date_end)}}</div>
                             </div>
                         </div>
                     </li>

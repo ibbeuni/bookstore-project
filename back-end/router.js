@@ -18,6 +18,10 @@ router.get('/salestable', salestable.get)
 router.get('/totaltable', totaltable.get)
 router.get('/logintable', logintable.get)
 router.post('/registertable', registertable.post)
-
+router.get('/random_all', random_all.get) 
+router.get('/random_appreciation', random_appreciation.get) 
+router.get('/random_painting', random_painting.get) 
+router.get('/random_art', random_art.get) 
+router.get('/random_photography', random_photography.get) 
 
 module.exports = router

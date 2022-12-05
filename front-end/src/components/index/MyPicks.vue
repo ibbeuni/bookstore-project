@@ -6,8 +6,7 @@
                     <div class="title-wrap">
                         <h2 class="title-heading">Picks</h2>
                         <div class="right-area">
-                            <!-- TODO 加上位址 -->
-                            <a href="" class="btn-more-plus">
+                            <a href="/#/home/login" class="btn-more-plus">
                                 <span>看更多 </span>
                                 <font-awesome-icon icon="fa-solid fa-plus" />
                             </a>
@@ -22,7 +21,7 @@
                                 </h4>
                             </div>
                             <div class="picks-btn">
-                                <a href="/#/login">登入並獲得更多推薦</a>
+                                <a href="/#/home/login">登入並獲得更多推薦</a>
                             </div>
                         </div>
                         <div class="picks-right-area">
@@ -117,7 +116,7 @@ li {
 }
 
 a {
-    cursor: default;
+    cursor: pointer;
 }
 
 button {
