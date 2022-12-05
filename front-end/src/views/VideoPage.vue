@@ -2,25 +2,25 @@
     <div>
         <div id="videoPage">
 
-            <p>分類>分類>分類</p>
+            <!-- <p>分類>分類>分類</p> -->
             <!-- <button @click="get()">获取user表数据</button> -->
             <br><br><br><br>
             <div id="videoPlace" class="flex" style="background-color:white;">
 
-                <div class="videoDiv flex" v-for="(item, index) in allvideo" :key="index">
+                <div class="videoDiv flex" v-for="(item, index) in pageVideo" :key="index">
                     <a class="block flex" href="">
                         <div>
                             <div class="videoImgOutDiv">
                                 <!-- <img class="videoImg" v-bind:src="allvideo[0].video_title_img" alt=""> -->
                                 <img class="videoImg"
-                                    v-bind:src="'http://127.0.0.1:3000/img/video/' + allvideo[index].video_title_img + '.jpg'"
+                                    v-bind:src="'http://127.0.0.1:3000/img/video/' + pageVideo[index].video_title_img + '.jpg'"
                                     alt="">
                             </div>
                         </div>
                         <div>
-                            <p class="nb nh3">{{ allvideo[index].video_name }}</p>
-                            <p>{{ allvideo[index].video_class }}</p>
-                            <p>上傳日期：{{ allvideo[index].video_upload_date }}</p>
+                            <p class="nb nh3">{{ pageVideo[index].video_name }}</p>
+                            <p>{{ pageVideo[index].video_class }}</p>
+                            <p>上傳日期：{{ pageVideo[index].video_upload_date }}</p>
                         </div>
                     </a>
                 </div>
@@ -35,13 +35,20 @@
             <br><br>
             <hr>
             <div id="pageButton">
-                <a href="#" class="previous round">&#8249;</a>
-                <a href="#" class="numberRound">1</a>
-                <a href="#" class="numberRound">2</a>
-                <a href="#" class="numberRound">3</a>
-                <a href="#" class="next round">&#8250;</a>
+                <!-- <a href="#" class="previous round">&#8249;</a> -->
+                <!-- <a href="#" class="numberRound">1</a>
+                    <a href="#" class="numberRound">2</a>
+                    <a href="#" class="numberRound">3</a> -->
+                <!-- <a href="#" class="numberRound">3</a> -->
+                <!-- <a href="#" class="next round">&#8250;</a> -->
+                <button  class="previous round">&#8249;</button>
+                <button @click="pageOne" class="numberRound">1</button>
+                <button @click="pageTwo" class="numberRound">2</button>
+                <!-- <button class="numberRound">3</button> -->
+                <button @click="nextPage" class="next round">&#8250;</button>
+                <!-- <label for=""><input type="button" value="123"></label> -->
             </div>
-            <br><br><br><br><br><br><br><br><br><br>
+            <br><br>
         </div>
     </div>
 </template>
@@ -53,7 +60,8 @@ import axios from "axios"
 export default {
     data() {
         return {
-            allvideo: '',
+            allVideo: '',
+            pageVideo: '',
             // imgSrc:require('../../static/img/video/v10201.jpg'),
 
 
@@ -62,13 +70,31 @@ export default {
     },
     mounted() {
         axios.get('http://127.0.0.1:3000/videotable').then(res => {
-            this.allvideo = res.data;
+
+            this.allVideo = res.data;
+            this.pageVideo = res.data.slice(0,15)
             console.log(res.data);
             // console.log(this.imgSrc);
         })
     },
 
     methods: {
+        pageOne(){
+            // let aa = 
+            this.pageVideo = this.allVideo.slice(0,15);
+            console.log( this.pageVideo);
+        },
+
+        pageTwo(){
+            let aa = this.allVideo.slice(15,30);
+            console.log( this.pageVideo);
+            this.pageVideo = aa;
+        },
+        nextPage(){
+
+            
+            
+        }
 
         // get() {
         //     axios.get('http://127.0.0.1:3000/videotable').then(res => {
@@ -326,6 +352,7 @@ table {
 
 
 
+#pageButton>button:hover,
 #pageButton>a:hover {
     background-color: #ddd;
     color: black;
@@ -337,8 +364,8 @@ table {
 }
 
 .next {
-    background-color: #04AA6D;
-    color: white;
+    /* background-color: #04AA6D;
+    color: white; */
 }
 
 .pageNumber {
@@ -351,6 +378,7 @@ table {
     display: inline-block;
     padding: 8px 16px;
     border-radius: 150%;
+    border: transparent;
 }
 
 .numberRound {
@@ -359,6 +387,8 @@ table {
     padding: 8px 14px;
     border-radius: 150%;
     margin: 0px 5px;
+    border: transparent;
+
 
 
 }
