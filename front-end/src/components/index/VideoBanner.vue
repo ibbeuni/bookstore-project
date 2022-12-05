@@ -16,8 +16,7 @@
                     <div class="title-wrap">
                         <h2 class="title-heading">線上讀書會</h2>
                         <div class="right-area">
-                            <!-- TODO 加上位址 -->
-                            <a href="" class="btn-more-plus">
+                            <a href="/#/home/videopage" class="btn-more-plus">
                                 <span>看更多 </span>
                                 <font-awesome-icon icon="fa-solid fa-plus" />
                             </a>
@@ -47,7 +46,7 @@
                                                 </a>
                                             </div>
                                         </div>
-                                        <a href="" class="video-img-link">
+                                        <a href="/#/home/videopage" class="video-img-link">
                                             <div class="img-wrap">
                                                 <div class="play-btn">
                                                     <font-awesome-icon icon="fa-solid fa-play" />

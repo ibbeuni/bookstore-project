@@ -5,31 +5,30 @@
                 <h2 class="title-heading">今日選書</h2>
                 <ul class="category-tag-list">
                     <li class="category-item">
-                        <button type="button" class="btn-category"><span>全部</span></button>
+                        <button type="button" class="btn-category" @click="getAllData"><span>全部</span></button>
                     </li>
                     <li class="category-item">
-                        <button type="button" class="btn-category"><span>鑑賞</span></button>
+                        <button type="button" class="btn-category" @click="getAppreciationData"><span>鑑賞</span></button>
                     </li>
                     <li class="category-item">
-                        <button type="button" class="btn-category"><span>繪畫</span></button>
+                        <button type="button" class="btn-category" @click="getPaintingData"><span>繪畫</span></button>
                     </li>
                     <li class="category-item">
-                        <button type="button" class="btn-category"><span>藝術</span></button>
+                        <button type="button" class="btn-category" @click="getArtData"><span>藝術</span></button>
                     </li>
                     <li class="category-item">
-                        <button type="button" class="btn-category"><span>攝影</span></button>
+                        <button type="button" class="btn-category" @click="getPhotographyData"><span>攝影</span></button>
                     </li>
                 </ul>
                 <div class="right-area">
-                    <!-- TODO 加上位址 -->
-                    <a href="" class="btn-more-plus">
+                    <a href="/#/home/best" class="btn-more-plus">
                         <span>看更多 </span>
                         <font-awesome-icon icon="fa-solid fa-plus" />
                     </a>
                 </div>
             </div>
             <div class="template-row">
-                <ul class="swiper-wrapper" v-for="(item, index) in cover" :key="index">
+                <ul class="swiper-wrapper" v-for="(item, index) in cover" :key="'id' + index">
                     <li class="main-swiper-slide">
                         <div class="main-prod-area">
                             <!-- TODO 加入商品連結 -->
@@ -96,28 +95,60 @@ export default {
             all: '',         // 隨機10筆
             cover: '',       // 取第1筆
             products: '',    // 取前4筆
+            appreciation: '',   // 鑑賞
+            painting: '',       // 鑑賞
+            art:'',             // 藝術
+            photography:'',     // 攝影
         }
     },
     mounted() {
         axios.get('http://127.0.0.1:3000/random_all').then(res => {
             this.all = res.data;
-            this.cover = this.all.slice(0, 1)
-            console.log(this.cover)
-            this.products = this.all.slice(1, 4)
-            console.log(this.products)
-
-
-            // // 全部隨機
-            // let randomArray = this.all;
-            // // 重新隨機排序陣列
-            // function shuffleArray(inputArray) {
-            //     inputArray.sort(() => Math.random() - 0.5);
-            // }
-            // // 取隨機排序的前10筆
-            // shuffleArray(randomArray);
-            // this.products = randomArray.slice(0,10);
-
+            this.cover = this.all.slice(0, 1)       // cover大圖用
+            this.products = this.all.slice(1, 4)    // side小圖用
         })
+
+        axios.get('http://127.0.0.1:3000/random_appreciation').then(res => {
+            this.appreciation = res.data;
+        })
+
+        axios.get('http://127.0.0.1:3000/random_painting').then(res => {
+            this.painting = res.data;
+        })
+
+        axios.get('http://127.0.0.1:3000/random_art').then(res => {
+            this.art = res.data;
+        })
+
+        axios.get('http://127.0.0.1:3000/random_photography').then(res => {
+            this.photography = res.data;
+        })
+    },
+    methods:{
+        getAllData() {
+            this.cover = this.all.slice(0, 1)
+            this.products = this.all.slice(1, 4)
+        },
+        
+        getAppreciationData() {
+            this.cover = this.appreciation.slice(0, 1);
+            this.products = this.appreciation.slice(1, 4);
+        },
+
+        getPaintingData() {
+            this.cover = this.painting.slice(0, 1);
+            this.products = this.painting.slice(1, 4);
+        },
+
+        getArtData() {
+            this.cover = this.art.slice(0, 1);
+            this.products = this.art.slice(1, 4);
+        },
+
+        getPhotographyData() {
+            this.cover = this.photography.slice(0, 1);
+            this.products = this.photography.slice(1, 4);
+        },
     }
 }
 </script>

@@ -5,19 +5,19 @@
                 <h2 class="title-heading">推薦書單</h2>
                 <ul class="category-tag-list">
                     <li class="category-item">
-                        <button type="button" class="btn-category" @click="getAllRandom"><span>全部</span></button>
+                        <button type="button" class="btn-category" @click="getAllData"><span>全部</span></button>
                     </li>
                     <li class="category-item">
-                        <button type="button" class="btn-category" @click="getAppreciationRandom"><span>鑑賞</span></button>
+                        <button type="button" class="btn-category" @click="getAppreciationData"><span>鑑賞</span></button>
                     </li>
                     <li class="category-item">
-                        <button type="button" class="btn-category" @click="getPaintingRandom"><span>繪畫</span></button>
+                        <button type="button" class="btn-category" @click="getPaintingData"><span>繪畫</span></button>
                     </li>
                     <li class="category-item">
-                        <button type="button" class="btn-category" @click="getArtRandom"><span>藝術</span></button>
+                        <button type="button" class="btn-category" @click="getArtData"><span>藝術</span></button>
                     </li>
                     <li class="category-item">
-                        <button type="button" class="btn-category" @click="getPhotographyRandom"><span>攝影</span></button>
+                        <button type="button" class="btn-category" @click="getPhotographyData"><span>攝影</span></button>
                     </li>
                 </ul>
                 <div class="right-area">
@@ -78,85 +78,72 @@ export default {
         }
     },
     mounted() {
-        axios.get('http://127.0.0.1:3000/booktable').then(res => {
-            this.all = res.data;
-            this.appreciation = res.data.slice(0, 25);
-            this.painting = res.data.slice(25, 50);
-            this.art = res.data.slice(50, 75);
-            this.photography = res.data.slice(75, 100);
+        // axios.get('http://127.0.0.1:3000/booktable').then(res => {
+        //     this.all = res.data;
+        //     this.appreciation = res.data.slice(0, 25);
+        //     this.painting = res.data.slice(25, 50);
+        //     this.art = res.data.slice(50, 75);
+        //     this.photography = res.data.slice(75, 100);
             
-            // 全部隨機
-            let randomArray = this.all;
-            // 重新隨機排序陣列
-            function shuffleArray(inputArray) {
-                inputArray.sort(() => Math.random() - 0.5);
-            }
-            // 取隨機排序的前10筆
-            shuffleArray(randomArray);
-            this.products = randomArray.slice(0,10);
+        //     // 全部隨機
+        //     let randomArray = this.all;
+        //     // 重新隨機排序陣列
+        //     function shuffleArray(inputArray) {
+        //         inputArray.sort(() => Math.random() - 0.5);
+        //     }
+        //     // 取隨機排序的前10筆
+        //     shuffleArray(randomArray);
+        //     this.products = randomArray.slice(0,10);
 
+        // })
+        
+        axios.get('http://127.0.0.1:3000/random_all').then(res => {
+            this.all = res.data;
+            this.products = this.all
         })
+
+        axios.get('http://127.0.0.1:3000/random_appreciation').then(res => {
+            this.appreciation = res.data;
+        })
+
+        axios.get('http://127.0.0.1:3000/random_painting').then(res => {
+            this.painting = res.data;
+        })
+
+        axios.get('http://127.0.0.1:3000/random_art').then(res => {
+            this.art = res.data;
+        })
+
+        axios.get('http://127.0.0.1:3000/random_photography').then(res => {
+            this.photography = res.data;
+        })
+
+
     },
     methods:{
-        // 全部隨機
-        getAllRandom(){
-            // 全部隨機
-            let randomArray = this.all;
-            // 重新隨機排序陣列
-            function shuffleArray(inputArray) {
-                inputArray.sort(() => Math.random() - 0.5);
-            }
-            // 取隨機排序的前10筆
-            shuffleArray(randomArray);
-            this.products = randomArray.slice(0,10);
+        // 全部
+        getAllData() {
+            this.products = this.all
         },
         
-        // 鑑賞隨機
-        getAppreciationRandom(){
-            let randomArray = this.appreciation;
-            // 重新隨機排序陣列
-            function shuffleArray(inputArray) {
-                inputArray.sort(() => Math.random() - 0.5);
-            }
-            // 取隨機排序的前10筆
-            shuffleArray(randomArray);
-            this.products = randomArray.slice(0,10);
+        // 鑑賞
+        getAppreciationData(){
+            this.products = this.appreciation
         },
 
-        // 繪畫隨機
-        getPaintingRandom(){
-            let randomArray = this.painting;
-            // 重新隨機排序陣列
-            function shuffleArray(inputArray) {
-                inputArray.sort(() => Math.random() - 0.5);
-            }
-            // 取隨機排序的前10筆
-            shuffleArray(randomArray);
-            this.products = randomArray.slice(0,10);
+        // 繪畫
+        getPaintingData(){
+            this.products = this.painting
         },
 
         // 藝術隨機
-        getArtRandom(){
-            let randomArray = this.art;
-            // 重新隨機排序陣列
-            function shuffleArray(inputArray) {
-                inputArray.sort(() => Math.random() - 0.5);
-            }
-            // 取隨機排序的前10筆
-            shuffleArray(randomArray);
-            this.products = randomArray.slice(0,10);
+        getArtData(){
+            this.products = this.art
         },
 
-        // 攝影隨機
-        getPhotographyRandom(){
-            let randomArray = this.photography;
-            // 重新隨機排序陣列
-            function shuffleArray(inputArray) {
-                inputArray.sort(() => Math.random() - 0.5);
-            }
-            // 取隨機排序的前10筆
-            shuffleArray(randomArray);
-            this.products = randomArray.slice(0,10);
+        // 攝影
+        getPhotographyData(){
+            this.products = this.photography
         }
     }
 }
