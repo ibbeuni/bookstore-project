@@ -1,79 +1,95 @@
 <template>
-    <div id="wrap">
-        <main id="pageContainer">
-            <section class="contents">
+<div class="wrap">
+<main class="container">
+    <section class="contents">
+        
+        <div class="title_wrap">
+            <h1 class="title_heading">註冊電子郵件</h1>
+        </div>
+        <hr>
+        <div class=content_inner>
+        <div class="info_inner">
+            <h2>請輸入您的會員資訊</h2>
+            <div class="for_wraping_title">
+            <span class="words_setting">ID *</span>
+            </div>
+            <div class="for_wraping">
+            <input v-model = member.id class="inputInner" type="email" placeholder="請輸入郵件">
+            </div>
+            
 
-                <div class="title_wrap">
-                    <h1 class="title_heading">註冊電子郵件</h1>
-                </div>
-                <hr>
-                <div class=content_inner>
-                    <div class="info_inner">
-                        <h2>請輸入您的會員資訊</h2>
-                        <div class="for_wraping_title">
-                            <span class="words_setting"><label for="userId">ID *</label></span>
-                        </div>
-
-                        <div class="for_wraping">
-                            <input id="userId" class="inputInner" type="text" placeholder="請輸入郵件">
-                        </div>
-                        <div class="for_wraping_title">
-                            <input type="checkbox">將電子郵件作為ID
-                        </div>
-                        <div class="for_wraping_title">
-                            <span class="words_setting"><label for="userPassword">密碼*</label> </span>
-                        </div>
-                        <div class="for_wraping">
-                            <input id="userPassword" class="inputInner" type="text" placeholder="請輸入密碼">
-                        </div>
-                        <div class="for_wraping_title">
-                            <span class="sml_word">英文、數字和特殊字母三種組合8位字符，不允許使用空格和三個連續字元或重複字元</span>
-                        </div>
-                        <div class="for_wraping_title">
-                            <span class="words_setting"><label for="doublePassword">驗證密碼</label></span>
-                        </div>
-
-                        <div class="for_wraping">
-                            <input id="doublePassword" class="inputInner" type="text" placeholder="請再輸入一次密碼">
-                        </div>
-                        <div class="for_wraping_title">
-                            <span class="words_setting"><label for="userName">姓名*</label></span>
-                        </div>
-                        <div class="for_wraping">
-                            <input id="userName" class="inputInner" type="text" placeholder="請輸入您的大名">
-                        </div>
-                        <div class="for_wraping_title">
-                            <span class="words_setting"><label for="userPhone">手機號碼*</label></span>
-                        </div>
-                        <div class="for_wraping">
-                            <input id="userPhone" class="inputInner" type="text" maxlength="10" placeholder="請輸入電話號碼">
-                        </div>
-                        <div class="for_wraping_title">
-                            <span class="words_setting"><label for="userEmail">電子郵件*</label> </span>
-                        </div>
-                        <div class="for_wraping">
-                            <input id="userEmail" class="inputInner" type="email" placeholder="請輸入電子郵件">
-                        </div>
-                        <div class="for_wraping_title">
-                            <span class="words_setting"><label for="userBirthday">生日*</label></span>
-                        </div>
-                        <div class="for_wraping">
-                            <input id="userBirthday" class="inputInner" type="text" maxlength="8" placeholder="請輸入您的生日八位數">
-                        </div>
-                        <br><br>
-                        <div class="for_wraping">
-                            <button class="register_btn">註冊會員</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="for_wraping_title">
+            <span class="words_setting">密碼*</span>
+            </div> 
+            <div class="for_wraping">
+            <input  v-model = member.password class="inputInner" type="password" placeholder="請輸入密碼">
+            </div>
+            <div class="for_wraping_title">
+            <span class="sml_word">英文、數字和特殊字母三種組合8位字符，不允許使用空格和三個連續字元或重複字元</span>
+            </div>
 
 
+            
+        <br><br>
+        <div class="for_wraping">
+        <button  class="register_btn" @click="goRegister" >註冊會員
+        </button>
+        </div>
+        </div>
+        </div>
+        
 
+       
 
-            </section>
-        </main>
-    </div>
+    </section>
+</main>
+</div>
 </template>
+
+<script>
+import axios from 'axios'
+
+export default {
+    data(){
+        return{
+            member:{
+                id:'',
+                password:'',
+                
+            }
+        }
+    },
+    methods:{
+        goRegister() {
+            if(this.member.id == ""){
+                alert('請輸入帳號')
+            }else if (this.member.password == ''){
+                alert('請輸入密碼')
+            }else{
+                axios.post('http://127.0.0.1:3000/registertable',{
+                    params:{
+                        id: this.member.id,
+                        password: this.member.password
+                    }
+                
+                }).then(res => {
+                    console.log(res.data)
+                    if(res.data.status == 200){
+                        console.log(res.data)
+                        alert('註冊成功')
+                        this.router.push('/login')
+                    }else{
+                        alert('請重新註冊')
+                    }
+                })
+            }
+        }
+
+    }
+    
+
+}
+</script>
 
 
 <style scoped>

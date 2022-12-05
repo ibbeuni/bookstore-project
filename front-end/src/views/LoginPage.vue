@@ -6,7 +6,11 @@
       <h3>已經是書店的會員了?</h3>
 
       <div class="form-group">
-        <input type="email" class="form-control" placeholder="請輸入您的ID" />
+        <input 
+        type="email" 
+        class="form-control"
+        v-model="login.userName" 
+        placeholder="請輸入您的ID" />
       </div>
 
       <br />
@@ -15,6 +19,7 @@
         <input
           type="password"
           class="form-control form-control-lg"
+          v-model="login.password"
           placeholder="請輸入您的密碼"
         />
       </div>
@@ -22,7 +27,7 @@
       
       <br />
 
-      <button type="submit" class="login_btn">登入</button>
+      <button type="submit" class="login_btn" @click="onLogin">登入</button>
       <br />
       <br />
 
@@ -41,13 +46,51 @@
 </template>
 
 <script>
-// export default {
-//   data:{
-//     return: {
-//       imgUrl: "./src/assets/bookStore_logo.png"
-//     }
-//   }
-// }
+import axios from 'axios'
+
+export default{
+  
+  data(){
+    return{
+      login:{
+        userName:'',
+        password:''
+      }
+    }
+  },
+  methods:{
+    onLogin() {
+      let username = this.login.userName
+      let password = this.login.password
+
+      if( username == ''){
+        alert('請輸入帳號')
+      }else if(password ==''){
+        alert('請輸入密碼')
+      }else{
+        axios.get('http://127.0.0.1:3000/logintable',{
+          params:{
+            ID : this.login.userName,
+            PASSWORD: this.login.password
+          }
+        }).then(res => {
+          if (res.data.status == 200){
+            this.$router.push({
+              path: '/home',
+            })
+          }else{
+            alert('查無此帳號，請先註冊喔');
+
+          }
+        })
+        
+      }
+      
+
+  
+    }
+}
+}
 </script>
 
 
