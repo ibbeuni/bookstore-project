@@ -38,7 +38,7 @@
                             <a href="">
                                 <div>
                                     <img class=""
-                                        v-bind:src="'http://127.0.0.1:3000/img/event/event_minicover/' + allevent[index].event_minicover_ + '.jpeg'"
+                                        v-bind:src="'http://127.0.0.1:3000/img/event/event_minicover/' + allevent[index].event_minicover + '.jpeg'"
                                         alt="">
                                 </div>
                             </a>
