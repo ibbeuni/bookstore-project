@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-12-01 08:24:28
--- 伺服器版本： 10.4.24-MariaDB
--- PHP 版本： 8.1.6
+-- 產生時間： 2022-12-05 09:27:42
+-- 伺服器版本： 10.4.27-MariaDB
+-- PHP 版本： 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,7 +37,7 @@ CREATE TABLE `book_table` (
   `translator` varchar(50) NOT NULL,
   `painter` varchar(50) NOT NULL,
   `publishing_house` varchar(50) NOT NULL,
-  `publication_date` date NOT NULL,
+  `publication_date` varchar(10) NOT NULL,
   `language` varchar(50) NOT NULL,
   `amount` int(2) UNSIGNED ZEROFILL NOT NULL,
   `ISBN` varchar(13) NOT NULL,
@@ -59,7 +59,7 @@ CREATE TABLE `book_table` (
   `img_3` varchar(50) NOT NULL,
   `img_4` varchar(50) NOT NULL,
   `img_5` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- 傾印資料表的資料 `book_table`
@@ -179,7 +179,7 @@ CREATE TABLE `cart_table` (
   `img_cover` varchar(50) DEFAULT NULL,
   `product_name` varchar(150) DEFAULT NULL,
   `product_price` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- 傾印資料表的資料 `cart_table`
@@ -199,7 +199,7 @@ CREATE TABLE `event_banner_table` (
   `banner_id` int(11) NOT NULL,
   `banner_img` varchar(10) DEFAULT NULL,
   `event_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- 傾印資料表的資料 `event_banner_table`
@@ -224,9 +224,9 @@ CREATE TABLE `event_table` (
   `event_cover` varchar(50) DEFAULT NULL,
   `event_minicover` varchar(50) DEFAULT NULL,
   `event_1` varchar(50) DEFAULT NULL,
-  `date_start` date DEFAULT NULL,
-  `date_end` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `date_start` varchar(10) DEFAULT NULL,
+  `date_end` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- 傾印資料表的資料 `event_table`
@@ -260,7 +260,7 @@ INSERT INTO `event_table` (`event_id`, `event_cover`, `event_minicover`, `event_
 CREATE TABLE `login_table` (
   `ID` varchar(100) NOT NULL,
   `PASSWORD` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- 傾印資料表的資料 `login_table`
@@ -276,24 +276,21 @@ INSERT INTO `login_table` (`ID`, `PASSWORD`) VALUES
 --
 
 CREATE TABLE `membership_table` (
-  `member_num` int(11) NOT NULL,
-  `member_id` char(50) DEFAULT NULL,
+  `member_id` char(50) NOT NULL,
   `member_password` varchar(50) DEFAULT NULL,
   `member_passwordCfrm` varchar(50) NOT NULL,
   `member_name` varchar(50) DEFAULT NULL,
   `member_phone` varchar(50) DEFAULT NULL,
-  `member_birthday` date DEFAULT NULL,
+  `member_birthday` varchar(10) DEFAULT NULL,
   `member_address` varchar(150) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- 傾印資料表的資料 `membership_table`
 --
 
-INSERT INTO `membership_table` (`member_num`, `member_id`, `member_password`, `member_passwordCfrm`, `member_name`, `member_phone`, `member_birthday`, `member_address`) VALUES
-(1, 'marunko@gmail.com', 'P288555io@@', 'P288555io@@', '小丸子', '0989015586', '1988-02-08', '日本靜岡縣清水市'),
-(2, 'daya@gmail.com', 'V1385698mb#!', 'V1385698mb#!', '大野', '0988756233', '1988-06-05', '日本靜岡縣清水市'),
-(3, '33@gmail.com', 'aB56782128n~!', 'aB56782128n~!', '衫田', '0955658456', '1988-04-08', '日本靜岡縣清水市');
+INSERT INTO `membership_table` (`member_id`, `member_password`, `member_passwordCfrm`, `member_name`, `member_phone`, `member_birthday`, `member_address`) VALUES
+('marunko@gmail.com', 'P288555io@@', 'P288555io@@', '小丸子', '0989015586', '1988-02-08', '日本靜岡縣清水市');
 
 -- --------------------------------------------------------
 
@@ -312,7 +309,7 @@ CREATE TABLE `order_detail` (
   `discount_price` int(11) DEFAULT NULL,
   `product_price` int(11) DEFAULT NULL,
   `deliver_address` varchar(150) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -327,7 +324,7 @@ CREATE TABLE `order_table` (
   `product_name` varchar(150) DEFAULT NULL,
   `product_price` int(11) DEFAULT NULL,
   `discount_price` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -376,7 +373,7 @@ CREATE TABLE `sales_table` (
   `photography_oct` int(11) DEFAULT NULL,
   `photography_nov` int(11) DEFAULT NULL,
   `art_nov` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- 傾印資料表的資料 `sales_table`
@@ -397,7 +394,7 @@ CREATE TABLE `total_table` (
   `art_total` int(11) DEFAULT NULL,
   `photography_totoal` int(11) DEFAULT NULL,
   `all_total` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- 傾印資料表的資料 `total_table`
@@ -416,7 +413,7 @@ CREATE TABLE `tracklist_table` (
   `product_id` int(11) NOT NULL,
   `product_name` varchar(50) DEFAULT NULL,
   `img_cover` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -435,7 +432,7 @@ CREATE TABLE `video_table` (
   `vedio_url` varchar(50) DEFAULT NULL,
   `video_title_img` varchar(50) DEFAULT NULL,
   `video_mouseon_img` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- 傾印資料表的資料 `video_table`
@@ -484,7 +481,7 @@ CREATE TABLE `welcome_banner_table` (
   `banner_class` varchar(10) DEFAULT NULL,
   `banner_title` varchar(50) DEFAULT NULL,
   `banner_img` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- 傾印資料表的資料 `welcome_banner_table`
@@ -538,7 +535,7 @@ ALTER TABLE `login_table`
 -- 資料表索引 `membership_table`
 --
 ALTER TABLE `membership_table`
-  ADD PRIMARY KEY (`member_num`);
+  ADD PRIMARY KEY (`member_id`);
 
 --
 -- 資料表索引 `order_detail`
@@ -569,16 +566,6 @@ ALTER TABLE `video_table`
 --
 ALTER TABLE `welcome_banner_table`
   ADD PRIMARY KEY (`banner_id`);
-
---
--- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
---
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `membership_table`
---
-ALTER TABLE `membership_table`
-  MODIFY `member_num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
