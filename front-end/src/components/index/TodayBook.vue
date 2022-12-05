@@ -8,16 +8,16 @@
                         <button type="button" class="btn-category"><span>全部</span></button>
                     </li>
                     <li class="category-item">
-                        <button type="button" class="btn-category"><span>繪畫</span></button>
+                        <button type="button" class="btn-category"><span>鑑賞</span></button>
                     </li>
                     <li class="category-item">
-                        <button type="button" class="btn-category"><span>攝影</span></button>
+                        <button type="button" class="btn-category"><span>繪畫</span></button>
                     </li>
                     <li class="category-item">
                         <button type="button" class="btn-category"><span>藝術</span></button>
                     </li>
                     <li class="category-item">
-                        <button type="button" class="btn-category"><span>鑑賞</span></button>
+                        <button type="button" class="btn-category"><span>攝影</span></button>
                     </li>
                 </ul>
                 <div class="right-area">
@@ -29,62 +29,50 @@
                 </div>
             </div>
             <div class="template-row">
-                <ul class="swiper-wrapper">
-                    <li class="swiper-slide">
-                        <div class="prod-area">
+                <ul class="swiper-wrapper" v-for="(item, index) in cover" :key="index">
+                    <li class="main-swiper-slide">
+                        <div class="main-prod-area">
                             <!-- TODO 加入商品連結 -->
-                            <a href="">
-                                <div class="prod-box">
-                                    <!-- TODO 圖片連結用變數替換 -->
-                                    <img src="@/assets/img/books/30101.png" alt="封面">
-                                </div>
-                            </a>
-                            <div class="prod-info">
-                                <!-- TODO 連結同.prod-img-box -->
-                                <a href="">
-                                    <!-- 商品名稱 product_name -->
-                                    <h5>物見：四十八位物件的閱讀者，與他們所見的世界</h5>
+                            <div class="main-prod-thumb-box">
+                                <a href="" class="prod-link">
+                                    <span class="main-img-box">
+                                        <img v-bind:src="'http://127.0.0.1:3000/img/books/' + cover[index].img_cover + '.png'"
+                                            alt="封面">
+                                    </span>
                                 </a>
-                                <small>作者 auther</small>
+                            </div>
+                            <div class="main-prod-info-box">
+                                <!-- TODO 加入商品連結 -->
+                                <a href="" class="prod-info">
+                                    <h5 class="main-prod-name">{{ cover[index].product_name }}</h5>
+                                </a>
+                                <small class="prod-author">{{ cover[index].auther }}</small>
                                 <div class="prod-price">
                                     <span class="percent">10
                                         <font-awesome-icon icon="fa-solid fa-percent" />
                                     </span>
-                                    <span class="price">價格</span>
+                                    <span class="price">{{ cover[index].discount_price }}</span>
                                     <span class="unit">元</span>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li class="swiper-slide side-img">
-                        <a href="">
-                            <div class="prod-box">
-                                <!-- TODO 圖片連結用變數替換 -->
-                                <img src="@/assets/img/books/30201.png" alt="封面">
-                                <!-- TODO 商品名稱 product_name -->
-                                <small>藝術史的一千零一夜【暢銷經典插畫版】</small>
+                </ul>
+                <ul class="swiper-wrapper" v-for="(item, index) in products" :key="index">
+                    <li class="swiper-slide">
+                        <div class="thumb-img-box">
+                            <a href="">
+                                <img v-bind:src="'http://127.0.0.1:3000/img/books/' + products[index].img_cover + '.png'"
+                                    alt="封面">
+                            </a>
+                        </div>
+                        <div class="prod-area">
+                            <div class="prod-info-box">
+                                <a href="" class="prod-info">
+                                    <small class="side-prod-name">{{ products[index].product_name }}</small>
+                                </a>
                             </div>
-                        </a>
-                    </li>
-                    <li class="swiper-slide side-img">
-                        <a href="">
-                            <div class="prod-box">
-                                <!-- TODO 圖片連結用變數替換 -->
-                                <img src="@/assets/img/books/30301.png" alt="封面">
-                                <!-- TODO 商品名稱 product_name -->
-                                <small>最後的秘境 東京藝大-天才們的華麗日常</small>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="swiper-slide side-img">
-                        <a href="">
-                            <div class="prod-box">
-                                <!-- TODO 圖片連結用變數替換 -->
-                                <img src="@/assets/img/books/30401.png" alt="封面">
-                                <!-- TODO 商品名稱 product_name -->
-                                <small>世界是什麼顏色？：橫跨千萬年的人類色彩文化史</small>
-                            </div>
-                        </a>
+                        </div>
                     </li>
                 </ul>
                 <button class="swiper-btn-prev">
@@ -99,8 +87,38 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
-    name: 'TodayBook'
+    name: 'TodayBook',
+    data() {
+        return {
+            all: '',         // 隨機10筆
+            cover: '',       // 取第1筆
+            products: '',    // 取前4筆
+        }
+    },
+    mounted() {
+        axios.get('http://127.0.0.1:3000/random_all').then(res => {
+            this.all = res.data;
+            this.cover = this.all.slice(0, 1)
+            console.log(this.cover)
+            this.products = this.all.slice(1, 4)
+            console.log(this.products)
+
+
+            // // 全部隨機
+            // let randomArray = this.all;
+            // // 重新隨機排序陣列
+            // function shuffleArray(inputArray) {
+            //     inputArray.sort(() => Math.random() - 0.5);
+            // }
+            // // 取隨機排序的前10筆
+            // shuffleArray(randomArray);
+            // this.products = randomArray.slice(0,10);
+
+        })
+    }
 }
 </script>
 
@@ -115,17 +133,19 @@ li {
 }
 
 a {
-    cursor: default;
+    cursor: pointer;
 }
 
 button {
     border: 0;
     background-color: none;
 }
+
 .contents {
     margin: 60px 0px;
     background-color: var(--background-color);
 }
+
 .contents-inner {
     /* position: relative; */
     width: 1200px;
@@ -176,6 +196,7 @@ button {
     display: flex;
     position: relative;
 }
+
 .swiper-wrapper {
     display: flex;
     padding-left: 0px;
@@ -183,36 +204,69 @@ button {
     width: 100%;
 }
 
-.swiper-slide {
+/* 左側main-product <li> */
+.main-swiper-slide {
     position: relative;
-    width: fit-content;
-}
-
-.prod-area {
+    width: 660px;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    height: auto;
 }
 
-.prod-box {
-    height: 300px;
+.main-prod-area {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.main-prod-thumb-box {
+    width: 234px;
     overflow: hidden;
     display: block;
     margin-left: 20px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-.prod-box img {
-    max-height: 100%;
-    max-width: 100%;
-    margin-bottom: 10px;
+.main-img-box {
+    /* height: auto; */
+    width: 234px;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid #eaeaea;
 }
 
-.prod-info {
-    margin: 50px 0px auto;
+.main-img-box img {
+    max-height: 365.376px;
+    width: 100%;
+    border: 0;
+    /* margin-bottom: 10px; */
+}
+
+.main-prod-info-box {
+    margin: 50px 0px auto 30px;
+}
+
+.main-prod-name {
+    max-height: calc(30px * 2);
+    font-size: 20px;
+    line-height: 30px;
+    overflow: hidden;
+}
+
+.prod-author {
+    max-height: 44px;
+    line-height: 22px;
+    margin-top: 8px;
 }
 
 .prod-price {
     display: flex;
-    margin: 20px 0px;
+    margin-top: 20px;
     font-weight: 800;
 }
 
@@ -225,8 +279,35 @@ button {
     margin-right: 5px;
 }
 
-.side-img {
-    width: 230px;
+/* 側邊商品框 */
+.swiper-slide {
+    margin: 0 0 0 20px;
+    width: 142px;
+    box-sizing: border-box;
+    height: 100%;
+    position: relative;
+    padding: 0;
+    display: list-item;
+}
+
+.thumb-img-box {
+    width: calc(100% - 2px);
+    border: 1px solid #eaeaea;
+}
+
+.thumb-img-box img {
+    width: 100%;
+    vertical-align: middle;
+    border: 0;
+}
+
+.prod-info-box {
+    margin-top: 12px;
+}
+
+.side-prod-name {
+    height: 38px;
+    line-height: 19px;
 }
 
 .swiper-btn-prev {
@@ -254,5 +335,4 @@ button {
     z-index: 2;
     box-sizing: border-box;
 }
-
 </style>
