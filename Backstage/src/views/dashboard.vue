@@ -138,49 +138,49 @@ import Schart from 'vue-schart';
 import { reactive } from 'vue';
 import imgurl from '../assets/img/img.jpg';
 import { ref } from '@vue/runtime-core'
-    import axios from 'axios'
-    //伺服器 與 params
-    const url = "http://localhost:3000/sales"
-    const urlParams="warning"
-    //接收伺服器的回傳資料
-    const resData = ref()
+import axios from 'axios'
+    // export default {
+    //     data() {
+    //         return {
+    //             alltotal: '',
+    //         };
+    //     },
+    //     mounted() {
+    //         axios.get('http://127.0.0.1:3000/total').then(res => {
+    //             this.alltotal = res.data;
+    //             console.log(res.data);
+    //             // console.log(this.imgSrc);
+    //         })
+    //     },
+    //     methods: {
+    //         // get() {
+    //         //     axios.get('http://127.0.0.1:3000/total').then(res => {
+    //         //         console.log(res.data[0]);
+    //         //     }).catch(err => {
+    //         //         console.log("失敗" + err);
+    //         //     })
+    //         // }
+    //     }
+    // }
+    // //伺服器 與 params
+    // const url = "http://localhost:3000/sales"
+    // const urlParams="warning"
+    // //接收伺服器的回傳資料
+    // const resData = ref()
 
-    const getAxios = function(){
-        axios.get(`http://${url}/userstatus`,
-            { params : {status: urlParams } }
-        ).then((res)=>{
-            //獲取伺服器的回傳資料
-            resData.value = res.data
-        })
-        .catch((error)=>{
-            console.log(error,'失敗');
-        })
-    }
-    //執行Axios
-    getAxios()
-// export default {
-//     data() {
-//         return {
-//             alltotal: '',
-//         };
-//     },
-//     mounted() {
-//         axios.get('http://127.0.0.1:3000/total').then(res => {
-//             this.alltotal = res.data;
-//             console.log(res.data);
-//             // console.log(this.imgSrc);
-//         })
-//     },
-//     methods: {
-//         // get() {
-//         //     axios.get('http://127.0.0.1:3000/total').then(res => {
-//         //         console.log(res.data[0]);
-//         //     }).catch(err => {
-//         //         console.log("失敗" + err);
-//         //     })
-//         // }
-//     }
-// }
+    // const getAxios = function(){
+    //     axios.get(`http://${url}/userstatus`,
+    //         { params : {status: urlParams } }
+    //     ).then((res)=>{
+    //         //獲取伺服器的回傳資料
+    //         resData.value = res.data
+    //     })
+    //     .catch((error)=>{
+    //         console.log(error,'失敗');
+    //     })
+    // }
+    // //執行Axios
+    // getAxios()
 
 const name = localStorage.getItem('ms_username');
 const role: string = name === 'admin' ? '超级管理员' : '普通用户';

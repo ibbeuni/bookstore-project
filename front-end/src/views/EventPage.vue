@@ -6,7 +6,8 @@
         </div>
         <!-- 活動輪播圖 -->
         <div style="text-align:center">
-            <img style="border-radius: 30px;" width="1200" height="340" src="../assets/img/event/event_cover/event_cover004.jpeg" alt="">
+            <img style="border-radius: 30px;" width="1200" height="340"
+                src="../assets/img/event/event_cover/event_cover004.jpeg" alt="">
         </div>
         <div class="bookname">
             <!-- 分類按鈕 -->
@@ -24,20 +25,21 @@
             <div>
                 <ul class="event_list col4">
                     <li class="event_item" v-for="(item, index) in allevent" :key="index">
-                        <div class="event_area">
-                            <a href=""></a>
-                            <div class="event_thumb_box">
-                                <span class="img_box">
-                                    <img class=""
-                                    v-bind:src="'http://127.0.0.1:3000/img/event/event_minicover/' + allevent[index].event_minicover + '.jpeg'"
-                                    alt="">
-                                </span>
+                        <a href="">
+                            <div class="event_area">
+                                <div class="event_thumb_box">
+                                    <span class="img_box">
+                                        <img class=""
+                                            v-bind:src="'http://127.0.0.1:3000/img/event/event_minicover/' + allevent[index].event_minicover + '.jpeg'"
+                                            alt="">
+                                    </span>
+                                </div>
+                                <div class="event_info_box">
+                                    <div class="event_period">活動時間{{ (allevent[index].date_start) }}</div>
+                                    <div class="event_period">結束時間{{ (allevent[index].date_end) }}</div>
+                                </div>
                             </div>
-                            <div class="event_info_box">
-                                <div class="event_period">活動時間{{(allevent[index].date_start)}}</div>
-                                <div class="event_period">結束時間{{(allevent[index].date_end)}}</div>
-                            </div>
-                        </div>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -67,7 +69,7 @@ export default {
     },
 
     methods: {
-  
+
         // get() {
         //     axios.get('http://127.0.0.1:3000/eventtable').then(res => {
         //         console.log(res.data[0]);
@@ -92,11 +94,13 @@ export default {
     /* background-color: blue; */
     display: margin-bottom;
 }
+
 /* li排列方式 */
 li {
     display: inline;
     margin-right: 10px;
 }
+
 .bookname {
     width: 100%;
     flex-wrap: wrap;
@@ -105,9 +109,11 @@ li {
     margin: 30px;
     /* text-align: center; */
 }
+
 .bookimg {
     text-align: center;
 }
+
 /* 按鈕樣式 */
 button {
     display: inline-block;
@@ -122,32 +128,36 @@ button {
     text-decoration: none;
     text-transform: uppercase
 }
+
 /* 按鈕觸碰及點擊後樣式 */
 button:hover,
 button:focus {
     background: #454545;
     color: #cfcece;
 }
+
 ul {
-  display: block;
-  margin-bottom: 20px;
+    display: block;
+    margin-bottom: 20px;
 }
+
 /* ul排列 */
-.event_list{
+.event_list {
     justify-content: center;
 }
+
 /* li排列與間隔 */
 .event_item {
-  display: inline-block;
-  list-style-type: none;
-  padding: 25px;
-  /* border:1px solid #ccc ; */
-  position: relative;
-  overflow: hidden;
-  flex-wrap: wrap;
-  /* width: 273;
+    display: inline-block;
+    list-style-type: none;
+    padding: 25px;
+    /* border:1px solid #ccc ; */
+    position: relative;
+    overflow: hidden;
+    flex-wrap: wrap;
+    /* width: 273;
   height: 148px; */
-  /* flex-basis: 60%; */
-  /* flex-wrap: wrap; */
+    /* flex-basis: 60%; */
+    /* flex-wrap: wrap; */
 }
 </style>
