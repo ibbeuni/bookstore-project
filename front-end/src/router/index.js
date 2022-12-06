@@ -41,6 +41,13 @@ const routes = [
                 path: 'homepage',
                 name: 'HomePage',
                 component: HomePage,
+                children:[
+                    {
+                        path: 'test',
+                        name: 'TestPage',
+                        component: TestPage
+                    },
+                ]
             },
             {
                 path: 'login',

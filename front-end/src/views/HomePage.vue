@@ -1,7 +1,7 @@
 <template>
     <!-- BODY_WRAPPER -->
     <div class="wrap">
-     
+        <router-view></router-view>
         <!-- 主要內容區 -->
         <main class="container-wrapper">
             <!-- component: welcome-banner -->
