@@ -1,5 +1,6 @@
 <template>
     <div>
+        <router-view></router-view>
         <div id="videoPage">
 
             <!-- <p>分類>分類>分類</p> -->
@@ -8,7 +9,7 @@
             <div id="videoPlace" class="flex" style="background-color:white;">
 
                 <div class="videoDiv flex" v-for="(item, index) in pageVideo" :key="index">
-                    <a class="block flex" href="http://localhost:8081/#/home/videodetail">
+                    <a class="block flex" href="http://localhost:8081/#/home/videodetail/23">
                         <div>
                             <div class="videoImgOutDiv">
                                 <!-- <img class="videoImg" v-bind:src="allvideo[0].video_title_img" alt=""> -->
@@ -60,6 +61,7 @@ import axios from "axios"
 export default {
     data() {
         return {
+            aa:1,
             allVideo: '',
             pageVideo: '',
             // imgSrc:require('../../static/img/video/v10201.jpg'),

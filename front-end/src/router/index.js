@@ -21,6 +21,7 @@ import OrderDetail from '../views/OrderDetail.vue';
 import TrackList from '../views/TrackList.vue';
 import ZhengTingTest from '../views/ZhengTingTest.vue';
 import ZtTest from '../views/ZtTest.vue';
+// import Videototal from '../views/VideoTotal.vue';
 
 
 
@@ -102,15 +103,16 @@ const routes = [
                 name: 'ProductPage',
                 component: ProductPage
             },
-            {
-                path: 'videodetail?',
-                name: 'VideoDetail',
-                component: VideoDetail
-            },
+
             {
                 path: 'videopage',
                 name: 'VideoPage',
                 component: VideoPage,
+            },
+            {
+                path: 'videodetail/:id',
+                name: 'VideoDetail',
+                component: VideoDetail
             },
             {
                 path: 'productbigimgs',
