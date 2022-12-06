@@ -36,7 +36,7 @@ const routes = [
         redirect: '/home/homepage',
         name: 'IndexView',
         component: IndexView,
-        children:[
+        children: [
             {
                 path: 'homepage',
                 name: 'HomePage',
@@ -93,9 +93,9 @@ const routes = [
                 component: EventDetail
             },
             {
-                path:'eventpage',
-                name:'EventPage',
-                component:EventPage
+                path: 'eventpage',
+                name: 'EventPage',
+                component: EventPage
             },
             {
                 path: 'product',
@@ -103,14 +103,14 @@ const routes = [
                 component: ProductPage
             },
             {
-                path: 'videodetail',
+                path: 'videodetail?',
                 name: 'VideoDetail',
                 component: VideoDetail
             },
             {
                 path: 'videopage',
                 name: 'VideoPage',
-                component: VideoPage
+                component: VideoPage,
             },
             {
                 path: 'productbigimgs',
@@ -140,7 +140,7 @@ const routes = [
             },
         ],
     },
-    
+
 ]
 
 const router = new VueRouter({

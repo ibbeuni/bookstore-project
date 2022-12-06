@@ -8,7 +8,7 @@
             <div id="videoPlace" class="flex" style="background-color:white;">
 
                 <div class="videoDiv flex" v-for="(item, index) in pageVideo" :key="index">
-                    <a class="block flex" href="">
+                    <a class="block flex" href="http://localhost:8081/#/home/videodetail">
                         <div>
                             <div class="videoImgOutDiv">
                                 <!-- <img class="videoImg" v-bind:src="allvideo[0].video_title_img" alt=""> -->
