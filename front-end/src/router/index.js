@@ -26,10 +26,10 @@ import back from '../Backstage/books_list.vue';
 Vue.use(VueRouter);
 
 const routes = [
-    // {
-    //     path: '*',
-    //     redirect: '/home/homepage',
-    // },
+    {
+        path: '*',
+        redirect: '/home/homepage',
+    },
     {
         path: '/back',
         component: back,
