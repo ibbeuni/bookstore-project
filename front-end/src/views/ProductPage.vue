@@ -15,14 +15,14 @@
                     <img id="productImg" src="../assets/img/product/9796074_R.webp" alt="">
                     <div id="productImgPage">
                         <div>
-                            <button>&lt;</button>
-                            <span>01</span>
+                            <button class="pagebtn btn btn-light">&lt;</button>
+                            <span> 01 </span>
                             <span> - </span>
-                            <span>04</span>
-                            <button>&gt;</button>
+                            <span> 04 </span>
+                            <button class="pagebtn btn btn-light">&gt;</button>
                         </div>
                         <div>
-                            <button>預覽</button>
+                            <button class="morebtn btn btn-light">預覽</button>
                         </div>
                     </div>
                 </div>
@@ -142,10 +142,10 @@
                                 <th>商品規格</th>
                                 <td>
                                     <ul>
-                                        <li>ISBN</li>
-                                        <li>出版地</li>
-                                        <li>語言</li>
-                                        <li>詳細規格</li>
+                                        <li>ISBN：</li>
+                                        <li>出版地：</li>
+                                        <li>語言：</li>
+                                        <li>詳細規格：</li>
                                         <li></li>
                                     </ul>
                                 </td>
@@ -229,7 +229,7 @@
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         </div>
-        <br><br><br><br><br><br><br><br><br><br>
+        <br><br><br>
         <!-- 加入購物車&直接購買 -->
         <div id="goToPayAndAddToShoppingCart">
             <div id="goToPayAndAddToShoppingCartInnerDiv">
@@ -509,6 +509,20 @@ table {
     margin-top: 20px;
 }
 
+#productImgPage .pagebtn{
+    border: #87806D solid 1px;
+    height: 40px;
+    border-radius: 50%;
+
+    
+}
+
+.morebtn{
+    border: #87806D solid 1px;
+    line-height: 15px;
+}
+
+
 
 
 #lastPrice {
@@ -690,6 +704,17 @@ table {
 #tableStyle th {
     border: black solid 1px;
 }
+
+#tableStyle th
+{
+    width: 100px;
+}
+
+#tableStyle td{
+    width: 300px;
+
+}
+
 
 /* </書本詳細資訊區TAB> */
 

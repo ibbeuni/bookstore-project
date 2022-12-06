@@ -21,8 +21,7 @@ import OrderDetail from '../views/OrderDetail.vue';
 import TrackList from '../views/TrackList.vue';
 import ZhengTingTest from '../views/ZhengTingTest.vue';
 import ZtTest from '../views/ZtTest.vue';
-
-
+import back from '../Backstage/books_list.vue';
 
 Vue.use(VueRouter);
 
@@ -32,11 +31,15 @@ const routes = [
         redirect: '/home/homepage',
     },
     {
+        path: '/back',
+        component: back,
+    },
+    {
         path: '/home',
         redirect: '/home/homepage',
         name: 'IndexView',
         component: IndexView,
-        children:[
+        children: [
             {
                 path: 'homepage',
                 name: 'HomePage',
@@ -100,24 +103,25 @@ const routes = [
                 component: EventDetail
             },
             {
-                path:'eventpage',
-                name:'EventPage',
-                component:EventPage
+                path: 'eventpage',
+                name: 'EventPage',
+                component: EventPage
             },
             {
                 path: 'product',
                 name: 'ProductPage',
                 component: ProductPage
             },
-            {
-                path: 'videodetail',
-                name: 'VideoDetail',
-                component: VideoDetail
-            },
+
             {
                 path: 'videopage',
                 name: 'VideoPage',
-                component: VideoPage
+                component: VideoPage,
+            },
+            {
+                path: 'videodetail/:id',
+                name: 'VideoDetail',
+                component: VideoDetail
             },
             {
                 path: 'productbigimgs',
@@ -147,7 +151,6 @@ const routes = [
             },
         ],
     },
-    
 ]
 
 const router = new VueRouter({

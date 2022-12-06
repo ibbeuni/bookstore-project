@@ -5,8 +5,7 @@
         
         <div class="title_wrap">
             <h1 class="title_heading">註冊電子郵件</h1>
-        </div>
-        <hr>
+        </div>       
         <div class=content_inner>
         <div class="info_inner">
             <h2>請輸入您的會員資訊</h2>
@@ -115,13 +114,17 @@ export default {
 }
 
 .contents {
-    width: 70%;
+    width: 1200px;
+    
+    /* justify-content: center; */
+    margin-top:20px;
 
 }
 
 .title_wrap {
     display: flex;
     justify-content: center;
+    align-content: center;
 }
 
 h1 {
@@ -148,6 +151,7 @@ h2 {
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
+    
 
 }
 
@@ -190,6 +194,8 @@ h2 {
     /* font-size: 10px; */
     width: 300px;
     height: 20px;
+    margin-top:10px;
+    padding:15px
 }
 
 .register_btn {
