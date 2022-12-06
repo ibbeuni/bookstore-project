@@ -2,18 +2,19 @@
     <div>
 
         <p>分類>分類>分類</p>
+        <p>{{this.$route.params.id}}</p>
 
         <div id="videoMain">
             <div id="videoMainLeft">
                 <div id="videoMainLeftDiv">
                     <div>
-                        <p class="nh1 nb">影片標題</p>
+                        <p class="nh1 nb">{{item[0].video_name}}</p>
                         <br>
-                        <p>上傳日期：2022 / 02 / 11</p>
+                        <p>上傳日期：{{item[0].video_upload_date}}</p>
                         <br>
                     </div>
                     <div>
-                        <iframe src="https://www.youtube.com/embed/LOxxhecSHQM" title="YouTube video player"
+                        <iframe :src="item[0].vedio_url" title="YouTube video player"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
@@ -121,6 +122,8 @@ export default {
             allvideo: '',
             // imgSrc:require('../../static/img/video/v10201.jpg'),
             otherVideo: '',
+            item:'',
+            id:this.$route.params.id,
 
 
         };
@@ -133,7 +136,15 @@ export default {
             console.log(res.data);
 
             // console.log(this.imgSrc);
+        }),
+        axios.get(`http://localhost:3000/videodetail${this.id}`).then(res => {
+            this.item = res.data;
+            console.log(this.item);
+            console.log(res.data);
+
+            // console.log(this.imgSrc);
         })
+        
     },
 
     methods: {
