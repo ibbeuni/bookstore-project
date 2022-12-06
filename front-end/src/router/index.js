@@ -21,15 +21,18 @@ import OrderDetail from '../views/OrderDetail.vue';
 import TrackList from '../views/TrackList.vue';
 import ZhengTingTest from '../views/ZhengTingTest.vue';
 import ZtTest from '../views/ZtTest.vue';
-
-
+import back from '../Backstage/books_list.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
+    // {
+    //     path: '*',
+    //     redirect: '/home/homepage',
+    // },
     {
-        path: '*',
-        redirect: '/home/homepage',
+        path: '/back',
+        component: back,
     },
     {
         path: '/home',
@@ -140,7 +143,6 @@ const routes = [
             },
         ],
     },
-    
 ]
 
 const router = new VueRouter({
