@@ -34,9 +34,9 @@
                     <div>
                         <p class="nh2 nb">影片介紹</p>
                         <br>
-                        <pre>
-
-                        </pre>
+                        <span>
+                            {{item[0].video_intro}}
+                        </span>
                     </div>
                     <br><br><br><br><br>
                     <!-- 相關書籍產品 -->
