@@ -26,6 +26,7 @@ import MemberList from '../Backstage/MemberList.vue';
 import BookList from '../Backstage/BookList.vue';
 import DashBoard from '../Backstage/DashBoard.vue';
 import LoginBack from '../Backstage/LoginBack.vue';
+import AddMember from '../Backstage/AddMember.vue';
 Vue.use(VueRouter);
 
 const routes = [
@@ -176,6 +177,11 @@ const routes = [
                 path:'loginback',
                 name:'loginback',
                 component: LoginBack,
+            },
+            {
+                path:'addmember',
+                name:'addmember',
+                component: AddMember,
             },
         ],
     },
