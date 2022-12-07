@@ -21,18 +21,17 @@ import OrderDetail from '../views/OrderDetail.vue';
 import TrackList from '../views/TrackList.vue';
 import ZhengTingTest from '../views/ZhengTingTest.vue';
 import ZtTest from '../views/ZtTest.vue';
-import back from '../Backstage/books_list.vue';
-
+import BackView from '../Backstage/BackView.vue';
+import MemberList from '../Backstage/MemberList.vue';
+import BookList from '../Backstage/BookList.vue';
+import DashBoard from '../Backstage/DashBoard.vue';
+import LoginBack from '../Backstage/LoginBack.vue';
 Vue.use(VueRouter);
 
 const routes = [
     {
         path: '*',
         redirect: '/home/homepage',
-    },
-    {
-        path: '/back',
-        component: back,
     },
     {
         path: '/home',
@@ -141,6 +140,34 @@ const routes = [
                 path: 'ZtTest',
                 name: 'ZtTest',
                 component: ZtTest
+            },
+        ],
+    },
+    {
+        path: '/back',
+        redirect: '/back/MemberList',
+        name: 'backview',
+        component: BackView,
+        children:[
+            {
+                path:'memberlist',
+                name:'memberlist',
+                component: MemberList,
+            },
+            {
+                path:'booklist',
+                name:'booklist',
+                component: BookList,
+            },
+            {
+                path:'dashboard',
+                name:'dashboard',
+                component: DashBoard,
+            },
+            {
+                path:'loginback',
+                name:'loginback',
+                component: LoginBack,
             },
         ],
     },
