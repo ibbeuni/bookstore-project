@@ -108,7 +108,8 @@ const routes = [
                 component: EventPage
             },
             {
-                path: 'product',
+                //1 增加/:id
+                path: 'product/:id',
                 name: 'ProductPage',
                 component: ProductPage
             },
