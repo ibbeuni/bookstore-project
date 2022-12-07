@@ -27,6 +27,7 @@ import BookList from '../Backstage/BookList.vue';
 import DashBoard from '../Backstage/DashBoard.vue';
 import LoginBack from '../Backstage/LoginBack.vue';
 import AddMember from '../Backstage/AddMember.vue';
+import BookAlter from '../Backstage/BookAlter.vue';
 Vue.use(VueRouter);
 
 const routes = [
@@ -147,10 +148,15 @@ const routes = [
     },
     {
         path: '/back',
-        redirect: '/back/MemberList',
+        redirect: '/back/loginback',
         name: 'backview',
         component: BackView,
         children:[
+            {
+                path: "loginback",
+                name: "loginback",
+                component: LoginBack,
+            }, 
             {
                 path:'memberlist',
                 name:'memberlist',
@@ -175,6 +181,11 @@ const routes = [
                 path:'addmember',
                 name:'addmember',
                 component: AddMember,
+            },
+            {
+                path:'bookalter',
+                name:'bookalter',
+                component: BookAlter,
             },
         ],
     },

@@ -41,6 +41,7 @@
 </template>
 
 <script setup lang="ts" name="basecharts">
+// import axios from "axios"
 import Schart from 'vue-schart';
 
 const options1 = {

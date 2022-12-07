@@ -12,6 +12,10 @@
                     </li>
                     <li>-</li>
                     <li class="nav_item">
+                        <router-link to="/back/BookAlter" style="color: orange;">書籍下架修改</router-link>
+                    </li>
+                    <li>-</li>
+                    <li class="nav_item">
                         <router-link to="/back/dashboard" style="color: orange;">銷售圖表與庫存</router-link>
                     </li>
                 </ul>

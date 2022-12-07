@@ -32,6 +32,9 @@
         <button class="buttomStyle" style="width:150px;height:50px;">新增書籍</button>
     </form>
 </template>
+<script>
+
+</script>
 <style>
 fieldset {
     /* background-color: #f1f1f1; */

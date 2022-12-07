@@ -67,6 +67,7 @@ export default {
   mounted() {
        axios.get('http://127.0.0.1:3000/acc/').then(res => {
            console.log(res)
+        //    console.log(this.item.member_name)
            this.memberList = res.data
         })
       
