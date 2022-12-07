@@ -16,6 +16,11 @@ let random_painting = require('./API/random_painting')
 let random_art = require('./API/random_art')
 let random_photography = require('./API/random_photography')
 let shoopingcartable = require('./API/soppingcart_table')
+const accRoute = require('./routes/Account')
+
+
+
+router.use('/acc',accRoute)
 
 
 router.get('/member', member.get)
