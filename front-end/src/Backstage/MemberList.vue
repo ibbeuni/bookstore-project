@@ -27,7 +27,7 @@
           <td>{{item.gender}}</td>
           <td>{{item.birth}}</td>
           <td>
-            <button>編輯</button>
+            <button @click="updateMember(item)">編輯</button>
             <button>刪除</button>
           </td>
         </tr>
@@ -73,6 +73,17 @@ export default {
   },
   methods: {
     addMember() {
+      this.$router.push({
+        name: "addmember",
+      });
+    },
+     updateMember(item) {
+      this.$router.push({
+        name: "addmember",
+        params: item,
+      });
+    },
+       deleteMember() {
       this.$router.push({
         name: "addmember",
         params: {
