@@ -2,13 +2,13 @@
     <div>
         <!-- 上方分類區 -->
         <div id="topClassDiv"><a href="">中文圖書</a> > <a href="">藝術設計</a> > <a href="">分類</a></div>
-
+        <p>{{ this.$route.params.id }}</p>
+        <p>{{ }}</p>
         <!-- 商品圖片、資訊區 -->
         <div id="productImgAndInformation">
             <div id="productInformationLeft">
                 <div id="productName">
-                    <p class="nh1 nb">書名</p>
-                    <p class="">副標題</p>
+                    <p class="nh1 nb">{{item[0].product_name}}</p>
 
                 </div>
                 <div id="productImgDiv">
@@ -246,15 +246,20 @@
     </div>
 </template>
 <script>
+import axios from "axios"
 
 export default {
     data() {
         return {
+            id: this.$route.params.id,
+            allbooks: '',
+            item: '',
+
 
         }
     },
-    methods:{
-       
+    methods: {
+
         openCity(evt, Information) {
             // Declare all variables
             var i, tabcontent, tablinks;
@@ -274,13 +279,21 @@ export default {
             // Show the current tab, and add an "active" class to the button that opened the tab
             document.getElementById(Information).style.display = "block";
             evt.currentTarget.className += " active";
-            
-
         },
-     
-       
-        
-    }
+    },
+    mounted() {
+
+        axios.get(`http://127.0.0.1:3000/booktable`).then(res => {
+              console.log(res.data)
+              this.allbooks = res.data;
+          }),
+          
+          axios.get(`http://127.0.0.1:3000/productdetail${this.id}`).then(res => {
+              console.log(res.data)
+              this.item = res.data;
+          })
+
+      }
 }
 
 
@@ -509,15 +522,15 @@ table {
     margin-top: 20px;
 }
 
-#productImgPage .pagebtn{
+#productImgPage .pagebtn {
     border: #87806D solid 1px;
     height: 40px;
     border-radius: 50%;
 
-    
+
 }
 
-.morebtn{
+.morebtn {
     border: #87806D solid 1px;
     line-height: 15px;
 }
@@ -538,11 +551,13 @@ table {
 #productInformationLeft {
     margin: 20px;
     margin-right: 100px;
+    width: 550px;
 }
 
 #productName {
     margin: 20px;
     line-height: 30px;
+    text-align: start;
 }
 
 /* 配送指南 */
@@ -705,12 +720,11 @@ table {
     border: black solid 1px;
 }
 
-#tableStyle th
-{
+#tableStyle th {
     width: 100px;
 }
 
-#tableStyle td{
+#tableStyle td {
     width: 300px;
 
 }

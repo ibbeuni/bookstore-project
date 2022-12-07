@@ -18,7 +18,7 @@
                                     alt="">
                             </div>
                         </div>
-                        <div>
+                        <div class="bookInfo">
                             <p class="nb nh3">{{ pageVideo[index].video_name }}</p>
                             <p>{{ pageVideo[index].video_class }}</p>
                             <p>上傳日期：{{ pageVideo[index].video_upload_date }}</p>
@@ -393,6 +393,10 @@ table {
 
 
 
+}
+
+.bookInfo {
+margin-left: 10px;
 }
 
 

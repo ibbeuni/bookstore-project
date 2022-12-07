@@ -86,13 +86,14 @@
                     </div>
                     <div v-for="(item, index) in otherVideo" :key="index">
                         <div class=" m20">
-                            <a class="block" :href="('http://localhost:8081/#/home/videodetail/' + otherVideo[index].product_id)">
+                            <a class="block"
+                                :href="('http://localhost:8081/#/home/videodetail/' + otherVideo[index].product_id)">
                                 <div class="flex">
                                     <div class=""><img class="otherVideo"
                                             v-bind:src="'http://127.0.0.1:3000/img/video/' + otherVideo[index].video_title_img + '.jpg'"
                                             alt="">
                                     </div>
-                                    <div class="">
+                                    <div class="bookinfomation">
                                         <p class="nh3 nb">{{ otherVideo[index].video_name }}</p>
                                         <br>
                                         <p class="nh4 nb">{{ otherVideo[index].video_class }}</p>
@@ -131,15 +132,16 @@ export default {
         };
     },
     mounted() {
+
         axios.get('http://127.0.0.1:3000/videotable').then(res => {
             this.allvideo = res.data;
             var a = res.data;
-            
+
             function shuffleArray(inputArray) {
                 inputArray.sort(() => Math.random() - 0.5);
             }
-           shuffleArray(a);
-            this.otherVideo = a.slice(0,5);
+            shuffleArray(a);
+            this.otherVideo = a.slice(0, 5);
             console.log(a);
             console.log(this.otherVideo);
             console.log(res.data);
@@ -159,11 +161,13 @@ export default {
     },
 
     methods: {
+      
 
     },
-    watch:{
-        id:{
-            
+   
+    watch: {
+        id: {
+
         }
     }
 }
@@ -438,6 +442,10 @@ iframe {
     display: block;
 }
 
+.bookinfomation{
+    margin-left: 10px;
+}
+
 .relatedProductDiv {
     background-color: #fff;
     margin: 20px;
@@ -467,6 +475,8 @@ iframe {
     overflow-x: auto;
 
 }
+
+
 
 /* /相關產品 */
 
