@@ -2,19 +2,19 @@
     <div>
 
         <p>分類>分類>分類</p>
+        <p>{{ this.$route.params.id }}</p>
 
         <div id="videoMain">
             <div id="videoMainLeft">
                 <div id="videoMainLeftDiv">
                     <div>
-                        <p class="nh1 nb">影片標題</p>
+                        <p class="nh1 nb">{{ item[0].video_name }}</p>
                         <br>
-                        <p>上傳日期：2022 / 02 / 11</p>
+                        <p>上傳日期：{{ item[0].video_upload_date }}</p>
                         <br>
                     </div>
                     <div>
-                        <iframe src="https://www.youtube.com/embed/LOxxhecSHQM" title="YouTube video player"
-                            frameborder="0"
+                        <iframe :src="item[0].vedio_url" title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
 
@@ -33,9 +33,9 @@
                     <div>
                         <p class="nh2 nb">影片介紹</p>
                         <br>
-                        <pre>
-
-                        </pre>
+                        <span>
+                            {{ item[0].video_intro }}
+                        </span>
                     </div>
                     <br><br><br><br><br>
                     <!-- 相關書籍產品 -->
@@ -46,14 +46,16 @@
                             <div class="relatedProductDiv">
                                 <a class="relatedProductTag_a" href="">
                                     <div>
-                                        <div>
-                                            <img class="relatedProductImg" src="../assets/img/product/9796074_R.webp"
+                                        <div class="relatedProductImgDiv">
+                                            <img class="relatedProductImg"
+                                                :src="'http://127.0.0.1:3000/img/books/' + bookinfo[0].img_cover + '.png'"
                                                 alt="">
                                         </div>
                                         <div>
-                                            <p>書名</p>
-                                            <p>作者</p>
-                                            <p>NT 500</p>
+                                            <p class="nb">{{ bookinfo[0].product_name }}</p>
+                                            <br>
+                                            <p class="auther">作者：{{ bookinfo[0].auther }}</p>
+                                            <!-- <p>NT 500</p> -->
                                         </div>
                                     </div>
                                 </a>
@@ -84,18 +86,18 @@
                     </div>
                     <div v-for="(item, index) in otherVideo" :key="index">
                         <div class=" m20">
-                            <a class="block" href="">
+                            <a class="block" :href="('http://localhost:8081/#/home/videodetail/' + otherVideo[index].product_id)">
                                 <div class="flex">
-                                <div class=""><img class="otherVideo"
-                                        v-bind:src="'http://127.0.0.1:3000/img/video/' + allvideo[index].video_title_img + '.jpg'"
-                                        alt="">
+                                    <div class=""><img class="otherVideo"
+                                            v-bind:src="'http://127.0.0.1:3000/img/video/' + otherVideo[index].video_title_img + '.jpg'"
+                                            alt="">
+                                    </div>
+                                    <div class="">
+                                        <p class="nh3 nb">{{ otherVideo[index].video_name }}</p>
+                                        <br>
+                                        <p class="nh4 nb">{{ otherVideo[index].video_class }}</p>
+                                    </div>
                                 </div>
-                                <div class="m10">
-                                    <p class="nh3 nb">{{ otherVideo[index].video_name }}</p>
-                                    <br>
-                                    <p class="nh4 nb">{{ otherVideo[index].video_class }}</p>
-                                </div>
-                            </div>
                             </a>
                         </div>
                     </div>
@@ -121,6 +123,9 @@ export default {
             allvideo: '',
             // imgSrc:require('../../static/img/video/v10201.jpg'),
             otherVideo: '',
+            item: '',
+            bookinfo: '',
+            id: this.$route.params.id,
 
 
         };
@@ -128,16 +133,38 @@ export default {
     mounted() {
         axios.get('http://127.0.0.1:3000/videotable').then(res => {
             this.allvideo = res.data;
-            this.otherVideo = res.data.slice(0, 5);
+            var a = res.data;
+            
+            function shuffleArray(inputArray) {
+                inputArray.sort(() => Math.random() - 0.5);
+            }
+           shuffleArray(a);
+            this.otherVideo = a.slice(0,5);
+            console.log(a);
             console.log(this.otherVideo);
             console.log(res.data);
 
-            // console.log(this.imgSrc);
-        })
+        }),
+            axios.get(`http://localhost:3000/videodetail${this.id}`).then(res => {
+                this.item = res.data;
+                // console.log(this.item);
+                // console.log(res.data);
+            }),
+            axios.get(`http://localhost:3000/productdetail${this.id}`).then(res => {
+                this.bookinfo = res.data;
+                // console.log(res.data);
+
+            })
+
     },
 
     methods: {
 
+    },
+    watch:{
+        id:{
+            
+        }
     }
 }
 
@@ -414,12 +441,22 @@ iframe {
 .relatedProductDiv {
     background-color: #fff;
     margin: 20px;
+    width: 160px;
 
 }
 
+.relatedProductImgDiv {
+    text-align: center;
+
+}
+
+.auther {
+    text-align: end;
+}
+
 .relatedProductImg {
-    width: 116px;
-    height: 160px;
+    width: 126px;
+    height: 180px;
     object-fit: cover;
 }
 

@@ -13,3 +13,17 @@ exports.get = (req, res) => {
         res.send(data)
     })
 }
+
+exports.nameUpdate = (req, res) => {
+
+    // res.send('okok')
+    // console.log('ok')
+    var sql = 'update membership_table set member_name = ? where id = ?'
+    
+    // console.log(req.body.params.member_id)
+    // console.log(req.body.params.member_name)
+    db.query(sql, )
+
+
+
+}   

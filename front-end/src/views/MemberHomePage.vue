@@ -42,11 +42,11 @@
 
                           <div class="itemlist flex">
                               <div><label for="changePassword">新密碼：</label></div>
-                              <div><input v-bind="user.password" type="text" id="changePassword"> </div>
+                              <div><input v-model="user.password" type="text" id="changePassword"> </div>
                           </div><div class="itemlist flex">
 
                               <div><label for="confirmPassword">密碼確認：</label></div>
-                              <div><input v-bind="user.passwordCfrm" type="text" id="changePassword"> </div>
+                              <div><input v-model="user.passwordCfrm" type="text" id="changePassword"> </div>
                           </div>
                           <p class="nh6 warning">*至少八個字符, 包含大小寫英文字母、數字或特殊符號，不允許使用連續或重複的三個字節</p>
                           
@@ -134,7 +134,8 @@ export default{
      }).catch(err=>{
       console.log('fail' + err)
      })
-     }
+     },
+    
    
     
 

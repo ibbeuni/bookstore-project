@@ -13,6 +13,10 @@
 </template>
 
 <style>
+.wrap {
+    z-index: 99;
+}
+
 /* 全域變數 */
 :root {
     --background-color: #fff;

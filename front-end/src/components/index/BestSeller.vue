@@ -78,24 +78,6 @@ export default {
         }
     },
     mounted() {
-        // axios.get('http://127.0.0.1:3000/booktable').then(res => {
-        //     this.all = res.data;
-        //     this.appreciation = res.data.slice(0, 25);
-        //     this.painting = res.data.slice(25, 50);
-        //     this.art = res.data.slice(50, 75);
-        //     this.photography = res.data.slice(75, 100);
-            
-        //     // 全部隨機
-        //     let randomArray = this.all;
-        //     // 重新隨機排序陣列
-        //     function shuffleArray(inputArray) {
-        //         inputArray.sort(() => Math.random() - 0.5);
-        //     }
-        //     // 取隨機排序的前10筆
-        //     shuffleArray(randomArray);
-        //     this.products = randomArray.slice(0,10);
-
-        // })
         
         axios.get('http://127.0.0.1:3000/random_all').then(res => {
             this.all = res.data;
