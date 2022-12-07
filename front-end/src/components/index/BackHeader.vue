@@ -12,7 +12,7 @@
                     </li>
                     <li>-</li>
                     <li class="nav_item">
-                        <router-link to="/back/dashboard" style="color: orange;">銷售圖表</router-link>
+                        <router-link to="/back/dashboard" style="color: orange;">銷售圖表與庫存</router-link>
                     </li>
                 </ul>
             </nav>

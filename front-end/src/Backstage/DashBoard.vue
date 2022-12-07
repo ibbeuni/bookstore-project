@@ -1,21 +1,42 @@
 <template>
     <div class="container">
-        <!-- <div class="plugins-tips">
-			vue-schart：vue.js封装sChart.js的图表组件。 访问地址：
-			<a href="https://github.com/lin-xin/vue-schart" target="_blank">vue-schart</a>
-		</div> -->
-        <div class="schart-box">
-            <div class="content-title">柱狀圖</div>
-            <schart class="schart" canvasId="bar" :options="options1"></schart>
+        <div class="iconline">
+            <div>
+                <font-awesome-icon class="iconSize" icon="fa-solid fa-book" />
+                <p style="color:pink;">收藏書籍數量</p>
+                <p style="color:pink;">5000</p>
+            </div>
+            <div>
+                <font-awesome-icon class="iconSize" icon="fa-solid fa-book" />
+                <p style="color:bisque;">繪畫書籍數量</p>
+                <p style="color:bisque;">5000</p>
+            </div>
+            <div>
+                <font-awesome-icon class="iconSize" icon="fa-solid fa-book" />
+                <p style="color:Indianred;">藝術書籍數量</p>
+                <p style="color:Indianred;">5000</p>
+            </div>
+            <div>
+                <font-awesome-icon class="iconSize" icon="fa-solid fa-book" />
+                <p style="color:aqua;">攝影書籍數量</p>
+                <p style="color:aqua;">5000</p>
+            </div>
+            <div>
+                <font-awesome-icon class="iconSize" icon="fa-solid fa-book" />
+                <p style="color:blue;">總書籍數量</p>
+                <p style="color:blue;">5000</p>
+            </div>
         </div>
-        <div class="schart-box">
-            <div class="content-title">折線圖</div>
-            <schart class="schart" canvasId="line" :options="options2"></schart>
+        <div>
+            <div class="schart-box">
+                <div class="content-title">柱狀圖</div>
+                <schart class="schart" canvasId="bar" :options="options1"></schart>
+            </div>
+            <div class="schart-box">
+                <div class="content-title">折線圖</div>
+                <schart class="schart" canvasId="line" :options="options2"></schart>
+            </div>
         </div>
-        <!-- <div class="schart-box">
-			<div class="content-title">饼状图</div>
-			<schart class="schart" canvasId="pie" :options="options3"></schart>
-		</div> -->
     </div>
 </template>
 
@@ -95,5 +116,18 @@ const options2 = {
     margin: 10px 0;
     font-size: 22px;
     color: #1f2f3d;
+}
+
+.iconSize {
+    font-size: 50px;
+}
+
+.iconline {
+    display: flex;
+    text-align: center
+}
+
+.iconline div {
+    margin: 0 auto;
 }
 </style>
