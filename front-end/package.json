@@ -21,7 +21,8 @@
     "vue": "^2.6.14",
     "vue-awesome-swiper": "^2.6.7",
     "vue-axios": "^3.5.2",
-    "vue-router": "3"
+    "vue-router": "3",
+    "vue-schart": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

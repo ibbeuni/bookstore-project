@@ -54,7 +54,7 @@ li {
     display: inline;
     cursor: default;
 }
-nav{
-    /* background-color: aquamarine; */
-}
+/* nav{
+    background-color: aquamarine;
+} */
 </style>
