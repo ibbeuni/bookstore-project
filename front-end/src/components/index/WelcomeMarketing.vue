@@ -145,7 +145,7 @@ button {
     align-items: center;
     font-size: 33px;
     margin-bottom: 10px;
-    color: var(--primary-color);
+    color: var(--neutral-color);
     background-color: rgba(245, 245, 245, 0.98);
 }
 </style>
