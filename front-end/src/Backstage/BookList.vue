@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="form-box">
+        <!-- <div class="form-box">
             <el-form ref="formRef" :rules="rules" :model="form" label-width="80px">
 				<el-form-item label="書籍名稱">
 					<el-input v-model="form.product_name"></el-input>
@@ -83,38 +83,38 @@
 				</el-form-item>
             </el-form-item>
 			</el-form>
-		</div>
+		</div> -->
 	</div>
 </template>
 <script>
 // import type { FormInstance, FormRules } from 'element-plus';
 
-const rules: FormRules = {
-	name: [{ required: true, message: '請輸入表單名稱', trigger: 'blur' }]
-};
-const ruleFormRef = ref('');
-const form = reactive({
-	sort: '',//類別
-	product_name: '',//書名
-	auther: '',//作者
-    original_author:'',//原文作者
-    translator:'',//譯者
-    painter:'',//繪者
-    publishing_house:'',//出版社
-	publication_date: '',//出版日期
-	language: '',//語言單選匡
-    amount:'',//數量
-    isbn:'',
-    binding_method:'',//裝訂方式
-    format:'',//詳細規格
-    publish_area:'',//出版地
-	introduction: '',//內容簡介
-    auther_Introduction:'',//作者簡介
-    list_price:'',//定價
-    cost_price:'',//進價
-    discount_price:'',//折扣價
-    key_word:[],//關鍵字
-    class_two:'',//類別二
-    class_three:''//類別三
-});
+// const rules: FormRules = {
+// 	name: [{ required: true, message: '請輸入表單名稱', trigger: 'blur' }]
+// };
+// const ruleFormRef = ref('');
+// const form = reactive({
+// 	sort: '',//類別
+// 	product_name: '',//書名
+// 	auther: '',//作者
+//     original_author:'',//原文作者
+//     translator:'',//譯者
+//     painter:'',//繪者
+//     publishing_house:'',//出版社
+// 	publication_date: '',//出版日期
+// 	language: '',//語言單選匡
+//     amount:'',//數量
+//     isbn:'',
+//     binding_method:'',//裝訂方式
+//     format:'',//詳細規格
+//     publish_area:'',//出版地
+// 	introduction: '',//內容簡介
+//     auther_Introduction:'',//作者簡介
+//     list_price:'',//定價
+//     cost_price:'',//進價
+//     discount_price:'',//折扣價
+//     key_word:[],//關鍵字
+//     class_two:'',//類別二
+//     class_three:''//類別三
+// });
 </script>
