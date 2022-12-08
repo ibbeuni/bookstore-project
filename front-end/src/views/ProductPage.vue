@@ -2,8 +2,7 @@
     <div>
         <!-- 上方分類區 -->
         <div id="topClassDiv"><a href="">中文圖書</a> > <a href="">藝術設計</a> > <a href="">分類</a></div>
-        <p>{{ this.$route.params.id }}</p>
-        <p>{{ }}</p>
+
         <!-- 商品圖片、資訊區 -->
         <div id="productImgAndInformation">
             <div id="productInformationLeft">
@@ -12,17 +11,17 @@
 
                 </div>
                 <div id="productImgDiv">
-                    <img id="productImg" src="../assets/img/product/9796074_R.webp" alt="">
+                    <img id="productImg" :src="'http://127.0.0.1:3000/img/books/'+item[0].img_cover+'.png'" alt="">
                     <div id="productImgPage">
                         <div>
-                            <button class="pagebtn btn btn-light">&lt;</button>
-                            <span> 01 </span>
+                            <button>&lt;</button>
+                            <span>01</span>
                             <span> - </span>
-                            <span> 04 </span>
-                            <button class="pagebtn btn btn-light">&gt;</button>
+                            <span>04</span>
+                            <button>&gt;</button>
                         </div>
                         <div>
-                            <button class="morebtn btn btn-light">預覽</button>
+                            <button>預覽</button>
                         </div>
                     </div>
                 </div>
@@ -36,8 +35,8 @@
                 <div id="priceDiv">
                     <hr>
                     <br>
-                    <span>促銷價：<span id="originalPrice">500</span></span>&nbsp;&nbsp;
-                    <span class="nh2 nb">折扣後價格：<span id="lastPrice">400</span><span>元</span></span>&nbsp;&nbsp;
+                    <span>促銷價：<span id="originalPrice">{{item[0].list_price}}</span></span>&nbsp;&nbsp;
+                    <span class="nh2 nb">折扣後價格：<span id="lastPrice">{{item[0].discount_price}}</span><span>元</span></span>&nbsp;&nbsp;
                     <span id="discount">8折</span>
                     <br>
                     <br>
@@ -60,12 +59,11 @@
                 <hr>
                 <div>
                     <ul id="productInformationRight">
-                        <li>作者：XXX</li>
-                        <li>出版社：XXXXXXXXXX</li>
-                        <li>出版日期：XXXX/XX/XX</li>
+                        <li>作者：{{item[0].auther}}</li>
+                        <li>出版社：{{item[0].publishing_house}}</li>
+                        <li>出版日期：{{item[0].publication_date}}</li>
                         <li>配送方式：宅配/超商店到店</li>
                         <li>付款方式：貨到付款/轉帳</li>
-                        <li>數量:</li>
                     </ul>
 
                 </div>
@@ -105,29 +103,29 @@
                 <br><br><br><br><br>
                 <!-- <書本詳細資訊> -->
                 <!-- 標籤鏈接 -->
-                <div id="tabDiv">
-                    <div class="tab">
-                        <!-- <button class="tablinks" onclick="openCity(event, 'London')">London</button> -->
-                        <!-- 默認顯示選項卡 -->
-                        <button class="tablinks" v-on:click="openCity(event, 'bookInformation')"
-                            id="defaultOpen">內容簡介</button>
-                        <button class="tablinks" v-on:click="openCity(event, 'moreInformation')">詳細介紹</button>
-                        <button class="tablinks" v-on:click="openCity(event, 'returnOrChangeProduct')">退 / 換貨須知</button>
-                        <button class="tablinks" v-on:click="openCity(event, 'relatedClass')">相關類別</button>
-                    </div>
+                <!-- 標籤內容更新OK的話下面刪除-->
 
-                    <!-- 標籤內容 -->
-                    <div id="bookInformation" class="tabcontent">
-                        <h3>內容簡介(寫死)</h3>
-                        <pre>這裡放資料庫資料內容簡介</pre>
-                        <br><br><br>
-                        <h3>作者簡介(寫死)</h3>
-                        <pre>這裡放資料庫資料作者簡介</pre>
-                    </div>
+                <div class="menu">
+                    <label for="L1" class="L1">內容簡介<input id="L1" type="radio" name="menu" checked></label>
+                    <label for="L2" class="L2">詳細介紹<input id="L2" type="radio" name="menu"></label>
+                    <label for="L3" class="L3">退 / 換貨須知<input id="L3" type="radio" name="menu"></label>
+                    <label for="L4" class="L4">相關類別<input id="L4" type="radio" name="menu"></label>
 
+                </div>
+                <div class="box box1">
+                    <br><br>
+                    <h3 class="nh3 nb">內容簡介</h3>
+                    <br>
+                    <p>{{item[0].introduction}}</p>
+                    <br><br><br>
+                    <h3 class="nh3 nb">作者簡介</h3>
+                    <br>
+                    <p>{{item[0].auther_Introduction}}</p>
+                    <br><br><br>
 
-                    <div id="moreInformation" class="tabcontent">
-                        <h3>詳細介紹(寫死)</h3>
+                </div>
+                <div class="box box2">
+                    <h3>詳細介紹(寫死)</h3>
 
                         <table id="tableStyle">
                             <tr>
@@ -142,31 +140,21 @@
                                 <th>商品規格</th>
                                 <td>
                                     <ul>
-                                        <li>ISBN：</li>
-                                        <li>出版地：</li>
-                                        <li>語言：</li>
-                                        <li>詳細規格：</li>
+                                        <li>ISBN：{{item[0].ISBN}}</li>
+                                        <li>出版地：{{item[0].publish_area}}</li>
+                                        <li>語言：{{item[0].language}}</li>
+                                        <li>詳細規格：{{item[0].format}}</li>
                                         <li></li>
                                     </ul>
                                 </td>
                             </tr>
                         </table>
-
-                        <pre>Paris is the capital of France.</pre>
-
-                    </div>
-
-                    <div id="returnOrChangeProduct" class="tabcontent">
-                        <h3>退 / 換貨須知(寫死)</h3>
-                        <pre>這裡寫退換貨須知</pre>
-
-                    </div>
-
-                    <div id="relatedClass" class="tabcontent">
-                        <h3>相關類別</h3>
-                        <p>Tokyo is the capital of Japan.</p>
-                    </div>
                 </div>
+                <div class="box box3">box3</div>
+                <div class="box box4">box4</div>
+
+                <!-- /標籤內容更新 -->
+
 
 
                 <!-- </書本詳細資訊> -->
@@ -229,7 +217,7 @@
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         </div>
-        <br><br><br>
+        <br><br><br><br><br><br><br><br><br><br>
         <!-- 加入購物車&直接購買 -->
         <div id="goToPayAndAddToShoppingCart">
             <div id="goToPayAndAddToShoppingCartInnerDiv">
@@ -252,48 +240,28 @@ export default {
     data() {
         return {
             id: this.$route.params.id,
-            allbooks: '',
-            item: '',
+            allbooks:'',
+            item:'',
 
 
         }
     },
     methods: {
 
-        openCity(evt, Information) {
-            // Declare all variables
-            var i, tabcontent, tablinks;
-
-            // Get all elements with class="tabcontent" and hide them
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-
-            // Get all elements with class="tablinks" and remove the class "active"
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-
-            // Show the current tab, and add an "active" class to the button that opened the tab
-            document.getElementById(Information).style.display = "block";
-            evt.currentTarget.className += " active";
-        },
     },
     mounted() {
 
         axios.get(`http://127.0.0.1:3000/booktable`).then(res => {
-              console.log(res.data)
-              this.allbooks = res.data;
-          }),
-          
-          axios.get(`http://127.0.0.1:3000/productdetail${this.id}`).then(res => {
-              console.log(res.data)
-              this.item = res.data;
-          })
+            console.log(res.data)
+            this.allbooks = res.data;
+        }),
 
-      }
+            axios.get(`http://127.0.0.1:3000/productdetail${this.id}`).then(res => {
+                console.log(res.data)
+                this.item = res.data;
+            })
+
+    }
 }
 
 
@@ -522,20 +490,6 @@ table {
     margin-top: 20px;
 }
 
-#productImgPage .pagebtn {
-    border: #87806D solid 1px;
-    height: 40px;
-    border-radius: 50%;
-
-
-}
-
-.morebtn {
-    border: #87806D solid 1px;
-    line-height: 15px;
-}
-
-
 
 
 #lastPrice {
@@ -552,13 +506,17 @@ table {
     margin: 20px;
     margin-right: 100px;
     width: 550px;
+
 }
+
 
 #productName {
     margin: 20px;
     line-height: 30px;
     text-align: start;
+
 }
+
 
 /* 配送指南 */
 #deliveryGuide {
@@ -627,8 +585,8 @@ table {
 }
 
 .maybeYouLikeImg {
-    width: 116px;
-    height: 160px;
+    width: 120px;
+    height: 170px;
     object-fit: cover;
 }
 
@@ -644,75 +602,94 @@ table {
 
 /* <書本詳細資訊區TAB> */
 /* 設置標籤樣式 */
-#tabDiv {
-    background-color: #ffffff;
+.menu label {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    margin: auto 5px 0;
+    border-radius: 5px 5px 0 0;
 }
 
-.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-
-
-}
-
-
-/* 打開選項卡內容的按鈕樣式 */
-.tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    /* transition: 0.3s; */
-    border-bottom: black solid 1px;
-
-}
-
-/* 改變滑鼠在上面時按鈕的背景顏色 */
-.tab button:hover {
-    background-color: #ddd;
-}
-
-/* 選取該選項時的樣式 */
-.tab button.active {
-
-    background-color: #ccc;
-    border-top: black solid 1px;
-    border-right: black solid 1px;
-    border-left: black solid 1px;
-    border-bottom: none;
-    border-radius: 10px 10px 0px 0px;
-    /* box-sizing: content-box; */
-}
-
-
-
-/* 設置標籤內容的樣式 */
-.tabcontent {
+.menu input {
     display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
 }
 
-/* 內容淡出效果 */
-.tabcontent {
-    animation: fadeEffect 2s;
-    /* Fading effect takes 1 second */
+.menu .L1 {
+    background-color: rgb(236, 170, 170);
 }
 
-/* Go from zero to full opacity */
-@keyframes fadeEffect {
-    from {
-        opacity: 0;
-    }
+.menu .L2 {
+    background-color: rgb(157, 206, 246);
 
-    to {
-        opacity: 1;
-    }
 }
+
+.menu .L3 {
+    background-color: rgb(109, 234, 111);
+
+}
+
+.menu .L4 {
+    background-color: rgb(245, 240, 101);
+
+}
+
+.box {
+    width: 100%;
+    display: none;
+}
+
+.box1 {
+    background-color: rgb(236, 170, 170);
+
+}
+
+
+.box2 {
+    background-color: rgb(157, 206, 246);
+
+}
+
+.box3 {
+    background-color: rgb(109, 234, 111);
+
+}
+
+.box4 {
+    background-color: rgb(245, 240, 101);
+
+}
+
+input:checked {
+    background-color: #53929B;
+}
+
+body:has(#L1:checked) .box1 {
+
+    display: block;
+}
+
+
+
+body:has(#L2:checked) .box2 {
+    display: block;
+
+}
+
+body:has(#L3:checked) .box3 {
+    display: block;
+
+}
+
+body:has(#L4:checked) .box4 {
+    display: block;
+
+}
+
+/* body:has(#L1:checked) .L1{
+    background-color: #fff;
+} */
+
+/* 書本詳細資料 */
 
 #tableStyle tr,
 #tableStyle td,
@@ -728,8 +705,13 @@ table {
     width: 300px;
 
 }
+/* 書本詳細資料 */
 
 
+
+
+
+/* /設置標籤樣式 */
 /* </書本詳細資訊區TAB> */
 
 /* </書本資訊區> */
