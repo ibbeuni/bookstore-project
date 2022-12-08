@@ -126,69 +126,7 @@
                 <div class="box box4">box4</div>
 
                 <!-- /標籤內容更新 -->
-                <div id="tabDiv">
-                    <div class="tab">
-                        <!-- <button class="tablinks" onclick="openCity(event, 'London')">London</button> -->
-                        <!-- 默認顯示選項卡 -->
-                        <button class="tablinks" v-on:click="openCity(event, 'bookInformation')"
-                            id="defaultOpen">內容簡介</button>
-                        <button class="tablinks" v-on:click="openCity(event, 'moreInformation')">詳細介紹</button>
-                        <button class="tablinks" v-on:click="openCity(event, 'returnOrChangeProduct')">退 / 換貨須知</button>
-                        <button class="tablinks" v-on:click="openCity(event, 'relatedClass')">相關類別</button>
-                    </div>
-
-
-                    <!-- 標籤內容 -->
-                    <div id="bookInformation" class="tabcontent">
-                        <h3>內容簡介(寫死)</h3>
-                        <pre>這裡放資料庫資料內容簡介</pre>
-                        <br><br><br>
-                        <h3>作者簡介(寫死)</h3>
-                        <pre>這裡放資料庫資料作者簡介</pre>
-                    </div>
-
-
-                    <div id="moreInformation" class="tabcontent">
-                        <h3>詳細介紹(寫死)</h3>
-
-                        <table id="tableStyle">
-                            <tr>
-                                <th>品牌</th>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>類型</th>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>商品規格</th>
-                                <td>
-                                    <ul>
-                                        <li>ISBN</li>
-                                        <li>出版地</li>
-                                        <li>語言</li>
-                                        <li>詳細規格</li>
-                                        <li></li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </table>
-
-                        <pre>Paris is the capital of France.</pre>
-
-                    </div>
-
-                    <div id="returnOrChangeProduct" class="tabcontent">
-                        <h3>退 / 換貨須知(寫死)</h3>
-                        <pre>這裡寫退換貨須知</pre>
-
-                    </div>
-
-                    <div id="relatedClass" class="tabcontent">
-                        <h3>相關類別</h3>
-                        <p>Tokyo is the capital of Japan.</p>
-                    </div>
-                </div>
+                
 
 
                 <!-- </書本詳細資訊> -->
@@ -277,28 +215,7 @@ export default {
     },
     methods: {
 
-        openCity(evt, Information) {
-            // Declare all variables
-            var i, tabcontent, tablinks;
-
-            // Get all elements with class="tabcontent" and hide them
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-
-            // Get all elements with class="tablinks" and remove the class "active"
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-
-            // Show the current tab, and add an "active" class to the button that opened the tab
-            document.getElementById(Information).style.display = "block";
-            evt.currentTarget.className += " active";
-
-
-        },
+       
 
 
 
@@ -694,6 +611,10 @@ table {
 
 }
 
+input:checked{
+    background-color: #53929B;
+}
+
 body:has(#L1:checked) .box1 {
 
     display: block;
@@ -715,6 +636,12 @@ body:has(#L4:checked) .box4 {
     display: block;
 
 }
+
+/* body:has(#L1:checked) .L1{
+    background-color: #fff;
+} */
+
+
 
 
 

@@ -1,5 +1,5 @@
 <template>
-    <header class="header-wrapper" :class="{fixed:fixed}" id="header">
+    <header class="header-wrapper" :class="{ fixed: fixed }" id="header">
         <!-- HEADER_INNER 限制內容物最寬1200px，包住search和nav -->
         <div class="contents-inner">
             <div class="search-wrap">
@@ -73,15 +73,21 @@
                 </ul>
                 <ul class="sub-list">
                     <li class="sub_item">
-                        <small><router-link to="/home/register">加入會員</router-link></small>
+                        <small>
+                            <router-link to="/home/register">加入會員</router-link>
+                        </small>
                     </li>
                     <li><small>・</small></li>
                     <li class="sub_item">
-                        <small><router-link to="/home/login">會員登入</router-link></small>
+                        <small>
+                            <router-link to="/home/login">會員登入</router-link>
+                        </small>
                     </li>
                     <li><small>・</small></li>
                     <li class="sub_item">
-                        <small><router-link to="/home/faq">Q&A</router-link></small>
+                        <small>
+                            <router-link to="/home/faq">Q&A</router-link>
+                        </small>
                     </li>
                 </ul>
             </nav>
@@ -92,8 +98,8 @@
 <script>
 export default {
     name: 'FullHeader',
-       created() {
-      window.addEventListener("scroll", this.handleScroll);
+    created() {
+        window.addEventListener("scroll", this.handleScroll);
     },
     data() {
         return {
@@ -101,16 +107,16 @@ export default {
         }
     },
     methods: {
-        toShoppingPage(){
+        toShoppingPage() {
             this.$router.push("/home/shoppingcart");
         },
-        toMemberPage(){
-             this.$router.push("/home/member");
+        toMemberPage() {
+            this.$router.push("/home/member");
         },
-         handleScroll() {
-            let headerHight =  document.getElementById("header").offsetHeight
+        handleScroll() {
+            let headerHight = document.getElementById("header").offsetHeight
             this.fixed = window.scrollY > headerHight ? true : false;
-      },
+        },
     },
 }
 </script>
@@ -276,12 +282,11 @@ button {
     margin-left: auto;
 }
 
- .fixed {
+.fixed {
     position: fixed;
     z-index: 10;
     top: 0;
     width: 100%;
     /* background-color: #fffbe6; */
-  }
-
+}
 </style>
