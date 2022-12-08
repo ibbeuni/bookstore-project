@@ -151,7 +151,12 @@
                         </table>
                 </div>
                 <div class="box box3">box3</div>
-                <div class="box box4">box4</div>
+                <div class="box box4">
+                    <br><br>
+                    <p class="nb nh3">相關類別</p>
+                    <p>{{item[0].class_one}} > {{item[0].class_two}} > {{item[0].class_three}}</p>
+                    <br><br>
+                </div>
 
                 <!-- /標籤內容更新 -->
 
@@ -606,7 +611,7 @@ table {
     padding: 10px 20px;
     text-decoration: none;
     color: #fff;
-    margin: auto 5px 0;
+    margin: auto 5px 0 0;
     border-radius: 5px 5px 0 0;
 }
 
