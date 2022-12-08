@@ -1,7 +1,7 @@
 
 <template>
     <div>
-      <button @click="alterBook()" style="margin-bottom: 20px">新增會員</button>
+      <button @click="alterBook()" style="margin-bottom: 20px">新增書籍</button>
       <table class="table table-hover table-dark">
         <thead>
           <tr>
@@ -37,38 +37,38 @@
         </thead>
         <tbody>
           <tr v-for="(item, index) in bookAlter" :key="index">
-            <th scope="row">{{index +1}}</th>
-            <td>{{item[index].product_id}}</td>
-            <td>{{item.product_name}}</td>
-            <td>{{item.auther}}</td>
-            <td>{{item.original_author}}</td>
-            <td>{{item.translator}}</td>
-            <td>{{item.painter}}</td>
-            <td>{{item.publishing_house}}</td>
-            <td>{{item.publication_date}}</td>
-            <td>{{item.language}}</td>
-            <td>{{item.amount}}</td>
-            <td>{{item.ISBN}}</td>
-            <td>{{item.binding_method}}</td>
-            <td>{{item.format}}</td>
-            <td>{{item.format}}</td>
-            <td>{{item.introduction}}</td>
-            <td>{{item.auther_Introduction}}</td>
-            <td>{{item.list_price}}</td>
-            <td>{{item.cost_price}}</td>
-            <td>{{item.discount_price}}</td>
-            <td>{{item.key_word[array]}}</td>
-            <td>{{item.class_one}}</td>
-            <td>{{item.class_two}}</td>
-            <td>{{item.class_three}}</td>
-            <td>{{item.img_cover}}</td>
-            <td>{{item.img_1}}</td>
-            <td>{{item.img_2}}</td>
-            <td>{{item.img_3}}</td>
-            <td>{{item.img_4}}</td>
-            <td>{{item.img_5}}</td>
+            <th scope="row">{{bookAlter[index].product_id}}</th>
+            <!-- <td>{{bookAlter[index].product_id}}</td> -->
+            <td>{{bookAlter[index].product_name}}</td> 
+            <td>{{bookAlter[index].auther}}</td>
+            <td>{{bookAlter[index].original_author}}</td>
+            <td>{{bookAlter[index].translator}}</td>
+            <td>{{bookAlter[index].painter}}</td>
+            <td>{{bookAlter[index].publishing_house}}</td>
+            <td>{{bookAlter[index].publication_date}}</td>
+            <td>{{bookAlter[index].language}}</td>
+            <td>{{bookAlter[index].amount}}</td>
+            <td>{{bookAlter[index].ISBN}}</td>
+            <td>{{bookAlter[index].binding_method}}</td>
+            <td>{{bookAlter[index].format}}</td>
+            <td>{{bookAlter[index].format}}</td>
+            <td>{{bookAlter[index].introduction}}</td>
+            <td>{{bookAlter[index].auther_Introduction}}</td>
+            <td>{{bookAlter[index].list_price}}</td>
+            <td>{{bookAlter[index].cost_price}}</td>
+            <td>{{bookAlter[index].discount_price}}</td>
+            <td>{{bookAlter[index].img_5}}</td>
+            <td>{{bookAlter[index].class_one}}</td>
+            <td>{{bookAlter[index].class_two}}</td>
+            <td>{{bookAlter[index].class_three}}</td>
+            <td>{{bookAlter[index].img_cover}}</td>
+            <td>{{bookAlter[index].img_1}}</td>
+            <td>{{bookAlter[index].img_2}}</td>
+            <td>{{bookAlter[index].img_3}}</td>
+            <td>{{bookAlter[index].img_4}}</td>
+            <td>{{bookAlter[index].img_5}}</td>
             <td>
-              <button @click="updateAlter(item)">編輯</button>
+              <button @click="updateAlter(bookAlter[index])">編輯</button>
               <button>刪除</button>
             </td>
           </tr>
