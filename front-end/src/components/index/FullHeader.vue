@@ -113,10 +113,10 @@ export default {
         toMemberPage() {
             this.$router.push("/home/member");
         },
-        // handleScroll() {
-        //     let headerHight = document.getElementById("header").offsetHeight
-        //     this.fixed = window.scrollY > headerHight ? true : false;
-        // },
+        handleScroll() {
+            let headerHight = document.getElementById("header").offsetHeight
+            this.fixed = window.scrollY > headerHight ? true : false;
+        },
     },
 }
 </script>
