@@ -1,6 +1,6 @@
 
 <template>
-    <div>
+    <div class="vhSize">
       <button @click="alterBook()" style="margin-bottom: 20px">新增書籍</button>
       <table class="table table-hover table-dark">
         <thead>
@@ -20,6 +20,7 @@
             <th scope="col">詳細規格</th>
             <th scope="col">出版地</th>
             <th scope="col">內容簡介</th>
+            <th scope="col">作者簡介</th>
             <th scope="col">定價</th>
             <th scope="col">進價</th>
             <th scope="col">折扣價</th>
@@ -33,6 +34,7 @@
             <th scope="col">img</th>
             <th scope="col">img</th>
             <th scope="col">img</th>
+            <th scope="col">操作</th>
           </tr>
         </thead>
         <tbody>
@@ -135,3 +137,10 @@
     },
   };
   </script>
+  <style>
+  .vhSize{
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  </style>

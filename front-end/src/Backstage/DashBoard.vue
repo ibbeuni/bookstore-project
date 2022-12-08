@@ -4,27 +4,27 @@
             <div>
                 <font-awesome-icon class="iconSize" icon="fa-solid fa-book" />
                 <p style="color:pink;">收藏書籍數量</p>
-                <p style="color:pink;">5000</p>
+                <p style="color:pink;">183</p>
             </div>
             <div>
                 <font-awesome-icon class="iconSize" icon="fa-solid fa-book" />
                 <p style="color:bisque;">繪畫書籍數量</p>
-                <p style="color:bisque;">5000</p>
+                <p style="color:bisque;">179</p>
             </div>
             <div>
                 <font-awesome-icon class="iconSize" icon="fa-solid fa-book" />
                 <p style="color:Indianred;">藝術書籍數量</p>
-                <p style="color:Indianred;">5000</p>
+                <p style="color:Indianred;">194</p>
             </div>
             <div>
                 <font-awesome-icon class="iconSize" icon="fa-solid fa-book" />
                 <p style="color:aqua;">攝影書籍數量</p>
-                <p style="color:aqua;">5000</p>
+                <p style="color:aqua;">207</p>
             </div>
             <div>
                 <font-awesome-icon class="iconSize" icon="fa-solid fa-book" />
                 <p style="color:blue;">總書籍數量</p>
-                <p style="color:blue;">5000</p>
+                <p style="color:blue;">763</p>
             </div>
         </div>
         <div>
@@ -42,7 +42,7 @@
 
 <script setup lang="ts" name="basecharts">
 // import axios from "axios"
-// import Schart from 'vue-schart';
+import Schart from 'vue-schart';
 
 const options1 = {
     type: 'bar',
