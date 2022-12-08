@@ -1,6 +1,7 @@
 <template>
 
     <div class="wrap">
+        <h1>{{id}}</h1>
         <div class="header">
             <div class="list center">
             </div>
@@ -11,7 +12,7 @@
                 <h2>《就算是空的》 發表活動</h2>
             </div>
             <div>
-                <p>2022-10-21~2022-11-20</p>
+                <p>{{date_start}}~{{date_end}}</p>
             </div>
         </div>
         <!-- 活動圖片區 -->
@@ -68,6 +69,8 @@ export default {
         return {
             allevent: '',
             otherevent: '',
+            item:'',
+            id: this.$route.params.id,
         };
     },
     mounted() {
@@ -81,11 +84,9 @@ export default {
             // console.log(this.allevent[1].event_minicover + ".jpeg");
             // console.log(this.imgSrc);
         }),
-            axios.get(`http://localhost:3000/eventtable${this.id}`).then(res => {
+            axios.get(`http://localhost:3000/eventdetail${this.id}`).then(res => {
                 this.item = res.data;
-            }),
-            axios.get(`http://localhost:3000/eventtable${this.id}`).then(res => {
-                this.bookinfo = res.data;
+                console.log(this.item)
             })
     },
 

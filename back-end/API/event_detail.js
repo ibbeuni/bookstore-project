@@ -2,7 +2,7 @@ let db = require('../dataBase/index')
 
 
 exports.get = (req, res) => {
-    var sql = 'SELECT * FROM event_table where product_id = ?'
+    var sql = 'SELECT * FROM event_table where event_id = ?'
     db.query(sql,[req.params.id], (err, data) => {
         if(err) {
             return res.send('錯誤:' + err.message)
