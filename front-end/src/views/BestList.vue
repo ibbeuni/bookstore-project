@@ -16,34 +16,37 @@
                         <div class="switch-prod-wrap">
                             <!-- list -->
                             <!-- <prod-list></prod-list> -->
-                            <ol class="prod-list">
+                            <ol class="prod-list" v-for="(item, index) in products" :key="index">
                                 <li class="prod-item">
                                     <div class="prod-area">
                                         <div class="prod-thumb-box">
+                                            <!-- TODO 指定商品網址 -->
                                             <a href="" class="prod-link">
                                                 <div class="img-box">
-                                                    <!-- TODO 到時用迴圈跑靜態檔案名{{30101}} -->
-                                                    <img src="@/assets/img/books/30101.png" alt="">
+                                                    <img v-bind:src="'http://127.0.0.1:3000/img/books/' + products[index].img_cover + '.png'" alt="">
                                                 </div>
                                             </a>
                                         </div>
                                         <div class="prod-info-box">
+                                            <!-- TODO 指定商品網址 -->
                                             <a href="" class="prod-info">
-                                                <h5 class="prod-name">物見：四十八位物件的閱讀者，與他們所見的世界</h5>
+                                                <h5 class="prod-name">{{products[index].product_name}}</h5>
                                             </a>
                                             <p class="prod-author">
-                                                作者名
+                                                {{products[index].auther}}
                                                 &nbsp;|&nbsp;
-                                                <span class="date">2022.11.30 出版</span>
+                                                {{products[index].publishing_house}}
+                                                &nbsp;|&nbsp;
+                                                <span class="date">{{products[index].publication_date}} 出版</span>
                                             </p>
                                             <div class="prod-price">
                                                 <span class="percent">10%</span>
                                                 <span class="price">
-                                                    <span class="val">售價</span>
+                                                    <strong class="val">優惠價 {{products[index].discount_price}}</strong>
                                                     <span class="unit">元</span>
                                                 </span>
                                                 <span class="price-normal">
-                                                    <span class="val">原價</span>
+                                                    <small class="val">原價 {{products[index].list_price}}</small>
                                                     <span class="unit">元</span>
                                                 </span>
                                             </div>
@@ -52,9 +55,9 @@
                                             </p>
                                         </div>
                                         <div class="prod-btn-wrap">
-                                            <button class="btn-wish-icon">
+                                            <!-- <button class="btn-wish-icon">
                                                 <font-awesome-icon icon="fa-solid fa-heart" />
-                                            </button>
+                                            </button> -->
                                             <div class="btn-wrap">
                                                 <a href="" class="add-cart-btn">
                                                     <span>加入購物車</span>
@@ -81,6 +84,7 @@ import BreadCrumb from '../components/best/BreadCrumb.vue';
 import AsideNav from '../components/best/AsideNav.vue';
 import SectionTitle from '../components/best/SectionTitle.vue';
 // import ProdList from '../components/best/ProdList.vue';
+import axios from 'axios'
 
 export default {
     components: {
@@ -98,6 +102,12 @@ export default {
             art:'',             // 藝術
             photography:'',     // 攝影
         }
+    },
+    mounted() {
+        axios.get('http://127.0.0.1:3000/best_list').then(res => {
+            this.all = res.data;
+            this.products = this.all
+        })
     }
 }
 </script>
@@ -162,6 +172,7 @@ ol {
 
 .btn-wrap {
     flex: 1;
+    margin: auto 0;
 }
 
 .img-box img {

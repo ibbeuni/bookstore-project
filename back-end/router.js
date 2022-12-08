@@ -16,6 +16,7 @@ let random_painting = require('./API/random_painting')
 let random_art = require('./API/random_art')
 let random_photography = require('./API/random_photography')
 let shoopingcartable = require('./API/soppingcart_table')
+let best_list = require('./API/best_list')
 const accRoute = require('./routes/Account')
 
 
@@ -40,5 +41,6 @@ router.get('/random_painting', random_painting.get)
 router.get('/random_art', random_art.get) 
 router.get('/random_photography', random_photography.get) 
 router.get('/shoppingcartable', shoopingcartable.get)
+router.get('/best_list', best_list.get)
 
 module.exports = router
