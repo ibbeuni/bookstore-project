@@ -1,5 +1,5 @@
 let mysql = require('mysql')
-let bcrypt = require('bcrypt')
+
 
 let conn = mysql.createConnection({
     host :'127.0.0.1',
