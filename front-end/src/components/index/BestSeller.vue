@@ -74,7 +74,6 @@ export default {
             painting: '',       // 鑑賞
             art:'',             // 藝術
             photography:'',     // 攝影
-
         }
     },
     mounted() {
