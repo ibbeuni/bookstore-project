@@ -37,7 +37,7 @@
                     <br>
                     <span>促銷價：<span id="originalPrice">{{item[0].list_price}}</span></span>&nbsp;&nbsp;
                     <span class="nh2 nb">折扣後價格：<span id="lastPrice">{{item[0].discount_price}}</span><span>元</span></span>&nbsp;&nbsp;
-                    <span id="discount">8折</span>
+                    <!-- <span id="discount">8折</span> -->
                     <br>
                     <br>
                     <hr>
@@ -130,11 +130,11 @@
                         <table id="tableStyle">
                             <tr>
                                 <th>品牌</th>
-                                <td></td>
+                                <td>{{item[0].publishing_house}}</td>
                             </tr>
                             <tr>
                                 <th>類型</th>
-                                <td></td>
+                                <td>{{item[0].class_one}} > {{item[0].class_two}} > {{item[0].class_three}}</td>
                             </tr>
                             <tr>
                                 <th>商品規格</th>
@@ -505,7 +505,7 @@ table {
 #productInformationLeft {
     margin: 20px;
     margin-right: 100px;
-    width: 550px;
+    width: 500px;
 
 }
 
@@ -513,7 +513,7 @@ table {
 #productName {
     margin: 20px;
     line-height: 30px;
-    text-align: start;
+    text-align: center;
 
 }
 
