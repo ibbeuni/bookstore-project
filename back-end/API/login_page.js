@@ -1,4 +1,6 @@
 let mysql = require('mysql')
+let bcrypt = require('bcrypt')
+
 let conn = mysql.createConnection({
     host :'127.0.0.1',
     user :'root',
@@ -12,9 +14,9 @@ conn.connect();
 
 exports.get = (req, res) =>{
     // res.send('ok')
-var sql = 'select * from login_table where ID=? and PASSWORD=?';
+var sql = 'select * from login_table where member_id=? and member_password=?';
 
- conn.query(sql, [req.query.ID, req.query.PASSWORD], (err, data) => {
+ conn.query(sql, [req.query.member_id, req.query.member_password], (err, data) => {
     // console.log(req.qurey.id)
         if(err) {
             return res.send({

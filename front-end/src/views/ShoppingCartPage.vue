@@ -34,7 +34,7 @@
           <div class="shopItem">
             <div class="buyProduct flex">
               <div class="flex productImgName" v-for="(pdt, index) in pdtList " v-bind:key="index">
-                <div><img class="shopItemImg" src="../assets/img/product/40201.png" alt=""></div>
+                <div><img class="shopItemImg" :src="'../assets/img/product/'+ +'.png'" alt=""></div>
                 <div><p class="nb">{{pdt.name}}</p></div>
               </div>
 
@@ -109,6 +109,7 @@
 
 <script>
 
+
 export default{
 data(){
   return{
@@ -126,7 +127,8 @@ data(){
      }
 
   }
-}
+},
+
 }
 
 

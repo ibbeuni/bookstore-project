@@ -32,14 +32,14 @@
       <br />
 
       <button class="register_btn">
-        <router-link to="/register"> 註冊 </router-link>
+        <router-link to=/register> 註冊 </router-link>
       </button>
 
       <br />
       <br />
 
       <p class="forgot-password text-right mt-2 mb-4">
-        <router-link to="/forgot-password">忘記密碼?</router-link>
+        <router-link to="/member">忘記密碼?</router-link>
       </p>
     </form>
   </div>
@@ -75,9 +75,14 @@ export default{
           }
         }).then(res => {
           if (res.data.status == 200){
-            this.$router.push({
-              path: '/home',
-            })
+            // if(username == this.login.userName && password == this.login.password){
+            //   localStorage.setItem('token', 'Imlogin')  
+            //   this.$router.push({
+            //   path: '/home/homepage',
+            // })
+
+            // }
+          
           }else{
             alert('查無此帳號，請先註冊喔');
 

@@ -10,12 +10,14 @@ conn.connect();
 
 exports.post = (req, res) => {
 
-    let sql2 = "INSERT INTO login_table (ID, PASSWORD) VALUES (?, ?)"
-
-    console.log(req.body.params.id) 
-    console.log(req.body.params.password) 
+    let sql2 = "INSERT INTO login_table (member_id, member_password) VALUES (?, ?)"
 
     conn.query(sql2, [req.body.params.id, req.body.params.password], (err, data) =>{
+
+        console.log(req.body.params.member_id) 
+        // console.log(req.body.params.member_password) 
+        res.send('ok')
+
         if(err){
             return res.send({
                 status:400,

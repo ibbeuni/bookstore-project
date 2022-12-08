@@ -24,7 +24,7 @@ router.use('/acc',accRoute)
 
 
 router.get('/member', member.get)
-
+router.post('/member/post', member.post)
 router.get('/videotable', videotable.get)
 router.get('/videodetail:id', videodetail.get)
 router.get('/productdetail:id', productdetail.get)

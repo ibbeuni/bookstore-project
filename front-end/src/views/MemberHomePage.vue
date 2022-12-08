@@ -42,38 +42,35 @@
 
                           <div class="itemlist flex">
                               <div><label for="changePassword">新密碼：</label></div>
-                              <div><input v-model="user.password" type="text" id="changePassword"> </div>
+                              <div><input v-model="password" type="text" id="changePassword"> </div>
                           </div><div class="itemlist flex">
 
                               <div><label for="confirmPassword">密碼確認：</label></div>
-                              <div><input v-model="user.passwordCfrm" type="text" id="changePassword"> </div>
+                              <div><input v-model="passwordCfrm" type="text" id="changePassword"> </div>
                           </div>
                           <p class="nh6 warning">*至少八個字符, 包含大小寫英文字母、數字或特殊符號，不允許使用連續或重複的三個字節</p>
                           
                           <div class="itemlist flex">
                               <div><span>姓名：</span></div>
-                              <div><span id="userName">{{name}}</span></div>
-                              &nbsp;&nbsp;&nbsp;
-                              <button class="changeButton">更改</button>
+                              <div><input  v-model="name" type="text" id="userName"></div>
+                              
                           </div>
 
                           <div class="itemlist flex">
                               <div><span>手機號碼：</span></div>
-                              <div><span  id="userPhone">{{phone}}</span></div>
-                              &nbsp;&nbsp;&nbsp;
-                              <button class="changeButton">更改</button>
+                              <div><input v-model="phone" type="text" id="userPhone"></div>
+                              
                           </div>
 
                           <div class="itemlist flex">
                               <div><span>出生日期：</span></div>
-                              <div><span  id="userName">{{birthday}}</span></div>
+                              <div><input v-model="birthday" type="text" id="userName"></div>
                           </div>
 
                           <div class="itemlist flex">
                               <div><span>住址：</span></div>
-                              <div><span  id="useraddress">{{address}}</span></div>
-                              &nbsp;&nbsp;&nbsp;
-                              <button class="changeButton">更改</button>
+                              <div><input v-model="address" type="text" id="useraddress"></div>
+                             
                           </div>
 
                           
@@ -81,7 +78,7 @@
                           <div id="submitButton">
                               <div>
                                   <button class="btn btn-outline-secondary">清除</button>
-                                  <button class="btn btn-outline-success">儲存</button>
+                                  <button class="btn btn-outline-success" @click="save">儲存</button>
                               </div>
 
                           </div>
@@ -116,10 +113,7 @@ export default{
     }
   }, 
   mounted(){
-    this.membership()
-  },
-  methods:{
-   membership(){
+    
      axios.get('http://127.0.0.1:3000/member').then(res =>{
       this.user = res.data;
       this.id=res.data[0].member_id;
@@ -134,7 +128,36 @@ export default{
      }).catch(err=>{
       console.log('fail' + err)
      })
-     },
+    
+     
+  },
+
+  
+  methods:{
+  // save(){
+   
+
+  //   if(passwordCfrm =="", name =="", phone =="", birthday =="", address){
+  //     alert('請完成會員資料')
+  //   }else{
+  //      axios.post('http://127.0.0.1:3000/member/post', {
+  //       params:{
+  //              passwordCfrm : this.passwordCfrm,
+  //              name :this.name,
+  //              phone : this.phone,
+  //              birthday : this.birthday,
+  //              address : this.address
+  //       }
+  
+  //    }).then(res => {
+  //     if(res.data.status == 200){
+  //       alert('儲存成功')
+  //       this.router.push('/homepage')
+  //     }
+  //    })
+
+  //   }
+  // }
     
    
     
@@ -440,19 +463,6 @@ table {
   color: red;
 }
 
-.changeButton{
-  border: #0D6EFD solid 1px;
-  border-radius: 5px;
-  background-color: #fff;
-  color: #0D6EFD;
-  
-}
-.changeButton:hover{
-  background-color:#0D6EFD;
-  color: white;
-  transition-duration: 0.2s;
-  transition-timing-function: linear;
-}
 
 #submitButton{
   border-top:2px black solid ;
