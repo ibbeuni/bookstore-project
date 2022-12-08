@@ -117,14 +117,15 @@
                     <h3 class="nh3 nb">內容簡介</h3>
                     <br>
                     <p>{{item[0].introduction}}</p>
-                    <br><br><br>
+                    <br><br>
                     <h3 class="nh3 nb">作者簡介</h3>
                     <br>
                     <p>{{item[0].auther_Introduction}}</p>
-                    <br><br><br>
+                    <br><br>
 
                 </div>
                 <div class="box box2">
+                    <br><br>
                     <h3>詳細介紹(寫死)</h3>
 
                         <table id="tableStyle">
@@ -144,13 +145,15 @@
                                         <li>出版地：{{item[0].publish_area}}</li>
                                         <li>語言：{{item[0].language}}</li>
                                         <li>詳細規格：{{item[0].format}}</li>
-                                        <li></li>
                                     </ul>
                                 </td>
                             </tr>
                         </table>
+                        <br><br>
                 </div>
-                <div class="box box3">box3</div>
+                <div class="box box3">
+                    <p></p>
+                </div>
                 <div class="box box4">
                     <br><br>
                     <p class="nb nh3">相關類別</p>
@@ -608,11 +611,20 @@ table {
 /* <書本詳細資訊區TAB> */
 /* 設置標籤樣式 */
 .menu label {
+    font-weight: bolder;
     padding: 10px 20px;
     text-decoration: none;
-    color: #fff;
+    /* color: #fff; */
+    color: black;
     margin: auto 5px 0 0;
-    border-radius: 5px 5px 0 0;
+    border-radius: 10px 10px 0 0;
+    border-top:rgb(159, 159, 159) solid 1px ;
+    border-right:rgb(159, 159, 159) solid 1px ;
+    border-left:rgb(159, 159, 159) solid 1px ;
+    box-sizing: content-box;
+}
+.menu label:hover{
+    background-color: rgb(237, 237, 237);
 }
 
 .menu input {
@@ -620,47 +632,54 @@ table {
 }
 
 .menu .L1 {
-    background-color: rgb(236, 170, 170);
+    /* background-color: rgb(236, 170, 170); */
 }
 
 .menu .L2 {
-    background-color: rgb(157, 206, 246);
+    /* background-color: rgb(157, 206, 246); */
 
 }
 
 .menu .L3 {
-    background-color: rgb(109, 234, 111);
+    /* background-color: rgb(109, 234, 111); */
 
 }
 
 .menu .L4 {
-    background-color: rgb(245, 240, 101);
+    /* background-color: rgb(245, 240, 101); */
 
 }
 
 .box {
     width: 100%;
     display: none;
+    border: 1px solid rgb(159, 159, 159);
+}
+
+.box p,
+.box h3,
+.box table{
+    margin: 0 30px;
 }
 
 .box1 {
-    background-color: rgb(236, 170, 170);
+    /* background-color: rgb(236, 170, 170); */
 
 }
 
 
 .box2 {
-    background-color: rgb(157, 206, 246);
+    /* background-color: rgb(157, 206, 246); */
 
 }
 
 .box3 {
-    background-color: rgb(109, 234, 111);
+    /* background-color: rgb(109, 234, 111); */
 
 }
 
 .box4 {
-    background-color: rgb(245, 240, 101);
+    /* background-color: rgb(245, 240, 101); */
 
 }
 
@@ -690,13 +709,21 @@ body:has(#L4:checked) .box4 {
 
 }
 
-/* body:has(#L1:checked) .L1{
-    background-color: #fff;
-} */
+body:has(#L1:checked) .L1{
+    background-color: #ccc;
+}
+body:has(#L2:checked) .L2{
+    background-color: #ccc;
+}
+body:has(#L3:checked) .L3{
+    background-color: #ccc;
+}
+body:has(#L4:checked) .L4{
+    background-color: #ccc;
+}
 
 /* 書本詳細資料 */
 
-#tableStyle tr,
 #tableStyle td,
 #tableStyle th {
     border: black solid 1px;
@@ -707,7 +734,7 @@ body:has(#L4:checked) .box4 {
 }
 
 #tableStyle td {
-    width: 300px;
+    width: 400px;
 
 }
 /* 書本詳細資料 */
