@@ -57,26 +57,27 @@ export default {
     data() {
         return {
             allevent: '',
+            pageevent: '',
         };
     },
     mounted() {
         axios.get('http://127.0.0.1:3000/eventtable').then(res => {
             this.allevent = res.data;
+            this.pageevent = res.data.slice(0, 15);
             console.log(res.data);
-            console.log(this.allevent[1].event_minicover + ".jpeg");
+            // console.log(this.allevent[1].event_minicover + ".jpeg");
             // console.log(this.imgSrc);
         })
+        axios.get(`http://localhost:3000/eventtable${this.id}`).then(res => {
+            this.item = res.data;
+        }),
+            axios.get(`http://localhost:3000/eventtable${this.id}`).then(res => {
+                this.bookinfo = res.data;
+            })
     },
 
     methods: {
 
-        // get() {
-        //     axios.get('http://127.0.0.1:3000/eventtable').then(res => {
-        //         console.log(res.data[0]);
-        //     }).catch(err => {
-        //         console.log("獲取失敗" + err);
-        //     })
-        // }
     }
 }
 </script>

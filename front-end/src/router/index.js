@@ -97,6 +97,11 @@ const routes = [
                 component: EventDetail
             },
             {
+                path: 'eventdetail/:id',
+                name: 'EventDetail',
+                component: EventDetail
+            },
+            {
                 path: 'eventpage',
                 name: 'EventPage',
                 component: EventPage

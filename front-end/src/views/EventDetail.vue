@@ -15,8 +15,10 @@
             </div>
         </div>
         <!-- 活動圖片區 -->
-        <div class="bookimg">
-            <img src="../assets/img/event/event_info/event_101.jpeg" alt="">
+        <div class="bookimg" v-for="(item, index) in allevent" :key="index">
+            <img class=""
+                v-bind:src="'http://127.0.0.1:3000/img/event/event_info/' + allevent[index].event_1 + '.jpeg'"
+                alt="">
         </div>
         <div class="bookname">
             <!-- 類別按鈕 -->
@@ -35,7 +37,7 @@
                 <ul class="event_list col4">
                     <li class="event_item" v-for="(item, index) in allevent" :key="index">
                         <div>
-                            <a href="">
+                            <a :href="('http://localhost:8081/#/home/eventdetail/' + allevent[index].event_1)">
                                 <div>
                                     <img class=""
                                         v-bind:src="'http://127.0.0.1:3000/img/event/event_minicover/' + allevent[index].event_minicover + '.jpeg'"
@@ -65,26 +67,29 @@ export default {
     data() {
         return {
             allevent: '',
+            otherevent: '',
         };
     },
     mounted() {
         axios.get('http://127.0.0.1:3000/eventtable').then(res => {
             this.allevent = res.data;
+            var a = res.data;
+            this.otherVideo = a.slice(0, 5);
+            console.log(a);
+            console.log(this.otherevent);
             console.log(res.data);
-            console.log(this.allevent[1].event_minicover + ".jpeg");
+            // console.log(this.allevent[1].event_minicover + ".jpeg");
             // console.log(this.imgSrc);
-        })
+        }),
+            axios.get(`http://localhost:3000/eventtable${this.id}`).then(res => {
+                this.item = res.data;
+            }),
+            axios.get(`http://localhost:3000/eventtable${this.id}`).then(res => {
+                this.bookinfo = res.data;
+            })
     },
 
     methods: {
-
-        // get() {
-        //     axios.get('http://127.0.0.1:3000/eventtable').then(res => {
-        //         console.log(res.data[0]);
-        //     }).catch(err => {
-        //         console.log("獲取失敗" + err);
-        //     })
-        // }
     }
 }
 </script>
