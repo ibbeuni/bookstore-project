@@ -44,7 +44,7 @@
                         <br>
                         <div id="relatedProduct">
                             <div class="relatedProductDiv">
-                                <a class="relatedProductTag_a" :href="('http://localhost:8081/#/home/product/'+this.$route.params.id)">
+                                <a class="relatedProductTag_a" :href="('/#/home/product/'+this.$route.params.id)">
                                     <div>
                                         <div class="relatedProductImgDiv">
                                             <img class="relatedProductImg"
@@ -87,7 +87,7 @@
                     <div v-for="(item, index) in otherVideo" :key="index">
                         <div class=" m20">
                             <a class="block"
-                                :href="('http://localhost:8081/#/home/videodetail/' + otherVideo[index].product_id)">
+                                :href="('/#/home/videodetail/' + otherVideo[index].product_id)">
                                 <div class="flex">
                                     <div class=""><img class="otherVideo"
                                             v-bind:src="'http://127.0.0.1:3000/img/video/' + otherVideo[index].video_title_img + '.jpg'"

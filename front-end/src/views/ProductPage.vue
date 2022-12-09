@@ -106,7 +106,7 @@
                 <!-- 標籤鏈接 -->
                 <!-- 標籤內容更新OK的話下面刪除-->
 
-                <div class="menu">
+                <div class="productmenu">
                     <label for="L1" class="L1">內容簡介<input id="L1" type="radio" name="menu" checked></label>
                     <label for="L2" class="L2">詳細介紹<input id="L2" type="radio" name="menu"></label>
                     <label for="L3" class="L3">退 / 換貨須知<input id="L3" type="radio" name="menu"></label>
@@ -682,7 +682,7 @@ table {
 
 /* <書本詳細資訊區TAB> */
 /* 設置標籤樣式 */
-.menu label {
+.productmenu label {
     font-weight: bolder;
     padding: 10px 20px;
     text-decoration: none;
@@ -696,33 +696,37 @@ table {
     border: rgb(159, 159, 159) 1px solid ;
     box-sizing: content-box;
     background-color: white;
+    text-align: center;
+
     z-index: 10;
     
 }
 
-.menu label:hover {
+
+
+.productmenu label:hover {
     background-color: rgb(237, 237, 237);
 }
 
-.menu input {
+.productmenu input {
     display: none;
 }
 
-.menu .L1 {
+.productmenu .L1 {
     /* background-color: rgb(236, 170, 170); */
 }
 
-.menu .L2 {
+.productmenu .L2 {
     /* background-color: rgb(157, 206, 246); */
 
 }
 
-.menu .L3 {
+.productmenu .L3 {
     /* background-color: rgb(109, 234, 111); */
 
 }
 
-.menu .L4 {
+.productmenu .L4 {
     /* background-color: rgb(245, 240, 101); */
 
 }
