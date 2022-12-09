@@ -1,6 +1,6 @@
 <template>
     <!-- BODY_WRAPPER -->
-    <div class="wrap">
+    <div class="wrap" style="background-color: gray;">
         <!-- HEADER_COMPONENT -->
         <back-header></back-header>
         <router-view></router-view>

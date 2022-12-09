@@ -28,6 +28,8 @@ import DashBoard from '../Backstage/DashBoard.vue';
 import LoginBack from '../Backstage/LoginBack.vue';
 import AddMember from '../Backstage/AddMember.vue';
 import BookAlter from '../Backstage/BookAlter.vue';
+import addBook from '../Backstage/addBook.vue';
+import alterBook from '../Backstage/alterBook.vue';
 Vue.use(VueRouter);
 
 const routes = [
@@ -44,12 +46,12 @@ const routes = [
             {
                 path: 'homepage',
                 name: 'HomePage',
-                component: HomePage,
+                component: HomePage
             },
             {
                 path: 'login',
                 name: 'LoginPage',
-                component: LoginPage,
+                component: LoginPage
             },
             {
                 path: 'best',
@@ -152,16 +154,18 @@ const routes = [
         ],
     },
     {
+        path: '/back1',
+        // redirect: '/back1/loginback',
+        name: 'loginback',
+        component: LoginBack,
+ 
+    },
+    {
         path: '/back',
-        redirect: '/back/loginback',
+        redirect: '/back/memberlist',
         name: 'backview',
         component: BackView,
         children:[
-            {
-                path: "loginback",
-                name: "loginback",
-                component: LoginBack,
-            }, 
             {
                 path:'memberlist',
                 name:'memberlist',
@@ -177,11 +181,11 @@ const routes = [
                 name:'dashboard',
                 component: DashBoard,
             },
-            {
-                path:'loginback',
-                name:'loginback',
-                component: LoginBack,
-            },
+            // {
+            //     path:'loginback',
+            //     name:'loginback',
+            //     component: LoginBack,
+            // },
             {
                 path:'addmember',
                 name:'addmember',
@@ -191,6 +195,16 @@ const routes = [
                 path:'bookalter',
                 name:'bookalter',
                 component: BookAlter,
+            },
+            {
+                path:'addbook',
+                name:'addbook',
+                component: addBook,
+            },
+            {
+                path:'alterbook',
+                name:'alterbook',
+                component: alterBook,
             },
         ],
     },
