@@ -1,7 +1,7 @@
 
 <template>
     <div class="vhSize">
-      <button @click="alterBook()" style="margin-bottom: 20px">新增書籍</button>
+      <!-- <button @click="alterBook()" style="margin-bottom: 20px">新增書籍</button> -->
       <table class="table table-hover table-dark">
         <thead>
           <tr>
@@ -39,7 +39,7 @@
         </thead>
         <tbody>
           <tr v-for="(item, index) in bookAlter" :key="index">
-            <th scope="row">{{bookAlter[index].product_id}}</th>
+            <button style="color:white" @click="updateAlter(bookAlter[index])"><th scope="row">{{bookAlter[index].product_id}}</th></button>
             <!-- <td>{{bookAlter[index].product_id}}</td> -->
             <td>{{bookAlter[index].product_name}}</td> 
             <td>{{bookAlter[index].auther}}</td>
@@ -53,7 +53,7 @@
             <td>{{bookAlter[index].ISBN}}</td>
             <td>{{bookAlter[index].binding_method}}</td>
             <td>{{bookAlter[index].format}}</td>
-            <td>{{bookAlter[index].format}}</td>
+            <td>{{bookAlter[index].publish_area}}</td>
             <td>{{bookAlter[index].introduction}}</td>
             <td>{{bookAlter[index].auther_Introduction}}</td>
             <td>{{bookAlter[index].list_price}}</td>
@@ -80,25 +80,6 @@
   </template>
   
   <script>
-//   import axios from "axios"
-
-// export default {
-//     data() {
-//         return {
-//             bookAlter: '',
-//         };
-//     },
-//     mounted() {
-//         axios.get('http://127.0.0.1:3000/booktable').then(res => {
-//             this.bookAlter = res.data;
-//             console.log(res.data);
-//             // console.log(this.imgSrc);
-//         })
-//     },
-
-//     methods: {
-//     }
-// }
   import axios from 'axios'
   export default {
     data() {

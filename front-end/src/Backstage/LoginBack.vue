@@ -1,8 +1,7 @@
-
-
 <template>
     <div class="login-wrap">
     <div id="pageContainer">
+        <br><br><br><br><br><br>
       <form class="userLogin">
   
         <div class="form-group">
@@ -19,7 +18,7 @@
         
         <br />
   
-        <button type="submit" class="login_btn"><a href="/#/back/memberlist">《歡迎使用者登入》</a></button>
+        <button type="submit" style="background-color: green;" class="login_btn"><a href="/#/back/memberlist">《歡迎使用者登入》</a></button>
       </form>
     </div>
 </div>
