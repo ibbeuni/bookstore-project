@@ -44,7 +44,7 @@
                         <br>
                         <div id="relatedProduct">
                             <div class="relatedProductDiv">
-                                <a class="relatedProductTag_a" href="">
+                                <a class="relatedProductTag_a" :href="('http://localhost:8081/#/home/product/'+this.$route.params.id)">
                                     <div>
                                         <div class="relatedProductImgDiv">
                                             <img class="relatedProductImg"

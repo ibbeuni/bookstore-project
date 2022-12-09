@@ -7,11 +7,11 @@
         <div id="productImgAndInformation">
             <div id="productInformationLeft">
                 <div id="productName">
-                    <p class="nh1 nb">{{item[0].product_name}}</p>
+                    <p class="nh1 nb">{{ item[0].product_name }}</p>
 
                 </div>
                 <div id="productImgDiv">
-                    <img id="productImg" :src="'http://127.0.0.1:3000/img/books/'+item[0].img_cover+'.png'" alt="">
+                    <img id="productImg" :src="'http://127.0.0.1:3000/img/books/' + item[0].img_cover + '.png'" alt="">
                     <div id="productImgPage">
                         <div>
                             <button>&lt;</button>
@@ -35,9 +35,10 @@
                 <div id="priceDiv">
                     <hr>
                     <br>
-                    <span>促銷價：<span id="originalPrice">{{item[0].list_price}}</span></span>&nbsp;&nbsp;
-                    <span class="nh2 nb">折扣後價格：<span id="lastPrice">{{item[0].discount_price}}</span><span>元</span></span>&nbsp;&nbsp;
-                    <span id="discount">8折</span>
+                    <span>促銷價：<span id="originalPrice">{{ item[0].list_price }}</span></span>&nbsp;&nbsp;
+                    <span class="nh2 nb">折扣後價格：<span id="lastPrice">{{ item[0].discount_price
+                    }}</span><span>元</span></span>&nbsp;&nbsp;
+                    <!-- <span id="discount">8折</span> -->
                     <br>
                     <br>
                     <hr>
@@ -59,9 +60,9 @@
                 <hr>
                 <div>
                     <ul id="productInformationRight">
-                        <li>作者：{{item[0].auther}}</li>
-                        <li>出版社：{{item[0].publishing_house}}</li>
-                        <li>出版日期：{{item[0].publication_date}}</li>
+                        <li>作者：{{ item[0].auther }}</li>
+                        <li>出版社：{{ item[0].publishing_house }}</li>
+                        <li>出版日期：{{ item[0].publication_date }}</li>
                         <li>配送方式：宅配/超商店到店</li>
                         <li>付款方式：貨到付款/轉帳</li>
                     </ul>
@@ -80,16 +81,16 @@
                 <div id="maybeYouLikeOutDiv">
                     <p class="nh2">你可能也喜歡</p>
                     <div id="maybeYouLike">
-                        <div class="maybeYouLikeDiv">
+                        <div class="maybeYouLikeDiv" v-for="(item, index) in otherbooks" :key="index">
                             <a class="maybeYouLikeTag_a" href="">
                                 <div>
-                                    <div>
-                                        <img class="maybeYouLikeImg" src="../assets/img/product/9796074_R.webp" alt="">
+                                    <div class="maybeYouLikeImgDiv">
+                                        <img class="maybeYouLikeImg" :src="('http://127.0.0.1:3000/img/books/' + otherbooks[index].img_cover + '.png')" alt="">
                                     </div>
                                     <div>
-                                        <p>書名</p>
-                                        <p>作者</p>
-                                        <p>NT 500</p>
+                                        <p class="nb booksName">{{ otherbooks[index].product_name }}</p>
+                                        <br>
+                                        <p class="author">{{ otherbooks[index].auther }}</p>
                                     </div>
                                 </div>
                             </a>
@@ -116,42 +117,82 @@
                     <br><br>
                     <h3 class="nh3 nb">內容簡介</h3>
                     <br>
-                    <p>{{item[0].introduction}}</p>
-                    <br><br><br>
+                    <p>{{ item[0].introduction }}</p>
+                    <br><br>
                     <h3 class="nh3 nb">作者簡介</h3>
                     <br>
-                    <p>{{item[0].auther_Introduction}}</p>
-                    <br><br><br>
+                    <p>{{ item[0].auther_Introduction }}</p>
+                    <br><br>
 
                 </div>
                 <div class="box box2">
+                    <br><br>
                     <h3>詳細介紹(寫死)</h3>
 
-                        <table id="tableStyle">
-                            <tr>
-                                <th>品牌</th>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>類型</th>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>商品規格</th>
-                                <td>
-                                    <ul>
-                                        <li>ISBN：{{item[0].ISBN}}</li>
-                                        <li>出版地：{{item[0].publish_area}}</li>
-                                        <li>語言：{{item[0].language}}</li>
-                                        <li>詳細規格：{{item[0].format}}</li>
-                                        <li></li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </table>
+                    <table id="tableStyle">
+                        <tr>
+                            <th>品牌</th>
+                            <td>{{ item[0].publishing_house }}</td>
+                        </tr>
+                        <tr>
+                            <th>類型</th>
+                            <td>{{ item[0].class_one }} > {{ item[0].class_two }} > {{ item[0].class_three }}</td>
+                        </tr>
+                        <tr>
+                            <th>商品規格</th>
+                            <td>
+                                <ul>
+                                    <li>ISBN：{{ item[0].ISBN }}</li>
+                                    <li>出版地：{{ item[0].publish_area }}</li>
+                                    <li>語言：{{ item[0].language }}</li>
+                                    <li>詳細規格：{{ item[0].format }}</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                    <br><br>
                 </div>
-                <div class="box box3">box3</div>
-                <div class="box box4">box4</div>
+                <div class="box box3">
+                    <br><br>
+                    <p class="nh3 nb">商品鑑賞期</p>
+                    <br>
+                    <p>為了保護消費者權益，依消保法規定，<span class="text-danger nb">商品皆享有七天猶豫期的權益。</span></p>
+                    <ul>
+                        <li class="nb text-danger">七天猶豫期非試用期！</li>
+                        <li>商品須在完整、未使用狀態且可還原狀態下才能進行退貨。退回商品需要為全新狀態，且包裝完整（含商品本體及所有完整配件、附件、包材、贈品等），切勿缺漏影響自身權利。</li>
+                        <li>退貨申請，請於收到商品之七天內聯繫客服（依據物流系統時間為主）並於24小時內寄出商品，以利後續作業處理。</li>
+                        <li>若因無法聯繫，因本身因素商品未在期限之內寄回而無法完成退貨作業，將自動取消退貨申請，且不得再次申請。</li>
+                        <li>請使用無油墨之包裝紙／紙袋／紙箱包裝（請勿直接於商品配件上黏貼退貨單）。請另加外包裝袋，避免破壞商品外盒或原包裝。</li>
+                        <li>當確認退貨申請後，即代表同意我們的退貨原則，並接受我們相關的後續處理事宜。</li>
+                    </ul>
+                    <br><br>
+                    <p class="nh3 nb">退換貨說明</p>
+                    <br>
+                    <p class="nh3 nb text-danger">[換貨]</p>
+                    <ul>
+                        <li>若商品本身瑕疵或訂單寄錯商品，換貨皆由我們負擔超取運費，代墊運費會放入新包裹裡。</li>
+                        <li>若購買錯誤尺寸商品，僅供退貨，敬請將原商品申請退貨，並且再請重新訂購。</li>
+                    </ul>
+                    <p class="nh3 nb text-danger">[退貨]</p>
+                    <p>退換貨商品須為未經拆封使用，或非人為瑕疵所造成的污損、故障，並保留完整的原始包裝（含外包裝紙盒），否則恕不接受退貨。</p>
+                    <p class="nh4">以下情況無法接受退貨：</p>
+                    <ul>
+                        <li>超過七天商品鑑賞期。</li>
+                        <li>商品已拆封使用，或人為因素而產生的破壞，如：污損、故障、損毀、磨損、擦傷、刮傷、髒污等。</li>
+                        <li>外包裝紙盒輕微的摺痕，不影響商品本身品質之情況。</li>
+                        <li>退貨商品包裝破損不完整，或發票、配件不齊者。</li>
+                        <li>惡意或大量退貨。</li>
+                        <li>因個人因素申請退貨，若再次訂購相同商品，則無法要求再次退貨。</li>
+                    </ul>
+                    <br>
+                    <br>
+                </div>
+                <div class="box box4">
+                    <br><br>
+                    <p class="nb nh3">相關類別</p>
+                    <p>{{ item[0].class_one }} > {{ item[0].class_two }} > {{ item[0].class_three }}</p>
+                    <br><br>
+                </div>
 
                 <!-- /標籤內容更新 -->
 
@@ -240,8 +281,9 @@ export default {
     data() {
         return {
             id: this.$route.params.id,
-            allbooks:'',
-            item:'',
+            allbooks: '',
+            otherbooks: '',
+            item: '',
 
 
         }
@@ -254,6 +296,19 @@ export default {
         axios.get(`http://127.0.0.1:3000/booktable`).then(res => {
             console.log(res.data)
             this.allbooks = res.data;
+            var a = res.data;
+
+            function shuffleArray(inputArray) {
+                inputArray.sort(() => Math.random() - 0.5);
+            }
+            shuffleArray(a);
+            this.otherbooks = a.slice(0, 4);
+            console.log(a);
+            console.log(this.otherbooks);
+            console.log(res.data);
+
+
+
         }),
 
             axios.get(`http://127.0.0.1:3000/productdetail${this.id}`).then(res => {
@@ -304,6 +359,8 @@ export default {
 .flex {
     display: flex;
 }
+
+
 
 /* </共用CSS> */
 
@@ -505,7 +562,7 @@ table {
 #productInformationLeft {
     margin: 20px;
     margin-right: 100px;
-    width: 550px;
+    width: 500px;
 
 }
 
@@ -513,7 +570,7 @@ table {
 #productName {
     margin: 20px;
     line-height: 30px;
-    text-align: start;
+    text-align: center;
 
 }
 
@@ -572,6 +629,8 @@ table {
     padding: 10px;
     font-weight: bolder;
     /* background-color: yellowgreen; */
+
+
 }
 
 .maybeYouLikeTag_a {
@@ -580,22 +639,44 @@ table {
 
 .maybeYouLikeDiv {
     background-color: #fff;
-    margin: 20px;
+    margin: 20px 0;
+    width: 180px;
 
 }
 
+.maybeYouLikeImgDiv {
+    text-align: center;
+    /* height: 180px; */
+}
+
 .maybeYouLikeImg {
-    width: 120px;
-    height: 170px;
+    width: 170px;
+    height: 190px;
     object-fit: cover;
 }
 
 #maybeYouLike {
     display: flex;
-    justify-content: start;
+    /* justify-content: start; */
+    justify-content: space-around;
     background-color: #F7F7F7;
-    overflow-x: auto;
 
+
+}
+
+.booksName{
+    margin-top: 7px;
+}
+
+.booksName,
+.author {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.author {
+    text-align: end;
 }
 
 /* </你可能也喜歡> */
@@ -603,11 +684,21 @@ table {
 /* <書本詳細資訊區TAB> */
 /* 設置標籤樣式 */
 .menu label {
+    font-weight: bolder;
     padding: 10px 20px;
     text-decoration: none;
-    color: #fff;
-    margin: auto 5px 0;
-    border-radius: 5px 5px 0 0;
+    /* color: #fff; */
+    color: black;
+    margin: auto 5px 0 0;
+    border-radius: 10px 10px 0 0;
+    border-top: rgb(159, 159, 159) solid 1px;
+    border-right: rgb(159, 159, 159) solid 1px;
+    border-left: rgb(159, 159, 159) solid 1px;
+    box-sizing: content-box;
+}
+
+.menu label:hover {
+    background-color: rgb(237, 237, 237);
 }
 
 .menu input {
@@ -615,47 +706,60 @@ table {
 }
 
 .menu .L1 {
-    background-color: rgb(236, 170, 170);
+    /* background-color: rgb(236, 170, 170); */
 }
 
 .menu .L2 {
-    background-color: rgb(157, 206, 246);
+    /* background-color: rgb(157, 206, 246); */
 
 }
 
 .menu .L3 {
-    background-color: rgb(109, 234, 111);
+    /* background-color: rgb(109, 234, 111); */
 
 }
 
 .menu .L4 {
-    background-color: rgb(245, 240, 101);
+    /* background-color: rgb(245, 240, 101); */
 
 }
 
 .box {
     width: 100%;
     display: none;
+    border: 1px solid rgb(159, 159, 159);
+}
+
+.box p,
+.box h3,
+.box table {
+    margin: 0 30px;
+}
+
+.box ul {
+    margin: 0 60px;
+    list-style: disc;
+
 }
 
 .box1 {
-    background-color: rgb(236, 170, 170);
+    /* background-color: rgb(236, 170, 170); */
 
 }
 
 
 .box2 {
-    background-color: rgb(157, 206, 246);
+    /* background-color: rgb(157, 206, 246); */
 
 }
 
 .box3 {
-    background-color: rgb(109, 234, 111);
+    /* background-color: rgb(109, 234, 111); */
 
 }
 
 .box4 {
-    background-color: rgb(245, 240, 101);
+    /* background-color: rgb(245, 240, 101); */
 
 }
 
@@ -685,13 +789,24 @@ body:has(#L4:checked) .box4 {
 
 }
 
-/* body:has(#L1:checked) .L1{
-    background-color: #fff;
-} */
+body:has(#L1:checked) .L1 {
+    background-color: #ccc;
+}
+
+body:has(#L2:checked) .L2 {
+    background-color: #ccc;
+}
+
+body:has(#L3:checked) .L3 {
+    background-color: #ccc;
+}
+
+body:has(#L4:checked) .L4 {
+    background-color: #ccc;
+}
 
 /* 書本詳細資料 */
 
-#tableStyle tr,
 #tableStyle td,
 #tableStyle th {
     border: black solid 1px;
@@ -702,9 +817,10 @@ body:has(#L4:checked) .box4 {
 }
 
 #tableStyle td {
-    width: 300px;
+    width: 400px;
 
 }
+
 /* 書本詳細資料 */
 
 
