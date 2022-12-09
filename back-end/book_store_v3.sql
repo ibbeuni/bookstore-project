@@ -233,7 +233,6 @@ CREATE TABLE `event_table` (
 --
 
 INSERT INTO `event_table` (`event_id`, `event_cover`, `event_minicover`, `event_1`, `date_start`, `date_end`) VALUES
-(0, 'event_cover', 'event_minicover', 'event_1', '0000-00-00', '0000-00-00'),
 (1, 'event_cover001', 'event_minicover_101', 'event_101', '2022-10-11', '2022-12-31'),
 (2, 'event_cover002', 'event_minicover_111', 'event_201', '2022-10-23', '2023-01-11'),
 (3, 'event_cover003', 'event_minicover_121', 'event_301', '2022-10-08', '2023-01-08'),
