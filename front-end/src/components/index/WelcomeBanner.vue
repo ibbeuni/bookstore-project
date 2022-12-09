@@ -14,7 +14,7 @@
                                     文青系質感文具上架
                                 </h1>
                                 <div class="banner-visual-box">
-                                    <div img-box>
+                                    <div class="img-box">
                                         <!-- TODO 根據幻燈片資料表跑迴圈 -->
                                         <img src="@/assets/img/index/welcome_banner/A02.jpg" alt="">
                                     </div>
