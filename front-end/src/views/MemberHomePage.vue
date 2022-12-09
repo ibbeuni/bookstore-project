@@ -8,6 +8,9 @@
                           src="require(./assets/img/maruko.PNG)"
                           alt="">
                   </div>
+                  <div>
+                    <input type="file" >
+                  </div>
                   <p class="nb nh3">會員姓名</p>
               </div>
           </div>
