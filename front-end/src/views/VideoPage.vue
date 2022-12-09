@@ -319,6 +319,7 @@ table {
     width: 180px;
     height: 140px;
     overflow: hidden;
+    border-radius: 10px;
 
 
 }
