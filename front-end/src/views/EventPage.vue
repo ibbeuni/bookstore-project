@@ -5,9 +5,10 @@
             </div>
         </div>
         <!-- 活動輪播圖 -->
-        <div style="text-align:center">
+        <div style="text-align:center"><a href="http://localhost:8081/#/home/eventdetail/10">
             <img style="border-radius: 30px;" width="1200" height="340"
                 src="../assets/img/event/event_cover/event_cover004.jpeg" alt="">
+                </a>
         </div>
         <div class="bookname">
             <!-- 分類按鈕 -->
