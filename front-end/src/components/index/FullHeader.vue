@@ -25,8 +25,7 @@
                         <input type="search" title="請輸入關鍵字" placeholder="熱門關鍵字">
                     </div>
                     <!-- 放大鏡搜尋按鈕 -->
-                    <button @click="pushData">
-                        <!-- TODO 取得input的內容後，丟到後端撈資料回傳 -->
+                    <button @click="pushData" class="srh-btn">
                         <font-awesome-icon icon="fa-solid fa-magnifying-glass" size="xl" />
                     </button>
                 </div>
@@ -41,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            <nav class="nav-wrap">
+            <nav class="nav-wrap" :class="{ hidden: hidden }">
                 <!-- 漢堡選單 -->
                 <div class="menu-wrap">
                     <button class="menu_btn">
@@ -96,7 +95,6 @@
 </template>
 
 <script>
-// import path from 'path';
 
 export default {
     name: 'FullHeader',
@@ -106,6 +104,7 @@ export default {
     data() {
         return {
             fixed: false,
+            hidden: false,
         }
     },
     methods: {
@@ -118,12 +117,12 @@ export default {
         handleScroll() {
             let headerHight = document.getElementById("header").offsetHeight
             this.fixed = window.scrollY > headerHight ? true : false;
+            this.hidden = window.scrollY > headerHight ? true : false;
         },
         pushData() {
             this.$router.push({
-                path: 'sample',
-                name: 'HomePageSample',
-                params: "",
+                name: 'BestList',
+                params: {abc: '123'},
             });
         }
     },
@@ -230,6 +229,10 @@ button {
     display: none;
 }
 
+.srh-btn {
+    background-color: transparent;
+}
+
 /* 會員、購物車icon */
 .user-menu-list {
     display: flex;
@@ -280,10 +283,6 @@ button {
     border-radius: 50%;
 }
 
-.menu_btn {
-    background-color: var(--background-color);
-}
-
 /* 主選單 */
 .nav-list {
     margin-right: auto;
@@ -301,5 +300,9 @@ button {
     top: 0;
     width: 100%;
     /* background-color: #fffbe6; */
+}
+
+.hidden {
+    display: none;
 }
 </style>

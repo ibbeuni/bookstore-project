@@ -1,6 +1,6 @@
 <template>
     <!-- BODY_WRAPPER -->
-    <!-- <div class="wrap">
+    <div class="wrap">
         <header class="header-wrapper"></header>
         <main></main>
         <footer></footer>
@@ -10,9 +10,9 @@
         <h1> 源石黑體 </h1>
         <h2> 送別 </h2>
         <a href="/#/home/product/102">test</a>
-    </div> -->
+    </div>
     <!-- SWIPER -->
-    <swiper ref="mySwiper" :options="swiperOptions">
+    <!-- <swiper ref="mySwiper" :options="swiperOptions">
         <swiper-slide>
             <img src="@/assets/img/index/welcome_banner/A01.jpg" alt="">
         </swiper-slide>
@@ -29,32 +29,35 @@
             <img src="@/assets/img/index/welcome_banner/D01.jpg" alt="">
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
-    </swiper>
+    </swiper> -->
+
+    
+
 </template>
 
 <script>
-export default {
-    name: 'TestSwiper',
-    data() {
-        return {
-            swiperOptions: {
-                pagination: {
-                    el: '.swiper-pagination'
-                },
-                // Some Swiper option/callback...
-            }
-        }
-    },
-    computed: {
-        swiper() {
-            return this.$refs.mySwiper.$swiper
-        }
-    },
-    mounted() {
-        console.log('Current Swiper instance object', this.swiper)
-        this.swiper.slideTo(3, 1000, false)
-    }
-}
+// export default {
+//     name: 'TestSwiper',
+//     data() {
+//         return {
+//             swiperOptions: {
+//                 pagination: {
+//                     el: '.swiper-pagination'
+//                 },
+//                 // Some Swiper option/callback...
+//             }
+//         }
+//     },
+//     computed: {
+//         swiper() {
+//             return this.$refs.mySwiper.$swiper
+//         }
+//     },
+//     mounted() {
+//         console.log('Current Swiper instance object', this.swiper)
+//         this.swiper.slideTo(3, 1000, false)
+//     }
+// }
 </script>
 
 

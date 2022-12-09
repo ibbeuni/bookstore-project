@@ -87,7 +87,8 @@
                                             <div class="prod-price">
                                                 <span class="percent">10%</span>
                                                 <span class="price">
-                                                    <strong class="val">優惠價 {{ products[index].discount_price }}</strong>
+                                                    <strong class="val">優惠價 {{ products[index].discount_price
+                                                    }}</strong>
                                                     <span class="unit">元</span>
                                                 </span>
                                                 <span class="price-normal">
@@ -140,10 +141,10 @@ export default {
     },
     data() {
         return {
-            all: '',            // 全部
+            all: '',             // 全部
             products: '',        // 跑迴圈用變數
-            appreciation: '',   // 鑑賞
-            painting: '',       // 繪畫
+            appreciation: '',    // 鑑賞
+            painting: '',        // 繪畫
             art: '',             // 藝術
             photography: '',     // 攝影
         }
@@ -169,6 +170,12 @@ export default {
         axios.get('http://127.0.0.1:3000/best_list_photography').then(res => {
             this.photography = res.data;
         })
+
+        if (this.$route.params != undefined) {
+            console.log(this.$route.params)
+        } else {
+            console.log("空")
+        }
     },
     methods: {
         // 全部
