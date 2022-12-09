@@ -13,12 +13,12 @@
                 <div id="productImgDiv">
                     <img id="productImg" :src="'http://127.0.0.1:3000/img/books/' + item[0].img_cover + '.png'" alt="">
                     <div id="productImgPage">
-                        <div>
-                            <button>&lt;</button>
+                        <div class="changeImg">
+                            <button class="btn btn-light">&lt;</button>
                             <span>01</span>
                             <span> - </span>
                             <span>04</span>
-                            <button>&gt;</button>
+                            <button class="btn btn-light">&gt;</button>
                         </div>
                         <div>
                             <button>預覽</button>
@@ -85,7 +85,9 @@
                             <a class="maybeYouLikeTag_a" href="">
                                 <div>
                                     <div class="maybeYouLikeImgDiv">
-                                        <img class="maybeYouLikeImg" :src="('http://127.0.0.1:3000/img/books/' + otherbooks[index].img_cover + '.png')" alt="">
+                                        <img class="maybeYouLikeImg"
+                                            :src="('http://127.0.0.1:3000/img/books/' + otherbooks[index].img_cover + '.png')"
+                                            alt="">
                                     </div>
                                     <div>
                                         <p class="nb booksName">{{ otherbooks[index].product_name }}</p>
@@ -106,7 +108,7 @@
                 <!-- 標籤鏈接 -->
                 <!-- 標籤內容更新OK的話下面刪除-->
 
-                <div class="menu">
+                <div class="productmenu">
                     <label for="L1" class="L1">內容簡介<input id="L1" type="radio" name="menu" checked></label>
                     <label for="L2" class="L2">詳細介紹<input id="L2" type="radio" name="menu"></label>
                     <label for="L3" class="L3">退 / 換貨須知<input id="L3" type="radio" name="menu"></label>
@@ -204,7 +206,7 @@
                 <div id="newBook">
                     <div class="flex">
                         <div class="mrauto">
-                            <span>新書推薦</span>
+                            <span class="nh2 nb">新書推薦</span>
                         </div>
                         <div>
                             <a href="">更多 > </a>
@@ -231,22 +233,20 @@
                 <div id="relatedVideo">
                     <div class="flex">
                         <div class="mrauto">
-                            <span>相關影片推薦</span>
+                            <span class="nh2 nb">相關影片推薦</span>
                         </div>
                         <div>
-                            <a href="">更多 > </a>
+                            <a :href="'/#/home/videopage'">更多 > </a>
                         </div>
                     </div>
                     <div>
                         <a class="relatedVideoTag_a" href="">
                             <div class="relatedVideoInnerDiv">
                                 <div>
-                                    <img class="relatedVideoImg" src="../assets/img/product/video_img.png" alt="">
+                                    <img class="relatedVideoImg" v-bind:src="'http://127.0.0.1:3000/img/video/' + video[0].video_title_img + '.jpg'" alt="">
                                 </div>
                                 <div class="relatedVideoInformation">
-                                    <p>書名</p>
-                                    <p>作者</p>
-                                    <P>NTD300</P>
+                                    <p class="nb">{{video[0].video_name}}</p>
                                 </div>
                             </div>
                         </a>
@@ -283,6 +283,7 @@ export default {
             allbooks: '',
             otherbooks: '',
             item: '',
+            video:'',
 
 
         }
@@ -310,10 +311,18 @@ export default {
 
         }),
 
-            axios.get(`http://127.0.0.1:3000/productdetail${this.id}`).then(res => {
+        axios.get(`http://127.0.0.1:3000/productdetail${this.id}`).then(res => {
                 console.log(res.data)
                 this.item = res.data;
+        }),
+
+        axios.get(`http://localhost:3000/videodetail${this.id}`).then(res => {
+                this.video = res.data;
+                console.log(res.data);
             })
+
+
+
 
     }
 }
@@ -546,6 +555,10 @@ table {
     margin-top: 20px;
 }
 
+.changeImg button{
+    border-radius: 50%;
+}
+
 
 
 #lastPrice {
@@ -663,7 +676,7 @@ table {
 
 }
 
-.booksName{
+.booksName {
     margin-top: 7px;
 }
 
@@ -682,7 +695,7 @@ table {
 
 /* <書本詳細資訊區TAB> */
 /* 設置標籤樣式 */
-.menu label {
+.productmenu label {
     font-weight: bolder;
     padding: 10px 20px;
     text-decoration: none;
@@ -693,36 +706,40 @@ table {
     /* border-top:rgb(159, 159, 159) 1px solid  ;
     border-left: rgb(159, 159, 159) 1px solid ;
     border-right:rgb(159, 159, 159) 1px solid  ; */
-    border: rgb(159, 159, 159) 1px solid ;
+    border: rgb(159, 159, 159) 1px solid;
     box-sizing: content-box;
     background-color: white;
+    text-align: center;
+
     z-index: 10;
-    
+
 }
 
-.menu label:hover {
+
+
+.productmenu label:hover {
     background-color: rgb(237, 237, 237);
 }
 
-.menu input {
+.productmenu input {
     display: none;
 }
 
-.menu .L1 {
+.productmenu .L1 {
     /* background-color: rgb(236, 170, 170); */
 }
 
-.menu .L2 {
+.productmenu .L2 {
     /* background-color: rgb(157, 206, 246); */
 
 }
 
-.menu .L3 {
+.productmenu .L3 {
     /* background-color: rgb(109, 234, 111); */
 
 }
 
-.menu .L4 {
+.productmenu .L4 {
     /* background-color: rgb(245, 240, 101); */
 
 }
@@ -795,25 +812,25 @@ body:has(#L4:checked) .box4 {
 
 body:has(#L1:checked) .L1 {
     background-color: #ccc;
-    border-bottom:white 1px solid ;
+    border-bottom: white 1px solid;
 
 }
 
 body:has(#L2:checked) .L2 {
     background-color: #ccc;
-    border-bottom:white 1px solid ;
+    border-bottom: white 1px solid;
 
 }
 
 body:has(#L3:checked) .L3 {
     background-color: #ccc;
-    border-bottom:white 1px solid ;
+    border-bottom: white 1px solid;
 
 }
 
 body:has(#L4:checked) .L4 {
     background-color: #ccc;
-    border-bottom:white 1px solid ;
+    border-bottom: white 1px solid;
 
 }
 
@@ -865,9 +882,9 @@ body:has(#L4:checked) .L4 {
 
 .thisClassNewBookInformation,
 .relatedVideoInformation {
-    margin: 50px 0 0 20px;
-}
+    margin-left: 20px;
 
+}
 
 
 /* </右側這個類別的新書> */
@@ -880,6 +897,7 @@ body:has(#L4:checked) .L4 {
     width: 134px;
     height: 134px;
     object-fit: cover;
+    border-radius: 7px;
 }
 
 .relatedVideoTag_a {
@@ -889,6 +907,10 @@ body:has(#L4:checked) .L4 {
 .relatedVideoInnerDiv {
     display: flex;
 }
+
+
+
+
 
 /* </右側相關影片> */
 

@@ -7,7 +7,7 @@
             <p><label for="title">繪者:</label><input type="text" /></p>
             <p><label for="title">出版社:</label><input type="text" /></p>
             <p><label for="title">出版日期:</label><input type="date" /></p>
-            <p><label for="title">單選框:</label><input type="radio" />繁體中文<input type="radio" />簡體中文</p>
+            <p><label for="title">單選框:</label><input type="radio" name="language"/>繁體中文<input type="radio" name="language"/>簡體中文</p>
             <p><label for="title">數量:</label><input type="text" /></p>
             <p><label for="title">ISBN:</label><input type="text" /></p>
             <p><label for="title">裝訂方式:</label><input type="text" /></p>

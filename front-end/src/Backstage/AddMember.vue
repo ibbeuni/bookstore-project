@@ -9,7 +9,7 @@
 
     <div>
       <button class="buttomStyle" style="width: 150px; height: 50px">
-        新增會員
+        新增與修改會員
       </button>
     </div>
   </div>
