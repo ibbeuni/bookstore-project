@@ -1,43 +1,22 @@
 <template>
     
     <div class="bg-wrap">
-        <div class="card-wrap">
-            <!-- 標題 -->
-            <div class="header-wrap">
-                <div class="date-wrap">
-                    <div>25</div>
-                    <div class="date-text">
-                        <div>Dec</div>
-                        <div>2022</div>
-                    </div>
-                </div>
-                <div class="week">SUNDAY</div>
-            </div>
-            <!-- 新增 -->
-            <div class="add-wrap">
-                <input class="add-input" placeholder="請輸入待辦事項..." type="text" />
-                <div class="add-btn">新增</div>
-            </div>
-            <!-- 筆數 -->
-            <div class="count-wrap">0/2筆</div>
-    
-            <!-- 待辦事項列表 -->
-            <ul class="list-wrap">
-                <!-- 代辦事項元件 -->
-                <li class="todo-item">
-                    <input type="checkbox" class="check-todo">
-                    <label class="content">JavaScript語法學習</label>
-                    <div class="delete-btn">刪除</div>
-                </li>
-                <li class="todo-item">
-                    <input type="checkbox" class="check-todo">
-                    <label class="content">js框架學習</label>
-                    <div class="delete-btn">刪除</div>
-                </li>
-            </ul>
-        </div>
+        <test-swiper></test-swiper>
     </div>
 </template>
+
+<script>
+import TestSwiper from '../views/TestPage.vue';
+export default {
+    name: 'TestSwiper',
+    components: {
+        'test-swiper': TestSwiper,
+    },
+}
+
+</script>
+
+
 
 <style scoped>
 

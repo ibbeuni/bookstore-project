@@ -25,10 +25,10 @@
                         <input type="search" title="請輸入關鍵字" placeholder="熱門關鍵字">
                     </div>
                     <!-- 放大鏡搜尋按鈕 -->
-                    <a href="">
+                    <button @click="pushData">
                         <!-- TODO 取得input的內容後，丟到後端撈資料回傳 -->
                         <font-awesome-icon icon="fa-solid fa-magnifying-glass" size="xl" />
-                    </a>
+                    </button>
                 </div>
                 <!-- 購物車、會員icon -->
                 <div class="user-menu-list">
@@ -96,6 +96,8 @@
 </template>
 
 <script>
+// import path from 'path';
+
 export default {
     name: 'FullHeader',
     created() {
@@ -117,6 +119,13 @@ export default {
             let headerHight = document.getElementById("header").offsetHeight
             this.fixed = window.scrollY > headerHight ? true : false;
         },
+        pushData() {
+            this.$router.push({
+                path: 'sample',
+                name: 'HomePageSample',
+                params: "",
+            });
+        }
     },
 }
 </script>
@@ -269,6 +278,10 @@ button {
     width: 44px;
     height: 44px;
     border-radius: 50%;
+}
+
+.menu_btn {
+    background-color: var(--background-color);
 }
 
 /* 主選單 */
