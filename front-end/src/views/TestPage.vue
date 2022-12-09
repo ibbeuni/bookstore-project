@@ -9,6 +9,7 @@
         <small>p-s: hello</small>
         <h1> 源石黑體 </h1>
         <h2> 送別 </h2>
+        <a href="/#/home/product/102">test</a>
     </div>
 </template>
 

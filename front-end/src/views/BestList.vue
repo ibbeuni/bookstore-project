@@ -7,7 +7,51 @@
             <section class="contents-wrap">
                 <div class="contents-inner flex">
                     <!-- LNB -->
-                    <aside-nav></aside-nav>
+                    <!-- <aside-nav></aside-nav> -->
+                    <aside class="aside-wrap">
+                        <div class="aside-header">
+                            <div class="aside-title-wrap">
+                                <h2 class="aside-title-heading">
+                                    暢銷書單
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="aside-body">
+                            <div class="snb-wrap">
+                                <ul class="snb-list">
+                                    <li class="snb-item">
+                                        <!-- TODO 加入連結 -->
+                                        <button type="button" class="snb-btn">
+                                            <h5>綜合</h5>
+                                        </button>
+                                    </li>
+                                    <li class="snb-item">
+                                        <button type="button" class="snb-btn" @click="getAppreciationData">
+                                            <h5>鑑賞</h5>
+                                        </button>
+                                    </li>
+                                    <li class="snb-item">
+                                        <!-- TODO 加入連結 -->
+                                        <button type="button" class="snb-btn" @click="getPaintingData">
+                                            <h5>繪畫</h5>
+                                        </button>
+                                    </li>
+                                    <li class="snb-item">
+                                        <!-- TODO 加入連結 -->
+                                        <button type="button" class="snb-btn" @click="getArtData">
+                                            <h5>藝術</h5>
+                                        </button>
+                                    </li>
+                                    <li class="snb-item">
+                                        <!-- TODO 加入連結 -->
+                                        <button type="button" class="snb-btn" @click="getPhotographyData">
+                                            <h5>攝影</h5>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </aside>
                     <!-- contents -->
                     <section class="section-wrap">
                         <!-- title 根據aside切換，更換內容 -->
@@ -23,30 +67,31 @@
                                             <!-- TODO 指定商品網址 -->
                                             <a href="" class="prod-link">
                                                 <div class="img-box">
-                                                    <img v-bind:src="'http://127.0.0.1:3000/img/books/' + products[index].img_cover + '.png'" alt="">
+                                                    <img v-bind:src="'http://127.0.0.1:3000/img/books/' + products[index].img_cover + '.png'"
+                                                        alt="">
                                                 </div>
                                             </a>
                                         </div>
                                         <div class="prod-info-box">
                                             <!-- TODO 指定商品網址 -->
                                             <a href="" class="prod-info">
-                                                <h5 class="prod-name">{{products[index].product_name}}</h5>
+                                                <h5 class="prod-name">{{ products[index].product_name }}</h5>
                                             </a>
                                             <p class="prod-author">
-                                                {{products[index].auther}}
+                                                {{ products[index].auther }}
                                                 &nbsp;|&nbsp;
-                                                {{products[index].publishing_house}}
+                                                {{ products[index].publishing_house }}
                                                 &nbsp;|&nbsp;
-                                                <span class="date">{{products[index].publication_date}} 出版</span>
+                                                <span class="date">{{ products[index].publication_date }} 出版</span>
                                             </p>
                                             <div class="prod-price">
                                                 <span class="percent">10%</span>
                                                 <span class="price">
-                                                    <strong class="val">優惠價 {{products[index].discount_price}}</strong>
+                                                    <strong class="val">優惠價 {{ products[index].discount_price }}</strong>
                                                     <span class="unit">元</span>
                                                 </span>
                                                 <span class="price-normal">
-                                                    <small class="val">原價 {{products[index].list_price}}</small>
+                                                    <small class="val">原價 {{ products[index].list_price }}</small>
                                                     <span class="unit">元</span>
                                                 </span>
                                             </div>
@@ -81,7 +126,7 @@
 
 <script>
 import BreadCrumb from '../components/best/BreadCrumb.vue';
-import AsideNav from '../components/best/AsideNav.vue';
+// import AsideNav from '../components/best/AsideNav.vue';
 import SectionTitle from '../components/best/SectionTitle.vue';
 // import ProdList from '../components/best/ProdList.vue';
 import axios from 'axios'
@@ -89,18 +134,18 @@ import axios from 'axios'
 export default {
     components: {
         'bread-crumb': BreadCrumb,
-        'aside-nav': AsideNav,
+        // 'aside-nav': AsideNav,
         'section-title': SectionTitle,
         // 'prod-list': ProdList,
     },
     data() {
         return {
             all: '',            // 全部
-            products:'',        // 隨機10筆
+            products: '',        // 跑迴圈用變數
             appreciation: '',   // 鑑賞
-            painting: '',       // 鑑賞
-            art:'',             // 藝術
-            photography:'',     // 攝影
+            painting: '',       // 繪畫
+            art: '',             // 藝術
+            photography: '',     // 攝影
         }
     },
     mounted() {
@@ -108,6 +153,48 @@ export default {
             this.all = res.data;
             this.products = this.all
         })
+
+        axios.get('http://127.0.0.1:3000/best_list_appreciation').then(res => {
+            this.appreciation = res.data;
+        })
+
+        axios.get('http://127.0.0.1:3000/best_list_art').then(res => {
+            this.painting = res.data;
+        })
+
+        axios.get('http://127.0.0.1:3000/best_list_painting').then(res => {
+            this.art = res.data;
+        })
+
+        axios.get('http://127.0.0.1:3000/best_list_photography').then(res => {
+            this.photography = res.data;
+        })
+    },
+    methods: {
+        // 全部
+        getAllData() {
+            this.products = this.all
+        },
+
+        // 鑑賞
+        getAppreciationData() {
+            this.products = this.appreciation;
+        },
+
+        // 繪畫
+        getPaintingData() {
+            this.products = this.painting;
+        },
+
+        // 藝術
+        getArtData() {
+            this.products = this.art;
+        },
+
+        // 攝影
+        getPhotographyData() {
+            this.products = this.photography;
+        },
     }
 }
 </script>
@@ -138,6 +225,50 @@ export default {
     padding-top: 42px;
 }
 
+/* aside */
+.aside-wrap {
+    width: 170px;
+    padding-right: 46px;
+}
+
+.aside-header {
+    margin-bottom: 30px;
+}
+
+.aside-title-wrap {
+    padding-bottom: 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.aside-title-heading {
+    line-height: 30px;
+}
+
+.snb-list {
+    list-style: none;
+    padding: 0;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    /* padding-inline-start: 40px; */
+}
+
+.snb-item {
+    display: list-item;
+}
+
+.snb-btn {
+    border: 0;
+    background-color: var(--background-color);
+}
+
+.snb-btn h5 {
+    margin-bottom: 2rem;
+    line-height: 23px;
+}
+
 /* 右側顯示區 */
 .section-wrap {
     width: calc(100% - 150px);
@@ -165,7 +296,7 @@ ol {
     align-items: flex-start;
 }
 
-.prod-info-box{
+.prod-info-box {
     flex: 1;
     padding-right: 50px;
 }

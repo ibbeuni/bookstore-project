@@ -31,9 +31,8 @@
                 <ul class="swiper-wrapper" v-for="(item, index) in cover" :key="'id' + index">
                     <li class="main-swiper-slide">
                         <div class="main-prod-area">
-                            <!-- TODO 加入商品連結 -->
                             <div class="main-prod-thumb-box">
-                                <a href="" class="prod-link">
+                                <a :href="'/#/home/product/' + cover[index].product_id">
                                     <span class="main-img-box">
                                         <img v-bind:src="'http://127.0.0.1:3000/img/books/' + cover[index].img_cover + '.png'"
                                             alt="封面">
@@ -41,8 +40,7 @@
                                 </a>
                             </div>
                             <div class="main-prod-info-box">
-                                <!-- TODO 加入商品連結 -->
-                                <a href="" class="prod-info">
+                                <a :href="'/#/home/product/' + cover[index].product_id">
                                     <h5 class="main-prod-name">{{ cover[index].product_name }}</h5>
                                 </a>
                                 <small class="prod-author">{{ cover[index].auther }}</small>
@@ -60,14 +58,14 @@
                 <ul class="swiper-wrapper" v-for="(item, index) in products" :key="index">
                     <li class="swiper-slide">
                         <div class="thumb-img-box">
-                            <a href="">
+                            <a :href="'/#/home/product/' + products[index].product_id">
                                 <img v-bind:src="'http://127.0.0.1:3000/img/books/' + products[index].img_cover + '.png'"
                                     alt="封面">
                             </a>
                         </div>
                         <div class="prod-area">
                             <div class="prod-info-box">
-                                <a href="" class="prod-info">
+                                <a :href="'/#/home/product/' + products[index].product_id" class="prod-info">
                                     <small class="side-prod-name">{{ products[index].product_name }}</small>
                                 </a>
                             </div>
@@ -96,7 +94,7 @@ export default {
             cover: '',       // 取第1筆
             products: '',    // 取前4筆
             appreciation: '',   // 鑑賞
-            painting: '',       // 鑑賞
+            painting: '',       // 繪畫
             art:'',             // 藝術
             photography:'',     // 攝影
         }

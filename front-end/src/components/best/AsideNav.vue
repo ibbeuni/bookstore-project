@@ -1,8 +1,8 @@
 <template>
     <aside class="aside-wrap">
         <div class="aside-header">
-            <div class="title-wrap">
-                <h2 class="title-heading">
+            <div class="aside-title-wrap">
+                <h2 class="aside-title-heading">
                     暢銷書單
                 </h2>
             </div>
@@ -18,14 +18,14 @@
                     </li>
                     <li class="snb-item">
                         <!-- TODO 加入連結 -->
-                        <a href="" class="snb-line">
-                            <h5>繪畫</h5>
-                        </a>
+                        <button type="button" class="snb-btn">
+                            <h5>鑑賞</h5>
+                        </button>
                     </li>
                     <li class="snb-item">
                         <!-- TODO 加入連結 -->
                         <a href="" class="snb-line">
-                            <h5>攝影</h5>
+                            <h5>繪畫</h5>
                         </a>
                     </li>
                     <li class="snb-item">
@@ -37,7 +37,7 @@
                     <li class="snb-item">
                         <!-- TODO 加入連結 -->
                         <a href="" class="snb-line">
-                            <h5>鑑賞</h5>
+                            <h5>攝影</h5>
                         </a>
                     </li>
                 </ul>
@@ -50,7 +50,7 @@
 <script>
 
 export default {
-    name: 'AsideNav'
+    name: 'AsideNav',
 }
 
 </script>
@@ -66,7 +66,7 @@ export default {
     margin-bottom: 30px;
 }
 
-.title-wrap {
+.aside-title-wrap {
     padding-bottom: 0;
     display: flex;
     justify-content: start;
@@ -74,7 +74,7 @@ export default {
     flex-direction: row;
 }
 
-.title-heading {
+.aside-title-heading {
     line-height: 30px;
 }
 
@@ -88,6 +88,11 @@ export default {
 
 .snb-item {
     display: list-item;
+}
+
+.snb-btn {
+    border: 0;
+    background-color: var(--background-color);
 }
 
 .snb-line h5 {
