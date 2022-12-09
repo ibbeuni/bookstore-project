@@ -25,7 +25,7 @@
             <!-- 類別按鈕 -->
             <div>
                 <ul>
-                    <a href="http://localhost:8081/#/home/eventpage" style="font-size: 25px">其他書籍活動</a><br><br>
+                    <a href="/#/home/eventpage" style="font-size: 25px">其他書籍活動</a><br><br>
                     <li class="linkLi"><button><span>所有活動</span></button></li>
                     <li class="linkLi"><button><span>收藏</span></button></li>
                     <li class="linkLi"><button><span>繪畫</span></button></li>
@@ -38,7 +38,7 @@
                 <ul class="event_list col4">
                     <li class="event_item" v-for="(item, index) in allevent" :key="index">
                         <div>
-                            <a :href="('http://localhost:8081/#/home/eventdetail/' + allevent[index].event_1)">
+                            <a :href="('/#/home/eventdetail/' + allevent[index].event_1)">
                                 <div>
                                     <img class=""
                                         v-bind:src="'http://127.0.0.1:3000/img/event/event_minicover/' + allevent[index].event_minicover + '.jpeg'"
