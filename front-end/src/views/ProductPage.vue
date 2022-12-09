@@ -127,7 +127,7 @@
                 </div>
                 <div class="box box2">
                     <br><br>
-                    <h3>詳細介紹(寫死)</h3>
+                    <h3>詳細介紹</h3>
 
                     <table id="tableStyle">
                         <tr>
@@ -255,7 +255,6 @@
 
                 </div>
             </div>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         </div>
         <br><br><br><br><br><br><br><br><br><br>
@@ -691,10 +690,14 @@ table {
     color: black;
     margin: auto 5px 0 0;
     border-radius: 10px 10px 0 0;
-    border-top: rgb(159, 159, 159) solid 1px;
-    border-right: rgb(159, 159, 159) solid 1px;
-    border-left: rgb(159, 159, 159) solid 1px;
+    /* border-top:rgb(159, 159, 159) 1px solid  ;
+    border-left: rgb(159, 159, 159) 1px solid ;
+    border-right:rgb(159, 159, 159) 1px solid  ; */
+    border: rgb(159, 159, 159) 1px solid ;
     box-sizing: content-box;
+    background-color: white;
+    z-index: 10;
+    
 }
 
 .menu label:hover {
@@ -728,6 +731,7 @@ table {
     width: 100%;
     display: none;
     border: 1px solid rgb(159, 159, 159);
+    margin-top: -1px;
 }
 
 .box p,
@@ -791,18 +795,26 @@ body:has(#L4:checked) .box4 {
 
 body:has(#L1:checked) .L1 {
     background-color: #ccc;
+    border-bottom:white 1px solid ;
+
 }
 
 body:has(#L2:checked) .L2 {
     background-color: #ccc;
+    border-bottom:white 1px solid ;
+
 }
 
 body:has(#L3:checked) .L3 {
     background-color: #ccc;
+    border-bottom:white 1px solid ;
+
 }
 
 body:has(#L4:checked) .L4 {
     background-color: #ccc;
+    border-bottom:white 1px solid ;
+
 }
 
 /* 書本詳細資料 */
