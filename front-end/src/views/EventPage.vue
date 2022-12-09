@@ -25,7 +25,7 @@
             <div>
                 <ul class="event_list col4">
                     <li class="event_item" v-for="(item, index) in allevent" :key="index">
-                        <a :href="('http://localhost:8081/#/home/eventdetail/'+ allevent[index].event_id )">
+                        <a :href="('http://localhost:8081/#/home/eventdetail/' + allevent[index].event_id )">
                             <div class="event_area">
                                 <div class="event_thumb_box">
                                     <span class="img_box">
