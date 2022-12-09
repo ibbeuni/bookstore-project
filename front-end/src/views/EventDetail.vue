@@ -12,13 +12,13 @@
                 <h2>《就算是空的》 發表活動</h2>
             </div>
             <div>
-                <p>{{date_start}}~{{date_end}}</p>
+                <p>{{item[0].date_start}}~{{item[0].date_end}}</p>
             </div>
         </div>
         <!-- 活動圖片區 -->
-        <div class="bookimg" v-for="(item, index) in allevent" :key="index">
+        <div class="bookimg">
             <img class=""
-                v-bind:src="'http://127.0.0.1:3000/img/event/event_info/' + allevent[index].event_1 + '.jpeg'"
+                v-bind:src="'http://127.0.0.1:3000/img/event/event_info/' + item[0].event_1 + '.jpeg'"
                 alt="">
         </div>
         <div class="bookname">
