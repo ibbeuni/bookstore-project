@@ -181,14 +181,12 @@ export default {
   },
   mounted() {
     axios.get("http://127.0.0.1:3000/booktable/").then((res) => {
-      console.log(res);
       this.allBookList = res.data;
     });
 
     axios.get("http://127.0.0.1:3000/best_list").then((res) => {
       this.all = res.data;
       this.products = this.all;
-      console.log("products", this.products);
     });
 
     axios.get("http://127.0.0.1:3000/best_list_appreciation").then((res) => {
@@ -243,8 +241,7 @@ export default {
     },
   },
   watch: {
-    condition(newVal, oldVal) {
-      console.log(newVal, oldVal);
+    condition(newVal) {
       if (newVal != "") {
         this.products = this.searchbookList;
       } else {

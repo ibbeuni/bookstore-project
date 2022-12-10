@@ -140,10 +140,7 @@ export default {
       if (urlPath != "/home/best") {
         this.$router.push({
           name: "BestList",
-          params: { a: this.test },
         });
-      } else {
-        console.log(this.$route.params);
       }
 
       // 如果是從別頁面？
