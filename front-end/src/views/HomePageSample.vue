@@ -1,18 +1,18 @@
 <template>
     
     <div class="bg-wrap">
-        <test-swiper></test-swiper>
+        <!-- <test-swiper></test-swiper> -->
     </div>
 </template>
 
 <script>
-import TestSwiper from '../views/TestPage.vue';
-export default {
-    name: 'TestSwiper',
-    components: {
-        'test-swiper': TestSwiper,
-    },
-}
+// import TestSwiper from '../views/TestPage.vue';
+// export default {
+//     name: 'TestSwiper',
+//     components: {
+//         'test-swiper': TestSwiper,
+//     },
+// }
 
 </script>
 

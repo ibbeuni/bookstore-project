@@ -46,12 +46,12 @@ const routes = [
             {
                 path: 'homepage',
                 name: 'HomePage',
-                component: HomePage,
+                component: HomePage
             },
             {
                 path: 'login',
                 name: 'LoginPage',
-                component: LoginPage,
+                component: LoginPage
             },
             {
                 path: 'best',
