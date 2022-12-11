@@ -8,7 +8,7 @@
     <p><label for="title">會員生日:</label><input v-model="memberData.member_birthday" type="text" required /></p>
 
     <div>
-      <button class="buttomStyle" style="width: 150px; height: 50px">
+      <button @click="updateMember(item)" class="buttomStyle" style="width: 150px; height: 50px" >
         新增與修改會員
       </button>
     </div>
@@ -23,6 +23,14 @@ export default {
       memberData:{},
     };
   },
+  methods: {
+     updateMember(item) {
+      this.$router.push({
+        name: "memberlist",
+        params: item,
+      });
+    },
+  },
   mounted() {
     if(this.$route.params['member_name'] != undefined){
         console.log(this.$route.params)
@@ -32,4 +40,5 @@ export default {
     }
   },
 };
+
 </script>
