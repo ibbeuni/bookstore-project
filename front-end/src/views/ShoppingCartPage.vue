@@ -30,8 +30,8 @@
           <div class="shopItem" v-for="(item, index) in pdt" :key="index">
             <div class="buyProduct flex" >
               <div class="flex productImgName" >
-                <div><img class="shopItemImg" :src="'@/assets/img/shoppingcar' + item.img_cover + '.png'" /></div>
-                <div><p class="nb">{{ item.product_name }}</p></div>
+                <div><img class="shopItemImg" v-bind:src="'http://127.0.0.1:3000/img/books/' + item.img_cover + '.png'" /></div>
+                <div ><p class='bookname'>{{ item.product_name }}</p></div>
               </div>
 
               <ul class="singlePrice">
@@ -502,6 +502,15 @@ table {
   border: 1px black solid;
   border-radius: 5px;
 }
+.bookname{
+  margin-top:30%;
+  display: flex;
+  font-size:12.5px;
+  color: black;
+  background-color:#e3d096;
+  
+}
+
 
 /* /購物車清單內容 */
 
@@ -544,7 +553,7 @@ table {
   border-radius: 10px;
 }
 .imgCtrl {
-  background-color:grey;
+  background-image: url("@/assets/noPic.png");
   width: 150px;
   height: 150px;
 }

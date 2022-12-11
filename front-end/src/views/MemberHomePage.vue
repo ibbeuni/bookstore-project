@@ -25,7 +25,7 @@
                     <font-awesome-icon icon="fa-solid fa-pen-to-square" />
                     <input type="file" @change="fileSelected" >
                   </div>
-                  <p class="nb nh3">{{name}}</p>
+                  <p class="nb nh3">Hello!{{name}}</p>
               </div>
               <ul class="nh3 nb">
                   <li><a href="" >會員資料</a></li>
@@ -130,8 +130,7 @@ export default{
      axios.get('http://127.0.0.1:3000/member').then(res =>{
       this.user = res.data;
       this.id=res.data[0].member_id;
-      this.password=res.data[0].member_password;
-    
+     
       
       
      }).catch(err=>{
@@ -146,17 +145,23 @@ export default{
   save(){
 
       axios.post('http://127.0.0.1:3000/member/post',{
+      
         params:{
           name: this.name,
           phone:this.phone,
           birthday:this.birthday,
           address:this.address
         }
+        
       }).then(res =>{
+        console.log(res.data);
         if(res.data.status == 200){
+          
           console.log(res.data)
           alert('儲存成功')
           this.router.push('/homepage')
+        }else{
+          console.log(res.data)
         }
       })
    
