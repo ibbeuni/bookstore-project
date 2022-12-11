@@ -27,10 +27,7 @@
   
       <div>
         <button
-          @click="addMember"
-          class="buttomStyle"
-          style="width: 150px; height: 50px"
-        >
+          @click="addMember" class="buttomStyle" style="width: 150px; height: 50px">
           新增與修改會員
         </button>
       </div>

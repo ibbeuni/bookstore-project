@@ -8,11 +8,7 @@
                     </li>
                     <li>-</li>
                     <li class="nav_item">
-                        <router-link to="/back/booklist" style="color: orange;">書籍上架</router-link>
-                    </li>
-                    <li>-</li>
-                    <li class="nav_item">
-                        <router-link to="/back/BookAlter" style="color: orange;">書籍下架修改</router-link>
+                        <router-link to="/back/booklist" style="color: orange;">書籍上下架與修改</router-link>
                     </li>
                     <li>-</li>
                     <li class="nav_item">
