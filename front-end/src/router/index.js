@@ -165,7 +165,6 @@ const routes = [
         // redirect: '/back1/loginback',
         name: 'loginback',
         component: LoginBack,
- 
     },
     {
         path: '/back',

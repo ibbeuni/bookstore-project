@@ -18,6 +18,10 @@
                     <li class="nav_item">
                         <router-link to="/back/dashboard" style="color: orange;">銷售圖表與庫存</router-link>
                     </li>
+                    <li>-</li>
+                    <li class="nav_item">
+                        <router-link to="/home" style="color: orange;">返回主頁</router-link>
+                    </li>
                 </ul>
             </nav>
     </header>
