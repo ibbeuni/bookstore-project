@@ -48,11 +48,18 @@ export default {
         name: "addmember",
       });
     },
-    updateMember(item) {
-      this.$router.push({
-        name: "addmember",
-        params: item,
-      });
+    updateMember(item,index) {
+        this.$router.push({
+            name: "addmember",
+            params: item,
+        });
+        axios
+        .update("http://127.0.0.1:3000/acc/")
+        .then((res) => {
+          if (res.data == "success") {
+            this.memberList.splice(index, 1);
+          }
+        });
     },
     deleteMember(item, index) {
       axios

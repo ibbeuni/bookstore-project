@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
@@ -24,12 +25,15 @@ export default {
     };
   },
   methods: {
-     updateMember(item) {
+     updateMember(item,) {
       this.$router.push({
         name: "memberlist",
         params: item,
-      });
-    },
+    });
+    axios
+      .patch("http://127.0.0.1:3000/acc/"),{
+      member_name:''}
+  },
   },
   mounted() {
     if(this.$route.params['member_name'] != undefined){
