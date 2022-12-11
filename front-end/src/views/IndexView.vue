@@ -2,8 +2,8 @@
     <!-- BODY_WRAPPER -->
     <div class="wrap">
         <!-- HEADER_COMPONENT -->
-        <full-header></full-header>
-        <router-view></router-view>
+        <full-header @searchText="updateSearchText"></full-header>
+        <router-view :condition="searchText"></router-view>
         <!-- FOOTER -->
         <full-footer></full-footer>
     </div>
@@ -19,9 +19,17 @@ export default {
     },
     data() {
         return {
-            a: ''
+            searchText: '',
         }
+    },
+    methods: {
+         updateSearchText(ans) {
+    //   this.answer = ans;
+    console.log(ans)
+    this.searchText = ans
+
     }
+    },
 }
 </script>
 

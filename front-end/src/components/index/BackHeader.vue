@@ -8,15 +8,15 @@
                     </li>
                     <li>-</li>
                     <li class="nav_item">
-                        <router-link to="/back/booklist" style="color: orange;">書籍上架</router-link>
-                    </li>
-                    <li>-</li>
-                    <li class="nav_item">
-                        <router-link to="/back/BookAlter" style="color: orange;">書籍下架修改</router-link>
+                        <router-link to="/back/booklist" style="color: orange;">書籍上下架與修改</router-link>
                     </li>
                     <li>-</li>
                     <li class="nav_item">
                         <router-link to="/back/dashboard" style="color: orange;">銷售圖表與庫存</router-link>
+                    </li>
+                    <li>-</li>
+                    <li class="nav_item">
+                        <router-link to="/home" style="color: orange;">返回主頁</router-link>
                     </li>
                 </ul>
             </nav>

@@ -1,22 +1,22 @@
 const express = require('express');
 const router = express.Router();
-const accDao = require('../dao/AccDao')
+const bookDao = require('../dao/BookDao')
 
 router.get('/', (req, res) => {
-    accDao.getUserList().then(function (results) {
+    bookDao.getUserList().then(function (results) {
         res.send(results);
     })
 });
 
 router.post('/', (req, res) => {
-    accDao.findById(req.body.data).then(function (results) {
+    bookDao.findById(req.body.data).then(function (results) {
         console.log(results.length)
         if (results.length > 0) {
-            accDao.updateMember(req.body.data).then(function (result) {
+            bookDao.updateBook(req.body.data).then(function (result) {
                 res.send(result);
             })
         } else {
-            accDao.addMember(req.body.data).then(function (result) {
+            bookDao.addBook(req.body.data).then(function (result) {
                 res.send(result);
             })
         }
@@ -29,7 +29,7 @@ router.put('/', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    accDao.deleteMember(req.params.id).then(function (result) {
+    bookDao.deleteBook(req.params.id).then(function (result) {
         res.send(result);
     })
 });

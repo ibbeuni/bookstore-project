@@ -1,7 +1,7 @@
 let db = require('../dataBase/index')
 
 const getUserList = function () {
-    var sql = 'SELECT * FROM book_store.membership_table'
+    var sql = 'SELECT * FROM book_store.book_table'
 
     return new Promise(function (resolve, reject) {
         db.query(
@@ -19,13 +19,13 @@ const getUserList = function () {
 
 };
 
-const findById = function(member){
+const findById = function(book){
 
-    var sql = 'SELECT * FROM book_store.membership_table WHERE member_id = ?'
+    var sql = 'SELECT * FROM book_store.book_table WHERE product_id = ?'
 
     return new Promise(function (resolve, reject) {
         db.query(
-            sql,member['member_id'],
+            sql,book['product_id'],
             function (err, rows) {
                 if (err) {
                     reject(new Error("error"));
@@ -38,13 +38,13 @@ const findById = function(member){
 
 };
 
-const addMember = function (member) {
+const addBook = function (book) {
 
-    var sql = 'insert into membership_table SET ?'
+    var sql = 'insert into book_table SET ?'
 
     return new Promise(function (resolve, reject) {
 
-        db.query(sql, member, (err, data) => {
+        db.query(sql, book, (err, data) => {
             if (err) {
                 reject(new Error("error"));
             } else {
@@ -55,12 +55,12 @@ const addMember = function (member) {
 
 };
 
-const updateMember = function(member){
-    var sql = 'UPDATE membership_table SET ? WHERE member_id = ?' 
+const updateBook = function(book){
+    var sql = 'UPDATE book_table SET ? WHERE product_id = ?' 
 
     return new Promise(function (resolve, reject) {
 
-        db.query(sql, [member,member['member_id']], (err, data) => {
+        db.query(sql, [book,book['product_id']], (err, data) => {
             if (err) {
                 reject(new Error("error"));
             } else {
@@ -70,12 +70,12 @@ const updateMember = function(member){
     })
 }
 
-const deleteMember = function(memberID){
-    var sql = 'DELETE FROM membership_table WHERE member_id = ?' 
+const deleteBook = function(bookID){
+    var sql = 'DELETE FROM book_table WHERE product_id = ?' 
 
     return new Promise(function (resolve, reject) {
 
-        db.query(sql, memberID, (err, data) => {
+        db.query(sql, bookID, (err, data) => {
             if (err) {
                 reject(new Error("error"));
             } else {
@@ -90,4 +90,4 @@ const app2 = () => {
     console.log('app2');
 };
 
-module.exports = { getUserList, addMember, updateMember, deleteMember, findById, app2 };
+module.exports = { getUserList, addBook, updateBook, deleteBook, findById, app2 };
