@@ -28,7 +28,7 @@ import DashBoard from '../Backstage/DashBoard.vue';
 import LoginBack from '../Backstage/LoginBack.vue';
 import AddMember from '../Backstage/AddMember.vue';
 import AddBook from '../Backstage/AddBook.vue';
-// import AddBook from '../Backstage/AddBook.vue';
+import PaymentPage from "../views/PaymentPage.vue";
 Vue.use(VueRouter);
 
 //获取原型对象上的push函数
@@ -157,6 +157,11 @@ const routes = [
                 name: 'ZtTest',
                 component: ZtTest
             },
+            {
+                path: 'paymentpage',
+                name: 'PaymentPage',
+                component: PaymentPage,
+            }
         ],
     },
     {
