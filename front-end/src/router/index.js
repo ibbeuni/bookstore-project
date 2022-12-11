@@ -30,6 +30,7 @@ import AddMember from '../Backstage/AddMember.vue';
 import BookAlter from '../Backstage/BookAlter.vue';
 import addBook from '../Backstage/addBook.vue';
 import alterBook from '../Backstage/alterBook.vue';
+import PaymentPage from "../views/PaymentPage.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -151,6 +152,11 @@ const routes = [
                 name: 'ZtTest',
                 component: ZtTest
             },
+            {
+                path: 'paymentpage',
+                name: 'PaymentPage',
+                component: PaymentPage,
+            }
         ],
     },
     {
