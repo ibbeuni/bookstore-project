@@ -147,7 +147,7 @@ const routes = [
             }
             ,
             {
-                path: 'ZtTest',
+                path: 'ZtTest/:id',
                 name: 'ZtTest',
                 component: ZtTest
             },
