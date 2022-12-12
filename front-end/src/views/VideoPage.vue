@@ -1,6 +1,7 @@
 <template>
     <div>
         <router-view></router-view>
+        <br><br><br><br><br>
         <div id="videoPage">
 
             <!-- <p>分類>分類>分類</p> -->
@@ -42,7 +43,7 @@
                     <a href="#" class="numberRound">3</a> -->
                 <!-- <a href="#" class="numberRound">3</a> -->
                 <!-- <a href="#" class="next round">&#8250;</a> -->
-                <button  class="previous round">&#8249;</button>
+                <button class="previous round">&#8249;</button>
                 <button @click="pageOne" class="numberRound">1</button>
                 <button @click="pageTwo" class="numberRound">2</button>
                 <!-- <button class="numberRound">3</button> -->
@@ -61,7 +62,7 @@ import axios from "axios"
 export default {
     data() {
         return {
-            aa:1,
+            aa: 1,
             allVideo: '',
             pageVideo: '',
             // imgSrc:require('../../static/img/video/v10201.jpg'),
@@ -74,28 +75,28 @@ export default {
         axios.get('http://127.0.0.1:3000/videotable').then(res => {
 
             this.allVideo = res.data;
-            this.pageVideo = res.data.slice(0,15)
+            this.pageVideo = res.data.slice(0, 15)
             console.log(res.data);
             // console.log(this.imgSrc);
         })
     },
 
     methods: {
-        pageOne(){
+        pageOne() {
             // let aa = 
-            this.pageVideo = this.allVideo.slice(0,15);
-            console.log( this.pageVideo);
+            this.pageVideo = this.allVideo.slice(0, 15);
+            console.log(this.pageVideo);
         },
 
-        pageTwo(){
-            let aa = this.allVideo.slice(15,30);
-            console.log( this.pageVideo);
+        pageTwo() {
+            let aa = this.allVideo.slice(15, 30);
+            console.log(this.pageVideo);
             this.pageVideo = aa;
         },
-        nextPage(){
+        nextPage() {
 
-            
-            
+
+
         }
 
         // get() {
@@ -397,7 +398,7 @@ table {
 }
 
 .bookInfo {
-margin-left: 10px;
+    margin-left: 10px;
 }
 
 

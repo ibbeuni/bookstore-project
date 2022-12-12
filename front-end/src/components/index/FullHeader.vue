@@ -130,8 +130,8 @@ export default {
     },
     handleScroll() {
       let headerHight = document.getElementById("header").offsetHeight;
-      this.fixed = window.scrollY > headerHight ? true : false;
-      this.hidden = window.scrollY > headerHight ? true : false;
+      this.fixed = true ;
+      this.hidden = window.scrollY > (headerHight/4) ? true : false;
     },
     pushData() {
       this.$emit("searchText", this.searchText);

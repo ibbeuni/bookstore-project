@@ -1,6 +1,6 @@
 <template>
     <!-- BODY_WRAPPER -->
-    <div class="wrap">
+    <!-- <div class="wrap">
         <header class="header-wrapper"></header>
         <main></main>
         <footer></footer>
@@ -10,7 +10,7 @@
         <h1> 源石黑體 </h1>
         <h2> 送別 </h2>
         <a href="/#/home/product/102">test</a>
-    </div>
+    </div> -->
     <!-- SWIPER -->
     <!-- <swiper ref="mySwiper" :options="swiperOptions">
         <swiper-slide>
@@ -30,8 +30,31 @@
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
     </swiper> -->
-
-    
+    <div>
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="1000">
+                    <img src="../assets/img/index/welcome_banner/A01.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="1000">
+                    <img src="../assets/img/index/welcome_banner/A02.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="1000">
+                    <img src="../assets/img/index/welcome_banner/B01.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
 
 </template>
 
@@ -62,6 +85,118 @@
 
 
 <style scoped>
+* {
+    box-sizing: border-box
+}
+
+body {
+    font-family: Verdana, sans-serif;
+}
+
+.mySlides {
+    display: none
+}
+
+/* 幻灯片容器 */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* 下一张 & 上一张 按钮 */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+/* 定位 "下一张" 按钮靠右 */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* 标题文本 */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* 数字文本 (1/3 等) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* 标记符号 */
+.dot {
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* 淡出动画 */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
 .wrap {
     z-index: 99;
 }

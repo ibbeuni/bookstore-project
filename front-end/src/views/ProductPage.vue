@@ -12,6 +12,10 @@
                 </div>
                 <div id="productImgDiv">
                     <img id="productImg" :src="'http://127.0.0.1:3000/img/books/' + item[0].img_cover + '.png'" alt="">
+                    <!-- 放大區 -->
+
+
+                    <!-- 放大區 -->
                     <div id="productImgPage">
                         <div class="changeImg">
                             <button class="btn btn-light">&lt;</button>
@@ -243,10 +247,12 @@
                         <a class="relatedVideoTag_a" href="">
                             <div class="relatedVideoInnerDiv">
                                 <div>
-                                    <img class="relatedVideoImg" v-bind:src="'http://127.0.0.1:3000/img/video/' + video[0].video_title_img + '.jpg'" alt="">
+                                    <img class="relatedVideoImg"
+                                        v-bind:src="'http://127.0.0.1:3000/img/video/' + video[0].video_title_img + '.jpg'"
+                                        alt="">
                                 </div>
                                 <div class="relatedVideoInformation">
-                                    <p class="nb">{{video[0].video_name}}</p>
+                                    <p class="nb">{{ video[0].video_name }}</p>
                                 </div>
                             </div>
                         </a>
@@ -283,7 +289,7 @@ export default {
             allbooks: '',
             otherbooks: '',
             item: '',
-            video:'',
+            video: '',
 
 
         }
@@ -311,12 +317,12 @@ export default {
 
         }),
 
-        axios.get(`http://127.0.0.1:3000/productdetail${this.id}`).then(res => {
+            axios.get(`http://127.0.0.1:3000/productdetail${this.id}`).then(res => {
                 console.log(res.data)
                 this.item = res.data;
-        }),
+            }),
 
-        axios.get(`http://localhost:3000/videodetail${this.id}`).then(res => {
+            axios.get(`http://localhost:3000/videodetail${this.id}`).then(res => {
                 this.video = res.data;
                 console.log(res.data);
             })
@@ -332,6 +338,10 @@ export default {
 </script>
 <style scoped>
 /* <共用CSS> */
+* {
+    box-sizing: border-box;
+}
+
 .nh1 {
     font-size: 24px;
 }
@@ -555,7 +565,7 @@ table {
     margin-top: 20px;
 }
 
-.changeImg button{
+.changeImg button {
     border-radius: 50%;
 }
 
@@ -936,6 +946,8 @@ body:has(#L4:checked) .L4 {
 }
 
 /* /加入購物車底部固定列 */
+
+
 
 
 

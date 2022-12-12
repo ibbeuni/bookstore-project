@@ -1,8 +1,9 @@
 <template>
     <div>
+        <br><br><br><br><br><br><br><br>
 
-        <p>分類>分類>分類</p>
-        <p>{{ this.$route.params.id }}</p>
+        <!-- <p>分類>分類>分類</p> -->
+        <p style="color:transparent;">{{ this.$route.params.id }}</p>
 
         <div id="videoMain">
             <div id="videoMainLeft">

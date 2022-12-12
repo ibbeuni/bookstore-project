@@ -24,10 +24,12 @@ let best_list_art = require('./API/best_list_art')
 let best_list_photography = require('./API/best_list_photography')
 let payment = require('./API/payment')
 const accRoute = require('./routes/Account')
+const bookRoute = require('./routes/Book')
 
 
 
 router.use('/acc',accRoute)
+router.use('/book',bookRoute)
 
 
 router.get('/member', member.get)
