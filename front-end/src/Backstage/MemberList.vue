@@ -20,7 +20,7 @@
             <th scope="row">{{ index + 1 }}</th>
             <td>{{ item.member_name }}</td>
             <td>{{ item.member_id }}</td>
-            <td>{{ item.member_password }}</td>
+            <td>＊＊＊＊＊＊＊＊＊＊＊＊</td>
             <td>{{ item.member_phone }}</td>
             <td>{{ item.member_address }}</td>
             <td>{{ item.member_birthday }}</td>
