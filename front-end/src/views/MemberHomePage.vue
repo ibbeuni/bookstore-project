@@ -1,6 +1,7 @@
 <template>
   <div>
-      <br><br><br><br>
+      <br><br><br><br><br><br><br><br>
+        <br><br><br><br>
       <div id="mainContent" class="flex">
           <div id="navLeft">
             <div id="userInfoDiv">
@@ -11,7 +12,6 @@
                     <font-awesome-icon icon="fa-solid fa-pen-to-square" />
                     <input type="file" @change="fileSelected" >
                   </div>
-                  <p class="nb nh3">Hello!{{name}}</p>
               </div>
               <ul class="nh3 nb">
                   <li><a href="" >會員資料</a></li>
@@ -39,11 +39,11 @@
                           </div>
 
                           <div class="itemlist flex">
-                              <div><label for="changePassword">新密碼：</label></div>
+                              <div><label class='labl' for="changePassword">新密碼：</label></div>
                               <div><input v-model="password" type="text" id="changePassword"> </div>
                           </div><div class="itemlist flex">
 
-                              <div><label for="confirmPassword">密碼確認：</label></div>
+                              <div><label class='labl' for="confirmPassword">密碼確認：</label></div>
                               <div><input v-model="passwordCfrm" type="text" id="changePassword"> </div>
                           </div>
                           <p class="nh6 warning">*至少八個字符, 包含大小寫英文字母、數字或特殊符號，不允許使用連續或重複的三個字節</p>
@@ -100,8 +100,6 @@ export default{
   return{
     // user:'',
     id:'',
-    password:'',
-    passwordCfrm:'',
     name:'',
     phone:'',
     birthday:'',
@@ -495,6 +493,10 @@ table {
 
 .itemlist>div:first-child {
   margin-right: auto;
+}
+.labl{
+  display:flex;
+  padding-left: 0px;
 }
 
 .warning {

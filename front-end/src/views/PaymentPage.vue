@@ -1,6 +1,8 @@
 <template>
     <div>
-        <br><br><br><br>
+        <br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br>
+        
         <div id="mainContent" class="flex">
             <div id="navLeft">
             <div id="userInfoDiv">
@@ -11,7 +13,6 @@
                     <font-awesome-icon icon="fa-solid fa-pen-to-square" />
                     <input type="file" @change="fileSelected" >
                   </div>
-                  <p class="nb nh3">Hello!{{name}}</p>
               </div>
               <ul class="nh3 nb">
                   <li><a href="" >會員資料</a></li>
@@ -46,24 +47,24 @@
                               <div>
                                 <span >帳號 / ID：</span> 
                               </div>
-                              <p>{{id}}</p>
+                              <p>{{user.id}}</p>
                           </div>
                           <div class="itemlist flex">
                               <div><span>姓名：</span></div>
-                              <div><input  v-model="name" type="text" id="userName"></div>
+                              <div><input  v-model="user.name" type="text" id="userName"></div>
                           </div>
                           <div class="itemlist flex">
                               <div><span>手機號碼：</span></div>
-                              <div><input v-model="phone" type="text" id="userPhone">
+                              <div><input v-model="user.phone" type="text" id="userPhone">
                               </div>
                           </div>
                           <div class="itemlist flex">
                               <div><span>住址：</span></div>
-                              <div><input v-model="address" type="text" id="useraddress"></div>
+                              <div><input v-model="user.address" type="text" id="useraddress"></div>
                           </div>
                           <div id="submitButton">
                               <div>
-                                  <button class="btn btn-outline-secondary">確認付款</button>
+                                  <button class="btn btn-outline-secondary" @click="confirmOrder">訂單確認</button>
                               </div>
                           </div>
                       </div>
@@ -86,31 +87,45 @@ import axios from 'axios'
 export default{
     data(){
         return{
-        user:"",
-        id:"",
-        name:"",
-        phone:"",
-        address:""
+        user:{
+            id:"",
+            name:"",
+            phone:"",
+            address:""
+        },
+        
         }
     },
       mounted(){
     
      axios.get('http://127.0.0.1:3000/payment').then(res =>{
       this.user = res.data;
-      console.log(res.data)
-      this.id=res.data.member_id;
-      this.name=res.data.member_name;
-      this.phone=res.data.member_phone;
-      this.phone=res.data.member_address;
-     
-      
-      
+      // console.log(res.data[0].member_id)
+      this.user.id=res.data[0].id;
+      this.user.name=res.data[0].name;
+      this.user.phone=res.data[0].phone;
+      this.user.address=res.data[0].address;
+    
      }).catch(err=>{
       console.log('fail' + err)
      })
     
      
   },
+   methods: {
+    fileSelected(e) {
+      const file = e.target.files.item(0);
+      const reader = new FileReader();
+      reader.addEventListener("load", this.imageLoaded);
+      reader.readAsDataURL(file);
+    },
+    imageLoaded(e) {
+      this.image = e.target.result;
+    },
+    confirmOrder(){
+      alert('已收到訂單，將盡快為您處理')
+    }
+    }
 }
 
 </script>
@@ -315,10 +330,7 @@ table {
 
 /* /歸零CSS */
 /* 影片區內頁css */
-.allwrap{
-    display:flex;
-    justify-content: center;
-}
+
 .imgCtrl{
  background-image: url('../assets/noPic.png');
   width: 150px;
@@ -339,7 +351,7 @@ table {
     *zoom: 1
 }
  
-.filrCtrl  input {
+.filrCtrl input {
     position: absolute;
     font-size: 100px;
     right: 0;

@@ -1,6 +1,7 @@
 <template>
   <div>
-    <br /><br /><br /><br />
+   <br><br><br><br><br><br><br><br><br><br><br><br>
+
     <div id="mainContent" class="flex">
       <div id="navLeft">
         <div id="userInfoDiv">
@@ -173,7 +174,7 @@ export default {
    
     },
     topayment(){
-      this.$router.push('/home/paymentpage')
+      this.$router.push('/home/payment')
     }
   
     
