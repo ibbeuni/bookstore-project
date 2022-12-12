@@ -13,8 +13,8 @@
             </div>
             <div>
                 <font-awesome-icon class="iconSize" icon="fa-solid fa-book" />
-                <p style="color:Indianred;">藝術書籍數量</p>
-                <p style="color:Indianred;">194</p>
+                <p style="color:yellow;">藝術書籍數量</p>
+                <p style="color:yellow;">194</p>
             </div>
             <div>
                 <font-awesome-icon class="iconSize" icon="fa-solid fa-book" />

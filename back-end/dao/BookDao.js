@@ -46,7 +46,7 @@ const addBook = function (book) {
 
         db.query(sql, book, (err, data) => {
             if (err) {
-                reject(new Error("error"));
+                reject(err);
             } else {
                 resolve('success');
             }
@@ -62,7 +62,7 @@ const updateBook = function(book){
 
         db.query(sql, [book,book['product_id']], (err, data) => {
             if (err) {
-                reject(new Error("error"));
+                reject(err);
             } else {
                 resolve('success');
             }
