@@ -1,23 +1,32 @@
 <template>
   <div>
-      <div id="headDiv">
+      <!-- <div id="headDiv">
           <div id="userInfo" class="flex">
               <div id="userInfoDiv">
-                  <div>
-                      <img id="userPhoto"
-                          src="require(./assets/img/maruko.PNG)"
-                          alt="">
+                  <div class='imgCtrl'>
+                      <img id="userPhoto" v-if='image' :src='image'  >
                   </div>
-                  <div>
-                    <input type="file" >
+                  <div class='filrCtrl'>
+                    <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                    <input type="file" @change="fileSelected" >
                   </div>
-                  <p class="nb nh3">會員姓名</p>
+                  <p class="nb nh3">{{name}}</p>
               </div>
           </div>
-      </div>
+      </div> -->
       <br><br><br><br>
       <div id="mainContent" class="flex">
           <div id="navLeft">
+            <div id="userInfoDiv">
+                  <div class='imgCtrl'>
+                      <img id="userPhoto" v-if='image' :src='image'  >
+                  </div>
+                  <div class='filrCtrl'>
+                    <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                    <input type="file" @change="fileSelected" >
+                  </div>
+                  <p class="nb nh3">Hello!{{name}}</p>
+              </div>
               <ul class="nh3 nb">
                   <li><a href="" >會員資料</a></li>
                   <li><a href="">購物車</a></li>
@@ -110,7 +119,8 @@ export default{
     name:'',
     phone:'',
     birthday:'',
-    address:''
+    address:'',
+    image:''
 
 
     }
@@ -120,12 +130,7 @@ export default{
      axios.get('http://127.0.0.1:3000/member').then(res =>{
       this.user = res.data;
       this.id=res.data[0].member_id;
-      this.password=res.data[0].member_password;
-      this.passwordCfrm=res.data[0].member_passwordCfrm;
-      this.name=res.data[0].member_name;
-      this.phone=res.data[0].member_phone;
-      this.birthday=res.data[0].member_birthday;
-      this.address=res.data[0].member_address;
+     
       
       
      }).catch(err=>{
@@ -137,30 +142,60 @@ export default{
 
   
   methods:{
-  // save(){
+  save(){
+
+      axios.post('http://127.0.0.1:3000/member/post',{
+      
+        params:{
+          name: this.name,
+          phone:this.phone,
+          birthday:this.birthday,
+          address:this.address
+        }
+        
+      }).then(res =>{
+        console.log(res.data);
+        if(res.data.status == 200){
+          
+          console.log(res.data)
+          alert('儲存成功')
+          this.router.push('/homepage')
+        }else{
+          console.log(res.data)
+        }
+      })
    
 
-  //   if(passwordCfrm =="", name =="", phone =="", birthday =="", address){
-  //     alert('請完成會員資料')
-  //   }else{
-  //      axios.post('http://127.0.0.1:3000/member/post', {
-  //       params:{
-  //              passwordCfrm : this.passwordCfrm,
-  //              name :this.name,
-  //              phone : this.phone,
-  //              birthday : this.birthday,
-  //              address : this.address
-  //       }
+    // if( this.name ==""|| this.phone ==""|| this.birthday ==""|| this.address){
+    //   alert('請完成會員資料')
+    // }else{
+    //    axios.post('http://127.0.0.1:3000/member/post', {
+    //     params:{
+    //            name :this.name,
+    //            phone : this.phone,
+    //            birthday : this.birthday,
+    //            address : this.address
+    //     }
   
-  //    }).then(res => {
-  //     if(res.data.status == 200){
-  //       alert('儲存成功')
-  //       this.router.push('/homepage')
-  //     }
-  //    })
+    //  }).then(res => {
+    //   if(res.data.status == 200){
+    //     alert('儲存成功')
+    //     this.router.push('/homepage')
+    //   }
+    //  })
 
-  //   }
-  // }
+    // }
+  },
+
+  fileSelected(e) {
+      const file = e.target.files.item(0);
+      const reader = new FileReader();
+      reader.addEventListener('load', this.imageLoaded);
+      reader.readAsDataURL(file);
+    },
+    imageLoaded(e) {
+      this.image = e.target.result;
+    }
     
    
     
@@ -373,7 +408,7 @@ table {
 /* /歸零CSS */
 /* 影片區內頁css */
 #headDiv {
-  background-image: linear-gradient(-5deg, #53929b, #e3d096);
+  /* background-image: linear-gradient(-5deg, #53929b, #e3d096); */
   /* background-color: rgb(225, 189, 189); */
   height: 250px;
 }
@@ -393,10 +428,45 @@ table {
 #userPhoto {
   width: 150px;
   height: 150px;
-  border-radius: 50%;
   background-color: beige;
   object-fit: cover;
 }
+.imgCtrl{
+ background-image: url('../assets/noPic.png');
+  width: 150px;
+  height: 150px;
+}
+.filrCtrl {
+    padding: 4px 10px;
+    height: 30px;
+    line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    /* background: #171717; */
+    border: 1px solid #ddd;
+    border-radius: 4px; 
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1
+}
+ 
+.filrCtrl  input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+ 
+/* .filrCtrld:hover {
+    color: #444;
+    background: #eee;
+    border-color: #ccc;
+    text-decoration: none
+} */
 
 
 

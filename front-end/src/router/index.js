@@ -27,10 +27,16 @@ import BookList from '../Backstage/BookList.vue';
 import DashBoard from '../Backstage/DashBoard.vue';
 import LoginBack from '../Backstage/LoginBack.vue';
 import AddMember from '../Backstage/AddMember.vue';
-import BookAlter from '../Backstage/BookAlter.vue';
-import addBook from '../Backstage/addBook.vue';
-import alterBook from '../Backstage/alterBook.vue';
+import AddBook from '../Backstage/AddBook.vue';
+import PaymentPage from "../views/PaymentPage.vue";
 Vue.use(VueRouter);
+
+//获取原型对象上的push函数
+const originalPush = VueRouter.prototype.push
+//修改原型对象中的push方法
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 
 const routes = [
     {
@@ -151,6 +157,11 @@ const routes = [
                 name: 'ZtTest',
                 component: ZtTest
             },
+            {
+                path: 'paymentpage',
+                name: 'PaymentPage',
+                component: PaymentPage,
+            }
         ],
     },
     {
@@ -158,7 +169,6 @@ const routes = [
         // redirect: '/back1/loginback',
         name: 'loginback',
         component: LoginBack,
- 
     },
     {
         path: '/back',
@@ -172,39 +182,24 @@ const routes = [
                 component: MemberList,
             },
             {
-                path:'booklist',
-                name:'booklist',
-                component: BookList,
-            },
-            {
-                path:'dashboard',
-                name:'dashboard',
-                component: DashBoard,
-            },
-            // {
-            //     path:'loginback',
-            //     name:'loginback',
-            //     component: LoginBack,
-            // },
-            {
                 path:'addmember',
                 name:'addmember',
                 component: AddMember,
             },
             {
-                path:'bookalter',
-                name:'bookalter',
-                component: BookAlter,
+                path:'booklist',
+                name:'booklist',
+                component: BookList,
             },
             {
                 path:'addbook',
                 name:'addbook',
-                component: addBook,
+                component: AddBook,
             },
             {
-                path:'alterbook',
-                name:'alterbook',
-                component: alterBook,
+                path:'dashboard',
+                name:'dashboard',
+                component: DashBoard,
             },
         ],
     },

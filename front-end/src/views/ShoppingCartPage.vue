@@ -1,21 +1,18 @@
 <template>
   <div>
-    <div id="headDiv">
-      <div id="userInfo" class="flex">
-        <div id="userInfoDiv">
-          <div>
-            <img id="userPhoto"
-              src=""
-              alt="">
-          </div>
-          <p class="nb nh3">會員姓名</p>
-        </div>
-
-      </div>
-    </div>
-    <br><br><br><br>
+    <br /><br /><br /><br />
     <div id="mainContent" class="flex">
       <div id="navLeft">
+        <div id="userInfoDiv">
+          <div class="imgCtrl">
+            <img id="userPhoto" v-if="image" :src="image" />
+          </div>
+          <div class="filrCtrl">
+            <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+            <input type="file" @change="fileSelected" />
+          </div>
+          <p class="nb nh3">{{ name }}</p>
+        </div>
         <ul class="nh3 nb">
           <li><a href="">會員資料</a></li>
           <li><a href="">購物車</a></li>
@@ -24,114 +21,177 @@
           <li><a href="">貨到通知</a></li>
           <li><a href="">訂閱/取消電子報</a></li>
         </ul>
-
       </div>
       <div id="canChangeDiv" class="flex">
         <div id="mainContentMid">
           <p class="nh1 nb">購物車清單</p>
-          
+
           <!-- !商品清單 -->
-          <div class="shopItem">
-            <div class="buyProduct flex">
-              <div class="flex productImgName" v-for="(pdt, index) in pdtList " v-bind:key="index">
-                <div><img class="shopItemImg" :src="'../assets/img/product/'+ +'.png'" alt=""></div>
-                <div><p class="nb">{{pdt.name}}</p></div>
+          <div class="shopItem" v-for="(item, index) in pdt" :key="index">
+            <div class="buyProduct flex" >
+              <div class="flex productImgName" >
+                <div><img class="shopItemImg" v-bind:src="'http://127.0.0.1:3000/img/books/' + item.img_cover + '.png'" /></div>
+                <div ><p class='bookname'>{{ item.product_name }}</p></div>
               </div>
 
               <ul class="singlePrice">
                 <li>單價</li>
-                <li>{{pdt.price}}</li>
+                <li>{{ item.product_price }}</li>
               </ul>
 
               <ul class="count">
                 <li>數量</li>
-                <li>
-                  <button>+</button>
-                  <span>{{pdt.amount}}</span>
-                  <button>-</button>
-                </li>
+                <div class="countingbox">
+                <button @click="add(item)">+</button>
+                <input class="amountbox" type="text" v-model='item.amount'>
+                <button @click="mius(item)">-</button>
+                </div> 
               </ul>
 
               <ul class="total">
                 <li>總共</li>
-                <li>{{pdt.pTotal}}</li>
+                <li>{{ item.amount * item.product_price }}</li>
               </ul>
 
               <div class="delete">
                 <div>
-                  <button>
+                  <button @click="remove(item)">
                     <font-awesome-icon icon="fa-solid fa-trash-can" />
                   </button>
                 </div>
               </div>
             </div>
-
           </div>
-          
+
           <!-- !計算清單 -->
         </div>
         <div id="mainContentRight">
           <div id="totalPrice">
             <div id="totalPriceDiv">
-                    
               <div>
                 <p id="aaa">商品價格</p>
-                <p>{{cnt.pPrice}}</p>
+                <p>{{sum}}&nbsp;元</p>
               </div>
 
               <div>
                 <p>運費</p>
-                <p>{{cnt.shpinFee}}</p>
+                <p>{{ cnt.shpinFee }}&nbsp;元</p>
               </div>
 
               <div>
-                <p>折扣</p>
-                <p>{{cnt.discount}}</p>
+                <p class='discount'>折扣</p>
+                <p class='discount'>{{ cnt.discount }}</p>
               </div>
 
-              <hr>
+              <hr />
               <div>
                 <p>總計金額</p>
-                <p id="lastTotalPrice">{{cnt.allTotal}}</p>
+                <p id="lastTotalPrice">${{ allTotal }}&nbsp;元</p>
               </div>
 
-              <br><br>
-              <button id="checOutButton">結帳</button>
+              <br /><br />
+              
+                <router-link :to="'/paymentpage'">
+                <button id="checOutButton">結帳</button>
+                </router-link>
+              
             </div>
           </div>
-
         </div>
       </div>
     </div>
-    <br><br><br><br><br><br><br><br><br><br>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
   </div>
 </template>
 
 <script>
+import axios from "axios";
 
-
-export default{
-data(){
-  return{
+export default {
+  data() {
+    return {
+      image: "",
       pdt:{
-        name:'AAA',
-        price:'1000',
-        amount:'2',
-        pTotal:'2000'
-     },
-     cnt:{
-      pPrice:'',
-      shpinFee:'',
-      discount:'',
-      allTotal:''
-     }
+        img_cover:'',
+        name:'',
+        product:'',
+        amount:''
+      },
+      cnt: {
+        shpinFee: "60",
+        discount: "10% off",
+      },
+    };
+  },
+  mounted() {
+    axios.get("http://127.0.0.1:3000/shoppingcartable").then((res) => {
+      // console.log(res.data[0].product_name)
+      this.pdt=res.data
+      this.pdt.img_cover=res.data.img_cover;
+      this.pdt.name=res.data.name;
+      this.pdt.price=res.data.price;
+      console.log(res.data.price)
+      this.pdt.amount=res.data.amount
+      
+    
+    
 
+    });
+  },
+  methods: {
+    fileSelected(e) {
+      const file = e.target.files.item(0);
+      const reader = new FileReader();
+      reader.addEventListener("load", this.imageLoaded);
+      reader.readAsDataURL(file);
+    },
+    imageLoaded(e) {
+      this.image = e.target.result;
+    },
+
+
+    add:function(item){
+      item.amount++
+      
+     
+    },
+    mius:function(item){
+      if(item.amount<=0){
+       
+       item.amount = 0
+     }else {
+       item.amount-- 
+       }
+    },
+    remove:function(item){
+      this.pdt.splice(item,1)
+   
+    },
+  
+    
+   
+  },
+  computed:{
+    sum(){
+      var totalPrice = 0
+     this.pdt.forEach(function(val){
+      totalPrice+=val.product_price*val.amount
+      console.log(val.product_price)
+     });
+     return totalPrice;
+    },
+    allTotal(){
+       var totalPrice = 0
+     this.pdt.forEach(function(val){
+      totalPrice+=val.product_price*val.amount
+      
+      });
+      return (totalPrice+60)*0.9
+      
+
+    }
   }
-},
-
-}
-
-
+};
 </script>
 
 <style scoped>
@@ -189,10 +249,8 @@ data(){
 }
 
 .bgcF7F7F7 {
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
 }
-
-
 
 /* </共用CSS> */
 
@@ -323,7 +381,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 
@@ -355,11 +413,8 @@ table {
 #userPhoto {
   width: 150px;
   height: 150px;
-  border-radius: 50%;
   object-fit: cover;
 }
-
-
 
 #mainContent {
   margin: 0 auto;
@@ -383,17 +438,15 @@ table {
 #mainContentMid {
   width: 700px;
   /* background-color: rgb(229, 243, 123); */
-
 }
 
-#mainContentMid>p {
+#mainContentMid > p {
   margin: 20px 30px;
 }
 
 #mainContentRight {
   width: 300px;
   /* background-color: rgb(170, 206, 226); */
-
 }
 
 #sendTo,
@@ -405,11 +458,13 @@ table {
   height: 150px;
 }
 
-#sendTo>div,
-.shopItem>div {
+#sendTo > div,
+.shopItem > div {
   margin: 10px 10px;
 }
-
+.buyProduct {
+  text-align: left;
+}
 .shopItemImg {
   width: 120px;
   height: 120px;
@@ -418,6 +473,8 @@ table {
 
 .productImgName {
   width: 300px;
+  /* text-align: left; */
+
   /* background-color: rgb(247, 177, 177); */
 }
 
@@ -428,24 +485,30 @@ table {
   width: 70px;
   margin: auto;
   text-align: center;
-
+  
 }
-
-.count {}
-
-
-.count button,
+.count button {
+  /* border: #53929b solid; */
+  border-radius: 5px;
+  border:1px;
+}
 .delete button {
   /* width: 20px; */
   border: none;
   background-color: #fff;
 }
 
-.count>li:not(:first-child) {
+.count > li:not(:first-child) {
   border: 1px black solid;
   border-radius: 5px;
-
-
+}
+.bookname{
+  margin-top:30%;
+  display: flex;
+  font-size:12.5px;
+  color: black;
+  background-color:#e3d096;
+  
 }
 
 
@@ -458,19 +521,17 @@ table {
   border: solid rgb(127, 127, 127) 2px;
   border-radius: 20px;
   margin: 78px auto;
-
 }
 
-#totalPriceDiv>div {
+#totalPriceDiv > div {
   display: flex;
-
 }
 
-#totalPriceDiv>div :first-child {
+#totalPriceDiv > div :first-child {
   margin-right: auto;
 }
 
-#totalPriceDiv>div p {
+#totalPriceDiv > div p {
   margin-top: 10px;
 }
 
@@ -485,9 +546,54 @@ table {
 #checOutButton {
   width: 100%;
   padding: 15px;
+  color:white;
+  font-weight: 40px;
   background-color: #53929b;
   border: none;
   border-radius: 10px;
+}
+.imgCtrl {
+  background-image: url("@/assets/noPic.png");
+  width: 150px;
+  height: 150px;
+}
+.filrCtrl {
+  padding: 4px 10px;
+  height: 30px;
+  line-height: 20px;
+  position: relative;
+  cursor: pointer;
+  /* background: #171717; */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+.filrCtrl input {
+  position: absolute;
+  font-size: 100px;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  cursor: pointer;
+}
+.amountbox{
+  width:20px;
+  border-radius: 5px;
+  border:1px;
+}
+.countingbox{
+  display: flex;
+  /* justify-content: center; */
+  align-content: center;
+}
+.discount{
+  color:red;
+  font-weight: 500;
 }
 
 /* /右方結帳 */
