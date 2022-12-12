@@ -160,8 +160,16 @@ export default {
        item.amount-- 
        }
     },
-    remove:function(item){
-      this.pdt.splice(item)
+    remove:function(pdt){
+      var newIndex = "";
+      this.pdt.forEach(function(item, key){
+        if(pdt.name == item.name){
+          newIndex = key
+        }
+      })
+      this.pdt.splice(newIndex, 1)
+      
+      
    
     },
     topayment(){

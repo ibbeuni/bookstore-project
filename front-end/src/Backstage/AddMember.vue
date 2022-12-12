@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="display: flex;">
       <p>
         <label for="title">會員姓名:</label
         ><input v-model="memberData.member_name" type="text" required />
@@ -10,10 +10,10 @@
       </p>
       <p>
         <label for="title">會員密碼:</label
-        ><input v-model="memberData.member_password" type="text" required />
+        ><input v-model="memberData.member_password" type="password" required />
       </p>
       <p>
-        <label for="title">書會員電話:</label
+        <label for="title">會員電話:</label
         ><input v-model="memberData.member_phone" type="text" required />
       </p>
       <p>
