@@ -226,11 +226,6 @@ button {
     overflow: hidden;
 }
 
-/* .img-box {
-    width: 273px;
-    height: 200px;
-} */
-
 .content-info-box {
     padding: 20px 24px 30px;
 }

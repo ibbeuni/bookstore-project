@@ -46,9 +46,6 @@ export default {
 </script>
 
 <style scoped>
-main {
-    margin-top: 216px;
-}
 
 ul,
 li {

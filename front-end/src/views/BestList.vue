@@ -253,9 +253,6 @@ export default {
 </script>
 
 <style scoped>
-main {
-    margin-top: 200px;
-}
 .wrap {
   /* 網頁內容最大寬度 */
   /* max-width: 1920px; */
