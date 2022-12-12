@@ -34,6 +34,10 @@ export default {
 </script>
 
 <style scoped>
+.wrap {
+    background-color: var(--background);
+}
+
 .margin-top {
     margin-top: 177px;
 }
