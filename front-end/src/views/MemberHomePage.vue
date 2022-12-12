@@ -1,19 +1,5 @@
 <template>
   <div>
-      <!-- <div id="headDiv">
-          <div id="userInfo" class="flex">
-              <div id="userInfoDiv">
-                  <div class='imgCtrl'>
-                      <img id="userPhoto" v-if='image' :src='image'  >
-                  </div>
-                  <div class='filrCtrl'>
-                    <font-awesome-icon icon="fa-solid fa-pen-to-square" />
-                    <input type="file" @change="fileSelected" >
-                  </div>
-                  <p class="nb nh3">{{name}}</p>
-              </div>
-          </div>
-      </div> -->
       <br><br><br><br>
       <div id="mainContent" class="flex">
           <div id="navLeft">
@@ -165,29 +151,9 @@ export default{
         }
       })
    
-
-    // if( this.name ==""|| this.phone ==""|| this.birthday ==""|| this.address){
-    //   alert('請完成會員資料')
-    // }else{
-    //    axios.post('http://127.0.0.1:3000/member/post', {
-    //     params:{
-    //            name :this.name,
-    //            phone : this.phone,
-    //            birthday : this.birthday,
-    //            address : this.address
-    //     }
-  
-    //  }).then(res => {
-    //   if(res.data.status == 200){
-    //     alert('儲存成功')
-    //     this.router.push('/homepage')
-    //   }
-    //  })
-
-    // }
   },
 
-  fileSelected(e) {
+    fileSelected(e) {
       const file = e.target.files.item(0);
       const reader = new FileReader();
       reader.addEventListener('load', this.imageLoaded);

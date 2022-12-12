@@ -11,52 +11,7 @@
                     <p class="nb nh3">會員姓名</p>
                 </div>
 
-                <!-- 三格推薦書單 -->
-                <!-- <div id="recommendBook" class="flex">
-                    <div>
-                        <img src="../assets/img/product/40201.png" alt="">
-                        <div class="recommendBookInfo flex">
-                            <div>
-                                <img src="../assets/img/product/40201.png" alt="">
-                            </div>
-                            <div class="bookInfoDetail">
-                                <p class="nb nh3">書名書名書名書名書名書名</p>
-                                <p>作者</p>
-                                <p>售價100</p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div>
-                        <img src="../assets/img/product/40901.png" alt="">
-                        <div class="recommendBookInfo flex">
-                            <div>
-                                <img src="../assets/img/product/40901.png" alt="">
-                            </div>
-                            <div class="bookInfoDetail">
-                                <p class="nb nh3">書名書名書名書名書名書名書名</p>
-                                <p>作者</p>
-                                <p>售價100</p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div>
-                        <img src="../assets/img/product/41301.png" alt="">
-                        <div class="recommendBookInfo flex">
-                            <div>
-                                <img src="../assets/img/product/41301.png" alt="">
-                            </div>
-                            <div class="bookInfoDetail">
-                                <p class="nb nh3">書名書名書名書名書名書名</p>
-                                <p>作者</p>
-                                <p>售價100</p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div> -->
-                <!-- /三格推薦書單 -->
+                
 
 
             </div>
@@ -332,56 +287,6 @@ table {
     object-fit: cover;
 }
 
-/* 推薦書單那三格 */
-/* #recommendBook {
-    justify-content: space-between;
-    position: relative;
-    margin-left: 60px;
-    bottom: -60px;
-    text-align: center;
-  }
-  
-  #recommendBook>div {
-    width: 260px;
-    height: 240px;
-    background-color: #fff;
-    margin: 0 20px;
-  }
-  
-  #recommendBook>div>img {
-    width: 260px;
-    height: 240px;
-    object-fit: scale-down;
-    filter: blur(5px);
-  }
-  
-  .recommendBookInfo {
-    width: 220px;
-    height: 120px;
-    background-color: transparent;
-    margin: 0 auto;
-    position: relative;
-    top: -180px;
-  
-  }
-  
-  .recommendBookInfo img {
-    height: 110px;
-    width: 80px;
-    object-fit: cover;
-  
-  }
-  
-  .bookInfoDetail {
-    margin: 10px;
-  }
-  
-  #recommendBook>div,
-  #recommendBook>div>img {
-    border-radius: 30px;
-  } */
-
-/* /推薦書單那三格 */
 
 #mainContent {
     margin: 0 auto;

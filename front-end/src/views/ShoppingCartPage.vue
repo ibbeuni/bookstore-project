@@ -90,11 +90,8 @@
               </div>
 
               <br /><br />
-              
-                <router-link :to="'/paymentpage'">
-                <button id="checOutButton">結帳</button>
-                </router-link>
-              
+
+                <button id="checOutButton" @click="topayment">結帳</button>
             </div>
           </div>
         </div>
@@ -164,9 +161,12 @@ export default {
        }
     },
     remove:function(item){
-      this.pdt.splice(item,1)
+      this.pdt.splice(item)
    
     },
+    topayment(){
+      this.$router.push('/home/paymentpage')
+    }
   
     
    

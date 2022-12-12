@@ -18,7 +18,7 @@ import VideoDetail from '../views/VideoDetail.vue';
 import VideoPage from '../views/VideoPage.vue';
 import EventPage from '../views/EventPage';
 import OrderDetail from '../views/OrderDetail.vue';
-import TrackList from '../views/TrackList.vue';
+import PaymentPage from '../views/PaymentPage.vue';
 import ZhengTingTest from '../views/ZhengTingTest.vue';
 import ZtTest from '../views/ZtTest.vue';
 import BackView from '../Backstage/BackView.vue';
@@ -28,7 +28,7 @@ import DashBoard from '../Backstage/DashBoard.vue';
 import LoginBack from '../Backstage/LoginBack.vue';
 import AddMember from '../Backstage/AddMember.vue';
 import AddBook from '../Backstage/AddBook.vue';
-import PaymentPage from "../views/PaymentPage.vue";
+
 Vue.use(VueRouter);
 
 //获取原型对象上的push函数
@@ -142,9 +142,9 @@ const routes = [
                 component: OrderDetail
             },
             {
-                path: 'tracklist',
-                name: 'TrackList',
-                component: TrackList
+                path: 'payment',
+                name: 'PaymentPage',
+                component: PaymentPage
             },
             {
                 path: 'ZhengTingTest',
@@ -157,11 +157,7 @@ const routes = [
                 name: 'ZtTest',
                 component: ZtTest
             },
-            {
-                path: 'paymentpage',
-                name: 'PaymentPage',
-                component: PaymentPage,
-            }
+           
         ],
     },
     {
