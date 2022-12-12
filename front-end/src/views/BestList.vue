@@ -11,9 +11,7 @@
           <aside class="aside-wrap">
             <div class="aside-header">
               <div class="aside-title-wrap">
-                <h2 class="aside-title-heading">
-                  暢銷書單
-                </h2>
+                <h2 class="aside-title-heading">暢銷書單</h2>
               </div>
             </div>
             <div class="aside-body">
@@ -55,46 +53,59 @@
           <!-- contents -->
           <section class="section-wrap">
             <!-- title 根據aside切換，更換內容 -->
-            <section-title></section-title>
+            <section-title @showPages="changeSelectPages"></section-title>
             <!-- list contents -->
             <div class="switch-prod-wrap">
               <!-- list -->
               <!-- <prod-list></prod-list> -->
-              <ol class="prod-list" v-for="(item, index) in products" :key="index">
+              <ol
+                class="prod-list"
+                v-for="(item, index) in showBooks"
+                :key="index"
+              >
                 <li class="prod-item">
                   <div class="prod-area">
                     <div class="prod-thumb-box">
                       <a :href="'/#/home/product/' + products[index].product_id" class="prod-link">
                         <div class="img-box">
-                          <img v-bind:src="
-                            'http://127.0.0.1:3000/img/books/' +
-                            products[index].img_cover +
-                            '.png'
-                          " alt="" />
+                          <img
+                            v-bind:src="
+                              'http://127.0.0.1:3000/img/books/' +
+                              item.img_cover +
+                              '.png'
+                            "
+                            alt=""
+                          />
                         </div>
                       </a>
                     </div>
                     <div class="prod-info-box">
                       <a :href="'/#/home/product/' + products[index].product_id" class="prod-info">
                         <h5 class="prod-name">
-                          {{ products[index].product_name }}
+                          {{ item.product_name }}
                         </h5>
                       </a>
                       <p class="prod-author">
-                        {{ products[index].auther }}
+                        {{ item.auther }}
                         &nbsp;|&nbsp;
-                        {{ products[index].publishing_house }}
+                        {{ item.publishing_house }}
                         &nbsp;|&nbsp;
-                        <span class="date">{{ products[index].publication_date }} 出版</span>
+                        <span class="date"
+                          >{{ item.publication_date }} 出版</span
+                        >
                       </p>
                       <div class="prod-price">
                         <span class="percent">10%</span>
                         <span class="price">
-                          <strong class="val">優惠價 {{ products[index].discount_price }}</strong>
-                          <strong class="unit">元</strong>
+                          <strong class="val"
+                            >優惠價 {{ item.discount_price }}</strong
+                          >
+                          <span class="unit">元</span>
                         </span>
                         <span class="price-normal">
-                          <span class="val">原價 {{ products[index].list_price }}</span>
+                          <small class="val"
+                            >原價 {{ item.list_price }}</small
+                          >
                           <span class="unit">元</span>
                         </span>
                       </div>
@@ -121,6 +132,22 @@
             </div>
           </section>
         </div>
+
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item">
+              <a @click="pageDown" class="page-link" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li @click="clickPage(index)" v-for="(item, index) in bookListDone" :key="index" class="page-item"><a class="page-link">{{index +1}}</a></li>
+            <li class="page-item">
+              <a @click="pageUp" class="page-link"  aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </section>
     </main>
   </div>
@@ -150,6 +177,8 @@ export default {
       art: "", // 藝術
       photography: "", // 攝影
       allBookList: [],
+      selectShowPages: 10,
+      nowPage: 1,
     };
   },
   mounted() {
@@ -186,39 +215,88 @@ export default {
       );
       return result;
     },
+    bookListDone() {
+      let drawList = this.products;
+      let arrtemp = [];
+      let arr = [];
+      let linecount = this.selectShowPages;
+
+      for (var i = 0; i < drawList.length; i++) {
+        var indextemp = i % linecount;
+        if (indextemp == 0) {
+          arrtemp = [];
+          arr[arr.length] = arrtemp;
+        }
+        arrtemp[indextemp] = drawList[i];
+      }
+
+
+      return arr;
+    },
+    showBooks(){
+      return this.bookListDone[this.nowPage -1];
+    },
+    allPages(){
+      let PagesNum = this.bookListDone.length
+
+      return PagesNum;
+    },
   },
   methods: {
+    clickPage(index){
+      this.nowPage = index +1
+    },
     // 全部
     getAllData() {
       this.products = this.all;
+      this.nowPage = 1
     },
 
     // 鑑賞
     getAppreciationData() {
       this.products = this.appreciation;
+      this.nowPage = 1
     },
 
     // 繪畫
     getPaintingData() {
       this.products = this.painting;
+      this.nowPage = 1
     },
 
     // 藝術
     getArtData() {
       this.products = this.art;
+      this.nowPage = 1
     },
 
     // 攝影
     getPhotographyData() {
       this.products = this.photography;
+      this.nowPage = 1
+    },
+    pageUp(){
+      if(this.nowPage < this.allPages){
+        this.nowPage = this.nowPage +1
+      }
+    },
+    pageDown(){
+      if(this.nowPage > 1){
+        this.nowPage = this.nowPage -1
+      }
+    },
+    changeSelectPages(page){
+      this.selectShowPages = page;
     },
   },
   watch: {
     condition(newVal) {
       if (newVal != "") {
         this.products = this.searchbookList;
+        this.nowPage = 1
       } else {
         this.products = this.all;
+        this.nowPage = 1
       }
     },
   },
