@@ -50,7 +50,7 @@
       addBook() {
         let data = this.bookData;
         data["book_passwordCfrm"] = "123456";
-        axios.post("http://127.0.0.1:3000/booktable/", { data }).then((res) => {
+        axios.post("http://127.0.0.1:3000/book/", { data }).then((res) => {
           if (res.data == "success") {
             this.$router.push({
               name: "booklist",

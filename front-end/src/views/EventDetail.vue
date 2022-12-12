@@ -9,7 +9,7 @@
         <!-- 活動文字內容與時間 -->
         <div class="bookname">
             <div>
-                <h2>《就算是空的》 發表活動</h2>
+                <h2>《新書》 發表活動</h2>
             </div>
             <div>
                 <p>{{item[0].date_start}}~{{item[0].date_end}}</p>
