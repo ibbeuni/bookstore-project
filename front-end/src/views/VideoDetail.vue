@@ -1,5 +1,6 @@
 <template>
     <div>
+        <br><br><br><br><br><br><br><br>
 
         <p>分類>分類>分類</p>
         <p>{{ this.$route.params.id }}</p>

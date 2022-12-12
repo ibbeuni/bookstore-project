@@ -1,6 +1,8 @@
 <template>
   <div>
+    <br><br><br><br><br><br>
     <br><br><br><br>
+
     <!-- 上方分類區 -->
     <!-- <div id="topClassDiv"><a href="">中文圖書</a> > <a href="">藝術設計</a> > <a href="">分類</a></div> -->
 
