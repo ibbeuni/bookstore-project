@@ -10,11 +10,10 @@
                     <p class="nh1 nb">{{ item[0].product_name }}</p>
 
                 </div>
-                <div id="productImgDiv" class="img-zoom-container">
+                <div id="productImgDiv">
                     <img id="productImg" :src="'http://127.0.0.1:3000/img/books/' + item[0].img_cover + '.png'" alt="">
                     <!-- 放大區 -->
 
-                    <div id="myresult" class="img-zoom-result"></div>
 
                     <!-- 放大區 -->
                     <div id="productImgPage">
@@ -948,28 +947,7 @@ body:has(#L4:checked) .L4 {
 
 /* /加入購物車底部固定列 */
 
-/* 放大鏡功能 */
 
-.img-zoom-container {
-  position: relative;
-}
-
-.img-zoom-lens {
-  position: absolute;
-  border: 1px solid #d4d4d4;
-  /*set the size of the lens:*/
-  width: 40px;
-  height: 40px;
-}
-
-.img-zoom-result {
-  border: 1px solid #d4d4d4;
-  /*set the size of the result div:*/
-  width: 300px;
-  height: 300px;
-}
-
-/* 放大鏡功能 */
 
 
 

@@ -101,7 +101,7 @@
           <p class="nh2">你可能也喜歡</p>
           <div id="maybeYouLike">
             <div class="maybeYouLikeDiv" v-for="(item, index) in otherbooks" :key="index">
-              <a class="maybeYouLikeTag_a" href="">
+              <a class="maybeYouLikeTag_a" :href="('/#/home/ztTest/' + otherbooks[index].product_id)">
                 <div>
                   <div class="maybeYouLikeImgDiv">
                     <img class="maybeYouLikeImg"
@@ -258,14 +258,14 @@
             </div>
           </div>
           <div>
-            <a class="relatedVideoTag_a" :href="('/#/home/videodetail/' + id)">
+            <a class="relatedVideoTag_a" :href=" video[0]? ('/#/home/videodetail/' + video[0].product_id  ): '#' ">
               <div class="relatedVideoInnerDiv">
                 <div>
                   <img class="relatedVideoImg"
-                    v-bind:src="'http://127.0.0.1:3000/img/video/' + video[0].video_title_img + '.jpg'" alt="">
+                    v-bind:src="video[0]?(('http://127.0.0.1:3000/img/video/' + video[0].video_title_img + '.jpg')):'http://127.0.0.1:3000/img/video/none.png'" alt="">
                 </div>
                 <div class="relatedVideoInformation">
-                  <p class="nb">{{ video[0].video_name }}</p>
+                  <p class="nb">{{( video[0]? video[0].video_name: '')}}</p>
                 </div>
               </div>
             </a>
@@ -315,6 +315,8 @@ export default {
     }
   },
   methods: {
+
+    
     // 放大區
     // 鼠标进入原图空间函数
     enterHandler() {
@@ -593,7 +595,7 @@ table {
 
 #productImgDiv {
   overflow: hidden;
-  margin-left: 70px;
+  margin-left: 45px;
 }
 
 #productImg {
@@ -637,8 +639,8 @@ table {
 
 #productInformationLeft {
   margin: 20px;
-  margin-right: 100px;
-  width: 500px;
+  /* margin-right: 100px; */
+  width: 450px;
 
 }
 
