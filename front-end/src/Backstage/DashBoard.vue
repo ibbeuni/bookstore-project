@@ -2,29 +2,29 @@
     <div class="container">
         <div class="iconline">
             <div>
-                <font-awesome-icon class="iconSize" icon="fa-solid fa-book" />
-                <p style="color:pink;">收藏書籍數量</p>
-                <p style="color:pink;">183</p>
+                <font-awesome-icon class="iconSize" icon="fa-solid fa-book" style="color:pink;"/>
+                <p>收藏書籍數量</p>
+                <p>183</p>
             </div>
             <div>
-                <font-awesome-icon class="iconSize" icon="fa-solid fa-book" />
-                <p style="color:bisque;">繪畫書籍數量</p>
-                <p style="color:bisque;">179</p>
+                <font-awesome-icon class="iconSize" icon="fa-solid fa-book" style="color:bisque;"/>
+                <p>繪畫書籍數量</p>
+                <p >179</p>
             </div>
             <div>
-                <font-awesome-icon class="iconSize" icon="fa-solid fa-book" />
-                <p style="color:yellow;">藝術書籍數量</p>
-                <p style="color:yellow;">194</p>
+                <font-awesome-icon class="iconSize" icon="fa-solid fa-book" style="color:Indianred;"/>
+                <p>藝術書籍數量</p>
+                <p>194</p>
             </div>
             <div>
-                <font-awesome-icon class="iconSize" icon="fa-solid fa-book" />
-                <p style="color:aqua;">攝影書籍數量</p>
-                <p style="color:aqua;">207</p>
+                <font-awesome-icon class="iconSize" icon="fa-solid fa-book" style="color:blue;"/>
+                <p>攝影書籍數量</p>
+                <p>207</p>
             </div>
             <div>
-                <font-awesome-icon class="iconSize" icon="fa-solid fa-book" />
-                <p style="color:blue;">總書籍數量</p>
-                <p style="color:blue;">763</p>
+                <font-awesome-icon class="iconSize" icon="fa-solid fa-book" style="color:yellow;"/>
+                <p style="color:yellow;">總書籍數量</p>
+                <p style="color:yellow;">763</p>
             </div>
         </div>
         <div>
@@ -100,6 +100,9 @@ const options2 = {
 </script>
 
 <style scoped>
+p{
+    font-size: 24px;
+}
 .schart-box {
     display: inline-block;
     margin: 20px;
