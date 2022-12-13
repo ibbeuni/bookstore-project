@@ -13,8 +13,8 @@
                   </div>
               </div>
               <ul class="nh3 nb">
-                  <li><a href="" >會員資料</a></li>
-                  <li><a href="">購物車</a></li>
+                  <li><a href="/#/home/member" >會員資料</a></li>
+                  <li><a href="/#/home/shoppingcart" >購物車</a></li>
                   <li><a href="">訂單查詢</a></li>
                   <li><a href="">追蹤清單</a></li>
                   <li><a href="">貨到通知</a></li>
@@ -137,14 +137,14 @@ export default{
         }
         
       }).then(res =>{
-        console.log(res.data);
+        // console.log(res.data);
         if(res.data.status == 200){
-          
-          console.log(res.data)
           alert('儲存成功')
-          this.router.push('/homepage')
-        }else{
           console.log(res.data)
+          
+          this.$router.push('/home/homepage')
+        }else{
+          // console.log(res.data)
         }
       })
    
@@ -395,7 +395,7 @@ table {
   object-fit: cover;
 }
 .imgCtrl{
- background-image: url('../assets/noPic.png');
+ background-image: url('../assets/maruko.png');
   width: 150px;
   height: 150px;
 }
