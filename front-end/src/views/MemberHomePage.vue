@@ -13,8 +13,8 @@
                   </div>
               </div>
               <ul class="nh3 nb">
-                  <li><a href="" >會員資料</a></li>
-                  <li><a href="">購物車</a></li>
+                  <li><a href="/#/home/member" >會員資料</a></li>
+                  <li><a href="/#/home/shoppingcart" >購物車</a></li>
                   <li><a href="">訂單查詢</a></li>
                   <li><a href="">追蹤清單</a></li>
                   <li><a href="">貨到通知</a></li>
@@ -395,7 +395,7 @@ table {
   object-fit: cover;
 }
 .imgCtrl{
- background-image: url('../assets/noPic.png');
+ background-image: url('../assets/maruko.png');
   width: 150px;
   height: 150px;
 }
