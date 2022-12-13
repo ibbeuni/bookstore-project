@@ -65,9 +65,22 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
-    name: 'VideoBanner'
+    name: 'VideoBanner',
+    data() {
+        return {
+            video:'',
+        }
+    },
+    mounted() {
+        axios.get('http://127.0.0.1:3000/videotable').then(res => {
+            this.video = res.data;
+        })
+    }
 }
+
 </script>
 
 <style scoped>
