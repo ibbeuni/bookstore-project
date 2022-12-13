@@ -2,6 +2,7 @@
   <div class="title-wrap">
     <h4 class="title-heading">{{searchResult}}</h4>
     <div class="sub-title-wrap">
+      <!-- TODO 以後改成搜尋結果共Ｘ筆 -->
       <p class="info-text">綜合暢銷排行</p>
       <div class="right-area">
         <div class="form-sel">
@@ -35,6 +36,7 @@ export default {
   data() {
     return {
       pages: 10,
+      hidden: false,
     };
   },
   computed:{
