@@ -4,7 +4,7 @@
     <div class="contents-inner">
       <div class="search-wrap">
         <div class="logo-box">
-          <a href="/#/home/homepage">
+          <a @click="clearSearch" href="/#/home/homepage">
             <img src="@/assets/BookstoreLogo.png" alt="" />
           </a>
         </div>

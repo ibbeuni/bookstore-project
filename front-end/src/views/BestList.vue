@@ -24,13 +24,21 @@
                     </button>
                   </li>
                   <li class="snb-item">
-                    <button type="button" class="snb-btn" @click="getAppreciationData">
+                    <button
+                      type="button"
+                      class="snb-btn"
+                      @click="getAppreciationData"
+                    >
                       <h5>鑑賞</h5>
                     </button>
                   </li>
                   <li class="snb-item">
                     <!-- TODO 加入連結 -->
-                    <button type="button" class="snb-btn" @click="getPaintingData">
+                    <button
+                      type="button"
+                      class="snb-btn"
+                      @click="getPaintingData"
+                    >
                       <h5>繪畫</h5>
                     </button>
                   </li>
@@ -42,7 +50,11 @@
                   </li>
                   <li class="snb-item">
                     <!-- TODO 加入連結 -->
-                    <button type="button" class="snb-btn" @click="getPhotographyData">
+                    <button
+                      type="button"
+                      class="snb-btn"
+                      @click="getPhotographyData"
+                    >
                       <h5>攝影</h5>
                     </button>
                   </li>
@@ -66,7 +78,10 @@
                 <li class="prod-item">
                   <div class="prod-area">
                     <div class="prod-thumb-box">
-                      <a :href="'/#/home/product/' + products[index].product_id" class="prod-link">
+                      <a
+                        :href="'/#/home/product/' + products[index].product_id"
+                        class="prod-link"
+                      >
                         <div class="img-box">
                           <img
                             v-bind:src="
@@ -80,7 +95,10 @@
                       </a>
                     </div>
                     <div class="prod-info-box">
-                      <a :href="'/#/home/product/' + products[index].product_id" class="prod-info">
+                      <a
+                        :href="'/#/home/product/' + products[index].product_id"
+                        class="prod-info"
+                      >
                         <h5 class="prod-name">
                           {{ item.product_name }}
                         </h5>
@@ -188,6 +206,9 @@ export default {
     };
   },
   mounted() {
+    this.$emit("booksType", "All");
+    this.$emit("searchText", "");
+
     axios.get("http://127.0.0.1:3000/booktable/").then((res) => {
       this.allBookList = res.data;
     });
@@ -296,7 +317,6 @@ export default {
       this.nowPage = 1;
       // this.booksType = "Appreciation";
       this.$emit("booksType", "Appreciation");
-
       this.$emit("searchText", "");
     },
 
@@ -345,27 +365,26 @@ export default {
 
     // 加入購物車
     addToCart() {
-      axios.post('http://127.0.0.1:3000/shoppingcartable/post',{
-      
-      params:{
-        product_id: this.product_id,
-        img_cover: this.img_cover,
-        product_name: this.product_name,
-        product_price: this.product_price,
-        amount: 1,
-      }
-      
-    }).then(res =>{
-      console.log(res.data);
-      if(res.data.status == 200){
-        
-        console.log(res.data)
-        alert('加入購物車成功！')
-        this.router.push('/shoppingcart')
-      }else{
-        console.log(res.data)
-      }
-    })
+      axios
+        .post("http://127.0.0.1:3000/shoppingcartable/post", {
+          params: {
+            product_id: this.product_id,
+            img_cover: this.img_cover,
+            product_name: this.product_name,
+            product_price: this.product_price,
+            amount: 1,
+          },
+        })
+        .then((res) => {
+          console.log(res.data);
+          if (res.data.status == 200) {
+            console.log(res.data);
+            alert("加入購物車成功！");
+            this.router.push("/shoppingcart");
+          } else {
+            console.log(res.data);
+          }
+        });
     },
   },
   watch: {
