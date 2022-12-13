@@ -26,21 +26,13 @@
                     </button>
                   </li>
                   <li class="snb-item">
-                    <button
-                      type="button"
-                      class="snb-btn"
-                      @click="getAppreciationData"
-                    >
+                    <button type="button" class="snb-btn" @click="getAppreciationData">
                       <h5>鑑賞</h5>
                     </button>
                   </li>
                   <li class="snb-item">
                     <!-- TODO 加入連結 -->
-                    <button
-                      type="button"
-                      class="snb-btn"
-                      @click="getPaintingData"
-                    >
+                    <button type="button" class="snb-btn" @click="getPaintingData">
                       <h5>繪畫</h5>
                     </button>
                   </li>
@@ -52,11 +44,7 @@
                   </li>
                   <li class="snb-item">
                     <!-- TODO 加入連結 -->
-                    <button
-                      type="button"
-                      class="snb-btn"
-                      @click="getPhotographyData"
-                    >
+                    <button type="button" class="snb-btn" @click="getPhotographyData">
                       <h5>攝影</h5>
                     </button>
                   </li>
@@ -72,25 +60,18 @@
             <div class="switch-prod-wrap">
               <!-- list -->
               <!-- <prod-list></prod-list> -->
-              <ol
-                class="prod-list"
-                v-for="(item, index) in products"
-                :key="index"
-              >
+              <ol class="prod-list" v-for="(item, index) in products" :key="index">
                 <li class="prod-item">
                   <div class="prod-area">
                     <div class="prod-thumb-box">
                       <!-- TODO 指定商品網址 -->
                       <a href="" class="prod-link">
                         <div class="img-box">
-                          <img
-                            v-bind:src="
-                              'http://127.0.0.1:3000/img/books/' +
-                              products[index].img_cover +
-                              '.png'
-                            "
-                            alt=""
-                          />
+                          <img v-bind:src="
+                            'http://127.0.0.1:3000/img/books/' +
+                            products[index].img_cover +
+                            '.png'
+                          " alt="" />
                         </div>
                       </a>
                     </div>
@@ -106,33 +87,27 @@
                         &nbsp;|&nbsp;
                         {{ products[index].publishing_house }}
                         &nbsp;|&nbsp;
-                        <span class="date"
-                          >{{ products[index].publication_date }} 出版</span
-                        >
+                        <span class="date">{{ products[index].publication_date }} 出版</span>
                       </p>
                       <div class="prod-price">
                         <span class="percent">10%</span>
                         <span class="price">
-                          <strong class="val"
-                            >優惠價 {{ products[index].discount_price }}</strong
-                          >
-                          <span class="unit">元</span>
+                          <strong class="val">優惠價 {{ products[index].discount_price }}</strong>
+                          <strong class="unit">元</strong>
                         </span>
                         <span class="price-normal">
-                          <small class="val"
-                            >原價 {{ products[index].list_price }}</small
-                          >
+                          <span class="val">原價 {{ products[index].list_price }}</span>
                           <span class="unit">元</span>
                         </span>
                       </div>
                       <p class="prod-intro">
-                        當我們在博物館中看見文物，我們或許只看見它們最表面的模樣。換作是長年浸淫在文物、藝術品中的大師級研究者，他們怎麼看見？他們又從「物」中解讀出甚麼訊息？本書是一回史無前例的策畫。邀請48位國際上知名的東亞藝術史學者、考古學者，每人選擇一件物品，帶領我們進入這件物品的世界。48位學者，每一位都閱物無數。當只能選擇一件，他們如何選出最打動自己，最願意為之傾訴的文物？他們選擇的物，有書畫、織品、陶瓷器、石器、出土破片、青銅器、石刻、版畫、電影、相片、早期印刷品、甚至大型宮殿建築。他們與物的關係，有個人獨到的學術見解，有令人顫抖的文物重現世間，有終身難忘的觀看經驗，人與物一期一會的相遇。
+                        {{ products[index].introduction }}
                       </p>
                     </div>
                     <div class="prod-btn-wrap">
                       <!-- <button class="btn-wish-icon">
-                                                <font-awesome-icon icon="fa-solid fa-heart" />
-                                            </button> -->
+                              <font-awesome-icon icon="fa-solid fa-heart" />
+                           </button> -->
                       <div class="btn-wrap">
                         <a href="" class="add-cart-btn">
                           <span>加入購物車</span>
@@ -401,10 +376,13 @@ ol {
 .prod-intro {
   margin-top: 20px;
   color: var(--font-color);
-  overflow: hidden;
   margin-bottom: 0;
-  /* TODO 設定多的字改成... */
-  max-height: 48px;
+  /* max-height: 48px; */
+  /* 設定多的字改成... */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 .prod-btn-wrap {
