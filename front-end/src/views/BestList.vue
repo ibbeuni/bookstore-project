@@ -107,12 +107,12 @@
                               <font-awesome-icon icon="fa-solid fa-heart" />
                            </button> -->
                       <div class="btn-wrap">
-                        <a href="" class="add-cart-btn">
+                        <button class="add-cart-btn" @click="addToCart">
                           <span>加入購物車</span>
-                        </a>
-                        <a href="" class="just-buy-btn">
+                        </button>
+                        <button class="just-buy-btn">
                           <span>馬上購買</span>
-                        </a>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -211,6 +211,31 @@ export default {
     // 攝影
     getPhotographyData() {
       this.products = this.photography;
+    },
+
+    // 加入購物車
+    addToCart() {
+      axios.post('http://127.0.0.1:3000/shoppingcartable/post',{
+      
+      params:{
+        product_id: this.product_id,
+        img_cover: this.img_cover,
+        product_name: this.product_name,
+        product_price: this.product_price,
+        amount: 1,
+      }
+      
+    }).then(res =>{
+      console.log(res.data);
+      if(res.data.status == 200){
+        
+        console.log(res.data)
+        alert('加入購物車成功！')
+        this.router.push('/shoppingcart')
+      }else{
+        console.log(res.data)
+      }
+    })
     },
   },
   watch: {
@@ -400,7 +425,8 @@ ol {
   margin-right: 8px;
 }
 
-.btn-wrap a {
+.btn-wrap button {
+  border: 0;
   display: inline-flex;
   justify-content: center;
   align-items: center;
