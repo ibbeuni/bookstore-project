@@ -103,9 +103,7 @@
                           <span class="unit">元</span>
                         </span>
                         <span class="price-normal">
-                          <small class="val"
-                            >原價 {{ item.list_price }}</small
-                          >
+                          <small class="val">原價 {{ item.list_price }}</small>
                           <span class="unit">元</span>
                         </span>
                       </div>
@@ -140,9 +138,16 @@
                 <span aria-hidden="true">&laquo;</span>
               </a>
             </li>
-            <li @click="clickPage(index)" v-for="(item, index) in bookListDone" :key="index" class="page-item"><a class="page-link">{{index +1}}</a></li>
+            <li
+              @click="clickPage(index)"
+              v-for="(item, index) in bookListDone"
+              :key="index"
+              class="page-item"
+            >
+              <a class="page-link">{{ index + 1 }}</a>
+            </li>
             <li class="page-item">
-              <a @click="pageUp" class="page-link"  aria-label="Next">
+              <a @click="pageUp" class="page-link" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
               </a>
             </li>
@@ -167,11 +172,11 @@ export default {
     "section-title": SectionTitle,
     // 'prod-list': ProdList,
   },
-  props: ["condition"],
+  props: ["condition", "booksType"],
   data() {
     return {
       all: "", // 全部
-      products: "", // 跑迴圈用變數
+      // products: "", // 跑迴圈用變數
       appreciation: "", // 鑑賞
       painting: "", // 繪畫
       art: "", // 藝術
@@ -179,6 +184,7 @@ export default {
       allBookList: [],
       selectShowPages: 10,
       nowPage: 1,
+      // booksType: "All",
     };
   },
   mounted() {
@@ -208,6 +214,36 @@ export default {
     });
   },
   computed: {
+    products: {
+      get() {
+        let result = this.all;
+        if (this.condition != "") {
+          result = this.searchbookList;
+        }
+
+        if (this.booksType == "All") {
+          result = this.all;
+        }
+
+        if (this.booksType == "Appreciation") {
+          result = this.appreciation;
+        }
+
+        if (this.booksType == "Painting") {
+          result = this.painting;
+        }
+
+        if (this.booksType == "Art") {
+          result = this.art;
+        }
+        if (this.booksType == "Photography") {
+          result = this.photography;
+        }
+
+        return result;
+      },
+      set() {},
+    },
     searchbookList() {
       let allBooks = this.allBookList;
       const result = allBooks.filter((item) =>
@@ -230,74 +266,86 @@ export default {
         arrtemp[indextemp] = drawList[i];
       }
 
-
       return arr;
     },
-    showBooks(){
-      return this.bookListDone[this.nowPage -1];
+    showBooks() {
+      return this.bookListDone[this.nowPage - 1];
     },
-    allPages(){
-      let PagesNum = this.bookListDone.length
+    allPages() {
+      let PagesNum = this.bookListDone.length;
 
       return PagesNum;
     },
   },
   methods: {
-    clickPage(index){
-      this.nowPage = index +1
+    clickPage(index) {
+      this.nowPage = index + 1;
     },
     // 全部
     getAllData() {
       this.products = this.all;
-      this.nowPage = 1
+      this.nowPage = 1;
+      // this.booksType = "All";
+      this.$emit("booksType", "All");
+      this.$emit("searchText", "");
     },
 
     // 鑑賞
     getAppreciationData() {
       this.products = this.appreciation;
-      this.nowPage = 1
+      this.nowPage = 1;
+      // this.booksType = "Appreciation";
+      this.$emit("booksType", "Appreciation");
+
+      this.$emit("searchText", "");
     },
 
     // 繪畫
     getPaintingData() {
       this.products = this.painting;
-      this.nowPage = 1
+      this.nowPage = 1;
+      // this.booksType = "Painting";
+      this.$emit("booksType", "Painting");
+
+      this.$emit("searchText", "");
     },
 
     // 藝術
     getArtData() {
       this.products = this.art;
-      this.nowPage = 1
+      this.nowPage = 1;
+      // this.booksType = "Art";
+      this.$emit("booksType", "Art");
+
+      this.$emit("searchText", "");
     },
 
     // 攝影
     getPhotographyData() {
       this.products = this.photography;
-      this.nowPage = 1
+      this.nowPage = 1;
+      // this.booksType = "Photography";
+      this.$emit("booksType", "Photography");
+
+      this.$emit("searchText", "");
     },
-    pageUp(){
-      if(this.nowPage < this.allPages){
-        this.nowPage = this.nowPage +1
+    pageUp() {
+      if (this.nowPage < this.allPages) {
+        this.nowPage = this.nowPage + 1;
       }
     },
-    pageDown(){
-      if(this.nowPage > 1){
-        this.nowPage = this.nowPage -1
+    pageDown() {
+      if (this.nowPage > 1) {
+        this.nowPage = this.nowPage - 1;
       }
     },
-    changeSelectPages(page){
+    changeSelectPages(page) {
       this.selectShowPages = page;
     },
   },
   watch: {
-    condition(newVal) {
-      if (newVal != "") {
-        this.products = this.searchbookList;
-        this.nowPage = 1
-      } else {
-        this.products = this.all;
-        this.nowPage = 1
-      }
+    products() {
+      this.nowPage = 1;
     },
   },
 };
