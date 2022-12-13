@@ -60,7 +60,7 @@
           <!-- contents -->
           <section class="section-wrap">
             <!-- title 根據aside切換，更換內容 -->
-            <section-title @showPages="changeSelectPages"></section-title>
+            <section-title :condition="condition" @showPages="changeSelectPages"></section-title>
             <!-- list contents -->
             <div class="switch-prod-wrap">
               <!-- list -->

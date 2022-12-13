@@ -1,11 +1,16 @@
 <template>
   <div class="title-wrap">
-    <h4 class="title-heading">綜合</h4>
+    <h4 class="title-heading">{{searchResult}}</h4>
     <div class="sub-title-wrap">
       <p class="info-text">綜合暢銷排行</p>
       <div class="right-area">
         <div class="form-sel">
-          <select ref="p" @change="showPages" title="選擇顯示方式" id="selListPer">
+          <select
+            ref="p"
+            @change="showPages"
+            title="選擇顯示方式"
+            id="selListPer"
+          >
             <option value="10">顯示10項</option>
             <option value="20">顯示20項</option>
           </select>
@@ -25,15 +30,25 @@
 
 <script>
 export default {
+  props: ["condition"],
   name: "SectionTitle",
   data() {
     return {
-        pages:10,
+      pages: 10,
     };
+  },
+  computed:{
+       searchResult(){
+           let result = ""
+           if(this.condition != ""){
+               result = "搜尋：" + this.condition
+           }
+          return result
+      },
   },
   methods: {
     showPages() {
-        this.pages = this.$refs.p.value
+      this.pages = this.$refs.p.value;
       this.$emit("showPages", this.pages);
     },
   },
