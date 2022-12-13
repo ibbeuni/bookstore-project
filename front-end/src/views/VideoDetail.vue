@@ -167,8 +167,10 @@ export default {
     },
    
     watch: {
-        id: {
-
+        // 監聽動態路由變化
+        $route(to) {
+            this.id = to.params.id;
+            this.$emit('change-page');
         }
     }
 }
