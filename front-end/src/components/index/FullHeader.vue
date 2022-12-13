@@ -63,7 +63,7 @@
           <div class="menu_area"></div>
         </div>
         <ul class="nav-list">
-          <li class="nav_item">
+          <li class="nav_item" @click="clickBestList">
             <router-link to="/home/best">暢銷排行</router-link>
           </li>
           <li>・</li>
@@ -122,7 +122,12 @@ export default {
     };
   },
   methods: {
+    clickBestList(){
+      this.clearSearch()
+      this.pushData()
+    },
     clearSearch(){
+      console.log("12321321")
       this.searchText = ""
     },
     toShoppingPage() {

@@ -206,8 +206,8 @@ export default {
     };
   },
   mounted() {
-    this.$emit("booksType", "All");
-    this.$emit("searchText", "");
+    // this.$emit("booksType", "All");
+    // this.$emit("searchText", "");
 
     axios.get("http://127.0.0.1:3000/booktable/").then((res) => {
       this.allBookList = res.data;
