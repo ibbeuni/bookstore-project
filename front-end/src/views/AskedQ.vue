@@ -9,6 +9,7 @@
         <div class="content">
             <div class="card_1">
                 <div class="accordion" id="myAccordion">
+                    <br><br><br>
                     <h1>會員常見問題</h1>
                     <div class="accordion-item">
                         <div class="accordion-header" id="headingOne">
@@ -31,7 +32,7 @@
                                 data-bs-target="#collapseTwo">
                                 Ｑ: 國內及離島可選擇的配送方式及運費計算？</button>
                         </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#myAccordion">
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
                             <div class="card-body">
                                 <p>Ａ :
                                     <br>
