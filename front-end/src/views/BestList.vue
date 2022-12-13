@@ -143,29 +143,30 @@
             </div>
           </section>
         </div>
-
-        <nav aria-label="Page navigation example">
-          <ul class="pagination">
-            <li class="page-item">
-              <a @click="pageDown" class="page-link" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li>
-            <li
-              @click="clickPage(index)"
-              v-for="(item, index) in bookListDone"
-              :key="index"
-              class="page-item"
-            >
-              <a class="page-link">{{ index + 1 }}</a>
-            </li>
-            <li class="page-item">
-              <a @click="pageUp" class="page-link" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <div class="page-nav">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item">
+                <a @click="pageDown" class="page-link" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li
+                @click="clickPage(index)"
+                v-for="(item, index) in bookListDone"
+                :key="index"
+                class="page-item"
+              >
+                <a class="page-link">{{ index + 1 }}</a>
+              </li>
+              <li class="page-item">
+                <a @click="pageUp" class="page-link" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </section>
     </main>
   </div>
@@ -588,7 +589,14 @@ ol {
   margin-top: 10px;
 }
 
-.pagination {
+.page-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 88px;
+}
 
+.page-nav a {
+  color: var(--neutral-color);
 }
 </style>
