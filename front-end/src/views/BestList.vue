@@ -365,6 +365,7 @@ export default {
 
     // 加入購物車
     addToCart() {
+      console.log(this.item.product_name)
       axios
         .post("http://127.0.0.1:3000/shoppingcartable/post", {
           params: {
@@ -590,5 +591,9 @@ ol {
 .just-buy-btn {
   background-color: var(--primary-color);
   margin-top: 10px;
+}
+
+.pagination {
+
 }
 </style>
