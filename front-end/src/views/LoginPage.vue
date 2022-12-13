@@ -88,8 +88,8 @@ export default{
       let username = this.login.userName
       let password = this.login.password
 
-      if( username == ''){
-        alert('請輸入帳號')
+      if( username !== '123@gmail.com' || username == ""){
+        alert('查無此帳號請重新輸入')
       }else if(password ==''){
         alert('請輸入密碼')
       }else{

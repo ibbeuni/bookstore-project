@@ -137,14 +137,14 @@ export default{
         }
         
       }).then(res =>{
-        console.log(res.data);
+        // console.log(res.data);
         if(res.data.status == 200){
-          
-          console.log(res.data)
           alert('儲存成功')
-          this.router.push('/homepage')
-        }else{
           console.log(res.data)
+          
+          this.$router.push('/home/homepage')
+        }else{
+          // console.log(res.data)
         }
       })
    
