@@ -16,7 +16,7 @@ exports.post = (req, res) => {
 
         console.log(req.body.params.member_id) 
         // console.log(req.body.params.member_password) 
-        res.send('ok')
+        // res.send('ok')
 
         if(err){
             return res.send({

@@ -31,7 +31,7 @@
       <br />
       <br />
 
-      <button class="register_btn">
+      <button class="register_btn" @click="register">
         <router-link to=/register> 註冊 </router-link>
       </button>
 
@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 
 export default{
   
@@ -93,30 +93,39 @@ export default{
       }else if(password ==''){
         alert('請輸入密碼')
       }else{
-        axios.get('http://127.0.0.1:3000/logintable',{
+        this.$router.push('/home/homepage')
+        // axios.get('http://127.0.0.1:3000/logintable',{
+        //   params:{
+        //     id : this.login.userName,
+        //     password : this.login.password,
+        //   }
           
-            member_id : username,
-            member_password : password
-          
-        }).then(res => {
-          if (res.data.status == 200){
+        // }).then((res, err) => {
+        //   console.log(res)
+        //   if (res.data.status == 200){
             
-              this.$router.push('/home/homepage')
+        //       this.$router.push('/home/homepage')
 
             
           
-          }else{
-            alert('查無此帳號，請先註冊喔');
-            console.log(username)
+        //   }else{
+        //     this.login.userName = "",
+        //     this.login.password = "",
+        //     alert('查無此帳號，請先註冊喔');
+        //     console.log('錯誤'+ err)
+            
 
-          }
-        })
+        //   }
+        // })
         
       }
       
 
   
-    }
+    },
+  register(){
+    this.$router.push('/home/register')
+  }
 }
 }
 </script>
