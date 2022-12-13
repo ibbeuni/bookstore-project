@@ -8,6 +8,7 @@
       :condition="searchText"
       @searchText="clearSearch"
       @booksType="changBooksType"
+      class="margin-top"
     ></router-view>
     <!-- FOOTER -->
     <full-footer></full-footer>
@@ -47,7 +48,10 @@ export default {
 
 <style scoped>
 
-router-view {
+.wrap{
+  background-color: var(--background-color);
+}
+.margin-top {
   margin-top: 177px;
 }
 

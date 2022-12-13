@@ -118,10 +118,10 @@
                           <strong class="val"
                             >優惠價 {{ item.discount_price }}</strong
                           >
-                          <span class="unit">元</span>
+                          <strong class="unit">元</strong>
                         </span>
                         <span class="price-normal">
-                          <small class="val">原價 {{ item.list_price }}</small>
+                          <span class="val">原價 {{ item.list_price }}</span>
                           <span class="unit">元</span>
                         </span>
                       </div>
