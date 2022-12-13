@@ -122,6 +122,9 @@ export default {
     };
   },
   methods: {
+    clearSearch(){
+      this.searchText = ""
+    },
     toShoppingPage() {
       this.$router.push("/home/shoppingcart");
     },
