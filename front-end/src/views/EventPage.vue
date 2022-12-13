@@ -7,16 +7,16 @@
         <!-- 活動輪播圖 -->
         <div style="text-align:center" id="carouselExampleFade" class="banner-visual-box carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="img-box carousel-item " data-bs-interval="1500">
+                <div class="img-box carousel-item " data-bs-interval="1000">
                     <img style="border-radius: 30px;" src="../assets/img/event/event_cover/event_cover001.jpeg" alt="">
                 </div>
-                <div class="img-box carousel-item active" data-bs-interval="1500">
+                <div class="img-box carousel-item " data-bs-interval="1000">
                     <img style="border-radius: 30px;" src="../assets/img/event/event_cover/event_cover002.jpeg" alt="">
                 </div>
-                <div class="img-box carousel-item " data-bs-interval="1500">
+                <div class="img-box carousel-item " data-bs-interval="1000">
                     <img style="border-radius: 30px;" src="../assets/img/event/event_cover/event_cover003.jpeg" alt="">
                 </div>
-                <div class="img-box carousel-item " data-bs-interval="1500">
+                <div class="img-box carousel-item active" data-bs-interval="1000">
                     <a href="/#/home/eventdetail/10"><img style="border-radius: 30px;" src="../assets/img/event/event_cover/event_cover004.jpeg" alt=""></a>
                 </div>
             </div>
