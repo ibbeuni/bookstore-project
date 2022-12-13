@@ -7,7 +7,6 @@
       <section class="contents-wrap">
         <div class="contents-inner flex">
           <!-- LNB -->
-          <!-- <aside-nav></aside-nav> -->
           <aside class="aside-wrap">
             <div class="aside-header">
               <div class="aside-title-wrap">
@@ -18,7 +17,6 @@
               <div class="snb-wrap">
                 <ul class="snb-list">
                   <li class="snb-item">
-                    <!-- TODO 加入連結 -->
                     <button type="button" class="snb-btn" @click="getAllData">
                       <h5>綜合</h5>
                     </button>
@@ -33,7 +31,6 @@
                     </button>
                   </li>
                   <li class="snb-item">
-                    <!-- TODO 加入連結 -->
                     <button
                       type="button"
                       class="snb-btn"
@@ -43,13 +40,11 @@
                     </button>
                   </li>
                   <li class="snb-item">
-                    <!-- TODO 加入連結 -->
                     <button type="button" class="snb-btn" @click="getArtData">
                       <h5>藝術</h5>
                     </button>
                   </li>
                   <li class="snb-item">
-                    <!-- TODO 加入連結 -->
                     <button
                       type="button"
                       class="snb-btn"
