@@ -1,6 +1,5 @@
 <template>
     <div>
-        <br><br><br><br><br><br><br><br>
 
         <!-- <p>分類>分類>分類</p> -->
         <p style="color:transparent;">{{ this.$route.params.id }}</p>
@@ -167,8 +166,10 @@ export default {
     },
    
     watch: {
-        id: {
-
+        // 監聽動態路由變化
+        $route(to) {
+            this.id = to.params.id;
+            this.$emit('change-page');
         }
     }
 }

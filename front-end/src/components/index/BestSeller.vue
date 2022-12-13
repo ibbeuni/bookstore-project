@@ -2,7 +2,7 @@
     <section class="contents">
         <div class="contents-inner">
             <div class="title-wrap">
-                <h2 class="title-heading">推薦書單</h2>
+                <h2 class="title-heading">暢銷排行</h2>
                 <ul class="category-tag-list">
                     <li class="category-item">
                         <button type="button" class="btn-category" @click="getAllData"><span>全部</span></button>
@@ -39,15 +39,14 @@
                                     </div>
                                 </div>
                                 <div class="prod-thumb-box">
-                                    <a href="">
+                                    <a :href="'/#/home/product/' + products[index].product_id">
                                         <div class="img-box">
                                             <img v-bind:src="'http://127.0.0.1:3000/img/books/' + products[index].img_cover + '.png'" alt="">
                                         </div>
                                     </a>
                                 </div>
                                 <div class="prod-info-box">
-                                    <!-- TODO 設定書本商品詳情頁網址 -->
-                                    <a href="">
+                                    <a :href="'/#/home/product/' + products[index].product_id">
                                         <p class="prod-name">{{products[index].product_name}}</p>
                                     </a>
                                     <small class="prod-author">{{products[index].auther}}</small>

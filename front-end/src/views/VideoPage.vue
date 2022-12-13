@@ -1,7 +1,6 @@
 <template>
     <div>
         <router-view></router-view>
-        <br><br><br><br><br>
         <div id="videoPage">
 
             <!-- <p>分類>分類>分類</p> -->
