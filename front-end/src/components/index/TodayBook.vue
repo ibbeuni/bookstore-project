@@ -72,10 +72,10 @@
                         </div>
                     </li>
                 </ul>
-                <button class="swiper-btn-prev">
+                <button class="swiper-btn-prev hidden">
                     <font-awesome-icon icon="fa-solid fa-chevron-left" />
                 </button>
-                <button class="swiper-btn-next">
+                <button class="swiper-btn-next hidden">
                     <font-awesome-icon icon="fa-solid fa-chevron-right" />
                 </button>
             </div>
@@ -363,5 +363,9 @@ button {
     background-color: var(--background-color);
     z-index: 2;
     box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
 }
 </style>

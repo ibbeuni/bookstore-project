@@ -1,45 +1,58 @@
 <template>
-    <!-- BODY_WRAPPER -->
-    <div class="wrap">
-        <!-- HEADER_COMPONENT -->
-        <full-header @searchText="updateSearchText"></full-header>
-        <router-view :condition="searchText" class="margin-top"></router-view>
-        <!-- FOOTER -->
-        <full-footer></full-footer>
-    </div>
+  <!-- BODY_WRAPPER -->
+  <div class="wrap">
+    <!-- HEADER_COMPONENT -->
+    <full-header ref="clearSearch" @searchText="updateSearchText"></full-header>
+    <router-view
+      :booksType="booksType"
+      :condition="searchText"
+      @searchText="clearSearch"
+      @booksType="changBooksType"
+      class="margin-top"
+    ></router-view>
+    <!-- FOOTER -->
+    <full-footer></full-footer>
+  </div>
 </template>
 
 <script>
-import FullHeader from '../components/index/FullHeader.vue';
-import FullFooter from '../components/index/FullFooter.vue';
+import FullHeader from "../components/index/FullHeader.vue";
+import FullFooter from "../components/index/FullFooter.vue";
 export default {
-    components: {
-        'full-header': FullHeader,
-        'full-footer': FullFooter
+  components: {
+    "full-header": FullHeader,
+    "full-footer": FullFooter,
+  },
+  data() {
+    return {
+      searchText: "",
+      booksType: "All",
+    };
+  },
+  methods: {
+    updateSearchText(ans) {
+      console.log(ans);
+      this.booksType = "";
+      this.searchText = ans;
     },
-    data() {
-        return {
-            searchText: '',
-        }
+    clearSearch() {
+      this.$refs.clearSearch.clearSearch();
     },
-    methods: {
-         updateSearchText(ans) {
-    //   this.answer = ans;
-    console.log(ans)
-    this.searchText = ans
-
-    }
+    changBooksType(type) {
+      console.log("這是type", type);
+      this.booksType = type;
     },
-}
+  },
+};
 </script>
 
 <style scoped>
-.wrap {
-    background-color: var(--background-color);
-}
 
+.wrap{
+  background-color: var(--background-color);
+}
 .margin-top {
-    margin-top: 177px;
+  margin-top: 177px;
 }
 
 </style>

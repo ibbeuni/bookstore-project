@@ -4,7 +4,7 @@
     <div class="contents-inner">
       <div class="search-wrap">
         <div class="logo-box">
-          <a href="/#/home/homepage">
+          <a @click="clearSearch" href="/#/home/homepage">
             <img src="@/assets/BookstoreLogo.png" alt="" />
           </a>
         </div>
@@ -63,7 +63,7 @@
           <div class="menu_area"></div>
         </div>
         <ul class="nav-list">
-          <li class="nav_item">
+          <li class="nav_item" @click="clickBestList">
             <router-link to="/home/best">暢銷排行</router-link>
           </li>
           <li>・</li>
@@ -122,6 +122,14 @@ export default {
     };
   },
   methods: {
+    clickBestList(){
+      this.clearSearch()
+      this.pushData()
+    },
+    clearSearch(){
+      console.log("12321321")
+      this.searchText = ""
+    },
     toShoppingPage() {
       this.$router.push("/home/shoppingcart");
     },

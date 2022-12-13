@@ -17,8 +17,9 @@
   
         
         <br />
-  
-        <button type="submit" style="background-color: green;" class="login_btn"><a href="/#/back/memberlist">《歡迎使用者登入》</a></button>
+        
+        <input type="button" style="background-color: green;" class="login_btn" value="《歡迎使用者登入》" onclick="location.href='/#/back/memberlist'">
+        <!-- <button type="submit" style="background-color: green;" class="login_btn"><a href="/#/back/memberlist">《歡迎使用者登入》</a></button> -->
       </form>
     </div>
 </div>

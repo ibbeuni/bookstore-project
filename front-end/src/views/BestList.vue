@@ -7,44 +7,49 @@
       <section class="contents-wrap">
         <div class="contents-inner flex">
           <!-- LNB -->
-          <!-- <aside-nav></aside-nav> -->
           <aside class="aside-wrap">
             <div class="aside-header">
               <div class="aside-title-wrap">
-                <h2 class="aside-title-heading">
-                  暢銷書單
-                </h2>
+                <h2 class="aside-title-heading">暢銷書單</h2>
               </div>
             </div>
             <div class="aside-body">
               <div class="snb-wrap">
                 <ul class="snb-list">
                   <li class="snb-item">
-                    <!-- TODO 加入連結 -->
                     <button type="button" class="snb-btn" @click="getAllData">
                       <h5>綜合</h5>
                     </button>
                   </li>
                   <li class="snb-item">
-                    <button type="button" class="snb-btn" @click="getAppreciationData">
+                    <button
+                      type="button"
+                      class="snb-btn"
+                      @click="getAppreciationData"
+                    >
                       <h5>鑑賞</h5>
                     </button>
                   </li>
                   <li class="snb-item">
-                    <!-- TODO 加入連結 -->
-                    <button type="button" class="snb-btn" @click="getPaintingData">
+                    <button
+                      type="button"
+                      class="snb-btn"
+                      @click="getPaintingData"
+                    >
                       <h5>繪畫</h5>
                     </button>
                   </li>
                   <li class="snb-item">
-                    <!-- TODO 加入連結 -->
                     <button type="button" class="snb-btn" @click="getArtData">
                       <h5>藝術</h5>
                     </button>
                   </li>
                   <li class="snb-item">
-                    <!-- TODO 加入連結 -->
-                    <button type="button" class="snb-btn" @click="getPhotographyData">
+                    <button
+                      type="button"
+                      class="snb-btn"
+                      @click="getPhotographyData"
+                    >
                       <h5>攝影</h5>
                     </button>
                   </li>
@@ -55,46 +60,63 @@
           <!-- contents -->
           <section class="section-wrap">
             <!-- title 根據aside切換，更換內容 -->
-            <section-title></section-title>
+            <section-title :condition="condition" @showPages="changeSelectPages"></section-title>
             <!-- list contents -->
             <div class="switch-prod-wrap">
               <!-- list -->
               <!-- <prod-list></prod-list> -->
-              <ol class="prod-list" v-for="(item, index) in products" :key="index">
+              <ol
+                class="prod-list"
+                v-for="(item, index) in showBooks"
+                :key="index"
+              >
                 <li class="prod-item">
                   <div class="prod-area">
                     <div class="prod-thumb-box">
-                      <a :href="'/#/home/product/' + products[index].product_id" class="prod-link">
+                      <a
+                        :href="'/#/home/product/' + products[index].product_id"
+                        class="prod-link"
+                      >
                         <div class="img-box">
-                          <img v-bind:src="
-                            'http://127.0.0.1:3000/img/books/' +
-                            products[index].img_cover +
-                            '.png'
-                          " alt="" />
+                          <img
+                            v-bind:src="
+                              'http://127.0.0.1:3000/img/books/' +
+                              item.img_cover +
+                              '.png'
+                            "
+                            alt=""
+                          />
                         </div>
                       </a>
                     </div>
                     <div class="prod-info-box">
-                      <a :href="'/#/home/product/' + products[index].product_id" class="prod-info">
+                      <a
+                        :href="'/#/home/product/' + products[index].product_id"
+                        class="prod-info"
+                      >
                         <h5 class="prod-name">
-                          {{ products[index].product_name }}
+                          {{ item.product_name }}
                         </h5>
                       </a>
                       <p class="prod-author">
-                        {{ products[index].auther }}
+                        {{ item.auther }}
                         &nbsp;|&nbsp;
-                        {{ products[index].publishing_house }}
+                        {{ item.publishing_house }}
                         &nbsp;|&nbsp;
-                        <span class="date">{{ products[index].publication_date }} 出版</span>
+                        <span class="date"
+                          >{{ item.publication_date }} 出版</span
+                        >
                       </p>
                       <div class="prod-price">
                         <span class="percent">10%</span>
                         <span class="price">
-                          <strong class="val">優惠價 {{ products[index].discount_price }}</strong>
+                          <strong class="val"
+                            >優惠價 {{ item.discount_price }}</strong
+                          >
                           <strong class="unit">元</strong>
                         </span>
                         <span class="price-normal">
-                          <span class="val">原價 {{ products[index].list_price }}</span>
+                          <span class="val">原價 {{ item.list_price }}</span>
                           <span class="unit">元</span>
                         </span>
                       </div>
@@ -107,12 +129,12 @@
                               <font-awesome-icon icon="fa-solid fa-heart" />
                            </button> -->
                       <div class="btn-wrap">
-                        <a href="" class="add-cart-btn">
+                        <button class="add-cart-btn" @click="addToCart">
                           <span>加入購物車</span>
-                        </a>
-                        <a href="" class="just-buy-btn">
+                        </button>
+                        <button class="just-buy-btn">
                           <span>馬上購買</span>
-                        </a>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -120,6 +142,30 @@
               </ol>
             </div>
           </section>
+        </div>
+        <div class="page-nav">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item">
+                <a @click="pageDown" class="page-link" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li
+                @click="clickPage(index)"
+                v-for="(item, index) in bookListDone"
+                :key="index"
+                class="page-item"
+              >
+                <a class="page-link">{{ index + 1 }}</a>
+              </li>
+              <li class="page-item">
+                <a @click="pageUp" class="page-link" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </section>
     </main>
@@ -140,19 +186,25 @@ export default {
     "section-title": SectionTitle,
     // 'prod-list': ProdList,
   },
-  props: ["condition"],
+  props: ["condition", "booksType"],
   data() {
     return {
       all: "", // 全部
-      products: "", // 跑迴圈用變數
+      // products: "", // 跑迴圈用變數
       appreciation: "", // 鑑賞
       painting: "", // 繪畫
       art: "", // 藝術
       photography: "", // 攝影
       allBookList: [],
+      selectShowPages: 10,
+      nowPage: 1,
+      // booksType: "All",
     };
   },
   mounted() {
+    // this.$emit("booksType", "All");
+    // this.$emit("searchText", "");
+
     axios.get("http://127.0.0.1:3000/booktable/").then((res) => {
       this.allBookList = res.data;
     });
@@ -179,6 +231,36 @@ export default {
     });
   },
   computed: {
+    products: {
+      get() {
+        let result = this.all;
+        if (this.condition != "") {
+          result = this.searchbookList;
+        }
+
+        if (this.booksType == "All") {
+          result = this.all;
+        }
+
+        if (this.booksType == "Appreciation") {
+          result = this.appreciation;
+        }
+
+        if (this.booksType == "Painting") {
+          result = this.painting;
+        }
+
+        if (this.booksType == "Art") {
+          result = this.art;
+        }
+        if (this.booksType == "Photography") {
+          result = this.photography;
+        }
+
+        return result;
+      },
+      set() {},
+    },
     searchbookList() {
       let allBooks = this.allBookList;
       const result = allBooks.filter((item) =>
@@ -186,40 +268,125 @@ export default {
       );
       return result;
     },
+    bookListDone() {
+      let drawList = this.products;
+      let arrtemp = [];
+      let arr = [];
+      let linecount = this.selectShowPages;
+
+      for (var i = 0; i < drawList.length; i++) {
+        var indextemp = i % linecount;
+        if (indextemp == 0) {
+          arrtemp = [];
+          arr[arr.length] = arrtemp;
+        }
+        arrtemp[indextemp] = drawList[i];
+      }
+
+      return arr;
+    },
+    showBooks() {
+      return this.bookListDone[this.nowPage - 1];
+    },
+    allPages() {
+      let PagesNum = this.bookListDone.length;
+
+      return PagesNum;
+    },
   },
   methods: {
+    clickPage(index) {
+      this.nowPage = index + 1;
+    },
     // 全部
     getAllData() {
       this.products = this.all;
+      this.nowPage = 1;
+      // this.booksType = "All";
+      this.$emit("booksType", "All");
+      this.$emit("searchText", "");
     },
 
     // 鑑賞
     getAppreciationData() {
       this.products = this.appreciation;
+      this.nowPage = 1;
+      // this.booksType = "Appreciation";
+      this.$emit("booksType", "Appreciation");
+      this.$emit("searchText", "");
     },
 
     // 繪畫
     getPaintingData() {
       this.products = this.painting;
+      this.nowPage = 1;
+      // this.booksType = "Painting";
+      this.$emit("booksType", "Painting");
+
+      this.$emit("searchText", "");
     },
 
     // 藝術
     getArtData() {
       this.products = this.art;
+      this.nowPage = 1;
+      // this.booksType = "Art";
+      this.$emit("booksType", "Art");
+
+      this.$emit("searchText", "");
     },
 
     // 攝影
     getPhotographyData() {
       this.products = this.photography;
+      this.nowPage = 1;
+      // this.booksType = "Photography";
+      this.$emit("booksType", "Photography");
+
+      this.$emit("searchText", "");
+    },
+    pageUp() {
+      if (this.nowPage < this.allPages) {
+        this.nowPage = this.nowPage + 1;
+      }
+    },
+    pageDown() {
+      if (this.nowPage > 1) {
+        this.nowPage = this.nowPage - 1;
+      }
+    },
+    changeSelectPages(page) {
+      this.selectShowPages = page;
+    },
+
+    // 加入購物車
+    addToCart() {
+      console.log(this.item.product_name)
+      axios
+        .post("http://127.0.0.1:3000/shoppingcartable/post", {
+          params: {
+            product_id: this.product_id,
+            img_cover: this.img_cover,
+            product_name: this.product_name,
+            product_price: this.product_price,
+            amount: 1,
+          },
+        })
+        .then((res) => {
+          console.log(res.data);
+          if (res.data.status == 200) {
+            console.log(res.data);
+            alert("加入購物車成功！");
+            this.router.push("/shoppingcart");
+          } else {
+            console.log(res.data);
+          }
+        });
     },
   },
   watch: {
-    condition(newVal) {
-      if (newVal != "") {
-        this.products = this.searchbookList;
-      } else {
-        this.products = this.all;
-      }
+    products() {
+      this.nowPage = 1;
     },
   },
 };
@@ -400,7 +567,8 @@ ol {
   margin-right: 8px;
 }
 
-.btn-wrap a {
+.btn-wrap button {
+  border: 0;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -419,5 +587,16 @@ ol {
 .just-buy-btn {
   background-color: var(--primary-color);
   margin-top: 10px;
+}
+
+.page-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 88px;
+}
+
+.page-nav a {
+  color: var(--neutral-color);
 }
 </style>

@@ -35,7 +35,7 @@
                             <div class="best-prod-area">
                                 <div class="best-prod-head">
                                     <div class="badge-flag">
-                                        <span>{{index + 1}}</span>
+                                        <span>{{ index + 1 }}</span>
                                     </div>
                                 </div>
                                 <div class="prod-thumb-box">
@@ -47,9 +47,9 @@
                                 </div>
                                 <div class="prod-info-box">
                                     <a :href="'/#/home/product/' + products[index].product_id">
-                                        <p class="prod-name">{{products[index].product_name}}</p>
+                                        <p class="prod-name">{{ products[index].product_name }}</p>
                                     </a>
-                                    <small class="prod-author">{{products[index].auther}}</small>
+                                    <small class="prod-author">{{ products[index].auther }}</small>
                                 </div>
                             </div>
                         </li>
@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from 'axios';
 
 export default {
     name: 'BestSeller',

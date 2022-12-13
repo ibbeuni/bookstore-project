@@ -20,3 +20,30 @@ exports.get = (req, res) => {
         res.send(data)
     })
 }
+
+exports.post = (req, res) => { 
+    let sql = 'insert into cart_table (product_id, img_cover, product_name, product_price, amount) value (?,?,?,?,?)'
+    var input_value = [ req.body.params.product_id, req.body.params.img_cover, req.body.params.product_name, req.body.params.product_price,req.body.params.amount  ]
+
+    console.log(req.body.params.product_id)
+    console.log(req.body.params.img_cover)
+    console.log(req.body.params.birthday)
+    console.log(req.body.params.address)
+
+    conn.query(sql, input_value , (err, data) => {
+        if(err){
+            return res.send({
+                status:400,
+                message:'fail'
+            })
+        }res.send({
+            status:200,
+            message:'ok'
+        })
+    })
+
+
+
+}   
+
+
