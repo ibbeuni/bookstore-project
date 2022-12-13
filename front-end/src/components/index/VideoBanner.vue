@@ -75,33 +75,7 @@ import axios from 'axios';
 
 export default {
     name: 'VideoBanner',
-    data() {
-        return {
-            allvideo: '',
-            otherVideo: '',
-
-
-        };
-    },
-    mounted() {
-        axios.get('http://127.0.0.1:3000/videotable').then(res => {
-            this.allvideo = res.data;
-            var a = res.data;
-
-            function shuffleArray(inputArray) {
-                inputArray.sort(() => Math.random() - 0.5);
-            }
-            shuffleArray(a);
-            this.otherVideo = a.slice(0, 1);
-            console.log(a);
-            console.log(this.otherVideo);
-            // console.log(res.data);
-
-        })
-
-
-
-    },
+  
     data() {
         return {
             products:'',
