@@ -5,7 +5,7 @@
                 <ul class="swiper-wrapper">
                     <li class="swiper-slide">
                         <div class="blur-img-box">
-                            <img src="@/assets/img/index/video_banner/v-banner01.jpg" alt="">
+                            <img :src="'http://localhost:3000/img/video/' + otherVideo[0].video_title_img + '.jpg'" alt="">
                         </div>
                     </li>
                 </ul>
@@ -28,15 +28,15 @@
                             <li class="swiper-slide-fade">
                                 <div class="video-banner-area">
                                     <div class="video-title-box">
-                                        <h2 class="video-title">我是影片的標題</h2>
-                                        <small class="video-host">與談人姓名</small>
+                                        <h2 class="video-title">{{otherVideo[0].product_name}}</h2>
+                                        <small class="video-host">{{otherVideo[0].auther}}</small>
                                     </div>
                                     <div class="video-visual-box">
                                         <div class="prod-area hidden">
                                             <div class="prod-thumb-box">
                                                 <a href="">
                                                     <div class="img-box">
-                                                        <img src="@/assets/img/books/30101.png" alt="">
+                                                        <img src="@/assets/img/books/31001.png" alt="">
                                                     </div>
                                                 </a>
                                             </div>
@@ -65,8 +65,38 @@
 </template>
 
 <script>
+import axios from "axios"
+
+
 export default {
-    name: 'VideoBanner'
+    name: 'VideoBanner',
+    data() {
+        return {
+            allvideo: '',
+            otherVideo: '',
+
+
+        };
+    },
+    mounted() {
+        axios.get('http://127.0.0.1:3000/videotable').then(res => {
+            this.allvideo = res.data;
+            var a = res.data;
+
+            function shuffleArray(inputArray) {
+                inputArray.sort(() => Math.random() - 0.5);
+            }
+            shuffleArray(a);
+            this.otherVideo = a.slice(0, 1);
+            console.log(a);
+            console.log(this.otherVideo);
+            // console.log(res.data);
+
+        })
+
+
+
+    }
 }
 </script>
 
@@ -291,7 +321,7 @@ button {
 }
 
 .img-wrap {
-    background-image: url('@/assets/img/index/video_banner/v-box01.jpg');
+    /* background-image:url('@/assets/img/index/video_banner/v-box01.jpg'); */
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
