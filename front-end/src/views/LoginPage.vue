@@ -59,6 +59,31 @@ export default{
     }
   },
   methods:{
+
+    // onLogin() {
+    //   if(this.login.userName == '') {
+    //     alert('用户名不能为空');
+    //   }else if(this.login.password == '') {
+    //     alert('密码不能为空');
+    //   }else{
+    //     axios.get('http://127.0.0.1:3000/logintable', {
+          
+    //         member_id: this.login.userName,
+    //         member_password: this.login.password
+          
+    //     }).then(res=>{
+    //       if(res.data.status == 200) {
+    //         this.$router.push({
+    //           path: '/home',
+    //         })
+    //       }else{
+    //         alert('用户名或密码错误', '登录失败',);
+    //       }
+    //     }).catch(err=>{
+    //         console.log("登录失败" + err);
+    //     })
+    //   }
+    // }
     onLogin() {
       let username = this.login.userName
       let password = this.login.password
@@ -69,22 +94,20 @@ export default{
         alert('請輸入密碼')
       }else{
         axios.get('http://127.0.0.1:3000/logintable',{
-          params:{
-            ID : this.login.userName,
-            PASSWORD: this.login.password
-          }
+          
+            member_id : username,
+            member_password : password
+          
         }).then(res => {
           if (res.data.status == 200){
-            // if(username == this.login.userName && password == this.login.password){
-            //   localStorage.setItem('token', 'Imlogin')  
-            //   this.$router.push({
-            //   path: '/home/homepage',
-            // })
+            
+              this.$router.push('/home/homepage')
 
-            // }
+            
           
           }else{
             alert('查無此帳號，請先註冊喔');
+            console.log(username)
 
           }
         })

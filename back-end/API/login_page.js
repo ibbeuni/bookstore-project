@@ -14,10 +14,10 @@ conn.connect();
 
 exports.get = (req, res) =>{
     // res.send('ok')
-var sql = 'select * from login_table where member_id=? and member_password=?';
-
+var sql = 'select * from login_table where member_id= ? and member_password= ?';
+// console.log(req.query.member_id)
  conn.query(sql, [req.query.member_id, req.query.member_password], (err, data) => {
-    // console.log(req.qurey.id)
+    
         if(err) {
             return res.send({
                 status:404,

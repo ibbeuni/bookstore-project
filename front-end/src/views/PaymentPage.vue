@@ -1,8 +1,6 @@
 <template>
     <div>
         <br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br>
-        
         <div id="mainContent" class="flex">
             <div id="navLeft">
             <div id="userInfoDiv">
@@ -93,6 +91,7 @@ export default{
             phone:"",
             address:""
         },
+        image:""
         
         }
     },
@@ -100,11 +99,13 @@ export default{
     
      axios.get('http://127.0.0.1:3000/payment').then(res =>{
       this.user = res.data;
-      // console.log(res.data[0].member_id)
-      this.user.id=res.data[0].id;
-      this.user.name=res.data[0].name;
-      this.user.phone=res.data[0].phone;
-      this.user.address=res.data[0].address;
+      
+      this.user.id=res.data[0].member_id;
+      this.user.name=res.data[0].member_name;
+      this.user.phone=res.data[0].member_phone;
+      this.user.address=res.data[0].member_address;
+      console.log(res.data[0].address)
+      console.log(res.data[0].member_id)
     
      }).catch(err=>{
       console.log('fail' + err)
@@ -332,7 +333,7 @@ table {
 /* 影片區內頁css */
 
 .imgCtrl{
- background-image: url('../assets/noPic.png');
+ background-image: url('@/assets/noPic.png');
   width: 150px;
   height: 150px;
 }
