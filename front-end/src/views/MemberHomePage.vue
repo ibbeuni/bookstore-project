@@ -1,7 +1,6 @@
 <template>
   <div>
       <br><br><br><br><br><br><br><br>
-        <br><br><br><br>
       <div id="mainContent" class="flex">
           <div id="navLeft">
             <div id="userInfoDiv">

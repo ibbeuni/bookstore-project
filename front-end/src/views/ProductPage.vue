@@ -1,7 +1,6 @@
 <template>
     <div>
-        <br><br><br><br><br><br>
-        <br><br><br><br>
+       
 
         <!-- 上方分類區 -->
         <!-- <div id="topClassDiv"><a href="">中文圖書</a> > <a href="">藝術設計</a> > <a href="">分類</a></div> -->
@@ -284,13 +283,13 @@
         <!-- 加入購物車&直接購買 -->
         <div id="goToPayAndAddToShoppingCart">
             <div id="goToPayAndAddToShoppingCartInnerDiv">
-                <div id="totalPrice">
-                    <p>商品總金額：<span>NTD500</span></p>
+                <div id="totalPrice" class="me-4">
+                    <p class="nb nh2">商品總金額：<span id="resultprice">500</span></p>
                 </div>
-                <div id="productQuantity"><button>-</button><span>1</span><button>+</button></div>
-                <div><button><i class="bi bi-heart"></i></button></div>
-                <div><button>加入購物車</button></div>
-                <div><button>直接購買</button></div>
+                <div id="productQuantity"  class="me-4"><button  class="btn btn-light">-</button><span>&nbsp;1&nbsp;</span><button  class="btn btn-light">+</button></div>
+                <!-- <div><button><i class="bi bi-heart"></i></button></div> -->
+                <div><button class="btn btn-primary">加入購物車</button></div>
+                <div><button class="btn btn-outline-danger">直接購買</button></div>
             </div>
         </div>
         <!-- /加入購物車&直接購買 -->
@@ -319,9 +318,10 @@ export default {
         }
     },
     watch: {
-        id:function() {
-            // 在這裡執行重新整理畫面的操作
-            location.reload();
+        // 監聽動態路由變化
+        $route(to) {
+            this.id = to.params.id
+            this.$emit('change-page')
         }
     },
     methods: {
@@ -1009,9 +1009,15 @@ body:has(#L4:checked) .L4 {
     padding: 25px 0px;
 }
 
-#totalPrice {
-    line-height: 23px;
+#goToPayAndAddToShoppingCartInnerDiv button{
+    height: 30px;
+    line-height: 1px;
 }
+
+#totalPrice {
+}
+
+
 
 /* /加入購物車底部固定列 */
 

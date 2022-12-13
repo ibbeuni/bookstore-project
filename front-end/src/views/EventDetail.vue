@@ -1,7 +1,7 @@
 <template>
 
     <div class="wrap">
-        <h1>{{id}}</h1>
+        <!-- <h1>{{id}}</h1> -->
         <div class="header">
             <div class="list center">
             </div>
