@@ -1,99 +1,128 @@
 <template>
     <section class="contents">
-        <div class="welcome-banner-wrapper">
-            <div class="welcome-banner-inner">
-                <!-- 幻燈片區、幻燈片搭配標題 -->
-                <div class="swiper-container">
-                    <!-- 幻燈片區 -->
-                    <ul class="swiper-wrapper">
-                        <li class="swiper-slide">
-                            <a href="" class="banner-link">
+            <div class="welcome-banner-wrapper">
+                <div class="welcome-banner-inner">
+                    <!-- 幻燈片區、幻燈片搭配標題 -->
+                    <div class="swiper-container">
+                        <!-- 幻燈片區 -->
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <!-- <a href="" class="banner-link"> -->
                                 <h1 class="banner-title">
                                     禮物首選！
                                     <br>
                                     文青系質感文具上架
                                 </h1>
-                                <div class="banner-visual-box">
-                                    <div class="img-box">
-                                        <!-- TODO 根據幻燈片資料表跑迴圈 -->
-                                        <img src="@/assets/img/index/welcome_banner/A02.jpg" alt="">
+                                <div id="carouselExampleFade" class="banner-visual-box carousel slide carousel-fade"
+                                    data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="img-box carousel-item active" data-bs-interval="1000">
+                                            <img src="@/assets/img/index/welcome_banner/A01.jpg" alt="">
+                                        </div>
+                                        <div class="img-box carousel-item active" data-bs-interval="1000">
+                                            <img src="@/assets/img/index/welcome_banner/A02.jpg" alt="">
+                                        </div>
+                                        <div class="img-box carousel-item active" data-bs-interval="1000">
+                                            <img src="@/assets/img/index/welcome_banner/B01.jpg" alt="">
+                                        </div>
+                                        <div class="img-box carousel-item active" data-bs-interval="1000">
+                                            <img src="@/assets/img/index/welcome_banner/C01.jpg" alt="">
+                                        </div>
+                                        <div class="img-box carousel-item active" data-bs-interval="1000">
+                                            <img src="@/assets/img/index/welcome_banner/D01.jpg" alt="">
+                                        </div>
+                                        <div class="img-box carousel-item active" data-bs-interval="1000">
+                                            <img src="@/assets/img/index/welcome_banner/E01.jpg" alt="">
+                                        </div>
+                                        <div class="img-box carousel-item active" data-bs-interval="1000">
+                                            <img src="@/assets/img/index/welcome_banner/F01.jpg" alt="">
+                                        </div>
+                                        <div class="img-box carousel-item active" data-bs-interval="1000">
+                                            <img src="@/assets/img/index/welcome_banner/G01.jpg" alt="">
+                                        </div>
                                     </div>
                                 </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="banner-floating-box">
-                    <div class="banner-control-box">
-                        <div class="swiper-page">
-                            <!-- TODO 改成welcome_banner_table的總張數 -->
-                            <span class="swiper-page-current">1</span>
-                            -
-                            <span class="swiper-page-total">8</span>
-                        </div>
-                        <button class="btn-swiper-pause">
-                            <font-awesome-icon icon="fa-solid fa-pause" />
-                        </button>
-                    </div>
-                    <!-- 與作家相遇BOX -->
-                    <div class="banner-content-box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="@/assets/img/index/welcome_writer/w02.jpeg" alt="作家照片">
-                            </div>
-                            <div class="content-info-box">
-                                <p class="content-type">與作家相遇</p>
-                                <p class="content-title">講座標題</p>
-                                <small class="content-desc">點我看更多⋯</small>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- 幻燈片控制nav -->
-                <div class="welcome-banner-control">
-                    <!-- SWIPER控制列 -->
-                    <div class="banner-control-inner">
-                        <!-- TODO 跑迴圈顯示banner slider分類（目前先寫死，寫完刪除多的<li>） -->
-                        <ul class="banner-group-list">
-                            <li class="banner-group-item">
-                                <button type="button" class="btn-banner-group">近期推薦</button>
-                            </li>
-                            <li class="banner-group-item">
-                                <button type="button" class="btn-banner-group">熱門話題</button>
-                            </li>
-                            <li class="banner-group-item">
-                                <button type="button" class="btn-banner-group">最新出版</button>
-                            </li>
-                            <li class="banner-group-item">
-                                <button type="button" class="btn-banner-group">主題企劃</button>
-                            </li>
-                            <li class="banner-group-item">
-                                <button type="button" class="btn-banner-group">有聲書</button>
-                            </li>
-                            <li class="banner-group-item">
-                                <button type="button" class="btn-banner-group">本月主打</button>
-                            </li>
-                            <li class="banner-group-item">
-                                <button type="button" class="btn-banner-group">閱讀講座</button>
+                                <!-- </a> -->
                             </li>
                         </ul>
-                        <div class="divider">
-                            <font-awesome-icon icon="fa-solid fa-grip-lines-vertical" />
+                    </div>
+                    <div class="banner-floating-box">
+                        <div class="banner-control-box hidden">
+                            <div class="swiper-page">
+                                <!-- TODO 改成welcome_banner_table的總張數 -->
+                                <span class="swiper-page-current">1</span>
+                                -
+                                <span class="swiper-page-total">8</span>
+                            </div>
+                            <button class="btn-swiper-pause">
+                                <font-awesome-icon icon="fa-solid fa-pause" />
+                            </button>
                         </div>
-                        <div class="banner-btn-box">
-                            <button type="button" class="swiper-button-prev">
-                                <font-awesome-icon icon="fa-solid fa-chevron-left" />
-                            </button>
-                            <button type="button" class="swiper-button-next">
-                                <font-awesome-icon icon="fa-solid fa-chevron-right" />
-                            </button>
+                        <!-- 與作家相遇BOX -->
+                        <div class="banner-content-box">
+                            <a href="">
+                                <div class="img-box">
+                                    <img src="@/assets/img/index/welcome_writer/w02.jpeg" alt="作家照片">
+                                </div>
+                                <div class="content-info-box">
+                                    <p class="content-type">與創作者相遇</p>
+                                    <p class="content-title">藝術的本質是什麼？</p>
+                                    <small class="content-desc">點我看更多⋯</small>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 幻燈片控制nav -->
+                    <div class="welcome-banner-control">
+                        <!-- SWIPER控制列 -->
+                        <div class="banner-control-inner">
+                            <ul class="banner-group-list">
+                                <li class="banner-group-item">
+                                    <button type="button" class="btn-banner-group">近期推薦</button>
+                                </li>
+                                <li class="banner-group-item">
+                                    <button type="button" class="btn-banner-group">熱門話題</button>
+                                </li>
+                                <li class="banner-group-item">
+                                    <button type="button" class="btn-banner-group">最新出版</button>
+                                </li>
+                                <li class="banner-group-item">
+                                    <button type="button" class="btn-banner-group">主題企劃</button>
+                                </li>
+                                <li class="banner-group-item">
+                                    <button type="button" class="btn-banner-group">有聲書</button>
+                                </li>
+                                <li class="banner-group-item">
+                                    <button type="button" class="btn-banner-group">本月主打</button>
+                                </li>
+                                <li class="banner-group-item">
+                                    <button type="button" class="btn-banner-group">閱讀講座</button>
+                                </li>
+                            </ul>
+                            <div class="divider">
+                                <font-awesome-icon icon="fa-solid fa-grip-lines-vertical" />
+                            </div>
+                            <div class="banner-btn-box">
+                                <button type="button" class="swiper-button-prev" data-bs-target="#carouselExampleFade"
+                                    data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true">
+                                        <font-awesome-icon icon="fa-solid fa-chevron-left" />
+                                    </span>
+                                    <!-- <span class="visually-hidden">Previous</span> -->
+                                </button>
+                                <button type="button" class="swiper-button-next" data-bs-target="#carouselExampleFade"
+                                    data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true">
+                                        <font-awesome-icon icon="fa-solid fa-chevron-right" />
+                                    </span>
+                                    <!-- <span class="visually-hidden">Next</span> -->
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
+        </section>
 </template>
 
 <script>
@@ -177,6 +206,7 @@ button {
     top: 0px;
     right: calc(100% - 1200px - 64px);
     display: flex;
+    z-index: 1;
 }
 
 /* banner控制按鈕及張數顯示 */
@@ -244,11 +274,12 @@ button {
 .welcome-banner-control {
     position: absolute;
     height: 70px;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.98);
     margin-left: calc((100% - 1200px) / 2 + 110px);
     bottom: 0px;
     left: 0px;
     right: 0px;
+    z-index: 1;
 }
 
 .banner-control-inner {
@@ -311,6 +342,10 @@ button {
     margin: 0px 20px;
     border: 0px;
     background-color: transparent;
+}
+
+.hidden {
+    display: none;
 }
 
 

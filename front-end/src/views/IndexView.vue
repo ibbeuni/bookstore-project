@@ -35,7 +35,7 @@ export default {
 
 <style scoped>
 .wrap {
-    background-color: var(--background);
+    background-color: var(--background-color);
 }
 
 .margin-top {

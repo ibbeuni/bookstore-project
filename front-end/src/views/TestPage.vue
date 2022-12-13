@@ -53,28 +53,28 @@
                                 <div id="carouselExampleFade" class="banner-visual-box carousel slide carousel-fade"
                                     data-bs-ride="carousel">
                                     <div class="carousel-inner">
-                                        <div class="img-box carousel-item active" data-bs-interval="3000">
+                                        <div class="img-box carousel-item active" data-bs-interval="1000">
                                             <img src="@/assets/img/index/welcome_banner/A01.jpg" alt="">
                                         </div>
-                                        <div class="img-box carousel-item active" data-bs-interval="3000">
+                                        <div class="img-box carousel-item active" data-bs-interval="1000">
                                             <img src="@/assets/img/index/welcome_banner/A02.jpg" alt="">
                                         </div>
-                                        <div class="img-box carousel-item active" data-bs-interval="3000">
+                                        <div class="img-box carousel-item active" data-bs-interval="1000">
                                             <img src="@/assets/img/index/welcome_banner/B01.jpg" alt="">
                                         </div>
-                                        <div class="img-box carousel-item active" data-bs-interval="3000">
+                                        <div class="img-box carousel-item active" data-bs-interval="1000">
                                             <img src="@/assets/img/index/welcome_banner/C01.jpg" alt="">
                                         </div>
-                                        <div class="img-box carousel-item active" data-bs-interval="3000">
+                                        <div class="img-box carousel-item active" data-bs-interval="1000">
                                             <img src="@/assets/img/index/welcome_banner/D01.jpg" alt="">
                                         </div>
-                                        <div class="img-box carousel-item active" data-bs-interval="3000">
+                                        <div class="img-box carousel-item active" data-bs-interval="1000">
                                             <img src="@/assets/img/index/welcome_banner/E01.jpg" alt="">
                                         </div>
-                                        <div class="img-box carousel-item active" data-bs-interval="3000">
+                                        <div class="img-box carousel-item active" data-bs-interval="1000">
                                             <img src="@/assets/img/index/welcome_banner/F01.jpg" alt="">
                                         </div>
-                                        <div class="img-box carousel-item active" data-bs-interval="3000">
+                                        <div class="img-box carousel-item active" data-bs-interval="1000">
                                             <img src="@/assets/img/index/welcome_banner/G01.jpg" alt="">
                                         </div>
                                     </div>
