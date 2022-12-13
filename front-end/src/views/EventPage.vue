@@ -5,11 +5,27 @@
             </div>
         </div>
         <!-- 活動輪播圖 -->
-        <div style="text-align:center"><a href="/#/home/eventdetail/10">
+        <div style="text-align:center" id="carouselExampleFade" class="banner-visual-box carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="img-box carousel-item " data-bs-interval="1500">
+                    <img style="border-radius: 30px;" src="../assets/img/event/event_cover/event_cover001.jpeg" alt="">
+                </div>
+                <div class="img-box carousel-item active" data-bs-interval="1500">
+                    <img style="border-radius: 30px;" src="../assets/img/event/event_cover/event_cover002.jpeg" alt="">
+                </div>
+                <div class="img-box carousel-item " data-bs-interval="1500">
+                    <img style="border-radius: 30px;" src="../assets/img/event/event_cover/event_cover003.jpeg" alt="">
+                </div>
+                <div class="img-box carousel-item " data-bs-interval="1500">
+                    <a href="/#/home/eventdetail/10"><img style="border-radius: 30px;" src="../assets/img/event/event_cover/event_cover004.jpeg" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <!-- <div style="text-align:center"><a href="/#/home/eventdetail/10">
             <img style="border-radius: 30px;" width="1200" height="340"
                 src="../assets/img/event/event_cover/event_cover004.jpeg" alt="">
                 </a>
-        </div>
+        </div> -->
         <div class="bookname">
             <!-- 分類按鈕 -->
             <div>
@@ -26,7 +42,7 @@
             <div>
                 <ul class="event_list col4">
                     <li class="event_item" v-for="(item, index) in allevent" :key="index">
-                        <a :href="('/#/home/eventdetail/' + allevent[index].event_id )">
+                        <a :href="('/#/home/eventdetail/' + allevent[index].event_id)">
                             <div class="event_area">
                                 <div class="event_thumb_box">
                                     <span class="img_box">
