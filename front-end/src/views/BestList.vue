@@ -64,8 +64,7 @@
                 <li class="prod-item">
                   <div class="prod-area">
                     <div class="prod-thumb-box">
-                      <!-- TODO 指定商品網址 -->
-                      <a href="" class="prod-link">
+                      <a :href="'/#/home/product/' + products[index].product_id" class="prod-link">
                         <div class="img-box">
                           <img v-bind:src="
                             'http://127.0.0.1:3000/img/books/' +
@@ -76,8 +75,7 @@
                       </a>
                     </div>
                     <div class="prod-info-box">
-                      <!-- TODO 指定商品網址 -->
-                      <a href="" class="prod-info">
+                      <a :href="'/#/home/product/' + products[index].product_id" class="prod-info">
                         <h5 class="prod-name">
                           {{ products[index].product_name }}
                         </h5>
