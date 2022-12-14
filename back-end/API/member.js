@@ -38,6 +38,7 @@ exports.post = (req, res) => {
 
     conn.query(sql1, input_value , (err, data) => {
         if(err){
+            console.log(err)
             return res.send({
                 status:400,
                 message:'fail'
