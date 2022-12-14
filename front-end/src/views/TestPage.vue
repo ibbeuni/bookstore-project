@@ -160,37 +160,33 @@
                 </div>
             </div>
         </section>
+        <video-banner></video-banner>
     </div>
 </template>
 
 <script>
-// export default {
-//     name: 'TestSwiper',
-//     data() {
-//         return {
-//             swiperOptions: {
-//                 pagination: {
-//                     el: '.swiper-pagination'
-//                 },
-//                 // Some Swiper option/callback...
-//             }
-//         }
-//     },
-//     computed: {
-//         swiper() {
-//             return this.$refs.mySwiper.$swiper
-//         }
-//     },
-//     mounted() {
-//         console.log('Current Swiper instance object', this.swiper)
-//         this.swiper.slideTo(3, 1000, false)
-//     }
-// }
+import VideoBanner from '../components/index/VideoBanner.vue';
+
+export default {
+    components: {
+        'video-banner': VideoBanner,
+    },
+    //     name: 'TestSwiper',
+    //     data() {
+    //         return {
+    //             swiperOptions: {
+    //                 pagination: {
+    //                     el: '.swiper-pagination'
+    //                 },
+    //                 // Some Swiper option/callback...
+    //             }
+    //         }
+    //     },
+}
 </script>
 
 
 <style scoped>
-
 ul,
 li {
     list-style: none;
