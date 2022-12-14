@@ -28,7 +28,7 @@ exports.post = (req, res) => {
 
     // res.send(req.body)
     // console.log('ok')
-    var sql = 'insert into membership_table (member_name, member_phone, member_birthday, member_address) value (?,?,?,?)'
+    var sql1 = 'insert into membership_table (member_name, member_phone, member_birthday, member_address) value (?,?,?,?)'
     var input_value = [ req.body.params.name, req.body.params.phone, req.body.params.birthday, req.body.params.address ]
 
     console.log(req.body.params.name)
@@ -36,7 +36,7 @@ exports.post = (req, res) => {
     console.log(req.body.params.birthday)
     console.log(req.body.params.address)
 
-    conn.query(sql, input_value , (err, data) => {
+    conn.query(sql1, input_value , (err, data) => {
         if(err){
             return res.send({
                 status:400,

@@ -33,8 +33,21 @@
                               <p class="nh2 nb">付款方式</p>
                           </div>
                           <div class="itemlist flex">
-                              <div><input type="radio" id="userName"></div>
+                              <div><input type="radio" class="userName"></div>
                               <div><span class="nh3 nb">貨到付款</span></div>
+                          </div>
+                          <div class="memberInfoDiv">
+                          <div>
+                              <p class="nh2 nb">配送方式</p>
+                          </div>
+                          <div class="itemlist flex" >
+                              <div><input type="radio"   class="userName"></div>
+                              <div><span class="nh3 nb">宅配</span></div>
+                            </div> 
+                            <div class="itemlist flex" > 
+                              <div><input type="radio"  class="userName"></div>
+                              <div><span class="nh3 nb">7-11取貨付款</span></div>
+                            </div>
                           </div>
                       </div>
                       <div id="memberInfoDiv">
@@ -424,6 +437,11 @@ table {
 }
 
 #memberInfoDiv>div:first-child {
+  margin: 20px 0;
+  border-bottom: solid 2px black;
+}
+
+.memberInfoDiv>div:first-child {
   margin: 20px 0;
   border-bottom: solid 2px black;
 }

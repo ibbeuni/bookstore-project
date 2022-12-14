@@ -116,7 +116,7 @@ export default {
       },
       cnt: {
         shpinFee: "60",
-        discount: "10% off",
+        discount: "20% off",
       },
     };
   },
@@ -192,7 +192,7 @@ export default {
       totalPrice+=val.product_price*val.amount
       
       });
-      return (totalPrice+60)*0.9
+      return (totalPrice+60)*0.8
       
 
     }
