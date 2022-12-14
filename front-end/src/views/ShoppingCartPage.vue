@@ -398,11 +398,7 @@ table {
 
 /* /歸零CSS */
 /* 影片區內頁css */
-#headDiv {
-  background-image: linear-gradient(-5deg, #53929b, #e3d096);
-  /* background-color: rgb(225, 189, 189); */
-  height: 250px;
-}
+
 
 #userInfo {
   width: 1200px;
@@ -559,7 +555,7 @@ table {
   border-radius: 10px;
 }
 .imgCtrl {
-  background-image: url("@/assets/noPic.png");
+  background-image: url("@/assets/maruko.png");
   width: 150px;
   height: 150px;
 }
