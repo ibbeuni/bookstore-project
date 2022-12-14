@@ -28,7 +28,7 @@ exports.post = (req, res) => {
 
     // res.send(req.body)
     // console.log('ok')
-    var sql1 = 'insert into membership_table (member_name, member_phone, member_birthday, member_address) value (?,?,?,?)'
+    var sql1 = 'update membership_table SET value (?,?,?,?) where (member_name, member_phone, member_birthday, member_address)'
     var input_value = [ req.body.params.name, req.body.params.phone, req.body.params.birthday, req.body.params.address ]
 
     console.log(req.body.params.name)
