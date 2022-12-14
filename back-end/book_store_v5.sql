@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-12-14 07:42:34
+-- 產生時間： 2022-12-14 08:01:31
 -- 伺服器版本： 10.4.27-MariaDB
 -- PHP 版本： 8.1.12
 
@@ -234,20 +234,19 @@ CREATE TABLE `event_table` (
 --
 
 INSERT INTO `event_table` (`event_id`, `event_cover`, `event_minicover`, `event_1`, `date_start`, `date_end`) VALUES
-(0, 'event_cover', 'event_minicover', 'event_1', '0000-00-00', '0000-00-00'),
 (1, 'event_cover001', 'event_minicover_101', 'event_101', '2022-10-11', '2022-12-31'),
 (2, 'event_cover002', 'event_minicover_111', 'event_201', '2022-10-23', '2023-01-11'),
 (3, 'event_cover003', 'event_minicover_121', 'event_301', '2022-10-08', '2023-01-08'),
 (4, 'event_cover004', 'event_minicover_131', 'event_401', '2022-10-31', '2023-01-07'),
-(5, 'event_cover005', 'event_minicover_201', 'event_411', '2022-10-09', '2023-01-24'),
+(5, 'event_cover005', 'event_minicover_201', 'event_201', '2022-10-09', '2023-01-24'),
 (6, 'event_cover006', 'event_minicover_211', 'event_101', '2022-10-11', '2022-12-31'),
 (7, 'event_cover007', 'event_minicover_221', 'event_201', '2022-10-23', '2023-01-11'),
 (8, 'event_cover008', 'event_minicover_231', 'event_301', '2022-10-08', '2023-01-08'),
-(9, 'event_cover009', 'event_minicover_301', 'event_401', '2022-10-31', '2023-01-07'),
+(9, 'event_cover009', 'event_minicover_301', 'event_301', '2022-10-31', '2023-01-07'),
 (10, 'event_cover010', 'event_minicover_311', 'event_411', '2022-10-09', '2023-01-24'),
 (11, 'event_cover011', 'event_minicover_321', 'event_101', '2022-10-11', '2022-12-31'),
 (12, 'event_cover012', 'event_minicover_331', 'event_201', '2022-10-23', '2023-01-11'),
-(13, 'event_cover013', 'event_minicover_401', 'event_301', '2022-10-08', '2023-01-08'),
+(13, 'event_cover013', 'event_minicover_401', 'event_401', '2022-10-08', '2023-01-08'),
 (14, 'event_cover014', 'event_minicover_411', 'event_401', '2022-10-31', '2023-01-07'),
 (15, 'event_cover015', 'event_minicover_421', 'event_411', '2022-10-09', '2023-01-24'),
 (16, 'event_cover016', 'event_minicover_431', 'event_101', '2022-10-11', '2022-12-31');
