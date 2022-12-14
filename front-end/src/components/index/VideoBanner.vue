@@ -1,12 +1,11 @@
 <template>
     <section class="contents">
-        <div class="video-banner-wrap" v-for="(item, index) in products" :key="index">
+        <div class="video-banner-wrap">
             <div class="swiper-container">
                 <ul class="swiper-wrapper">
                     <li class="swiper-slide">
                         <div class="blur-img-box">
-                            <!-- <img src="@/assets/img/index/video_banner/v-banner01.jpg" alt=""> -->
-                            <img v-bind:src="'http://127.0.0.1:3000/img/video/' + products[index].video_title_img + '.jpg'" alt="">
+                            <img src="@/assets/img/index/video_banner/v-banner01.jpg" alt="">
                         </div>
                     </li>
                 </ul>
@@ -29,24 +28,21 @@
                             <li class="swiper-slide-fade">
                                 <div class="video-banner-area">
                                     <div class="video-title-box">
-                                        <h2 class="video-title">{{ products[index].video_name }}</h2>
-                                        <p class="video-class">{{ products[index].video_class }}</p>
-                                        <!-- <h2 class="video-title">{{otherVideo[0].product_name}}</h2> -->
-                                        <small class="video-host">{{otherVideo[0].auther}}</small>
+                                        <h2 class="video-title">我是影片的標題</h2>
+                                        <small class="video-host">與談人姓名</small>
                                     </div>
                                     <div class="video-visual-box">
-                                        <div class="prod-area">
+                                        <div class="prod-area hidden">
                                             <div class="prod-thumb-box">
                                                 <a href="">
                                                     <div class="img-box">
-                                                        <img v-bind:src="'http://127.0.0.1:3000/img/books/' + products[index].product_id + '01.png'" alt="">
-                                                        <!-- <img src="@/assets/img/books/31001.png" alt=""> -->
+                                                        <img src="@/assets/img/books/30101.png" alt="">
                                                     </div>
                                                 </a>
                                             </div>
                                             <div class="prod-info-box">
-                                                <a :href="'/#/home/product/' + products[index].product_id">
-                                                    <span class="prod-auther">{{ products[index].auther }}</span>
+                                                <a href="">
+                                                    <span class="prod-auther">作者名</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -69,49 +65,9 @@
 </template>
 
 <script>
-import axios from 'axios';
 export default {
-    name: 'VideoBanner',
-    // data() {
-    //     return {
-    //         allvideo: '',
-    //         otherVideo: '',
-
-
-    //     };
-    // },
-    // mounted() {
-    //     axios.get('http://127.0.0.1:3000/videotable').then(res => {
-    //         this.allvideo = res.data;
-    //         var a = res.data;
-
-    //         function shuffleArray(inputArray) {
-    //             inputArray.sort(() => Math.random() - 0.5);
-    //         }
-    //         shuffleArray(a);
-    //         this.otherVideo = a.slice(0, 1);
-    //         console.log(a);
-    //         console.log(this.otherVideo);
-    //         // console.log(res.data);
-
-    //     })
-
-
-
-    // },
-  
-    data() {
-        return {
-            products:'',
-        }
-    },
-    mounted() {
-        axios.get('http://127.0.0.1:3000/random_video').then(res => {
-            this.products = res.data;
-        })
-    }
+    name: 'VideoBanner'
 }
-
 </script>
 
 <style scoped>
@@ -274,7 +230,7 @@ button {
     color: var(--background-color);
 }
 
-.video-class {
+.video-host {
     margin-top: 17px;
     line-height: 23px;
     color: var(--background-color);
@@ -332,11 +288,10 @@ button {
     overflow: hidden;
     text-decoration: none;
     cursor: pointer;
-    margin-left: 50px;
 }
 
 .img-wrap {
-    /* background-image:url('@/assets/img/index/video_banner/v-box01.jpg'); */
+    background-image: url('@/assets/img/index/video_banner/v-box01.jpg');
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
