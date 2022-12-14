@@ -23,8 +23,8 @@
             </div>
             <div>
                 <font-awesome-icon class="iconSize" icon="fa-solid fa-book" style="color:yellow;"/>
-                <p style="color:yellow;">總書籍數量</p>
-                <p style="color:yellow;">763</p>
+                <p>總書籍數量</p>
+                <p>763</p>
             </div>
         </div>
         <div>
