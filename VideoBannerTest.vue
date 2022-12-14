@@ -5,9 +5,8 @@
                 <ul class="swiper-wrapper">
                     <li class="swiper-slide">
                         <div class="blur-img-box">
-                            <!-- <img src="@/assets/img/video/v21401.jpg" alt=""> -->
-                            <img v-bind:src="'http://127.0.0.1:3000/img/video/' + products[index].video_title_img + '.jpg'"
-                                alt="">
+                            <!-- <img src="@/assets/img/index/video_banner/v-banner01.jpg" alt=""> -->
+                            <img v-bind:src="'http://127.0.0.1:3000/img/video/' + products[index].video_title_img + '.jpg'" alt="">
                         </div>
                     </li>
                 </ul>
@@ -36,22 +35,19 @@
                                     <div class="video-visual-box">
                                         <div class="prod-area">
                                             <div class="prod-thumb-box">
-                                                <a :href="'/#/home/product/' + products[index].product_id">
+                                                <a href="">
                                                     <div class="img-box">
-                                                        <!-- <img src="@/assets/img/books/30101.png" alt=""> -->
-                                                        <img v-bind:src="'http://127.0.0.1:3000/img/books/' + products[index].product_id + '01.png'"
-                                                            alt="">
+                                                        <img v-bind:src="'http://127.0.0.1:3000/img/books/' + products[index].product_id + '01.png'" alt="">
                                                     </div>
                                                 </a>
                                             </div>
                                             <div class="prod-info-box">
                                                 <a :href="'/#/home/product/' + products[index].product_id">
-                                                    <span class="prod-auther">作者：{{ products[index].auther }}</span>
+                                                    <span class="prod-auther">{{ products[index].auther }}</span>
                                                 </a>
                                             </div>
                                         </div>
-                                        <a :href="'/#/home/videodetail/' + products[index].product_id"
-                                            class="video-img-link">
+                                        <a href="/#/home/videopage" class="video-img-link">
                                             <div class="img-wrap">
                                                 <div class="play-btn">
                                                     <font-awesome-icon icon="fa-solid fa-play" />
@@ -76,7 +72,7 @@ export default {
     name: 'VideoBanner',
     data() {
         return {
-            products: '',
+            products:'',
         }
     },
     mounted() {
@@ -85,6 +81,7 @@ export default {
         })
     }
 }
+
 </script>
 
 <style scoped>
@@ -145,15 +142,6 @@ button {
 
 }
 
-.cover::before {
-    content: " ";
-    position: absolute;
-    top: 0;
-    left: 0;
-    /*最后一个参数是半透明度，可以透过调整0-1的数值，调整到满意的透明度*/
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
 .blur-img-box {
     position: absolute;
     top: 0;
@@ -162,7 +150,7 @@ button {
     overflow: hidden;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .blur-img-box img {
@@ -173,9 +161,6 @@ button {
     transform: translateY(-50%);
     position: absolute;
     /* vertical-align: middle; */
-    /* 設定背景banner半透明遮罩 */
-    -webkit-mask-image: linear-gradient(to top, transparent 3%, rgb(0, 0, 0) 100%);
-    /* mask-image: linear-gradient(to top, transparent 5%, black 100%) */
 }
 
 .video-contents {
@@ -291,7 +276,6 @@ button {
     position: relative;
     box-sizing: border-box;
     cursor: pointer;
-    border: 1px solid #EAEAEA;
 }
 
 .prod-thumb-box img {
@@ -322,7 +306,7 @@ button {
 }
 
 .img-wrap {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.23)), url('@/assets/img/video/v21401.jpg');
+    background-image: url('@/assets/img/index/video_banner/v-box01.jpg');
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
