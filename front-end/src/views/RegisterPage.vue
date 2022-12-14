@@ -76,10 +76,11 @@ export default {
                     if(res.data.status == 200){
                         console.log(res.data)
                         alert('註冊成功')
-                        this.router.push('/login')
+                        this.$router.push('/home/login')
                     }else{
                         alert('請重新註冊')
                     }
+                    
                 })
             }
         }
