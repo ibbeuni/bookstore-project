@@ -1,9 +1,10 @@
 <template>
     <div class="login-wrap">
     <div id="pageContainer">
-        <br><br><br><br><br><br>
+        <br><br>
+        <router-link to="/home" style="color: orange;"><input style="background-color: orange;" class="login_btn" type="button" value="返回主頁"></router-link>
+        <br><br><br><br>
       <form class="userLogin">
-  
         <div class="form-group">
           <input  
           placeholder="請輸入您的ID" />
