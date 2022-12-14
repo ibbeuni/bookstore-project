@@ -1,26 +1,22 @@
 <template>
     <div>
-        <input v-model="k" type="text" /> <button @click="yy">送出</button>
+        <!-- <input v-model="k" type="text" /> <button @click="yy">送出</button> -->
         <!-- {{s}} -->
-        <!-- <div v-for="item in s" :key="item.id">
+        <div v-for="item in s" :key="item.id">
             {{ item.age }}
-        </div> -->
-        <test-test :ww="t"></test-test>
+        </div>
+        <!-- {{ww}} -->
     </div>
 
 </template>
 
 <script>
-import TestTest from '../components/best/TestTest.vue'
-
 export default {
-    components: {
-        'test-test': TestTest,
-    },
+    // name: 'TestTest',
+    props: ["ww"],
     data() {
         return {
             k: 2,
-            e: 1,
             t: 0,
             a: [
             {age: 1},
@@ -44,7 +40,7 @@ export default {
     },
     computed: {
         s() {
-            return this.a.filter( b => b.age > this.t );
+            return this.a.filter( b => b.age > this.ww );
         }
     }
 }
