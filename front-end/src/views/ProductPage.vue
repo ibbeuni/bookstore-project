@@ -56,8 +56,7 @@
                     <hr>
                     <br>
                     <span>促銷價：<span id="originalPrice">{{ item[0].list_price }}</span></span>&nbsp;&nbsp;
-                    <span class="nh2 nb">折扣後價格：<span id="lastPrice">{{ item[0].discount_price
-                    }}</span><span>元</span></span>&nbsp;&nbsp;
+                    <span class="nh2 nb">折扣後價格：<span id="lastPrice">{{ item[0].discount_price}}</span><span>元</span></span>&nbsp;&nbsp;
                     <!-- <span id="discount">8折</span> -->
                     <br>
                     <br>
@@ -284,13 +283,13 @@
         <div id="goToPayAndAddToShoppingCart">
             <div id="goToPayAndAddToShoppingCartInnerDiv">
                 <div id="totalPrice" class="me-4">
-                    <p class="nb nh2">商品總金額：<span id="resultprice">500</span></p>
+                    <p class="nb nh2">商品金額：<span id="resultprice">{{ item[0].discount_price}}</span></p>
                 </div>
-                <div id="productQuantity" class="me-4"><button
+                <!-- <div id="productQuantity" class="me-4"><button
                         class="btn btn-light">-</button><span>&nbsp;1&nbsp;</span><button
-                        class="btn btn-light">+</button></div>
+                        class="btn btn-light">+</button></div> -->
                 <!-- <div><button><i class="bi bi-heart"></i></button></div> -->
-                <div><button id="add-cart-btn" class="btn btn-primary">加入購物車</button></div>
+                <div><button  id="add-cart-btn" class="btn btn-primary">加入購物車</button></div>
                 &nbsp;&nbsp;
                 <div><button id="just-buy-btn" class="btn btn-outline-danger">直接購買</button></div>
             </div>
@@ -646,6 +645,9 @@ table {
     font-size: 36px;
     color: #53929B;
 }
+
+
+
 
 #originalPrice {
     text-decoration: line-through;
