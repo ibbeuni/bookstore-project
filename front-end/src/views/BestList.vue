@@ -132,7 +132,7 @@
                         <button class="add-cart-btn" @click="addToCart">
                           <span>加入購物車</span>
                         </button>
-                        <button class="just-buy-btn">
+                        <button class="just-buy-btn" @click="needLogin">
                           <span>馬上購買</span>
                         </button>
                       </div>
@@ -357,6 +357,11 @@ export default {
     },
     changeSelectPages(page) {
       this.selectShowPages = page;
+    },
+
+    // 請先登入
+    needLogin() {
+      alert('請先登入會員，謝謝！')
     },
 
     // 加入購物車

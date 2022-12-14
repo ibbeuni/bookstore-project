@@ -56,7 +56,9 @@
                     <hr>
                     <br>
                     <span>促銷價：<span id="originalPrice">{{ item[0].list_price }}元</span></span>&nbsp;&nbsp;
-                    <span class="nh2 nb">折扣後價格：<span id="lastPrice">{{ item[0].discount_price}}</span><span>元</span></span>&nbsp;&nbsp;
+                    <span class="nh2 nb">折扣後價格：<span id="lastPrice">{{
+                            item[0].discount_price
+                    }}</span><span>元</span></span>&nbsp;&nbsp;
                     <!-- <span id="discount">8折</span> -->
                     <br>
                     <br>
@@ -283,15 +285,15 @@
         <div id="goToPayAndAddToShoppingCart">
             <div id="goToPayAndAddToShoppingCartInnerDiv">
                 <div id="totalPrice" class="me-4">
-                    <p class="nb nh2">商品金額：<span id="resultprice">{{ item[0].discount_price}}</span></p>
+                    <p class="nb nh2">商品金額：<span id="resultprice">{{ item[0].discount_price }} 元</span></p>
                 </div>
                 <!-- <div id="productQuantity" class="me-4"><button
                         class="btn btn-light">-</button><span>&nbsp;1&nbsp;</span><button
                         class="btn btn-light">+</button></div> -->
                 <!-- <div><button><i class="bi bi-heart"></i></button></div> -->
-                <div><button  id="add-cart-btn" class="btn btn-primary">加入購物車</button></div>
+                <div><button id="add-cart-btn" class="btn btn-primary" @click="addToCart">加入購物車</button></div>
                 &nbsp;&nbsp;
-                <div><button id="just-buy-btn" class="btn btn-outline-danger">直接購買</button></div>
+                <div><button id="just-buy-btn" class="btn btn-outline-danger" @click="needLogin">直接購買</button></div>
             </div>
         </div>
         <!-- /加入購物車&直接購買 -->
@@ -328,7 +330,14 @@ export default {
     },
     methods: {
 
+        // 請先登入
+        needLogin() {
+            alert('請先登入會員，謝謝！')
+        },
 
+        addToCart() {
+            alert('加入購物車成功！')
+        },
 
 
         // 放大區
@@ -642,7 +651,7 @@ table {
 
 
 #lastPrice {
-    font-size: 36px;
+    font-size: 2rem;
     color: #53929B;
 }
 
@@ -1136,5 +1145,4 @@ body:has(#L4:checked) .L4 {
     background-color: var(--primary-color);
     font-size: 700;
 }
-
 </style>
