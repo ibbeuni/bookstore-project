@@ -14,10 +14,10 @@
                     <li class="nav_item">
                         <router-link to="/back/dashboard" style="color: white;">銷售圖表與庫存</router-link>
                     </li>
-                    <!-- <li>-</li>
+                    <li>-</li>
                     <li class="nav_item">
-                        <router-link to="/home" style="color: white;">返回主頁</router-link>
-                    </li> -->
+                        <router-link to="/back1" style="color:  white;">管理者登出</router-link>
+                    </li>
                 </ul>
             </nav>
     </header>
