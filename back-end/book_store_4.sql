@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-12-05 09:27:42
+-- 產生時間： 2022-12-14 07:42:34
 -- 伺服器版本： 10.4.27-MariaDB
 -- PHP 版本： 8.1.12
 
@@ -178,16 +178,17 @@ CREATE TABLE `cart_table` (
   `product_id` int(11) NOT NULL,
   `img_cover` varchar(50) DEFAULT NULL,
   `product_name` varchar(150) DEFAULT NULL,
-  `product_price` int(11) DEFAULT NULL
+  `product_price` int(11) DEFAULT NULL,
+  `amount` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- 傾印資料表的資料 `cart_table`
 --
 
-INSERT INTO `cart_table` (`product_id`, `img_cover`, `product_name`, `product_price`) VALUES
-(1, '20101', 'John', 100),
-(2, '20102', 'Peter', 200);
+INSERT INTO `cart_table` (`product_id`, `img_cover`, `product_name`, `product_price`, `amount`) VALUES
+(112, '11201', '官窯瑰寶：成化鬥彩瓷器圖錄', 1200, 1),
+(123, '12301', '從郵票中看中歐的景觀與建築', 360, 1);
 
 -- --------------------------------------------------------
 
@@ -233,19 +234,20 @@ CREATE TABLE `event_table` (
 --
 
 INSERT INTO `event_table` (`event_id`, `event_cover`, `event_minicover`, `event_1`, `date_start`, `date_end`) VALUES
+(0, 'event_cover', 'event_minicover', 'event_1', '0000-00-00', '0000-00-00'),
 (1, 'event_cover001', 'event_minicover_101', 'event_101', '2022-10-11', '2022-12-31'),
 (2, 'event_cover002', 'event_minicover_111', 'event_201', '2022-10-23', '2023-01-11'),
 (3, 'event_cover003', 'event_minicover_121', 'event_301', '2022-10-08', '2023-01-08'),
 (4, 'event_cover004', 'event_minicover_131', 'event_401', '2022-10-31', '2023-01-07'),
-(5, 'event_cover005', 'event_minicover_201', 'event_201', '2022-10-09', '2023-01-24'),
+(5, 'event_cover005', 'event_minicover_201', 'event_411', '2022-10-09', '2023-01-24'),
 (6, 'event_cover006', 'event_minicover_211', 'event_101', '2022-10-11', '2022-12-31'),
 (7, 'event_cover007', 'event_minicover_221', 'event_201', '2022-10-23', '2023-01-11'),
 (8, 'event_cover008', 'event_minicover_231', 'event_301', '2022-10-08', '2023-01-08'),
-(9, 'event_cover009', 'event_minicover_301', 'event_301', '2022-10-31', '2023-01-07'),
+(9, 'event_cover009', 'event_minicover_301', 'event_401', '2022-10-31', '2023-01-07'),
 (10, 'event_cover010', 'event_minicover_311', 'event_411', '2022-10-09', '2023-01-24'),
 (11, 'event_cover011', 'event_minicover_321', 'event_101', '2022-10-11', '2022-12-31'),
 (12, 'event_cover012', 'event_minicover_331', 'event_201', '2022-10-23', '2023-01-11'),
-(13, 'event_cover013', 'event_minicover_401', 'event_401', '2022-10-08', '2023-01-08'),
+(13, 'event_cover013', 'event_minicover_401', 'event_301', '2022-10-08', '2023-01-08'),
 (14, 'event_cover014', 'event_minicover_411', 'event_401', '2022-10-31', '2023-01-07'),
 (15, 'event_cover015', 'event_minicover_421', 'event_411', '2022-10-09', '2023-01-24'),
 (16, 'event_cover016', 'event_minicover_431', 'event_101', '2022-10-11', '2022-12-31');
@@ -257,16 +259,16 @@ INSERT INTO `event_table` (`event_id`, `event_cover`, `event_minicover`, `event_
 --
 
 CREATE TABLE `login_table` (
-  `ID` varchar(100) NOT NULL,
-  `PASSWORD` varchar(255) NOT NULL
+  `member_id` varchar(100) NOT NULL,
+  `member_password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- 傾印資料表的資料 `login_table`
 --
 
-INSERT INTO `login_table` (`ID`, `PASSWORD`) VALUES
-('betty@example.com', '12345678');
+INSERT INTO `login_table` (`member_id`, `member_password`) VALUES
+('maruko@gmail.com', '123456789');
 
 -- --------------------------------------------------------
 
@@ -281,15 +283,16 @@ CREATE TABLE `membership_table` (
   `member_name` varchar(50) DEFAULT NULL,
   `member_phone` varchar(50) DEFAULT NULL,
   `member_birthday` varchar(10) DEFAULT NULL,
-  `member_address` varchar(150) DEFAULT NULL
+  `member_address` varchar(150) DEFAULT NULL,
+  `img` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- 傾印資料表的資料 `membership_table`
 --
 
-INSERT INTO `membership_table` (`member_id`, `member_password`, `member_passwordCfrm`, `member_name`, `member_phone`, `member_birthday`, `member_address`) VALUES
-('marunko@gmail.com', 'P288555io@@', 'P288555io@@', '小丸子', '0989015586', '1988-02-08', '日本靜岡縣清水市');
+INSERT INTO `membership_table` (`member_id`, `member_password`, `member_passwordCfrm`, `member_name`, `member_phone`, `member_birthday`, `member_address`, `img`) VALUES
+('maruko@gmail.com', '123456789', '123456789', '小丸子', '0989015586', '1988-02-08', '日本靜岡縣清水市', '');
 
 -- --------------------------------------------------------
 
@@ -528,7 +531,7 @@ ALTER TABLE `event_table`
 -- 資料表索引 `login_table`
 --
 ALTER TABLE `login_table`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`member_id`);
 
 --
 -- 資料表索引 `membership_table`
