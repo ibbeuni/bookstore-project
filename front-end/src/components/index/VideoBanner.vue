@@ -28,21 +28,21 @@
                             <li class="swiper-slide-fade">
                                 <div class="video-banner-area">
                                     <div class="video-title-box">
-                                        <h2 class="video-title">我是真正的影片標題</h2>
-                                        <p class="video-class">我是影片分類</p>
+                                        <h2 class="video-title">我是影片的標題</h2>
+                                        <small class="video-host">與談人姓名</small>
                                     </div>
                                     <div class="video-visual-box">
-                                        <div class="prod-area">
+                                        <div class="prod-area hidden">
                                             <div class="prod-thumb-box">
                                                 <a href="">
                                                     <div class="img-box">
-                                                        <img src="@/assets/img/books/31001.png" alt="">
+                                                        <img src="@/assets/img/books/30101.png" alt="">
                                                     </div>
                                                 </a>
                                             </div>
-                                            <div class="prod-info-box hidden">
+                                            <div class="prod-info-box">
                                                 <a href="">
-                                                    <span class="prod-auther">作者名稱</span>
+                                                    <span class="prod-auther">作者名</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -66,15 +66,8 @@
 
 <script>
 export default {
-    name: 'VideoBanner',
-  
-    data() {
-        return {
-            products:'',
-        }
-    },
+    name: 'VideoBanner'
 }
-
 </script>
 
 <style scoped>
@@ -237,7 +230,7 @@ button {
     color: var(--background-color);
 }
 
-.video-class {
+.video-host {
     margin-top: 17px;
     line-height: 23px;
     color: var(--background-color);
@@ -295,11 +288,10 @@ button {
     overflow: hidden;
     text-decoration: none;
     cursor: pointer;
-    margin-left: 50px;
 }
 
 .img-wrap {
-    background-image:url('@/assets/img/index/video_banner/v-box01.jpg');
+    background-image: url('@/assets/img/index/video_banner/v-box01.jpg');
     height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
