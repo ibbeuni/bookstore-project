@@ -55,7 +55,7 @@
                 <div id="priceDiv">
                     <hr>
                     <br>
-                    <span>促銷價：<span id="originalPrice">{{ item[0].list_price }}</span></span>&nbsp;&nbsp;
+                    <span>促銷價：<span id="originalPrice">{{ item[0].list_price }}元</span></span>&nbsp;&nbsp;
                     <span class="nh2 nb">折扣後價格：<span id="lastPrice">{{ item[0].discount_price}}</span><span>元</span></span>&nbsp;&nbsp;
                     <!-- <span id="discount">8折</span> -->
                     <br>
