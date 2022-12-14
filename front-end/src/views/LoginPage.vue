@@ -2,6 +2,7 @@
 
 <template>
   <div id="pageContainer">
+    <br><br><br><br><br><br>
     <form class="userLogin">
       <h3>已經是書店的會員了?</h3>
 
@@ -31,8 +32,7 @@
       <br />
       <br />
 
-      <button class="register_btn" @click="register">
-        <router-link to=/register> 註冊 </router-link>
+      <button class="register_btn" @click="register"> 註冊 
       </button>
 
       <br />

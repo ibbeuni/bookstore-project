@@ -10,10 +10,12 @@
             <div class="card_1">
                 <div class="accordion" id="myAccordion">
                     <br><br><br>
+                    <div style="text-align:center;">
                     <h1>會員常見問題</h1>
+                    </div>
                     <div class="accordion-item">
                         <div class="accordion-header" id="headingOne">
-                            <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                            <button id="five" type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
                                 data-bs-target="#collapseOne">Ｑ : 沒有在領取的期內取貨怎麼辦？</button>
                         </div>
                         <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
@@ -28,7 +30,7 @@
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingTwo">
-                            <button type="button" class="accordion-button" data-bs-toggle="collapse"
+                            <button id="five" type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
                                 data-bs-target="#collapseTwo">
                                 Ｑ: 國內及離島可選擇的配送方式及運費計算？</button>
                         </h2>
@@ -56,7 +58,7 @@
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingThree">
-                            <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                            <button id="five" type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
                                 data-bs-target="#collapseThree">Ｑ : 超過領取期限，包裹被退回至賣場，怎麼辦呢？</button>
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
@@ -70,7 +72,7 @@
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingFour">
-                            <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                            <button id="five" type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
                                 data-bs-target="#collapseFour">Ｑ : 如何辦理退換貨？</button>
                         </h2>
                         <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
@@ -89,7 +91,7 @@
                         </div>
                         <div class="accordion-item">
                             <div class="accordion-header" id="headingFive">
-                                <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                                <button id="five" type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
                                     data-bs-target="#collapseFive">Ｑ : 收到的商品有瑕疵怎麼處理？</button>
                             </div>
                             <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
@@ -112,6 +114,18 @@
 <script>
 </script>
 <style scoped>
+.card-body{
+    background: rgb(255, 255, 255);
+}
+button:hover,
+button:focus {
+    /* background: antiquewhite; */
+    color: red;
+}
+#five{
+    background-color: antiquewhite;
+    /* border: 30px antiquewhite; */
+}
 .container {
     width: 100%;
     height: 100%;
