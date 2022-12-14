@@ -3,7 +3,7 @@
     <h4 class="title-heading">{{searchResult}}</h4>
     <div class="sub-title-wrap">
       <!-- TODO 以後改成搜尋結果共Ｘ筆 -->
-      <p class="info-text">綜合暢銷排行</p>
+      <!-- <p class="info-text">綜合暢銷排行</p> -->
       <div class="right-area">
         <div class="form-sel">
           <select
@@ -106,7 +106,7 @@ select {
   box-sizing: border-box;
   align-items: center;
   cursor: default;
-  border-width: 1px;
+  border-width: 0.5px;
   border-style: solid;
   border-color: var(--neutral-color);
   border-radius: 6px;
@@ -127,7 +127,7 @@ select {
   display: inline-block;
   width: 50%;
   height: 38px;
-  border: 1px solid var(--neutral-color);
+  border: 0.5px solid var(--neutral-color);
   background-color: var(--background-color);
   padding: 0;
   box-sizing: border-box;
@@ -140,7 +140,7 @@ select {
   display: inline-block;
   width: 50%;
   height: 38px;
-  border: 1px solid var(--neutral-color);
+  border: 0.5px solid var(--neutral-color);
   background-color: var(--background-color);
   padding: 0;
   box-sizing: border-box;
