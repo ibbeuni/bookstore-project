@@ -14,7 +14,6 @@
             <!-- component: bestseller -->
             <best-seller></best-seller>
             <!-- component: video -->
-            <!-- TODO 改套用Vue幻燈片套件：vue-awesome-swiper -->
             <video-banner></video-banner>
         </main>
     </div>
