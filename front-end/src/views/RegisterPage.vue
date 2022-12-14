@@ -78,7 +78,7 @@ export default {
                         alert('註冊成功')
                         this.$router.push('/home/login')
                     }else{
-                        alert('請重新註冊')
+                        alert('帳號已存在，請登入，或使用其他帳號進行註冊')
                     }
                     
                 })

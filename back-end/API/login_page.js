@@ -12,9 +12,9 @@ conn.connect();
 
 exports.get = (req, res) =>{
     // res.send('ok')
-var sql = 'select * from login_table where memeber_id=? and member_password =?';
+var sql = 'select member_id from login_table ';
 
- conn.query(sql, [req.query.id, req.query.password], function(err, data) {
+ conn.query(sql, [req.query.id], function(err, data) {
     
         if(err) {
             console.log(err)

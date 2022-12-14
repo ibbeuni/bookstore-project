@@ -93,7 +93,9 @@ export default{
       }else if(password ==''){
         alert('請輸入密碼')
       }else{
-        this.$router.push('/home/homepage')
+        this.$router.push('/home/member')
+        alert('請完成會員資料')
+        
         // axios.get('http://127.0.0.1:3000/logintable',{
         //   params:{
         //     id : this.login.userName,

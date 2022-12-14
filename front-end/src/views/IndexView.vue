@@ -61,8 +61,8 @@ export default {
 .topBtn {
   position: fixed;
   z-index: 99;
-  bottom: 3rem;
-  right: 3rem;
+  bottom: 5.8rem;
+  right: 2.5rem;
   width: 3.5rem;
   height: 3.5rem;
   background-color: var(--background-color);

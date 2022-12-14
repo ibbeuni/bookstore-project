@@ -33,19 +33,19 @@
                           </div>
 
                           <div class="itemlist flex">
-                              <div><span >帳號 / ID：</span> </div>
-                              <p>{{id}}</p>
+                              <div><span >帳號 / ID</span></div>
+                             <div><input v-model="id" type="text" id="changePassword"> </div>
                           </div>
 
                           <div class="itemlist flex">
                               <div><label class='labl' for="changePassword">新密碼：</label></div>
-                              <div><input v-model="password" type="text" id="changePassword"> </div>
-                          </div><div class="itemlist flex">
-
-                              <div><label class='labl' for="confirmPassword">密碼確認：</label></div>
-                              <div><input v-model="passwordCfrm" type="text" id="changePassword"> </div>
+                              <div><input  type="text" id="changePassword"> </div>
                           </div>
-                          <p class="nh6 warning">*至少八個字符, 包含大小寫英文字母、數字或特殊符號，不允許使用連續或重複的三個字節</p>
+                          <div class="itemlist flex">
+                              <div><label class='labl' for="confirmPassword">密碼確認：</label></div>
+                              <div><input  type="text" id="changePassword"> </div>
+                          </div>
+                          <p class="nh6 warning">*新增會員資料不需填寫。密碼限制八位數包含英文及數字</p>
                           
                           <div class="itemlist flex">
                               <div><span>姓名：</span></div>
@@ -61,7 +61,7 @@
 
                           <div class="itemlist flex">
                               <div><span>出生日期：</span></div>
-                              <div><input v-model="birthday" type="text" id="userName"></div>
+                              <div><input v-model="birthday" type="text" id="userName" placeholder="0000-00-00"></div>
                           </div>
 
                           <div class="itemlist flex">
@@ -110,9 +110,10 @@ export default{
   }, 
   mounted(){
     
-     axios.get('http://127.0.0.1:3000/member').then(res =>{
+     axios.get('http://127.0.0.1:3000/logintable').then(res =>{
       this.user = res.data;
-      this.id=res.data[0].member_id;
+      // console.log(res.data.data[0].member_id)
+      this.id=res.data.data[0].member_id;
      
       
       
@@ -126,22 +127,18 @@ export default{
   
   methods:{
   save(){
-
       axios.post('http://127.0.0.1:3000/member/post',{
-      
         params:{
-          name: this.name,
+          name:this.name,
           phone:this.phone,
           birthday:this.birthday,
           address:this.address
         }
         
       }).then(res =>{
-        // console.log(res.data);
+         console.log(res)
         if(res.data.status == 200){
           alert('儲存成功')
-          console.log(res.data)
-          
           this.$router.push('/home/homepage')
         }else{
           // console.log(res.data)
@@ -395,7 +392,7 @@ table {
   object-fit: cover;
 }
 .imgCtrl{
- background-image: url('../assets/maruko.png');
+ background-image: url('../assets/noPic.png');
   width: 150px;
   height: 150px;
 }

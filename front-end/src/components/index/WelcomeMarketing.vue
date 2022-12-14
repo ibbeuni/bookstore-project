@@ -4,8 +4,7 @@
             <div class="welcome-marketing-wrap">
                 <ul class="welcome-marketing-list">
                     <li class="item">
-                        <!-- TODO 連結到活動分頁 -->
-                        <a href="">
+                        <a href="/#/home/login">
                             <div class="icon-box">
                                 <font-awesome-icon icon="fa-solid fa-tags" />
                             </div>
@@ -13,8 +12,7 @@
                         </a>
                     </li>
                     <li class="item">
-                        <!-- TODO 連結到下方section -->
-                        <a href="">
+                        <a href="/#/home/login">
                             <div class="icon-box">
                                 <font-awesome-icon icon="fa-solid fa-wand-magic-sparkles" />
                             </div>
@@ -22,8 +20,7 @@
                         </a>
                     </li>
                     <li class="item">
-                        <!-- TODO 連結到新進書單分頁 -->
-                        <a href="">
+                        <a href="/#/home/best">
                             <div class="icon-box">
                                 <font-awesome-icon icon="fa-solid fa-lines-leaning" />
                             </div>
@@ -40,8 +37,7 @@
                         </a>
                     </li>
                     <li class="item">
-                        <!-- TODO 連結到影片分頁 -->
-                        <a href="">
+                        <a href="/#/home/videopage">
                             <div class="icon-box">
                                 <font-awesome-icon icon="fa-solid fa-book-open" />
                             </div>
@@ -49,8 +45,7 @@
                         </a>
                     </li>
                     <li class="item">
-                        <!-- TODO 連結到EVENT分頁 -->
-                        <a href="">
+                        <a href="/#/home/eventpage">
                             <div class="icon-box">
                                 <font-awesome-icon icon="fa-solid fa-bullhorn" />
                             </div>
@@ -67,23 +62,21 @@
                         </a>
                     </li>
                     <li class="item">
-                        <!-- TODO 連結到追蹤書單功能（要登入） -->
-                        <a href="">
+                        <a href="/#/home/login">
                             <div class="icon-box">
                                 <font-awesome-icon icon="fa-solid fa-hand-holding-heart" />
                             </div>
                             <small>我的書單</small>
                         </a>
                     </li>
-                    <li class="item">
-                        <!-- TODO 連結到..某個分頁吧 -->
-                        <a href="">
+                    <!-- <li class="item">
+                        <a href="/#/home/login">
                             <div class="icon-box">
                                 <font-awesome-icon icon="fa-solid fa-money-bills" />
                             </div>
                             <small>禮物卡</small>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>

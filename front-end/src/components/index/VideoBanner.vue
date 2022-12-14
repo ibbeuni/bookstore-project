@@ -46,7 +46,8 @@
                                             </div>
                                             <div class="prod-info-box">
                                                 <a :href="'/#/home/product/' + products[index].product_id">
-                                                    <span class="prod-auther">作者：{{ products[index].auther }}</span>
+                                                    <p class="prod-name">{{ products[index].product_name }}</p>
+                                                    <small class="prod-auther">作者：{{ products[index].auther }}</small>
                                                 </a>
                                             </div>
                                         </div>
@@ -304,6 +305,11 @@ button {
 
 .prod-info-box {
     margin-top: 16px;
+}
+
+.prod-name {
+    font-size: 14px;
+    margin-bottom: 5px;
 }
 
 .prod-auther {
