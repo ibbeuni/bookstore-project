@@ -44,7 +44,7 @@
                         <br>
                         <div id="relatedProduct">
                             <div class="relatedProductDiv">
-                                <a class="relatedProductTag_a" :href="('/#/home/product/'+this.$route.params.id)">
+                                <a class="relatedProductTag_a" :href="('/#/home/product/' + this.$route.params.id)">
                                     <div>
                                         <div class="relatedProductImgDiv">
                                             <img class="relatedProductImg"
@@ -86,7 +86,7 @@
                     </div>
                     <div v-for="(item, index) in otherVideo" :key="index">
                         <div class=" m20">
-                            <a class="block"
+                            <a v-on:click="getInfo" class="block"
                                 :href="('/#/home/videodetail/' + otherVideo[index].product_id)">
                                 <div class="flex">
                                     <div class=""><img class="otherVideo"
@@ -132,6 +132,7 @@ export default {
         };
     },
     mounted() {
+        this.getInfo();
 
         axios.get('http://127.0.0.1:3000/videotable').then(res => {
             this.allvideo = res.data;
@@ -161,10 +162,23 @@ export default {
     },
 
     methods: {
-      
+        getInfo() {
+            axios.get(`http://localhost:3000/videodetail${this.id}`).then(res => {
+                this.item = res.data;
+                // console.log(this.item);
+                // console.log(res.data);
+            }),
+                axios.get(`http://localhost:3000/productdetail${this.id}`).then(res => {
+                    this.bookinfo = res.data;
+                    // console.log(res.data);
+
+                })
+
+        }
+
 
     },
-   
+
     watch: {
         // 監聽動態路由變化
         $route(to) {
@@ -426,6 +440,7 @@ iframe {
     width: 130px;
     height: 130px;
     object-fit: cover;
+    border-radius: 7px;
 }
 
 /* 相關產品 */
@@ -444,7 +459,7 @@ iframe {
     display: block;
 }
 
-.bookinfomation{
+.bookinfomation {
     margin-left: 10px;
 }
 
