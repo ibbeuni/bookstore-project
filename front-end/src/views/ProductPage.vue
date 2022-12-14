@@ -285,9 +285,9 @@
                 <div id="totalPrice" class="me-4">
                     <p class="nb nh2">商品金額：<span id="resultprice">{{ item[0].discount_price}}</span></p>
                 </div>
-                <!-- <div id="productQuantity" class="me-4"><button
+                <div id="productQuantity" class="me-4"><button
                         class="btn btn-light">-</button><span>&nbsp;1&nbsp;</span><button
-                        class="btn btn-light">+</button></div> -->
+                        class="btn btn-light">+</button></div>
                 <!-- <div><button><i class="bi bi-heart"></i></button></div> -->
                 <div><button  id="add-cart-btn" class="btn btn-primary">加入購物車</button></div>
                 &nbsp;&nbsp;
@@ -327,6 +327,8 @@ export default {
         }
     },
     methods: {
+
+        
 
 
 
