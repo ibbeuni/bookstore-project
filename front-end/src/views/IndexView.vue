@@ -3,13 +3,16 @@
   <div class="wrap">
     <!-- HEADER_COMPONENT -->
     <full-header ref="clearSearch" @searchText="updateSearchText"></full-header>
-    <router-view
-      :booksType="booksType"
-      :condition="searchText"
-      @searchText="clearSearch"
-      @booksType="changBooksType"
-      class="margin-top"
-    ></router-view>
+    <router-view :booksType="booksType" :condition="searchText" @searchText="clearSearch" @booksType="changBooksType"
+      class="margin-top"></router-view>
+    <a href="#" class="back-to-top">
+      <div class="topBtn">
+        <div class="top-font">
+          <font-awesome-icon icon="fa-solid fa-angle-up" />
+          <p>TOP</p>
+        </div>
+      </div>
+    </a>
     <!-- FOOTER -->
     <full-footer></full-footer>
   </div>
@@ -47,12 +50,36 @@ export default {
 </script>
 
 <style scoped>
-
-.wrap{
+.wrap {
   background-color: var(--background-color);
 }
+
 .margin-top {
   margin-top: 177px;
 }
 
+.topBtn {
+  position: fixed;
+  z-index: 99;
+  bottom: 3rem;
+  right: 3rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0px 3px 9px var(--neutral-color);
+  color: var(--font-color);
+}
+
+.top-font {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.top-font p {
+  line-height: 14px;
+}
 </style>
