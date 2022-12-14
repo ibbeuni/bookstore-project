@@ -31,7 +31,7 @@
                                     <div class="video-title-box">
                                         <h2 class="video-title">{{ products[index].video_name }}</h2>
                                         <p class="video-class">{{ products[index].video_class }}</p>
-                                        <h2 class="video-title">{{otherVideo[0].product_name}}</h2>
+                                        <!-- <h2 class="video-title">{{otherVideo[0].product_name}}</h2> -->
                                         <small class="video-host">{{otherVideo[0].auther}}</small>
                                     </div>
                                     <div class="video-visual-box">
@@ -40,7 +40,7 @@
                                                 <a href="">
                                                     <div class="img-box">
                                                         <img v-bind:src="'http://127.0.0.1:3000/img/books/' + products[index].product_id + '01.png'" alt="">
-                                                        <img src="@/assets/img/books/31001.png" alt="">
+                                                        <!-- <img src="@/assets/img/books/31001.png" alt=""> -->
                                                     </div>
                                                 </a>
                                             </div>
@@ -75,6 +75,33 @@ import axios from 'axios';
 
 export default {
     name: 'VideoBanner',
+    // data() {
+    //     return {
+    //         allvideo: '',
+    //         otherVideo: '',
+
+
+    //     };
+    // },
+    // mounted() {
+    //     axios.get('http://127.0.0.1:3000/videotable').then(res => {
+    //         this.allvideo = res.data;
+    //         var a = res.data;
+
+    //         function shuffleArray(inputArray) {
+    //             inputArray.sort(() => Math.random() - 0.5);
+    //         }
+    //         shuffleArray(a);
+    //         this.otherVideo = a.slice(0, 1);
+    //         console.log(a);
+    //         console.log(this.otherVideo);
+    //         // console.log(res.data);
+
+    //     })
+
+
+
+    // },
   
     data() {
         return {
