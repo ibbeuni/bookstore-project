@@ -19,7 +19,7 @@
             <p><label for="title">定價:</label><input v-model="bookData.list_price" type="text" required /></p>
             <p><label for="title">進價:</label><input v-model="bookData.cost_price" type="text" required /></p>
             <p><label for="title">折扣價:</label><input v-model="bookData.discount_price" type="text" required /></p>
-            <p><label for="title">關鍵字:</label><input v-model="bookData.img_5" type="text" required /></p>
+            <p><label for="title">關鍵字:</label><input v-model="bookData.key_wordarray" type="text" required /></p>
             <p><label for="title">類別一:</label><input v-model="bookData.class_one" type="text" required /></p>
             <p><label for="title">類別二:</label><input v-model="bookData.class_two" type="text" required /></p>
             <p><label for="title">類別三:</label><input v-model="bookData.class_three" type="text" required /></p>
