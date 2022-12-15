@@ -168,7 +168,7 @@ li {
 }
 
 a {
-  cursor: default;
+  cursor: pointer;
 }
 
 button {
