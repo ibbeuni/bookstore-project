@@ -349,6 +349,17 @@ export default {
         },
 
         addToCart() {
+            axios.post(`http://127.0.0.1:3000/shoppingcartable/post`).then(res => {
+            
+            
+            
+            console.log(res.data)
+           
+
+
+
+        }),
+
             alert('加入購物車成功！')
         },
 
