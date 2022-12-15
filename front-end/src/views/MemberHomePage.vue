@@ -110,11 +110,11 @@ export default{
   }, 
   mounted(){
     
-     axios.get('http://127.0.0.1:3000/logintable').then(res =>{
+     axios.get('http://127.0.0.1:3000/member').then(res =>{
       this.user = res.data;
-      // console.log(res.data.data[0].member_id)
-      this.id=res.data.data[0].member_id;
-     
+      console.log(res.data[1])
+      this.id=res.data[1].member_id;
+    //  console.log(res.data)
       
       
      }).catch(err=>{
