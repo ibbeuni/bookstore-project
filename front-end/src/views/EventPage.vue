@@ -41,12 +41,12 @@
             <!-- 所有活動minicover圖片 -->
             <div>
                 <ul class="event_list col4">
-                    <li class="event_item" v-for="(item, index) in allevent" :key="index">
+                    <li class="event_item" v-for="(item, index) in allevent" :key="index" >
                         <a :href="('/#/home/eventdetail/' + allevent[index].event_id)">
                             <div class="event_area">
                                 <div class="event_thumb_box">
                                     <span class="img_box">
-                                        <img class=""
+                                        <img class="" style="border-radius: 30px;"
                                             v-bind:src="'http://127.0.0.1:3000/img/event/event_minicover/' + allevent[index].event_minicover + '.jpeg'"
                                             alt="">
                                     </span>

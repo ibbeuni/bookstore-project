@@ -3,25 +3,23 @@
     <div id="pageContainer">
         <br><br>
         <router-link to="/home" style="color: orange;"><input style="background-color: orange;" class="login_btn" type="button" value="返回主頁"></router-link>
-        <br><br><br><br>
+        <br><br><br>
+        <div>
       <form class="userLogin">
+        <br><br><br><br>
         <div class="form-group">
           <input  
           placeholder="請輸入您的ID" />
         </div>
-  
         <br />
-  
         <div class="form-group">
           <input placeholder="請輸入您的密碼" type="password"/>
         </div>
-  
-        
-        <br />
-        
+        <br /><br>
         <input type="button" style="background-color: green;" class="login_btn" value="《歡迎使用者登入》" onclick="location.href='/#/back/memberlist'">
         <!-- <button type="submit" style="background-color: green;" class="login_btn"><a href="/#/back/memberlist">《歡迎使用者登入》</a></button> -->
       </form>
+      </div>
     </div>
 </div>
   </template>
