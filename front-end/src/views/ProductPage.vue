@@ -1,7 +1,7 @@
 <template>
     <div>
 
-       
+
 
 
         <!-- 上方分類區 -->
@@ -312,8 +312,8 @@ import axios from "axios"
 
 export default {
     name: "App",
-  components: {},
- 
+    components: {},
+
     data() {
         return {
             id: this.$route.params.id,
@@ -332,7 +332,7 @@ export default {
 
         }
     },
-    
+
     watch: {
         // 監聽動態路由變化
         $route(to) {
@@ -341,7 +341,7 @@ export default {
         }
     },
     methods: {
-        
+
 
         // 請先登入
         needLogin() {
@@ -349,16 +349,25 @@ export default {
         },
 
         addToCart() {
-            axios.post(`http://127.0.0.1:3000/shoppingcartable/post`).then(res => {
-            
-            
-            
-            console.log(res.data)
-           
+            // axios.post(`http://127.0.0.1:3000/shoppingcartable/post`).then(res => {
+            //     console.log(res.data)
+            // }),
+              
+            axios({
+                method:'POST',
+                url:'http://127.0.0.1:3000/shoppingcartable/post',
+                data:{
+                    title:'skfjgsndfkjgnsdlfgl',
+                    author:'jddjjdjdjddjd'
+                }
+            })
+
+                console.log(this.id)
 
 
 
-        }),
+
+
 
             alert('加入購物車成功！')
         },
@@ -401,8 +410,8 @@ export default {
 
 
     mounted() {
-        
-    
+
+
 
         axios.get(`http://127.0.0.1:3000/booktable`).then(res => {
             console.log(res.data)
@@ -443,14 +452,7 @@ export default {
 </script>
 <style scoped>
 /* bootstrap */
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-}
+
 
 /* bootstrap */
 
