@@ -118,7 +118,7 @@ export default{
       
       
      }).catch(err=>{
-      console.log('fail' + err)
+      console.log(err)
      })
     
      
