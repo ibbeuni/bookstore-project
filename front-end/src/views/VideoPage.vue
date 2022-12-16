@@ -20,8 +20,9 @@
                         </div>
                         <div class="bookInfo">
                             <p class="nb nh3">{{ pageVideo[index].video_name }}</p>
-                            <p>{{ pageVideo[index].video_class }}</p>
-                            <p>上傳日期：{{ pageVideo[index].video_upload_date }}</p>
+                            <small>{{ pageVideo[index].video_class }}</small>
+                            <br>
+                            <small>上傳日期：{{ pageVideo[index].video_upload_date }}</small>
                         </div>
                     </a>
                 </div>
@@ -121,7 +122,7 @@ export default {
 }
 
 .nh3 {
-    font-size: 18px;
+    font-size: 17px;
 }
 
 .nh4 {
@@ -320,6 +321,7 @@ table {
     height: 140px;
     overflow: hidden;
     border-radius: 10px;
+    border: 1px solid #EAEAEA;
 
 
 }
@@ -398,6 +400,11 @@ table {
 
 .bookInfo {
     margin-left: 10px;
+    line-height: 28px;
+}
+
+.bookInfo small{
+    color: var(--neutral-color);
 }
 
 

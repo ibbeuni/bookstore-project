@@ -1064,7 +1064,7 @@ body:has(#L4:checked) .L4 {
 }
 
 #goToPayAndAddToShoppingCartInnerDiv button {
-    height: 30px;
+    height: 38px;
     line-height: 1px;
 }
 
@@ -1129,7 +1129,7 @@ body:has(#L4:checked) .L4 {
 .top {
     width: 180px;
     height: 180px;
-    background-color: lightcoral;
+    background-color: var(--secondary-color);
     opacity: 0.4;
     position: absolute;
     top: 0;
@@ -1191,7 +1191,7 @@ body:has(#L4:checked) .L4 {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    height: 20px;
+    height: 38px;
     width: 90px;
     padding: 3px 13px;
     border-radius: 6px;
