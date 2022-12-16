@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 
 export default{
   
@@ -93,34 +93,34 @@ export default{
       }else if(password ==''){
         alert('請輸入密碼')
       }else{
-        // this.$router.push('/home/member')
-        // alert('請完成會員資料')
+        this.$router.push('/home/member')
+        alert('請完成會員資料')
         
-        axios.get('http://127.0.0.1:3000/logintable',{
+        // axios.get('http://127.0.0.1:3000/logintable',{
           
-          params:{
-            id : this.login.userName,
-            password : this.login.password,
-          }
+        //   params:{
+        //     id : this.login.userName,
+        //     password : this.login.password,
+        //   }
           
-        }).then((res, err) => {
-          const token = res.data.token
-          console.log(token)
-          if (res.data.status == 200){
+        // }).then((res, err) => {
+        //   const token = res.data.token
+        //   console.log(token)
+        //   if (res.data.status == 200){
             
-              this.$router.push('/home/homepage')
+        //       this.$router.push('/home/homepage')
 
             
           
-          }else{
-            this.login.userName = "",
-            this.login.password = "",
-            alert('查無此帳號，請先註冊喔');
-            console.log('錯誤'+ err)
+        //   }else{
+        //     this.login.userName = "",
+        //     this.login.password = "",
+        //     alert('查無此帳號，請先註冊喔');
+        //     console.log('錯誤'+ err)
             
 
-          }
-        })
+        //   }
+        // })
         
       }
       
