@@ -138,6 +138,7 @@ export default{
     },
     confirmOrder(){
       alert('已收到訂單，將盡快為您處理')
+      this.$router.push('/home/homepage')
     }
     }
 }
