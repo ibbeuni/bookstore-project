@@ -84,15 +84,15 @@ export default{
     //     })
     //   }
     // }
-    onLogin() {
-      let username = this.login.userName
-      let password = this.login.password
+    // onLogin() {
+    //   let username = this.login.userName
+    //   let password = this.login.password
 
-      if( username == ""){
-        alert('查無此帳號請重新輸入')
-      }else if(password ==''){
-        alert('請輸入密碼')
-      }else{
+    //   if( username == ""){
+    //     alert('查無此帳號請重新輸入')
+    //   }else if(password ==''){
+    //     alert('請輸入密碼')
+    //   }else{
         // this.$router.push('/home/member')
         // alert('請完成會員資料')
         
@@ -103,30 +103,30 @@ export default{
         //     password : this.login.password,
         //   }
           
-        }).then((res, err) => {
-          const token = res.data.token
-          console.log(token)
-          if (res.data.status == 200){
+    //     }).then((res, err) => {
+    //       const token = res.data.token
+    //       console.log(token)
+    //       if (res.data.status == 200){
             
-              this.$router.push('/home/homepage')
+    //           this.$router.push('/home/homepage')
 
             
           
-        //   }else{
-        //     this.login.userName = "",
-        //     this.login.password = "",
-        //     alert('查無此帳號，請先註冊喔');
-        //     console.log('錯誤'+ err)
+    //     //   }else{
+    //     //     this.login.userName = "",
+    //     //     this.login.password = "",
+    //     //     alert('查無此帳號，請先註冊喔');
+    //     //     console.log('錯誤'+ err)
             
 
-        //   }
-        // })
+    //     //   }
+    //     // })
         
-      }
+    //   }
       
 
   
-    },
+    // },
   register(){
     this.$router.push('/home/register')
   }
