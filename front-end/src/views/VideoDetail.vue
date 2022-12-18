@@ -52,8 +52,7 @@
                                                 alt="">
                                         </div>
                                         <div>
-                                            <p class="nb">{{ bookinfo[0].product_name }}</p>
-                                            <br>
+                                            <p class="nb product_name">{{ bookinfo[0].product_name }}</p>
                                             <p class="auther">作者：{{ bookinfo[0].auther }}</p>
                                             <!-- <p>NT 500</p> -->
                                         </div>
@@ -163,16 +162,18 @@ export default {
 
     methods: {
         getInfo() {
+            
             axios.get(`http://localhost:3000/videodetail${this.id}`).then(res => {
                 this.item = res.data;
                 // console.log(this.item);
                 // console.log(res.data);
             }),
-                axios.get(`http://localhost:3000/productdetail${this.id}`).then(res => {
-                    this.bookinfo = res.data;
-                    // console.log(res.data);
-
-                })
+            axios.get(`http://localhost:3000/productdetail${this.id}`).then(res => {
+                this.bookinfo = res.data;
+                // console.log(res.data);
+                
+            })
+            // this.$router.push(`${this.$route.params.id}`)
 
         }
 
@@ -424,8 +425,8 @@ iframe {
     height: 940px;
     border-radius: 30px;
     overflow: auto;
-    box-shadow: 3px 3px 5px rgb(172, 164, 164);
-    border: 1px solid rgb(172, 164, 164);
+    box-shadow: 3px 3px 5px #d0d0d0;
+    border: 1px solid rgb(202, 192, 192);
 
 }
 
@@ -441,6 +442,7 @@ iframe {
     height: 130px;
     object-fit: cover;
     border-radius: 7px;
+    border: 1px solid #EAEAEA;
 }
 
 /* 相關產品 */
@@ -465,18 +467,24 @@ iframe {
 
 .relatedProductDiv {
     background-color: #fff;
-    margin: 20px;
+    margin: 20px 0;
     width: 160px;
 
 }
 
 .relatedProductImgDiv {
     text-align: center;
+    border: 1px solid #EAEAEA;
 
 }
 
 .auther {
-    text-align: end;
+    text-align: start;
+    margin-top: 10px;
+}
+.product_name{
+    margin-top: 10px;
+
 }
 
 .relatedProductImg {
@@ -488,7 +496,7 @@ iframe {
 #relatedProduct {
     display: flex;
     justify-content: start;
-    background-color: #F7F7F7;
+    /* background-color: #F7F7F7; */
     overflow-x: auto;
 
 }

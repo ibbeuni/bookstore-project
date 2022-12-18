@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 
 export default{
   
@@ -95,11 +95,6 @@ export default{
       }else{
         // this.$router.push('/home/member')
         // alert('請完成會員資料')
-
-        axios.get('http://127.0.0.1:3000/member').then(respond=>{
-          var res = respond.data.data
-          console.log(res)
-        })
         
         // axios.get('http://127.0.0.1:3000/logintable',{
           
@@ -108,16 +103,12 @@ export default{
         //     password : this.login.password,
         //   }
           
-        // }).then((res, err) => {
-        //  console.log(res.data)
-        //   if (res.data.status == 200){
-        //     const token = res.data.token
-        //     const expried = res.data.expried
-        //     console.log(token, expried)
-          
-        //   this.doucument.localstorage = `hexToken = ${token}; expires = ${new Date(expried)}`
-        //    this.$router.push('/home/homepage')
-              
+        }).then((res, err) => {
+          const token = res.data.token
+          console.log(token)
+          if (res.data.status == 200){
+            
+              this.$router.push('/home/homepage')
 
             
           
