@@ -88,39 +88,48 @@ export default{
       let username = this.login.userName
       let password = this.login.password
 
-      if( username !== 'maruko@gmail.com' || username == ""){
+      if( username == ""){
         alert('查無此帳號請重新輸入')
       }else if(password ==''){
         alert('請輸入密碼')
       }else{
         // this.$router.push('/home/member')
         // alert('請完成會員資料')
-        
-        axios.get('http://127.0.0.1:3000/logintable',{
-          
-          params:{
-            id : this.login.userName,
-            password : this.login.password,
-          }
-          
-        }).then((res, err) => {
-          const token = res.data.token
-          console.log(token)
-          if (res.data.status == 200){
-            
-              this.$router.push('/home/homepage')
 
-            
-          
-          }else{
-            this.login.userName = "",
-            this.login.password = "",
-            alert('查無此帳號，請先註冊喔');
-            console.log('錯誤'+ err)
-            
-
-          }
+        axios.get('http://127.0.0.1:3000/member').then(respond=>{
+          var res = respond.data.data
+          console.log(res)
         })
+        
+        // axios.get('http://127.0.0.1:3000/logintable',{
+          
+        //   params:{
+        //     id : this.login.userName,
+        //     password : this.login.password,
+        //   }
+          
+        // }).then((res, err) => {
+        //  console.log(res.data)
+        //   if (res.data.status == 200){
+        //     const token = res.data.token
+        //     const expried = res.data.expried
+        //     console.log(token, expried)
+          
+        //   this.doucument.localstorage = `hexToken = ${token}; expires = ${new Date(expried)}`
+        //    this.$router.push('/home/homepage')
+              
+
+            
+          
+        //   }else{
+        //     this.login.userName = "",
+        //     this.login.password = "",
+        //     alert('查無此帳號，請先註冊喔');
+        //     console.log('錯誤'+ err)
+            
+
+        //   }
+        // })
         
       }
       
