@@ -82,12 +82,14 @@ const routes = [
             {
                 path: 'member',
                 name: 'MemberHomePage',
-                component: MemberHomePage
+                component: MemberHomePage,
+                meta: {requiresAuth: true}
             },
             {
                 path: 'shoppingcart',
                 name: 'ShoppingCartPage',
-                component: ShoppingCartPage
+                component: ShoppingCartPage,
+                meta: {requiresAuth: true}
             },
             {
                 path: 'register',

@@ -123,6 +123,7 @@ export default {
 
 .nh3 {
     font-size: 17px;
+    margin-bottom: 3px;
 }
 
 .nh4 {

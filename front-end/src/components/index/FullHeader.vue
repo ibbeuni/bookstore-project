@@ -108,6 +108,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "FullHeader",
   created() {
@@ -120,6 +122,11 @@ export default {
       test: [1, 2, 3, 4],
       searchText: "",
     };
+  },
+  mounted() {
+    axios.get('http://127.0.0.1:3000/login_status')
+    
+
   },
   methods: {
     clickBestList(){
