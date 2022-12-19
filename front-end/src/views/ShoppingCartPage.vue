@@ -31,7 +31,7 @@
             <div class="buyProduct flex" >
               <div class="flex productImgName" >
                 <div><img class="shopItemImg" v-bind:src="'http://127.0.0.1:3000/img/books/' + item.img_cover + '.png'" /></div>
-                <div ><p class='bookname'>{{ item.product_name }}</p></div>
+                <div class="col align-self-center"><p class='bookname'>{{ item.product_name }}</p></div>
               </div>
 
               <ul class="singlePrice">
@@ -505,12 +505,12 @@ table {
   border-radius: 5px;
 }
 .bookname{
-  margin-top:30%;
+  margin:auto 0 auto 20px;
   display: flex;
-  font-size:12.5px;
+  font-size:13px;
   color: black;
-  background-color:#e3d096;
   
+    
 }
 
 
