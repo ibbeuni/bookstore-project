@@ -11,7 +11,7 @@
                 <div class="accordion" id="myAccordion">
                     <br><br><br>
                     <div style="text-align:center;">
-                    <h1>會員常見問題</h1>
+                        <h1>會員常見問題</h1>
                     </div>
                     <div class="accordion-item">
                         <div class="accordion-header" id="headingOne">
@@ -29,11 +29,11 @@
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
+                        <div class="accordion-header" id="headingTwo">
                             <button id="five" type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
                                 data-bs-target="#collapseTwo">
                                 Ｑ: 國內及離島可選擇的配送方式及運費計算？</button>
-                        </h2>
+                        </div>
                         <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
                             <div class="card-body">
                                 <p>Ａ :
@@ -57,10 +57,10 @@
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree">
+                        <div class="accordion-header" id="headingThree">
                             <button id="five" type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
                                 data-bs-target="#collapseThree">Ｑ : 超過領取期限，包裹被退回至賣場，怎麼辦呢？</button>
-                        </h2>
+                        </div>
                         <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
                             <div class="card-body">
                                 <p>Ａ :
@@ -71,10 +71,10 @@
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingFour">
+                        <div class="accordion-header" id="headingFour">
                             <button id="five" type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
                                 data-bs-target="#collapseFour">Ｑ : 如何辦理退換貨？</button>
-                        </h2>
+                        </div>
                         <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
                             <div class="card-body">
                                 <p>Ａ :
@@ -89,17 +89,17 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="accordion-item">
-                            <div class="accordion-header" id="headingFive">
-                                <button id="five" type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFive">Ｑ : 收到的商品有瑕疵怎麼處理？</button>
-                            </div>
-                            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
-                                <div class="card-body">
-                                    <p>Ａ :
-                                        若您收到的商品有瑕疵，或非您所訂購的商品，請趕緊於收到包裹7日內將該商品瑕疵/寄錯的細節照片Email至客服傳送給我們，並在信件內留下會員帳號/訂單資訊/手機號碼，以便客服人員確認。我們將在收到商品照片後立即為您處理。若兩日未回覆可能有漏信的情形，可請您再次來信或來電聯繫客服。
-                                    </p>
-                                </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header" id="headingFive">
+                            <button id="five" type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFive">Ｑ : 收到的商品有瑕疵怎麼處理？</button>
+                        </div>
+                        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                            <div class="card-body">
+                                <p>Ａ :
+                                    若您收到的商品有瑕疵，或非您所訂購的商品，請趕緊於收到包裹7日內將該商品瑕疵/寄錯的細節照片Email至客服傳送給我們，並在信件內留下會員帳號/訂單資訊/手機號碼，以便客服人員確認。我們將在收到商品照片後立即為您處理。若兩日未回覆可能有漏信的情形，可請您再次來信或來電聯繫客服。
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -114,18 +114,21 @@
 <script>
 </script>
 <style scoped>
-.card-body{
+.card-body {
     background: rgb(255, 255, 255);
 }
+
 button:hover,
 button:focus {
     /* background: antiquewhite; */
-    color: red;
+    color: black;
 }
-#five{
-    background-color: #e7dfbf;
+
+#five {
+    background-color: white;
     /* border: 30px antiquewhite; */
 }
+
 .container {
     width: 100%;
     height: 100%;
@@ -193,6 +196,6 @@ button:focus {
     flex-wrap: wrap;
     height: 100%;
     /* background-color: green; */
-    margin-right: 5px;
+    /* margin-right: 5px; */
 }
 </style>
