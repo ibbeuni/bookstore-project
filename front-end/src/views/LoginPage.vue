@@ -10,7 +10,7 @@
         <input 
         type="email" 
         class="form-control"
-        v-model="login.userName" 
+        v-model="info.userName" 
         placeholder="請輸入您的ID" />
       </div>
 
@@ -20,7 +20,7 @@
         <input
           type="password"
           class="form-control form-control-lg"
-          v-model="login.password"
+          v-model="info.passWord"
           placeholder="請輸入您的密碼"
         />
       </div>
@@ -46,81 +46,66 @@
 </template>
 
 <script>
-// import axios from 'axios'
+import axios from 'axios'
 
 export default{
   
   data(){
     return{
-      login:{
+      info:{
         userName:'',
-        password:''
-      }
-    }
+        passWord:''
+        }
+    }                                                                                                 
   },
   methods:{
 
-    // onLogin() {
-    //   if(this.login.userName == '') {
-    //     alert('用户名不能为空');
-    //   }else if(this.login.password == '') {
-    //     alert('密码不能为空');
-    //   }else{
-    //     axios.get('http://127.0.0.1:3000/logintable', {
+    
+    onLogin() {
+      if(this.info.userName == '') {
+        alert('用户名不能为空');
+      }else if(this.info.passWord == '') {
+        alert('密码不能为空');
+      }else{
+        axios.post('http://127.0.0.1:3000/logintable', {
+            member_id: this.info.userName,
+            member_password: this.info.passWord
           
-    //         member_id: this.login.userName,
-    //         member_password: this.login.password
+        }).then(res=>{
           
-    //     }).then(res=>{
-    //       if(res.data.status == 200) {
-    //         this.$router.push({
-    //           path: '/home',
-    //         })
-    //       }else{
-    //         alert('用户名或密码错误', '登录失败',);
-    //       }
-    //     }).catch(err=>{
-    //         console.log("登录失败" + err);
-    //     })
-    //   }
-    // }
+          if(res.data.status == 200) {
+            localStorage.setItem('token', res.data.token)
+            this.$router.push({
+              path: '/home',
+            })
+          }else{
+            alert('用户名或密码错误', '登录失败',);
+          }
+        }).catch(err=>{
+            console.log("登录失败" + err);
+        })
+      }
+    },
     // onLogin() {
-    //   let username = this.login.userName
-    //   let password = this.login.password
 
-    //   if( username == ""){
+    //   if( this.info.userName == ""){
     //     alert('查無此帳號請重新輸入')
-    //   }else if(password ==''){
+    //   }else if(this.info.passWord ==''){
     //     alert('請輸入密碼')
     //   }else{
-        // this.$router.push('/home/member')
-        // alert('請完成會員資料')
-        
-        // axios.get('http://127.0.0.1:3000/logintable',{
-          
-        //   params:{
-        //     id : this.login.userName,
-        //     password : this.login.password,
-        //   }
-          
-    //     }).then((res, err) => {
-    //       const token = res.data.token
-    //       console.log(token)
+    //     axios.get('http://127.0.0.1:3000/logintable',{
+
+    //         id:this.info.userName,
+    //         password:this.info.passWord  
+    //       })
+    //     .then((res, err) => {
     //       if (res.data.status == 200){
-            
     //           this.$router.push('/home/homepage')
-
-            
-          
-    //     //   }else{
-    //     //     this.login.userName = "",
-    //     //     this.login.password = "",
-    //     //     alert('查無此帳號，請先註冊喔');
-    //     //     console.log('錯誤'+ err)
-            
-
-    //     //   }
-    //     // })
+    //       }else{
+    //         alert('查無此帳號，請先註冊喔');
+    //         console.log('錯誤'+ err)
+    //       }
+    //     })
         
     //   }
       

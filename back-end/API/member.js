@@ -13,7 +13,7 @@ conn.connect();
 
 exports.get = (req, res) => {
     var sql = 'SELECT * FROM membership_table'
-    var value = [req.query.member_id]
+    var value = [req.query.member_id, req.query.member_password]
 
     conn.query(sql, value, (err, data) => {
 

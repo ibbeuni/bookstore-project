@@ -1,21 +1,25 @@
- let mysql = require('mysql')
-let conn = mysql.createConnection({
-    host :'127.0.0.1',
-    user :'root',
-    password :'root',
-    database : 'book_store'
-})
+// let mysql = require('mysql')
+// let conn = mysql.createConnection({
+//     host :'127.0.0.1',
+//     user :'root',
+//     password :'root',
+//     database : 'book_store'
+// })
 
-conn.connect();
+// conn.connect();
 
-// let db = require('../dataBase/index')
+let db = require('../dataBase/index')
 
-exports.get = (req, res) =>{
+exports.post = (req, res) =>{
     // res.send('ok')
-var sql = 'select member_id from login_table ';
+    console.log(req.body)
+var sql = 'select * from membership_table where member_id = ? and member_password = ?';
+var sql2 = 'update membership_table set member_token =? where member_id=?'
+const token = Math.floor(Math.random()*10000000000000000000) 
+// console.log(token)
 
- conn.query(sql, [req.query.id], function(err, data) {
-    
+ db.query(sql, [req.body.member_id, req.body.member_password], function(err, data) {
+  
         if(err) {
             console.log(err)
             return res.send({
@@ -24,17 +28,23 @@ var sql = 'select member_id from login_table ';
             })
         }
         if(data.length > 0){
-            res.send({
+            db.query(sql2, [token, req.body.member_id], err=>{
+                console.log(err)
+                res.send({
                 status:200,
                 message:'login succeed',
-                data
-            })
+                token: Math.floor(Math.random()*10000000000000000000) 
+            })})
+            
         }else{
-            console.log(data)
+            console.log( err)
             res.send({
                 status:202,
                 message:'something might be wrong'
             })
         }
     })
+
+    
+
 }
