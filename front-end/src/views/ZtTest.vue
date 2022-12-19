@@ -1105,6 +1105,7 @@ body:has(#L4:checked) .L4 {
   left: 0;
   right: 0;
   background-color: #fff;
+  z-index: 100;
 }
 
 #goToPayAndAddToShoppingCartInnerDiv {
