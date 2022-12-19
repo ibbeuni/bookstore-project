@@ -22,20 +22,12 @@
                     </button>
                   </li>
                   <li class="snb-item">
-                    <button
-                      type="button"
-                      class="snb-btn"
-                      @click="getAppreciationData"
-                    >
+                    <button type="button" class="snb-btn" @click="getAppreciationData">
                       <h5>鑑賞</h5>
                     </button>
                   </li>
                   <li class="snb-item">
-                    <button
-                      type="button"
-                      class="snb-btn"
-                      @click="getPaintingData"
-                    >
+                    <button type="button" class="snb-btn" @click="getPaintingData">
                       <h5>繪畫</h5>
                     </button>
                   </li>
@@ -45,11 +37,7 @@
                     </button>
                   </li>
                   <li class="snb-item">
-                    <button
-                      type="button"
-                      class="snb-btn"
-                      @click="getPhotographyData"
-                    >
+                    <button type="button" class="snb-btn" @click="getPhotographyData">
                       <h5>攝影</h5>
                     </button>
                   </li>
@@ -65,35 +53,22 @@
             <div class="switch-prod-wrap">
               <!-- list -->
               <!-- <prod-list></prod-list> -->
-              <ol
-                class="prod-list"
-                v-for="(item, index) in showBooks"
-                :key="index"
-              >
+              <ol class="prod-list" v-for="(item, index) in showBooks" :key="index">
                 <li class="prod-item">
                   <div class="prod-area">
                     <div class="prod-thumb-box">
-                      <a
-                        :href="'/#/home/product/' + products[index].product_id"
-                        class="prod-link"
-                      >
+                      <a :href="'/#/home/product/' + products[index].product_id" class="prod-link">
                         <div class="img-box">
-                          <img
-                            v-bind:src="
-                              'http://127.0.0.1:3000/img/books/' +
-                              item.img_cover +
-                              '.png'
-                            "
-                            alt=""
-                          />
+                          <img v-bind:src="
+                            'http://127.0.0.1:3000/img/books/' +
+                            item.img_cover +
+                            '.png'
+                          " alt="" />
                         </div>
                       </a>
                     </div>
                     <div class="prod-info-box">
-                      <a
-                        :href="'/#/home/product/' + products[index].product_id"
-                        class="prod-info"
-                      >
+                      <a :href="'/#/home/product/' + products[index].product_id" class="prod-info">
                         <h5 class="prod-name">
                           {{ item.product_name }}
                         </h5>
@@ -103,16 +78,12 @@
                         &nbsp;|&nbsp;
                         {{ item.publishing_house }}
                         &nbsp;|&nbsp;
-                        <span class="date"
-                          >{{ item.publication_date }} 出版</span
-                        >
+                        <span class="date">{{ item.publication_date }} 出版</span>
                       </p>
                       <div class="prod-price">
                         <span class="percent">10%</span>
                         <span class="price">
-                          <strong class="val"
-                            >優惠價 {{ item.discount_price }}</strong
-                          >
+                          <strong class="val">優惠價 {{ item.discount_price }}</strong>
                           <strong class="unit">元</strong>
                         </span>
                         <span class="price-normal">
@@ -151,12 +122,7 @@
                   <span aria-hidden="true">&laquo;</span>
                 </a>
               </li>
-              <li
-                @click="clickPage(index)"
-                v-for="(item, index) in bookListDone"
-                :key="index"
-                class="page-item"
-              >
+              <li @click="clickPage(index)" v-for="(item, index) in bookListDone" :key="index" class="page-item">
                 <a class="page-link">{{ index + 1 }}</a>
               </li>
               <li class="page-item">
@@ -199,6 +165,7 @@ export default {
       selectShowPages: 10,
       nowPage: 1,
       // booksType: "All",
+    
     };
   },
   mounted() {
@@ -229,6 +196,7 @@ export default {
     axios.get("http://127.0.0.1:3000/best_list_photography").then((res) => {
       this.photography = res.data;
     });
+
   },
   computed: {
     products: {
@@ -259,7 +227,7 @@ export default {
 
         return result;
       },
-      set() {},
+      set() { },
     },
     searchbookList() {
       let allBooks = this.allBookList;
@@ -388,6 +356,9 @@ export default {
           }
         });
     },
+
+  
+   
   },
   watch: {
     products() {

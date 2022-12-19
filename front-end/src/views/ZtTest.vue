@@ -70,7 +70,7 @@
               <div id="deliveryGuide">
                   <div id="deliveryGuideLeftDiv">配送指南</div>
                   <div>
-                      <font-awesome-icon icon="fa-regular fa-circle-question" />
+                      <!-- <font-awesome-icon icon="fa-regular fa-circle-question" /> -->
                       <div>
                           <button class="btn btn-outline-secondary just-buy-btn">免運資訊
                           </button>
@@ -307,12 +307,15 @@
 <script>
 
 
+
 import axios from "axios"
+
 
 
 export default {
   name: "App",
   components: {},
+
 
   data() {
       return {
@@ -327,20 +330,80 @@ export default {
           topShow: false,
           rShow: false,
           // 放大區
+          // 要寫入資料庫資料
 
 
 
-      }
-  },
+          // 要寫入資料庫資料
 
-  watch: {
-      // 監聽動態路由變化
-      $route(to) {
-          this.id = to.params.id
-          this.$emit('change-page')
+
+
       }
   },
   methods: {
+      // async addToCart() {
+      //     const data = {
+      //         product_id: `${this.item[0].product_id}`,
+      //         img_cover: this.item[0].img_cover,
+      //         product_name: `${this.item[0].product_name}`,
+      //         product_price: this.item[0].discount_price,
+      //         amount: 1
+      //     };
+
+      //     try {
+      //         // 發送 POST 請求到伺服器，傳遞所需的資料
+      //         const response = await axios.post('http://127.0.0.1:3000/shoppingcartable/post', data);
+      //         console.log(response.data);
+      //     } catch (error) {
+      //         console.error(error);
+      //     }
+      //     console.log(this.item[0].product_id)
+      //     console.log(this.item[0].img_cover)
+      //     console.log(this.item[0].product_name)
+      //     console.log(this.item[0].discount_price)
+
+      //     // alert('加入購物車成功！');
+      // },
+      //  addToCart() {
+      //     axios.post('http://127.0.0.1:3000/shoppingcartable/post', {
+      //         product_id: `${this.item[0].product_id}`,
+      //         img_cover: this.item[0].img_cover,
+      //         product_name: `${this.item[0].product_name}`,
+      //         product_price: this.item[0].discount_price,
+      //         amount: 1
+      //     })
+      //         .then(function (response) {
+      //             console.log(response);
+      //         })
+      //         .catch(function (error) {
+      //             console.log(error);
+      //         });
+
+      // },
+
+      addToCart() {
+          axios.post('http://127.0.0.1:3000/shoppingcartable/post', {
+              params: {
+                  product_id: `${this.item[0].product_id}`,
+                  img_cover: this.item[0].img_cover,
+                  product_name: `${this.item[0].product_name}`,
+                  product_price: this.item[0].discount_price,
+                  amount: 1
+              }
+
+          }).then(res => {
+              alert('儲存成功')
+              //  this.$router.push('/home/homepage')
+              console.log(res)
+              if (res.data.status == 200) {
+
+                  //   this.$router.push('/home/homepage')
+              } else {
+                  // console.log(res.data)
+              }
+          })
+
+      },
 
 
       // 請先登入
@@ -348,29 +411,14 @@ export default {
           alert('請先登入會員，謝謝！')
       },
 
-      addToCart() {
-          // axios.post(`http://127.0.0.1:3000/shoppingcartable/post`).then(res => {
-          //     console.log(res.data)
-          // }),
-            
-          axios({
-              method:'POST',
-              url:'http://127.0.0.1:3000/shoppingcartable/post',
-              data:{
-                  title:'skfjgsndfkjgnsdlfgl',
-                  author:'jddjjdjdjddjd'
-              }
-          })
+      // addToCart() {
+      //     // axios.post(`http://127.0.0.1:3000/shoppingcartable/post`).then(res => {
+      //     //     console.log(res.data)
+      //     // }),
 
-              console.log(this.id)
-
-
-
-
-
-
-          alert('加入購物車成功！')
-      },
+      //     console.log(this.id)
+      //     alert('加入購物車成功！')
+      // },
 
 
       // 放大區
@@ -410,6 +458,7 @@ export default {
 
 
   mounted() {
+
 
 
 
