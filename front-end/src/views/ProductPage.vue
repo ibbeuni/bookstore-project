@@ -392,7 +392,7 @@ export default {
                 }
 
             }).then(res => {
-                alert('儲存成功')
+                alert('加入購物車成功')
                 //  this.$router.push('/home/homepage')
                 console.log(res)
                 if (res.data.status == 200) {
