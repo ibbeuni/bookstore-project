@@ -206,6 +206,23 @@ const routes = [
 const router = new VueRouter({
     routes
 });
+Vue.use(router)
+router.beforeEach((to, from, next) => {
+    if ( to.meta.requiresAuth === true) {
+        if(localStorage.getItem('token')){
+            next()
+        }else{
+            next({
+                path:'/home/login'
+            })
+        }
+    }else{
+      next()
+    }
+}
+  
+  )
+
 
 
 

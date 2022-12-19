@@ -63,9 +63,9 @@ export default{
     
     onLogin() {
       if(this.info.userName == '') {
-        alert('用户名不能为空');
+        alert('請輸入帳號');
       }else if(this.info.passWord == '') {
-        alert('密码不能为空');
+        alert('請輸入密碼');
       }else{
         axios.post('http://127.0.0.1:3000/logintable', {
             member_id: this.info.userName,
@@ -80,10 +80,10 @@ export default{
               path: '/home/member',
             })
           }else{
-            alert('用户名或密码错误', '登录失败',);
+            alert('帳號或密碼錯誤', '登入失敗',);
           }
         }).catch(err=>{
-            console.log("登录失败" + err);
+            console.log("登入失敗" + err);
         })
       }
     },

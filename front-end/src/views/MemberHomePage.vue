@@ -137,8 +137,6 @@ export default{
         
       }).then(res =>{
         console.log(res.data)
-        //  alert('儲存成功')
-        //  this.$router.push('/home/homepage')
          
         if(res.data.status == 200){
           console.log(res.data)
