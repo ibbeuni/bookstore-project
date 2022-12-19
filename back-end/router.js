@@ -24,6 +24,7 @@ let best_list_painting = require('./API/best_list_painting')
 let best_list_art = require('./API/best_list_art')
 let best_list_photography = require('./API/best_list_photography')
 let payment = require('./API/payment')
+let login_status = require('./API/login_status')
 const accRoute = require('./routes/Account')
 const bookRoute = require('./routes/Book')
 
@@ -59,5 +60,6 @@ router.get('/best_list_appreciation', best_list_appreciation.get)
 router.get('/best_list_painting', best_list_painting.get)
 router.get('/best_list_art', best_list_art.get)
 router.get('/best_list_photography', best_list_photography.get)
+router.get('/login_status', login_status.get)
 
 module.exports = router
