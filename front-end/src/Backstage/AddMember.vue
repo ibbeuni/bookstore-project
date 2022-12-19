@@ -24,6 +24,10 @@
         <label for="title">會員生日:</label
         ><input v-model="memberData.member_birthday" type="text" required />
       </p>
+      <p>
+        <label for="title">會員備註:</label
+        ><input v-model="memberData.member_remark" type="text" required />
+      </p>
   
       <div>
         <button
