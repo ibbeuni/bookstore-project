@@ -1,7 +1,7 @@
 <template>
     <div>
 
-       
+
 
 
         <!-- 上方分類區 -->
@@ -70,7 +70,7 @@
                 <div id="deliveryGuide">
                     <div id="deliveryGuideLeftDiv">配送指南</div>
                     <div>
-                        <font-awesome-icon icon="fa-regular fa-circle-question" />
+                        <!-- <font-awesome-icon icon="fa-regular fa-circle-question" /> -->
                         <div>
                             <button class="btn btn-outline-secondary just-buy-btn">免運資訊
                             </button>
@@ -307,13 +307,16 @@
 <script>
 
 
+
 import axios from "axios"
+
 
 
 export default {
     name: "App",
-  components: {},
- 
+    components: {},
+
+
     data() {
         return {
             id: this.$route.params.id,
@@ -327,41 +330,95 @@ export default {
             topShow: false,
             rShow: false,
             // 放大區
+            // 要寫入資料庫資料
 
 
 
-        }
-    },
-    
-    watch: {
-        // 監聽動態路由變化
-        $route(to) {
-            this.id = to.params.id
-            this.$emit('change-page')
+            // 要寫入資料庫資料
+
+
+
         }
     },
     methods: {
-        
+        // async addToCart() {
+        //     const data = {
+        //         product_id: `${this.item[0].product_id}`,
+        //         img_cover: this.item[0].img_cover,
+        //         product_name: `${this.item[0].product_name}`,
+        //         product_price: this.item[0].discount_price,
+        //         amount: 1
+        //     };
+
+        //     try {
+        //         // 發送 POST 請求到伺服器，傳遞所需的資料
+        //         const response = await axios.post('http://127.0.0.1:3000/shoppingcartable/post', data);
+        //         console.log(response.data);
+        //     } catch (error) {
+        //         console.error(error);
+        //     }
+        //     console.log(this.item[0].product_id)
+        //     console.log(this.item[0].img_cover)
+        //     console.log(this.item[0].product_name)
+        //     console.log(this.item[0].discount_price)
+
+        //     // alert('加入購物車成功！');
+        // },
+        //  addToCart() {
+        //     axios.post('http://127.0.0.1:3000/shoppingcartable/post', {
+        //         product_id: `${this.item[0].product_id}`,
+        //         img_cover: this.item[0].img_cover,
+        //         product_name: `${this.item[0].product_name}`,
+        //         product_price: this.item[0].discount_price,
+        //         amount: 1
+        //     })
+        //         .then(function (response) {
+        //             console.log(response);
+        //         })
+        //         .catch(function (error) {
+        //             console.log(error);
+        //         });
+
+        // },
+
+        addToCart() {
+            axios.post('http://127.0.0.1:3000/shoppingcartable/post', {
+                params: {
+                    product_id: `${this.item[0].product_id}`,
+                    img_cover: this.item[0].img_cover,
+                    product_name: `${this.item[0].product_name}`,
+                    product_price: this.item[0].discount_price,
+                    amount: 1
+                }
+
+            }).then(res => {
+                alert('儲存成功')
+                //  this.$router.push('/home/homepage')
+                console.log(res)
+                if (res.data.status == 200) {
+
+                    //   this.$router.push('/home/homepage')
+                } else {
+                    // console.log(res.data)
+                }
+            })
+
+        },
+
 
         // 請先登入
         needLogin() {
             alert('請先登入會員，謝謝！')
         },
 
-        addToCart() {
-            axios.post(`http://127.0.0.1:3000/shoppingcartable/post`).then(res => {
-            
-            
-            
-            console.log(res.data)
-           
+        // addToCart() {
+        //     // axios.post(`http://127.0.0.1:3000/shoppingcartable/post`).then(res => {
+        //     //     console.log(res.data)
+        //     // }),
 
-
-
-        }),
-
-            alert('加入購物車成功！')
-        },
+        //     console.log(this.id)
+        //     alert('加入購物車成功！')
+        // },
 
 
         // 放大區
@@ -401,8 +458,9 @@ export default {
 
 
     mounted() {
-        
-    
+
+
+
 
         axios.get(`http://127.0.0.1:3000/booktable`).then(res => {
             console.log(res.data)
@@ -443,14 +501,7 @@ export default {
 </script>
 <style scoped>
 /* bootstrap */
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-}
+
 
 /* bootstrap */
 
@@ -1062,7 +1113,7 @@ body:has(#L4:checked) .L4 {
 }
 
 #goToPayAndAddToShoppingCartInnerDiv button {
-    height: 30px;
+    height: 38px;
     line-height: 1px;
 }
 
@@ -1127,7 +1178,7 @@ body:has(#L4:checked) .L4 {
 .top {
     width: 180px;
     height: 180px;
-    background-color: lightcoral;
+    background-color: var(--secondary-color);
     opacity: 0.4;
     position: absolute;
     top: 0;
@@ -1189,7 +1240,7 @@ body:has(#L4:checked) .L4 {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    height: 20px;
+    height: 38px;
     width: 90px;
     padding: 3px 13px;
     border-radius: 6px;

@@ -2,6 +2,8 @@
   <div>
 
 
+
+
       <!-- 上方分類區 -->
       <!-- <div id="topClassDiv"><a href="">中文圖書</a> > <a href="">藝術設計</a> > <a href="">分類</a></div> -->
 
@@ -56,7 +58,9 @@
                   <hr>
                   <br>
                   <span>促銷價：<span id="originalPrice">{{ item[0].list_price }}元</span></span>&nbsp;&nbsp;
-                  <span class="nh2 nb">折扣後價格：<span id="lastPrice">{{ item[0].discount_price}}</span><span>元</span></span>&nbsp;&nbsp;
+                  <span class="nh2 nb">折扣後價格：<span id="lastPrice">{{
+                          item[0].discount_price
+                  }}</span><span>元</span></span>&nbsp;&nbsp;
                   <!-- <span id="discount">8折</span> -->
                   <br>
                   <br>
@@ -66,13 +70,15 @@
               <div id="deliveryGuide">
                   <div id="deliveryGuideLeftDiv">配送指南</div>
                   <div>
-                      <font-awesome-icon icon="fa-regular fa-circle-question" />
-                      <p><a href="">免運資訊
-                              <font-awesome-icon icon="fa-regular fa-circle-question" />
-                          </a></p>
-                      <p><a href="">配送資訊
-                              <font-awesome-icon icon="fa-regular fa-circle-question" />
-                          </a></p>
+                      <!-- <font-awesome-icon icon="fa-regular fa-circle-question" /> -->
+                      <div>
+                          <button class="btn btn-outline-secondary just-buy-btn">免運資訊
+                          </button>
+                      </div>
+                      <div>
+                          <a class="btn btn-outline-secondary just-buy-btn">配送資訊
+                          </a>
+                      </div>
                   </div>
               </div>
               <br>
@@ -283,24 +289,34 @@
       <div id="goToPayAndAddToShoppingCart">
           <div id="goToPayAndAddToShoppingCartInnerDiv">
               <div id="totalPrice" class="me-4">
-                  <p class="nb nh2">商品金額：<span id="resultprice">{{ item[0].discount_price}}</span></p>
+                  <p class="nb nh2">商品金額：<span id="resultprice">{{ item[0].discount_price }} 元</span></p>
               </div>
               <div id="productQuantity" class="me-4"><button
                       class="btn btn-light">-</button><span>&nbsp;1&nbsp;</span><button
                       class="btn btn-light">+</button></div>
               <!-- <div><button><i class="bi bi-heart"></i></button></div> -->
-              <div><button  id="add-cart-btn" class="btn btn-primary">加入購物車</button></div>
+              <div><button id="add-cart-btn" class="btn btn-primary" @click="addToCart">加入購物車</button></div>
               &nbsp;&nbsp;
-              <div><button id="just-buy-btn" class="btn btn-outline-danger">直接購買</button></div>
+              <div><button id="just-buy-btn" class="btn btn-outline-danger" @click="needLogin">直接購買</button></div>
           </div>
       </div>
       <!-- /加入購物車&直接購買 -->
   </div>
 </template>
+
 <script>
+
+
+
 import axios from "axios"
 
+
+
 export default {
+  name: "App",
+  components: {},
+
+
   data() {
       return {
           id: this.$route.params.id,
@@ -314,21 +330,95 @@ export default {
           topShow: false,
           rShow: false,
           // 放大區
+          // 要寫入資料庫資料
 
 
 
-      }
-  },
-  watch: {
-      // 監聽動態路由變化
-      $route(to) {
-          this.id = to.params.id
-          this.$emit('change-page')
+          // 要寫入資料庫資料
+
+
+
       }
   },
   methods: {
+      // async addToCart() {
+      //     const data = {
+      //         product_id: `${this.item[0].product_id}`,
+      //         img_cover: this.item[0].img_cover,
+      //         product_name: `${this.item[0].product_name}`,
+      //         product_price: this.item[0].discount_price,
+      //         amount: 1
+      //     };
+
+      //     try {
+      //         // 發送 POST 請求到伺服器，傳遞所需的資料
+      //         const response = await axios.post('http://127.0.0.1:3000/shoppingcartable/post', data);
+      //         console.log(response.data);
+      //     } catch (error) {
+      //         console.error(error);
+      //     }
+      //     console.log(this.item[0].product_id)
+      //     console.log(this.item[0].img_cover)
+      //     console.log(this.item[0].product_name)
+      //     console.log(this.item[0].discount_price)
+
+      //     // alert('加入購物車成功！');
+      // },
+      //  addToCart() {
+      //     axios.post('http://127.0.0.1:3000/shoppingcartable/post', {
+      //         product_id: `${this.item[0].product_id}`,
+      //         img_cover: this.item[0].img_cover,
+      //         product_name: `${this.item[0].product_name}`,
+      //         product_price: this.item[0].discount_price,
+      //         amount: 1
+      //     })
+      //         .then(function (response) {
+      //             console.log(response);
+      //         })
+      //         .catch(function (error) {
+      //             console.log(error);
+      //         });
+
+      // },
+
+      addToCart() {
+          axios.post('http://127.0.0.1:3000/shoppingcartable/post', {
+              params: {
+                  product_id: `${this.item[0].product_id}`,
+                  img_cover: this.item[0].img_cover,
+                  product_name: `${this.item[0].product_name}`,
+                  product_price: this.item[0].discount_price,
+                  amount: 1
+              }
+
+          }).then(res => {
+              alert('儲存成功')
+              //  this.$router.push('/home/homepage')
+              console.log(res)
+              if (res.data.status == 200) {
+
+                  //   this.$router.push('/home/homepage')
+              } else {
+                  // console.log(res.data)
+              }
+          })
+
+      },
 
 
+      // 請先登入
+      needLogin() {
+          alert('請先登入會員，謝謝！')
+      },
+
+      // addToCart() {
+      //     // axios.post(`http://127.0.0.1:3000/shoppingcartable/post`).then(res => {
+      //     //     console.log(res.data)
+      //     // }),
+
+      //     console.log(this.id)
+      //     alert('加入購物車成功！')
+      // },
 
 
       // 放大區
@@ -369,6 +459,9 @@ export default {
 
   mounted() {
 
+
+
+
       axios.get(`http://127.0.0.1:3000/booktable`).then(res => {
           console.log(res.data)
           this.allbooks = res.data;
@@ -407,6 +500,11 @@ export default {
 
 </script>
 <style scoped>
+/* bootstrap */
+
+
+/* bootstrap */
+
 /* <共用CSS> */
 * {
   box-sizing: border-box;
@@ -642,7 +740,7 @@ table {
 
 
 #lastPrice {
-  font-size: 36px;
+  font-size: 2rem;
   color: #53929B;
 }
 
@@ -1015,7 +1113,7 @@ body:has(#L4:checked) .L4 {
 }
 
 #goToPayAndAddToShoppingCartInnerDiv button {
-  height: 30px;
+  height: 38px;
   line-height: 1px;
 }
 
@@ -1080,7 +1178,7 @@ body:has(#L4:checked) .L4 {
 .top {
   width: 180px;
   height: 180px;
-  background-color: lightcoral;
+  background-color: var(--secondary-color);
   opacity: 0.4;
   position: absolute;
   top: 0;
@@ -1137,4 +1235,22 @@ body:has(#L4:checked) .L4 {
   font-size: 700;
 }
 
+.just-buy-btn {
+  border: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 38px;
+  width: 90px;
+  padding: 3px 13px;
+  border-radius: 6px;
+  /* color: var(--background-color); */
+  /* background-color: var(--primary-color); */
+  font-size: 700;
+}
+
+.just-buy-btn:hover {
+  background-color: #477d85;
+
+}
 </style>
