@@ -1,23 +1,22 @@
 <template>
     <div class="wrap">
-        <div class="header">
-            <div class="list center">
-            </div>
-        </div>
+        <br><br><br><br><br><br><br><br><br>
         <!-- 活動輪播圖 -->
-        <div style="text-align:center" id="carouselExampleFade" class="banner-visual-box carousel slide carousel-fade" data-bs-ride="carousel">
+        <div style="text-align:center" id="carouselExampleFade" class="banner-visual-box carousel slide carousel-fade"
+            data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="img-box carousel-item " data-bs-interval="1000">
-                    <img style="border-radius: 30px;" src="../assets/img/event/event_cover/event_cover001.jpeg" alt="">
+                    <img style="border-radius: 16px;" src="../assets/img/event/event_cover/event_cover001.jpeg" alt="">
                 </div>
                 <div class="img-box carousel-item " data-bs-interval="1000">
-                    <img style="border-radius: 30px;" src="../assets/img/event/event_cover/event_cover002.jpeg" alt="">
+                    <img style="border-radius: 16px;" src="../assets/img/event/event_cover/event_cover002.jpeg" alt="">
                 </div>
                 <div class="img-box carousel-item " data-bs-interval="1000">
-                    <img style="border-radius: 30px;" src="../assets/img/event/event_cover/event_cover003.jpeg" alt="">
+                    <img style="border-radius: 16px;" src="../assets/img/event/event_cover/event_cover003.jpeg" alt="">
                 </div>
                 <div class="img-box carousel-item active" data-bs-interval="1000">
-                    <a href="/#/home/eventdetail/10"><img style="border-radius: 30px;" src="../assets/img/event/event_cover/event_cover004.jpeg" alt=""></a>
+                    <a href="/#/home/eventdetail/10"><img style="border-radius: 16px;"
+                            src="../assets/img/event/event_cover/event_cover004.jpeg" alt=""></a>
                 </div>
             </div>
         </div>
@@ -29,8 +28,8 @@
         <div class="bookname">
             <!-- 分類按鈕 -->
             <div>
-                <ul>
-                    <a href="" style="font-size: 25px">其他書籍活動</a><br><br>
+                <ul class="content-inner bookname-title">
+                    <h4 class="content-inner">其他書籍活動</h4>
                     <li><button><span>所有活動</span></button></li>
                     <li><button><span>收藏</span></button></li>
                     <li><button><span>繪畫</span></button></li>
@@ -40,20 +39,21 @@
             </div>
             <!-- 所有活動minicover圖片 -->
             <div>
-                <ul class="event_list col4">
-                    <li class="event_item" v-for="(item, index) in allevent" :key="index" >
+                <ul class="event_list col4 content-inner">
+                    <li class="event_item" v-for="(item, index) in allevent" :key="index">
                         <a :href="('/#/home/eventdetail/' + allevent[index].event_id)">
                             <div class="event_area">
                                 <div class="event_thumb_box">
                                     <span class="img_box">
-                                        <img class="" style="border-radius: 30px;"
+                                        <img
                                             v-bind:src="'http://127.0.0.1:3000/img/event/event_minicover/' + allevent[index].event_minicover + '.jpeg'"
                                             alt="">
                                     </span>
                                 </div>
-                                <div class="event_info_box">
-                                    <div class="event_period">活動時間{{ (allevent[index].date_start) }}</div>
-                                    <div class="event_period">結束時間{{ (allevent[index].date_end) }}</div>
+                                <div class="event_info_box" style="margin-top: 10px;">
+                                    <div><small class="event_period">{{ (allevent[index].date_start) }} ~ {{ (allevent[index].date_end) }}</small>
+                                    </div>
+                                    <!-- <div class="event_period"><small>結束時間 {{ (allevent[index].date_end) }}</small></div> -->
                                 </div>
                             </div>
                         </a>
@@ -99,6 +99,18 @@ export default {
 }
 </script>
 <style scoped>
+
+.content-inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+.wrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+.event_period{
+    color: var(--neutral-color);
+}
 .header {
     width: 100%;
     height: 100px;
@@ -122,10 +134,19 @@ li {
 .bookname {
     width: 100%;
     flex-wrap: wrap;
-    height: 100%;
+    /* height: 100%; */
     /* background-color: yellowgreen; */
-    margin: 30px;
+    margin-top: 30px;
     /* text-align: center; */
+}
+
+.bookname-title {
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+
+.bookname-title h4 {
+    margin: 60px 0 30px;
 }
 
 .bookimg {
@@ -137,12 +158,12 @@ button {
     display: inline-block;
     text-align: center;
     vertical-align: middle;
-    padding: 0px 20px;
+    padding: 7px 16px 8px;
     border: 0px solid #e9e8e8;
     border-radius: 50px;
     background: #e9e8e8;
-    font: normal normal bold 20px arial;
-    color: #272727;
+    font: 16px;
+    color: var(--font-color);
     text-decoration: none;
     text-transform: uppercase
 }
@@ -161,21 +182,37 @@ ul {
 
 /* ul排列 */
 .event_list {
-    justify-content: center;
+    /* justify-content: center; */
+    padding-left: 0;
+    /* test */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
 }
 
 /* li排列與間隔 */
 .event_item {
     display: inline-block;
     list-style-type: none;
-    padding: 25px;
-    /* border:1px solid #ccc ; */
+    margin: 20px 10px;
     position: relative;
     overflow: hidden;
     flex-wrap: wrap;
-    /* width: 273;
-  height: 148px; */
-    /* flex-basis: 60%; */
-    /* flex-wrap: wrap; */
+    width: 275px;
 }
+
+.img_box {
+    width: 250px;
+    margin: 0;
+}
+
+.img_box img {
+    border-radius: 16px;
+    border: 1px solid #EAEAEA;
+    box-sizing: border-box;
+}
+
+
 </style>
