@@ -12,6 +12,7 @@
             <th scope="col">會員電話</th>
             <th scope="col">會員地址</th>
             <th scope="col">會員生日</th>
+            <th scope="col">會員備註</th>
             <th scope="col">操作</th>
           </tr>
         </thead>
@@ -24,6 +25,7 @@
             <td>{{ item.member_phone }}</td>
             <td>{{ item.member_address }}</td>
             <td>{{ item.member_birthday }}</td>
+            <td>{{item.member_remark}}</td>
             <td>
               <button @click="updateMember(item)">編輯</button>
               <button @click="deleteMember(item, index)">刪除</button>
