@@ -51,6 +51,7 @@
         let data = this.bookData;
         axios.post("http://127.0.0.1:3000/book/", { data }).then((res) => {
           if (res.data == "success") {
+            alert('成功')
             this.$router.push({
               name: "booklist",
             });

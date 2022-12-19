@@ -59,6 +59,7 @@
           .delete("http://127.0.0.1:3000/acc/" + item["member_id"])
           .then((res) => {
             if (res.data == "success") {
+                alert('成功刪除')
               this.memberList.splice(index, 1);
             }
           });
