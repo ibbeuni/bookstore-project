@@ -35,7 +35,7 @@
               </div>
 
               <ul class="singlePrice">
-                <li>單價</li>
+                <li class="discount nb">折扣價</li>
                 <li>{{ item.product_price }}</li>
               </ul>
 
@@ -78,10 +78,10 @@
                 <p>{{ cnt.shpinFee }}&nbsp;元</p>
               </div>
 
-              <div>
+              <!-- <div>
                 <p class='discount'>折扣</p>
                 <p class='discount'>{{ cnt.discount }}</p>
-              </div>
+              </div> -->
 
               <hr />
               <div>
@@ -116,7 +116,7 @@ export default {
       },
       cnt: {
         shpinFee: "60",
-        discount: "20% off",
+        // discount: "20% off",
       },
     };
   },
@@ -189,10 +189,10 @@ export default {
     allTotal(){
        var totalPrice = 0
      this.pdt.forEach(function(val){
-      totalPrice+=val.product_price*val.amount
+      Math.floor(totalPrice+=val.product_price*val.amount)
       
       });
-      return (totalPrice+60)*0.8
+      return (totalPrice+60)
       
 
     }
@@ -597,6 +597,8 @@ table {
   color:red;
   font-weight: 500;
 }
+
+
 
 /* /右方結帳 */
 </style>
