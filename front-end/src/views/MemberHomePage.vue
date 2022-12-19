@@ -112,8 +112,8 @@ export default{
     
      axios.get('http://127.0.0.1:3000/member').then(res =>{
       this.user = res.data;
-      // console.log(res.data[1])
-      this.id=res.data.member_id;
+      console.log(res.data[0])
+      this.id=res.data[0].member_id;
     //  console.log(res.data)
       
       
@@ -128,19 +128,20 @@ export default{
   methods:{
   save(){
       axios.post('http://127.0.0.1:3000/member/post',{
-        params:{
-          name:this.name,
-          phone:this.phone,
-          birthday:this.birthday,
-          address:this.address
-        }
+        
+          member_name:this.name,
+          member_phone:this.phone,
+          member_birthday:this.birthday,
+          member_address:this.address
+        
         
       }).then(res =>{
+        console.log(res.data)
         //  alert('儲存成功')
         //  this.$router.push('/home/homepage')
          
         if(res.data.status == 200){
-          console.log(res.data.status)
+          console.log(res.data)
           alert('儲存成功')
          this.$router.push('/home/homepage')
         }else{

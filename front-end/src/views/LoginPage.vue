@@ -75,8 +75,9 @@ export default{
           
           if(res.data.status == 200) {
             localStorage.setItem('token', res.data.token)
+            alert('請先登錄會員資料')
             this.$router.push({
-              path: '/home',
+              path: '/home/member',
             })
           }else{
             alert('用户名或密码错误', '登录失败',);

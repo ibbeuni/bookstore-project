@@ -25,18 +25,10 @@ exports.get = (req, res) => {
 }
 
 exports.post = (req, res) => {
+    console.log(res.body)
 
-    // res.send(req.body)
-    // console.log('ok')
-    
-    
     var sql1 = 'update membership_table set member_name=?, member_phone=?, member_birthday=?, member_address=? where member_id=?'
     var input_value = [ req.body.member_name, req.body.member_phone, req.body.member_birthday, req.body.member_address ]
-
-    console.log(req.body.member_name)
-    console.log(req.body.member_phone)
-    console.log(req.body.member_birthday)
-    console.log(req.body.member_address)
 
     conn.query(sql1, input_value , (err, data) => {
         if(err){
