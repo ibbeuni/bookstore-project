@@ -111,6 +111,7 @@ export default{
   mounted(){
     
      axios.get('http://127.0.0.1:3000/member').then(res =>{
+      localStorage.getItem('token')
       this.user = res.data;
       console.log(res.data[0])
       this.id=res.data[0].member_id;

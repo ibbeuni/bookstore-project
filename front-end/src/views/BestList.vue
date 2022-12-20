@@ -100,7 +100,7 @@
                               <font-awesome-icon icon="fa-solid fa-heart" />
                            </button> -->
                       <div class="btn-wrap">
-                        <button class="add-cart-btn" @click="addToCart">
+                        <button class="add-cart-btn" @click="addToCart(item)">
                           <span>加入購物車</span>
                         </button>
                         <button class="just-buy-btn" @click="needLogin">
@@ -165,8 +165,7 @@ export default {
       selectShowPages: 10,
       nowPage: 1,
       // booksType: "All",
-      item:'',
-    
+
     };
   },
   mounted() {
@@ -334,37 +333,33 @@ export default {
     },
 
     // 加入購物車
-    addToCart() {
-      // axios.get(`http://127.0.0.1:3000/productdetail${this.id}`).then(res => {
-      //           console.log(res.data)
-      //           this.item = res.data;
-      //       });
+    addToCart(item) {
 
-      console.log(this)
-      // axios
-      //   .post("http://127.0.0.1:3000/shoppingcartable/post", {
-      //     params: {
-      //       product_id: this.product_id,
-      //       img_cover: this.img_cover,
-      //       product_name: this.product_name,
-      //       product_price: this.product_price,
-      //       amount: 1,
-      //     },
-      //   })
-      //   .then((res) => {
-      //     console.log(res.data);
-      //     if (res.data.status == 200) {
-      //       console.log(res.data);
-      //       alert("加入購物車成功！");
-      //       this.router.push("/shoppingcart");
-      //     } else {
-      //       console.log(res.data);
-      //     }
-      //   });
+      // console.log(item);
+      axios.post('http://127.0.0.1:3000/shoppingcartable/post', {
+        params: {
+          product_id: item.product_id,
+          img_cover: item.img_cover,
+          product_name: item.product_name,
+          product_price: item.discount_price,
+          amount: 1
+        }
+
+      }).then(res => {
+        alert('加入購物車成功')
+        //  this.$router.push('/home/homepage')
+        console.log(res)
+        if (res.data.status == 200) {
+
+          //   this.$router.push('/home/homepage')
+        } else {
+          // console.log(res.data)
+        }
+      })
     },
 
-  
-   
+
+
   },
   watch: {
     products() {
