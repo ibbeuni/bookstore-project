@@ -144,7 +144,7 @@ export default {
   mounted() {
     axios.get('http://127.0.0.1:3000/login_status').then(res => {
       this.memberData = res.data;
-      console.log(this.memberData)
+      // console.log(this.memberData)
     })
     // 判斷是否為登入狀態
     // let userName = localStorage.getItem('token')
@@ -158,7 +158,7 @@ export default {
       this.pushData()
     },
     clearSearch(){
-      console.log("12321321")
+      console.log("clearSearch")
       this.searchText = ""
     },
     toShoppingPage() {
