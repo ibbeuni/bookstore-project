@@ -22,12 +22,12 @@
           </div>
           <!-- 搜尋匡 -->
           <div class="search-input-wrap">
-            <input
-              v-model="searchText"
-              type="search"
-              title="請輸入關鍵字"
-              placeholder="熱門關鍵字"
-            />
+            <input 
+              v-model="searchText" 
+              type="search" 
+              title="請輸入關鍵字" 
+              placeholder="熱門關鍵字" 
+              @keyup.enter="pushData" />
           </div>
           <!-- 放大鏡搜尋按鈕 -->
           <button @click="pushData" class="srh-btn">
@@ -37,19 +37,11 @@
         <!-- 購物車、會員icon -->
         <div class="user-menu-list">
           <div class="user-menu-item">
-            <font-awesome-icon
-              @click="toShoppingPage"
-              icon="fa-solid fa-cart-shopping"
-              size="2x"
-            />
+            <font-awesome-icon @click="toShoppingPage" icon="fa-solid fa-cart-shopping" size="2x" />
           </div>
           <!-- TODO LOGIN後，加上li.user_menu_item [login] class -->
           <div class="user-menu-item user-icon">
-            <font-awesome-icon
-              @click="toMemberPage"
-              icon="fa-solid fa-user"
-              size="xl"
-            />
+            <font-awesome-icon @click="toMemberPage" icon="fa-solid fa-user" size="xl" />
           </div>
         </div>
       </div>
@@ -143,7 +135,7 @@ export default {
     };
   },
   mounted() {
-    
+
     this.token = localStorage.getItem('token')
     console.log("this token:" + this.token)
     if (this.token == null) {
@@ -154,10 +146,10 @@ export default {
       this.notLogin = false
       console.log(this.notLogin)
     }
-    
+
     axios.get('http://127.0.0.1:3000/logintable').then(res => {
       this.memberData = res.data;
-      this.memberData.forEach( member => {
+      this.memberData.forEach(member => {
         if (member.member_token == this.token) {
           // console.log('yes')  // 測試用
           this.userName = member.member_name
@@ -166,11 +158,11 @@ export default {
     })
   },
   methods: {
-    clickBestList(){
+    clickBestList() {
       this.clearSearch()
       this.pushData()
     },
-    clearSearch(){
+    clearSearch() {
       console.log("clearSearch")
       this.searchText = ""
       // this.$router.go(0)
@@ -183,8 +175,8 @@ export default {
     },
     handleScroll() {
       let headerHight = document.getElementById("header").offsetHeight;
-      this.fixed = true ;
-      this.hidden = window.scrollY > (headerHight/4) ? true : false;
+      this.fixed = true;
+      this.hidden = window.scrollY > (headerHight / 4) ? true : false;
     },
     pushData() {
       this.$emit("searchText", this.searchText);
@@ -204,7 +196,10 @@ export default {
       this.memberData = '';
       this.$router.go(0);
       console.log(this.memberData)
-    }
+    },
+    // keyHandler(e) {
+    //   console.log(e.keycode)
+    // }
   },
 };
 </script>
