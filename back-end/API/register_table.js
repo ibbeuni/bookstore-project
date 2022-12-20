@@ -22,7 +22,7 @@ exports.post = (req, res) => {
         if(err){
             return res.send({
                 status:400,
-                message:'register fail',
+                message:err,
             })
         }res.send({
             status:200,

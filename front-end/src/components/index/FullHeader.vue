@@ -86,30 +86,30 @@
         <ul class="sub-list">
           <li class="sub_item">
             <small>
-              <router-link to="/home/register">加入會員</router-link>
-              <!-- <router-link to="/home/register" v-if='notLogin'>加入會員</router-link> -->
+              <!-- <router-link to="/home/register">加入會員</router-link> -->
+              <router-link to="/home/register" v-if='notLogin'>加入會員</router-link>
             </small>
           </li>
-          <li><small>・</small></li>
-          <!-- <li class="sub_item">
-            <small>
-              <router-link to="/home/register" v-if='!notLogin'> {{ userName }} </router-link>
-            </small>
-          </li> -->
           <!-- <li><small>・</small></li> -->
           <li class="sub_item">
             <small>
-              <router-link to="/home/login">會員登入</router-link>
-              <!-- <router-link to="/home/login" v-if='notLogin'>會員登入</router-link> -->
+              <router-link to="/home/register" v-if='!notLogin'> {{ userName }}，歡迎回來！ </router-link>
             </small>
           </li>
           <li><small>・</small></li>
-          <!-- <li class="sub_item">
+          <li class="sub_item">
             <small>
-              <a href="" v-if='!notLogin' @click.prevent="logout">會員登出</a>
+              <!-- <router-link to="/home/login">會員登入</router-link> -->
+              <router-link to="/home/login" v-if='notLogin'>會員登入</router-link>
             </small>
-          </li> -->
+          </li>
           <!-- <li><small>・</small></li> -->
+          <li class="sub_item">
+            <small>
+              <a href="" v-if='!notLogin' @click.prevent="logOut">會員登出</a>
+            </small>
+          </li>
+          <li><small>・</small></li>
           <li class="sub_item">
             <small>
               <router-link to="/home/faq">Q&A</router-link>
@@ -136,21 +136,39 @@ export default {
       test: [1, 2, 3, 4],
       searchText: "",
       // 登入功能
-      // memberData: '',
-      // userName: '',
-      // notLogin: true,
+      memberData: '',
+      userName: '',
+      token: '',
+      notLogin: true,
     };
   },
   mounted() {
+    
+    this.token = localStorage.getItem('token')
+    console.log("this.token:" + this.token)
+    if (this.token == null) {
+      this.notLogin = true
+      console.log(this.notLogin)
+    }
+    else {
+      this.notLogin = false
+      console.log(this.notLogin)
+    }
+    
     axios.get('http://127.0.0.1:3000/login_status').then(res => {
       this.memberData = res.data;
-      // console.log(this.memberData)
+      // console.log(this.memberData[0].member_name)
+      if (this.memberData[0].member_token == this.token) {
+        this.userName = this.memberData[0].member_name
+        console.log(this.userName)
+      }
     })
     // 判斷是否為登入狀態
     // let userName = localStorage.getItem('token')
     // console.log("test"+ userName)
     // this.userName = userName ? userName : '未登入'
     // this.notLogin = userName ? false : true
+
   },
   methods: {
     clickBestList(){
@@ -160,6 +178,7 @@ export default {
     clearSearch(){
       console.log("clearSearch")
       this.searchText = ""
+      this.$router.go(0)
     },
     toShoppingPage() {
       this.$router.push("/home/shoppingcart");
@@ -183,11 +202,12 @@ export default {
       }
       // 如果是從別頁面？
     },
-    // logout() {
-    //   localStorage.removeItem('userName');
-    //   localStorage.removeItem('token');
-    //   this.$router.go(0)
-    // }
+    logOut() {
+      localStorage.removeItem('userName');
+      localStorage.removeItem('token');
+      this.$router.go(0)
+      this.notLogin = false
+    }
   },
 };
 </script>
