@@ -87,15 +87,29 @@
           <li class="sub_item">
             <small>
               <router-link to="/home/register">加入會員</router-link>
+              <!-- <router-link to="/home/register" v-if='notLogin'>加入會員</router-link> -->
             </small>
           </li>
           <li><small>・</small></li>
+          <!-- <li class="sub_item">
+            <small>
+              <router-link to="/home/register" v-if='!notLogin'> {{ userName }} </router-link>
+            </small>
+          </li> -->
+          <!-- <li><small>・</small></li> -->
           <li class="sub_item">
             <small>
               <router-link to="/home/login">會員登入</router-link>
+              <!-- <router-link to="/home/login" v-if='notLogin'>會員登入</router-link> -->
             </small>
           </li>
           <li><small>・</small></li>
+          <!-- <li class="sub_item">
+            <small>
+              <a href="" v-if='!notLogin' @click.prevent="logout">會員登出</a>
+            </small>
+          </li> -->
+          <!-- <li><small>・</small></li> -->
           <li class="sub_item">
             <small>
               <router-link to="/home/faq">Q&A</router-link>
@@ -121,12 +135,22 @@ export default {
       hidden: false,
       test: [1, 2, 3, 4],
       searchText: "",
+      // 登入功能
+      // memberData: '',
+      // userName: '',
+      // notLogin: true,
     };
   },
   mounted() {
-    axios.get('http://127.0.0.1:3000/login_status')
-    
-
+    axios.get('http://127.0.0.1:3000/login_status').then(res => {
+      this.memberData = res.data;
+      // console.log(this.memberData)
+    })
+    // 判斷是否為登入狀態
+    // let userName = localStorage.getItem('token')
+    // console.log("test"+ userName)
+    // this.userName = userName ? userName : '未登入'
+    // this.notLogin = userName ? false : true
   },
   methods: {
     clickBestList(){
@@ -134,7 +158,7 @@ export default {
       this.pushData()
     },
     clearSearch(){
-      console.log("12321321")
+      console.log("clearSearch")
       this.searchText = ""
     },
     toShoppingPage() {
@@ -157,9 +181,13 @@ export default {
           name: "BestList",
         });
       }
-
       // 如果是從別頁面？
     },
+    // logout() {
+    //   localStorage.removeItem('userName');
+    //   localStorage.removeItem('token');
+    //   this.$router.go(0)
+    // }
   },
 };
 </script>
