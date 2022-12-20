@@ -74,6 +74,7 @@ export default{
         }).then(res=>{
           
           if(res.data.status == 200) {
+            
             localStorage.setItem('token', res.data.token)
             alert('請先登錄會員資料')
             this.$router.push({

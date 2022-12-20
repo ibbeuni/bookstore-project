@@ -38,14 +38,9 @@
                           </div>
 
                           <div class="itemlist flex">
-                              <div><label class='labl' for="changePassword">新密碼：</label></div>
+                              <div><label class='labl' for="changePassword">密碼：</label></div>
                               <div><input  type="text" id="changePassword"> </div>
                           </div>
-                          <div class="itemlist flex">
-                              <div><label class='labl' for="confirmPassword">密碼確認：</label></div>
-                              <div><input  type="text" id="changePassword"> </div>
-                          </div>
-                          <p class="nh6 warning">*新增會員資料不需填寫。密碼限制八位數包含英文及數字</p>
                           
                           <div class="itemlist flex">
                               <div><span>姓名：</span></div>
@@ -110,12 +105,18 @@ export default{
   }, 
   mounted(){
     
-     axios.get('http://127.0.0.1:3000/member').then(res =>{
-      localStorage.getItem('token')
+    let obj = {token:localStorage.getItem('token')}
+   
+     axios.post('http://127.0.0.1:3000/member/post',obj).then(res =>{
+     
+      console.log(res)
       this.user = res.data;
-      console.log(res.data[0])
       this.id=res.data[0].member_id;
-    //  console.log(res.data)
+      this.name=res.data[0].member_name;
+      this.phone=res.data[0].member_phone;
+      this.birthday=res.data[0].member_birthday;
+      this.address=res.data[0].member_address;
+     
       
       
      }).catch(err=>{

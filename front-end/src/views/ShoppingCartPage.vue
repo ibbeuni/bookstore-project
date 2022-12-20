@@ -159,9 +159,11 @@ export default {
        }
     },
     remove:function(pdt){
+      console.log(pdt)
       var newIndex = "";
       this.pdt.forEach(function(item, key){
-        if(pdt.name == item.name){
+        console.log("apple:",pdt.product_id,item.product_id);
+        if(pdt.product_id == item.product_id){
           newIndex = key
         }
       })
