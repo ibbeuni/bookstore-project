@@ -83,13 +83,13 @@ const routes = [
                 path: 'member',
                 name: 'MemberHomePage',
                 component: MemberHomePage,
-                meta: {requiresAuth: true}
+                // meta: {requiresAuth: true}
             },
             {
                 path: 'shoppingcart',
                 name: 'ShoppingCartPage',
                 component: ShoppingCartPage,
-                meta: {requiresAuth: true}
+                // meta: {requiresAuth: true}
             },
             {
                 path: 'register',
@@ -213,7 +213,7 @@ router.beforeEach((to, from, next) => {
             next()
         }else{
             next({
-                path:'/home/login'
+                path:'/home/member'
             })
         }
     }else{

@@ -27,6 +27,31 @@
             <span class="sml_word">英文、數字和特殊字母三種組合8位字符，不允許使用空格和三個連續字元或重複字元</span>
             </div>
 
+            <div class="for_wraping_title">
+            <span class="words_setting">姓名 *</span>
+            </div>
+            <div class="for_wraping">
+            <input v-model = member.name class="inputInner" type="text" placeholder="請輸入您的姓名">
+            </div>
+            <div class="for_wraping_title">
+            <span class="words_setting">聯絡方式 *</span>
+            </div>
+            <div class="for_wraping">
+            <input v-model = member.phone class="inputInner" type="phone" placeholder="請輸入您的手機">
+            </div>
+            <div class="for_wraping_title">
+            <span class="words_setting">生日 *</span>
+            </div>
+            <div class="for_wraping">
+            <input v-model = member.birthday class="inputInner" type="text" placeholder="0000-00-00">
+            </div>
+            <div class="for_wraping_title">
+            <span class="words_setting">住址 *</span>
+            </div>
+            <div class="for_wraping">
+            <input v-model = member.address class="inputInner" type="text" placeholder="請輸入聯絡地址">
+            </div>
+
 
             
         <br><br>
@@ -54,21 +79,28 @@ export default {
             member:{
                 id:'',
                 password:'',
+                name:'',
+                phone:'',
+                birthday:'',
+                address:''
                 
             }
         }
     },
     methods:{
         goRegister() {
-            if(this.member.id == ""){
-                alert('請輸入帳號')
-            }else if (this.member.password == ''){
-                alert('請輸入密碼')
+            if(this.member.id == "" || this.member.password =="" || this.member.name =="" || this.member.phone =="" || this.member.birthday=="" ||this.member.address=="" ){
+                alert('請輸入會員資訊')
             }else{
                 axios.post('http://127.0.0.1:3000/registertable',{
                     params:{
                         id: this.member.id,
-                        password: this.member.password
+                        password: this.member.password,
+                        name:this.member.name,
+                        phone:this.member.phone,
+                        birthday:this.member.birthday,
+                        address:this.member.address
+                        
                     }
                 
                 }).then(res => {
@@ -77,7 +109,7 @@ export default {
                         console.log(res.data)
                         alert('註冊成功')
                         this.$router.push('/home/login')
-                    }else{
+ 9                   }else{
                         alert('帳號已存在，請登入，或使用其他帳號進行註冊')
                     }
                     
