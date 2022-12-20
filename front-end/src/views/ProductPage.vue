@@ -116,7 +116,7 @@
                                     <div>
                                         <p class="nb booksName">{{ otherbooks[index].product_name }}</p>
                                         <br>
-                                        <p class="author">{{ otherbooks[index].auther }}</p>
+                                        <p class="author">作者：{{ otherbooks[index].auther }}</p>
                                     </div>
                                 </div>
                             </a>
@@ -233,25 +233,28 @@
                             <span class="nh2 nb">新書推薦</span>
                         </div>
                         <div>
-                            <a href="">更多 > </a>
+                            <a href="/#/home/best/">更多 > </a>
                         </div>
 
                     </div>
                     <div>
-                        <a class="thisClassNewBookTag_a" href="">
-                            <div class="thisClassNewBookInnerDiv">
-                                <div>
-                                    <img class="thisClassNewBookImg" src="../assets/img/product/9796074_R.webp" alt="">
+                        <div class="newbooks" v-for="(item, index) in newbooks" :key="index">
+                            <a class="thisClassNewBookTag_a" href="">
+                                <div class="thisClassNewBookInnerDiv">
+                                    <div>
+                                        <img class="thisClassNewBookImg"
+                                            :src="('http://127.0.0.1:3000/img/books/' + newbooks[index].img_cover + '.png')"
+                                            alt="">
+                                    </div>
+                                    <div class="thisClassNewBookInformation">
+                                        <p class="nb booksName">{{ newbooks[index].product_name }}</p>
+                                        <br>
+                                        <p class="author">作者：{{ newbooks[index].auther }}</p>
+                                        <!-- <P>NTD300</P> -->
+                                    </div>
                                 </div>
-                                <div class="thisClassNewBookInformation">
-                                    <p class="nb">人子</p>
-                                    <br>
-                                    <p>作者：鹿橋</p>
-                                    <!-- <P>NTD300</P> -->
-                                </div>
-                            </div>
-                        </a>
-
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <!-- 相關影片推薦 -->
@@ -323,6 +326,7 @@ export default {
             id: this.$route.params.id,
             allbooks: '',
             otherbooks: '',
+            newbooks: '',
             item: '',
             video: '',
             // 放大區
@@ -473,6 +477,7 @@ export default {
             }
             shuffleArray(a);
             this.otherbooks = a.slice(0, 4);
+            this.newbooks = a.slice(10, 14);
             console.log(a);
             console.log(this.otherbooks);
             console.log(res.data);
@@ -864,14 +869,24 @@ table {
 
 .booksName,
 .author {
-    overflow: hidden;
+    /* overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; */
+    display: block;
+  letter-spacing:0;
+  line-height:20px;
+  overflow:hidden;
+  text-overflow:clip;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;  
+  -webkit-line-clamp:2; 
 }
 
-.author {
+/* .author {
     text-align: end;
-}
+} */
 
 /* </你可能也喜歡> */
 
@@ -1046,6 +1061,10 @@ body:has(#L4:checked) .L4 {
 /* <右側這個類別的新書> */
 #newBook {
     margin: 40px;
+}
+
+.newbooks{
+    margin-top: 10px;
 }
 
 .thisClassNewBookTag_a {
