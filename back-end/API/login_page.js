@@ -38,7 +38,7 @@ const token = Math.floor(Math.random()*10000000000000000000)
            
             
         }else{
-            console.log( err)
+            console.log(err)
             res.send({
                 status:202,
                 message:'something might be wrong'

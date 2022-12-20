@@ -146,7 +146,7 @@ export default {
       this.notLogin = false
       console.log(this.notLogin)
     }
-
+    // 檢查登入狀態
     axios.get('http://127.0.0.1:3000/logintable').then(res => {
       this.memberData = res.data;
       this.memberData.forEach(member => {
@@ -164,8 +164,8 @@ export default {
     },
     clearSearch() {
       console.log("clearSearch")
-      this.searchText = ""
-      // this.$router.go(0)
+      this.searchText = ""   // 清空搜尋欄內容
+      this.$router.go(0)     // 重新整理畫面
     },
     toShoppingPage() {
       this.$router.push("/home/shoppingcart");
@@ -190,12 +190,12 @@ export default {
       // 如果是從別頁面？
     },
     logOut() {
-      localStorage.removeItem('userName');
+      // localStorage.removeItem('userName');
       localStorage.removeItem('token');
       this.notLogin = false;
       this.memberData = '';
       this.$router.go(0);
-      console.log(this.memberData)
+      console.log('test'+this.memberData)
     },
     // keyHandler(e) {
     //   console.log(e.keycode)
