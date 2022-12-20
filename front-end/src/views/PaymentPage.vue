@@ -113,16 +113,16 @@ export default {
     console.log("this token:" + this.token)
     axios.get('http://127.0.0.1:3000/payment').then(res => {
       this.user = res.data;
-      console.log("test:" + this.user);
-      // this.user.forEach(member => {
-      //   if (member.member_token == this.token) {
-      //     console.log('yes')  // 測試用
-      //     this.user.id = member.member_id;
-      //     this.user.name = member.member_name;
-      //     this.user.phone = member.member_phone;
-      //     this.user.address = member.member_address;
-      //   }
-      // })
+      // console.log("test:" + this.user);
+      this.user.forEach(member => {
+        if (member.member_token == this.token) {
+          console.log(member.member_name)  // 測試用
+          this.user.id = member.member_id;
+          this.user.name = member.member_name;
+          this.user.phone = member.member_phone;
+          this.user.address = member.member_address;
+        }
+      })
 
       // this.user.id=res.data[0].member_id;
       // this.user.name=res.data[0].member_name;
