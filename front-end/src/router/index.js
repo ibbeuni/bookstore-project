@@ -210,10 +210,12 @@ Vue.use(router)
 router.beforeEach((to, from, next) => {
     if ( to.meta.requiresAuth === true) {
         if(localStorage.getItem('token')){
-            next()
+            next({
+                path:'/home/homepage'
+            })
         }else{
             next({
-                path:'/home/member'
+                path:'/home/login'
             })
         }
     }else{

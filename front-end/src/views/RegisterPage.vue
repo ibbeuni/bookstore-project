@@ -10,7 +10,7 @@
         <div class="info_inner">
             <h2>請輸入您的會員資訊</h2>
             <div class="for_wraping_title">
-            <span class="words_setting">ID *</span>
+            <span class="words_setting">信箱 *</span>
             </div>
             <div class="for_wraping">
             <input v-model = member.id class="inputInner" type="email" placeholder="請輸入郵件">

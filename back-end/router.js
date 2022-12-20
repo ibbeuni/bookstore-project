@@ -34,7 +34,7 @@ router.use('/acc',accRoute)
 router.use('/book',bookRoute)
 
 
-router.get('/member', member.get)
+// router.get('/member', member.get)
 router.post('/member/post', member.post)
 router.get('/videotable', videotable.get)
 router.get('/videodetail:id', videodetail.get)

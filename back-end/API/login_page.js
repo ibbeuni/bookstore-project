@@ -33,7 +33,7 @@ const token = Math.floor(Math.random()*10000000000000000000)
                 res.send({
                 status:200,
                 message:'login succeed',
-                token: token, 
+                token: token
             })})
             
         }else{

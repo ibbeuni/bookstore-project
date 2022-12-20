@@ -22,6 +22,7 @@ exports.post = (req, res) => {
         if(err){
             return res.send({
                 status:400,
+                info:'fail',
                 message:err,
             })
         }res.send({
