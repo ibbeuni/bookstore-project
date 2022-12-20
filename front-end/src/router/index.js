@@ -208,8 +208,11 @@ const router = new VueRouter({
 });
 Vue.use(router)
 router.beforeEach((to, from, next) => {
+
     if ( to.meta.requiresAuth === true) {
+
         if(localStorage.getItem('token')){
+            console.log(localStorage.getItem('token'))
             next()
         }else{
             next({
