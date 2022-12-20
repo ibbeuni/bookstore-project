@@ -83,13 +83,13 @@ const routes = [
                 path: 'member',
                 name: 'MemberHomePage',
                 component: MemberHomePage,
-                // meta: {requiresAuth: true}
+                meta: {requiresAuth: true}
             },
             {
                 path: 'shoppingcart',
                 name: 'ShoppingCartPage',
                 component: ShoppingCartPage,
-                // meta: {requiresAuth: true}
+                meta: {requiresAuth: true}
             },
             {
                 path: 'register',
@@ -210,9 +210,7 @@ Vue.use(router)
 router.beforeEach((to, from, next) => {
     if ( to.meta.requiresAuth === true) {
         if(localStorage.getItem('token')){
-            next({
-                path:'/home/homepage'
-            })
+            next()
         }else{
             next({
                 path:'/home/login'

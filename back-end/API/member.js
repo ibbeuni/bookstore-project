@@ -21,9 +21,11 @@ exports.post = (req, res) => {
         }
         res.send(data)
     })
+
+  
 }
 
-exports.post = (req, res) => {
+exports.update = (req, res) => {
     console.log(res.body)
 
     var sql1 = 'update membership_table set member_name =?, member_phone=?, member_birthday=?, member_address=? where member_token=?'

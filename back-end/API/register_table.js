@@ -10,7 +10,7 @@ conn.connect();
 
 exports.post = (req, res) => {
 
-    let sql2 = "INSERT INTO membership_table (member_id, member_password, member_name, member_phone, member_birthday, member_address) VALUES (?,?,?,?,?,?)"
+    let sql2 = "INSERT INTO membership_table (member_id, member_password, member_name, member_phone, member_birthday, member_address) VALUES (?,?,?,?,?,?) "
     let val = [req.body.params.id, req.body.params.password, req.body.params.name, req.body.params.phone, req.body.params.birthday, req.body.params.address]
 
     conn.query(sql2, val, (err, data) =>{
