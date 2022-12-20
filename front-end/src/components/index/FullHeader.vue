@@ -159,15 +159,10 @@ export default {
       this.memberData = res.data;
       this.memberData.forEach( member => {
         if (member.member_token == this.token) {
-          // console.log('yes')  // 測試
+          // console.log('yes')  // 測試用
           this.userName = member.member_name
         }
       })
-      // console.log('test:'+ this.memberData[0].member_name)
-      // if (this.memberData[0].member_token == this.token) {
-      //   this.userName = this.memberData[0].member_name
-      //   console.log(this.userName)
-      // }
     })
   },
   methods: {
