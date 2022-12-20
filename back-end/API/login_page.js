@@ -46,6 +46,15 @@ const token = Math.floor(Math.random()*10000000000000000000)
         }
     })
 
-    
 
+}
+
+exports.get = (req, res) => {
+    var sql = 'SELECT * FROM membership_table ORDER BY member_addTime DESC'
+    db.query(sql, (err, data) => {
+        if(err) {
+            return res.send('錯誤:' + err.message)
+        }
+        res.send(data)
+    })
 }

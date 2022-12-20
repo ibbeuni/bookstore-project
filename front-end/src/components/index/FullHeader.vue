@@ -93,7 +93,7 @@
           <!-- <li><small>・</small></li> -->
           <li class="sub_item">
             <small>
-              <router-link to="/home/register" v-if='!notLogin'> {{ userName }}，歡迎回來！ </router-link>
+              <router-link to="/home/register" v-if='!notLogin'>{{ userName }}，歡迎回來！</router-link>
             </small>
           </li>
           <li><small>・</small></li>
@@ -145,7 +145,7 @@ export default {
   mounted() {
     
     this.token = localStorage.getItem('token')
-    console.log("this.token:" + this.token)
+    console.log("this token:" + this.token)
     if (this.token == null) {
       this.notLogin = true
       console.log(this.notLogin)
@@ -155,20 +155,15 @@ export default {
       console.log(this.notLogin)
     }
     
-    axios.get('http://127.0.0.1:3000/login_status').then(res => {
+    axios.get('http://127.0.0.1:3000/logintable').then(res => {
       this.memberData = res.data;
-      // console.log(this.memberData[0].member_name)
-      if (this.memberData[0].member_token == this.token) {
-        this.userName = this.memberData[0].member_name
-        console.log(this.userName)
-      }
+      this.memberData.forEach( member => {
+        if (member.member_token == this.token) {
+          // console.log('yes')  // 測試用
+          this.userName = member.member_name
+        }
+      })
     })
-    // 判斷是否為登入狀態
-    // let userName = localStorage.getItem('token')
-    // console.log("test"+ userName)
-    // this.userName = userName ? userName : '未登入'
-    // this.notLogin = userName ? false : true
-
   },
   methods: {
     clickBestList(){
@@ -178,7 +173,7 @@ export default {
     clearSearch(){
       console.log("clearSearch")
       this.searchText = ""
-      this.$router.go(0)
+      // this.$router.go(0)
     },
     toShoppingPage() {
       this.$router.push("/home/shoppingcart");
@@ -205,8 +200,10 @@ export default {
     logOut() {
       localStorage.removeItem('userName');
       localStorage.removeItem('token');
-      this.$router.go(0)
-      this.notLogin = false
+      this.notLogin = false;
+      this.memberData = '';
+      this.$router.go(0);
+      console.log(this.memberData)
     }
   },
 };
