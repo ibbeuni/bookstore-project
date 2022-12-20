@@ -74,12 +74,11 @@ export default{
           
           if(res.data.status == 200) {
            localStorage.setItem('token', res.data.token)
-           
            if(this.token !== null){
              this.$router.push('/home/homepage')
             this.$router.go(0)
               }
-          console.log(this.memberData[0].member_name)
+          // console.log(this.memberData[0].member_name)
 
           }else{
             alert('帳號或密碼錯誤', '登入失敗',);
