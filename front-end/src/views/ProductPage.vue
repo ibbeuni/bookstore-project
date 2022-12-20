@@ -244,9 +244,10 @@
                                     <img class="thisClassNewBookImg" src="../assets/img/product/9796074_R.webp" alt="">
                                 </div>
                                 <div class="thisClassNewBookInformation">
-                                    <p>書名</p>
-                                    <p>作者</p>
-                                    <P>NTD300</P>
+                                    <p class="nb">人子</p>
+                                    <br>
+                                    <p>作者：鹿橋</p>
+                                    <!-- <P>NTD300</P> -->
                                 </div>
                             </div>
                         </a>

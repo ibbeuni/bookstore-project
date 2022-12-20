@@ -1,132 +1,143 @@
 <template>
-    <div>
-        <br><br><br><br><br><br><br><br>
-        <div id="mainContent" class="flex">
-            <div id="navLeft">
-            <div id="userInfoDiv">
-                  <div class='imgCtrl'>
-                      <img id="userPhoto" v-if='image' :src='image'  >
-                  </div>
-                  <div class='filrCtrl'>
-                    <font-awesome-icon icon="fa-solid fa-pen-to-square" />
-                    <input type="file" @change="fileSelected" >
-                  </div>
-              </div>
-              <ul class="nh3 nb">
-                  <li><a href="/#/home/member" >會員資料</a></li>
-                  <li><a href="/#/home/shoppingcart">購物車</a></li>
-                  <li><a href="">訂單查詢</a></li>
-                  <li><a href="">追蹤清單</a></li>
-                  <li><a href="">貨到通知</a></li>
-                  <li><a href="">訂閱/取消電子報</a></li>
-              </ul>
-
-        </div>
-            <!-- !可變換元件區域 -->
-        <div >
-            <div id="canChangeDiv">
-              <div id="infoDiv"> 
-                <p id="componenTtital" class="nh1 nb">付款</p>
-                  <div id="memberInfo">
-                    <div id="memberInfoDiv">
-                          <div>
-                              <p class="nh2 nb">付款方式</p>
-                          </div>
-                          <div class="itemlist flex">
-                              <div><input type="radio" class="userName"></div>
-                              <div><span class="nh3 nb">貨到付款</span></div>
-                          </div>
-                          <div class="memberInfoDiv">
-                          <div>
-                              <p class="nh2 nb">配送方式</p>
-                          </div>
-                          <div class="itemlist flex" >
-                              <div><input type="radio"   class="userName"></div>
-                              <div><span class="nh3 nb">宅配</span></div>
-                            </div> 
-                            <div class="itemlist flex" > 
-                              <div><input type="radio"  class="userName"></div>
-                              <div><span class="nh3 nb">7-11取貨付款</span></div>
-                            </div>
-                          </div>
-                      </div>
-                      <div id="memberInfoDiv">
-                          <div>
-                              <p class="nh2 nb">付款資訊</p>
-                          </div>
-                          <div class="itemlist flex">
-                              <div>
-                                <span >帳號 / ID：</span> 
-                              </div>
-                              <p>{{user.id}}</p>
-                          </div>
-                          <div class="itemlist flex">
-                              <div><span>姓名：</span></div>
-                              <div><input  v-model="user.name" type="text" id="userName"></div>
-                          </div>
-                          <div class="itemlist flex">
-                              <div><span>手機號碼：</span></div>
-                              <div><input v-model="user.phone" type="text" id="userPhone">
-                              </div>
-                          </div>
-                          <div class="itemlist flex">
-                              <div><span>住址：</span></div>
-                              <div><input v-model="user.address" type="text" id="useraddress"></div>
-                          </div>
-                          <div id="submitButton">
-                              <div>
-                                  <button class="btn btn-outline-secondary" @click="confirmOrder">訂單確認</button>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+  <div>
+    <br><br><br><br><br><br><br><br>
+    <div id="mainContent" class="flex">
+      <div id="navLeft">
+        <div id="userInfoDiv">
+          <div class='imgCtrl'>
+            <img id="userPhoto" v-if='image' :src='image'>
+          </div>
+          <div class='filrCtrl'>
+            <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+            <input type="file" @change="fileSelected">
           </div>
         </div>
-       </div>
-           
-            
-            <!-- !/可變換元件區域 -->
-        
-        <br><br><br><br><br><br><br><br><br><br>
+        <ul class="nh3 nb">
+          <li><a href="/#/home/member">會員資料</a></li>
+          <li><a href="/#/home/shoppingcart">購物車</a></li>
+          <li><a href="">訂單查詢</a></li>
+          <li><a href="">追蹤清單</a></li>
+          <li><a href="">貨到通知</a></li>
+          <li><a href="">訂閱/取消電子報</a></li>
+        </ul>
+
+      </div>
+      <!-- !可變換元件區域 -->
+      <div>
+        <div id="canChangeDiv">
+          <div id="infoDiv">
+            <p id="componenTtital" class="nh1 nb">付款</p>
+            <div id="memberInfo">
+              <div id="memberInfoDiv">
+                <div>
+                  <p class="nh2 nb">付款方式</p>
+                </div>
+                <div class="itemlist flex">
+                  <div><input type="radio" class="userName"></div>
+                  <div><span class="nh3 nb">貨到付款</span></div>
+                </div>
+                <div class="memberInfoDiv">
+                  <div>
+                    <p class="nh2 nb">配送方式</p>
+                  </div>
+                  <div class="itemlist flex">
+                    <div><input type="radio" class="userName"></div>
+                    <div><span class="nh3 nb">宅配</span></div>
+                  </div>
+                  <div class="itemlist flex">
+                    <div><input type="radio" class="userName"></div>
+                    <div><span class="nh3 nb">7-11取貨付款</span></div>
+                  </div>
+                </div>
+              </div>
+              <div id="memberInfoDiv">
+                <div>
+                  <p class="nh2 nb">付款資訊</p>
+                </div>
+                <div class="itemlist flex">
+                  <div>
+                    <span>帳號 / ID：</span>
+                  </div>
+                  <p>{{ user.id }}</p>
+                </div>
+                <div class="itemlist flex">
+                  <div><span>姓名：</span></div>
+                  <div><input v-model="user.name" type="text" id="userName"></div>
+                </div>
+                <div class="itemlist flex">
+                  <div><span>手機號碼：</span></div>
+                  <div><input v-model="user.phone" type="text" id="userPhone">
+                  </div>
+                </div>
+                <div class="itemlist flex">
+                  <div><span>住址：</span></div>
+                  <div><input v-model="user.address" type="text" id="useraddress"></div>
+                </div>
+                <div id="submitButton">
+                  <div>
+                    <button class="btn btn-outline-secondary" @click="confirmOrder">訂單確認</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+
+    <!-- !/可變換元件區域 -->
+
+    <br><br><br><br><br><br><br><br><br><br>
+  </div>
 </template>
   
 <script>
 import axios from 'axios'
 
-export default{
-    data(){
-        return{
-        user:{
-            id:"",
-            name:"",
-            phone:"",
-            address:""
-        },
-        image:""
-        
-        }
-    },
-      mounted(){
-    
-     axios.get('http://127.0.0.1:3000/payment').then(res =>{
-      this.user = res.data;
-      
-      this.user.id=res.data[0].member_id;
-      this.user.name=res.data[0].member_name;
-      this.user.phone=res.data[0].member_phone;
-      this.user.address=res.data[0].member_address;
-      console.log(res.data[0].address)
-      console.log(res.data[0].member_id)
-    
-     }).catch(err=>{
-      console.log('fail' + err)
-     })
-    
-     
+export default {
+  data() {
+    return {
+      user: {
+        id: "",
+        name: "",
+        phone: "",
+        address: ""
+      },
+      image: "",
+      token: '',
+    }
   },
-   methods: {
+  mounted() {
+    this.token = localStorage.getItem('token')
+    console.log("this token:" + this.token)
+    axios.get('http://127.0.0.1:3000/payment').then(res => {
+      this.user = res.data;
+      console.log("test:" + this.user);
+      // this.user.forEach(member => {
+      //   if (member.member_token == this.token) {
+      //     console.log('yes')  // 測試用
+      //     this.user.id = member.member_id;
+      //     this.user.name = member.member_name;
+      //     this.user.phone = member.member_phone;
+      //     this.user.address = member.member_address;
+      //   }
+      // })
+
+      // this.user.id=res.data[0].member_id;
+      // this.user.name=res.data[0].member_name;
+      // this.user.phone=res.data[0].member_phone;
+      // this.user.address=res.data[0].member_address;
+      // console.log(res.data[0].address)
+      // console.log(res.data[0].member_id)
+
+    }).catch(err => {
+      console.log('fail' + err)
+    })
+
+
+  },
+  methods: {
     fileSelected(e) {
       const file = e.target.files.item(0);
       const reader = new FileReader();
@@ -136,11 +147,11 @@ export default{
     imageLoaded(e) {
       this.image = e.target.result;
     },
-    confirmOrder(){
+    confirmOrder() {
       alert('已收到訂單，將盡快為您處理')
       this.$router.push('/home/homepage')
     }
-    }
+  }
 }
 
 </script>
@@ -346,36 +357,37 @@ table {
 /* /歸零CSS */
 /* 影片區內頁css */
 
-.imgCtrl{
- background-image: url('../assets/maruko.png');
+.imgCtrl {
+  background-image: url('../assets/maruko.png');
   width: 150px;
   height: 150px;
 }
+
 .filrCtrl {
-    padding: 4px 10px;
-    height: 30px;
-    line-height: 20px;
-    position: relative;
-    cursor: pointer;
-    /* background: #171717; */
-    border: 1px solid #ddd;
-    border-radius: 4px; 
-    overflow: hidden;
-    display: inline-block;
-    *display: inline;
-    *zoom: 1
+  padding: 4px 10px;
+  height: 30px;
+  line-height: 20px;
+  position: relative;
+  cursor: pointer;
+  /* background: #171717; */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1
 }
- 
+
 .filrCtrl input {
-    position: absolute;
-    font-size: 100px;
-    right: 0;
-    top: 0;
-    opacity: 0;
-    filter: alpha(opacity=0);
-    cursor: pointer
+  position: absolute;
+  font-size: 100px;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  cursor: pointer
 }
- 
+
 /* .filrCtrld:hover {
     color: #444;
     background: #eee;
@@ -402,10 +414,12 @@ table {
 #navLeft li {
   margin: 20px;
 }
-#middlepart{
-    display: flex;
-    justify-content: center;
+
+#middlepart {
+  display: flex;
+  justify-content: center;
 }
+
 #canChangeDiv {
   width: 1000px;
   /* background-color: rgb(240, 133, 133); */
@@ -461,17 +475,19 @@ table {
 }
 
 
-#submitButton{
-  border-top:2px black solid ;
+#submitButton {
+  border-top: 2px black solid;
   text-align: center;
 }
-#submitButton>div{
+
+#submitButton>div {
   width: 500px;
   margin: 0 auto;
 }
-#submitButton button{
+
+#submitButton button {
   margin: 15px;
   /* width: 50px; */
-  
+
 }
 </style>
