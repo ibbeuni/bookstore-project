@@ -8,7 +8,8 @@ const getUserList = function () {
             sql,
             function (err, rows) {
                 if (rows === undefined) {
-                    reject(new Error("Error rows is undefined"));
+                    console.log(err)
+                    // reject(new Error("Error rows is undefined"));
                 } else {
                     resolve(rows);
 
@@ -28,7 +29,8 @@ const findById = function(member){
             sql,member['member_id'],
             function (err, rows) {
                 if (err) {
-                    reject(new Error("error"));
+                    console.log(err)
+                    // reject(new Error("error"));
                 } else {
                     resolve(rows);
                 }
@@ -46,7 +48,7 @@ const addMember = function (member) {
 
         db.query(sql, member, (err, data) => {
             if (err) {
-                reject(new Error("error"));
+                console.log(err);
             } else {
                 resolve('success');
             }
@@ -62,7 +64,7 @@ const updateMember = function(member){
 
         db.query(sql, [member,member['member_id']], (err, data) => {
             if (err) {
-                reject(new Error("error"));
+                console.log(err);
             } else {
                 resolve('success');
             }

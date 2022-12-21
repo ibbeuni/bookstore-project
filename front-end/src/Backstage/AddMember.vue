@@ -50,7 +50,7 @@
     methods: {
       addMember() {
         let data = this.memberData;
-        data["member_passwordCfrm"] = "123456";
+       
         axios.post("http://127.0.0.1:3000/acc/", { data }).then((res) => {
           if (res.data == "success" ) {
             alert('成功')
