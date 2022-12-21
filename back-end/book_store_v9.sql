@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2022-12-19 07:33:28
+-- 產生時間： 2022-12-21 06:41:02
 -- 伺服器版本： 10.4.27-MariaDB
 -- PHP 版本： 8.1.12
 
@@ -176,6 +176,7 @@ INSERT INTO `book_table` (`product_id`, `product_name`, `auther`, `original_auth
 
 CREATE TABLE `cart_table` (
   `product_id` int(11) NOT NULL,
+  `product_addTime` timestamp NOT NULL DEFAULT current_timestamp(),
   `img_cover` varchar(50) DEFAULT NULL,
   `product_name` varchar(150) DEFAULT NULL,
   `product_price` int(11) DEFAULT NULL,
@@ -186,9 +187,10 @@ CREATE TABLE `cart_table` (
 -- 傾印資料表的資料 `cart_table`
 --
 
-INSERT INTO `cart_table` (`product_id`, `img_cover`, `product_name`, `product_price`, `amount`) VALUES
-(106, '10601', '你不可不知道的 歐洲藝術與建築風格(四版)', 405, 1),
-(419, '41901', '臺灣作家一百年', 1620, 1);
+INSERT INTO `cart_table` (`product_id`, `product_addTime`, `img_cover`, `product_name`, `product_price`, `amount`) VALUES
+(319, '2022-12-20 15:34:42', '31901', '萬物的另一面：韓國當代藝術家安奎哲隨筆集', 306, 1),
+(410, '2022-12-20 08:08:53', '41001', '存在的 Existent', 540, 1),
+(425, '2022-12-20 08:05:21', '42501', '企鵝黑幫(二版)', 225, 1);
 
 -- --------------------------------------------------------
 
@@ -277,13 +279,39 @@ INSERT INTO `login_table` (`member_id`, `member_password`) VALUES
 
 CREATE TABLE `membership_table` (
   `member_id` char(50) NOT NULL,
+  `member_addTime` timestamp NOT NULL DEFAULT current_timestamp(),
   `member_password` varchar(50) DEFAULT NULL,
   `member_name` varchar(50) DEFAULT NULL,
   `member_phone` varchar(50) DEFAULT NULL,
   `member_birthday` varchar(10) DEFAULT NULL,
   `member_address` varchar(150) DEFAULT NULL,
-  `member_token` varchar(50) NOT NULL
+  `member_token` varchar(50) DEFAULT NULL,
+  `member_remark` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- 傾印資料表的資料 `membership_table`
+--
+
+INSERT INTO `membership_table` (`member_id`, `member_addTime`, `member_password`, `member_name`, `member_phone`, `member_birthday`, `member_address`, `member_token`, `member_remark`) VALUES
+('maruko@gmail.com', '2022-12-20 01:56:18', '123456789', '小丸子', '0987654321', '2020-01-01', '日本', '6051104885805323000', NULL),
+('cat@gmail.com', '2022-12-20 06:43:53', '789456123', '大貓', '0985123654', '2020-10-10', '台中市中區進化北路515號', '146535971278238820', NULL),
+('123@gmail.com', '2022-12-20 07:12:23', '123456798', '大名', '0987654321', '1999-01-01', '台中市西屯區台灣大道81號', NULL, NULL),
+('noel.kitty@gmail.com', '2022-12-20 10:51:55', '456789', '諾拉', '0985145698', '1988-10-23', '台北市錦州街275號', NULL, NULL),
+('simba@gmail.com', '2022-12-20 18:29:31', '000000', '辛巴小子', '0965432178', '1999-01-21', '台中市北區中山路98號', NULL, NULL),
+('ponpon@hotmail.com', '2022-12-21 02:52:28', '123456', '澎澎', '0912569787', '2000-12-31', '新北市新店區北新路269號', NULL, NULL),
+('dinman.chen@yahoo.com.tw', '2022-12-21 03:01:07', '000000', '陳丁滿', '0944123698', '2000-07-22', '屏東市潮州鎮滿州街20號', NULL, NULL),
+('yacho.chu@hotmail.com', '2022-12-21 03:02:50', '789456', '諸葛野口', '0923654789', '2001-12-25', '桃園市林口區中正路188號', NULL, NULL),
+('shanshan.wang@gmail.com', '2022-12-21 03:04:10', '789456123', '王衫衫', '0922365978', '1985-06-25', '台北市中正區羅斯福路10號', NULL, NULL),
+('meihaun.cheng555@yahoo.com.tw', '2022-12-21 03:06:06', '8888888', '張美環', '0955236987', '1989-05-22', '新北市板橋區三民路123號', NULL, NULL),
+('yu.chung@gmail.com', '2022-12-21 03:07:25', '888999', '莊曉雨', '0987452312', '1995-10-04', '台中市南屯區忠勇路10號', NULL, NULL),
+('wang3000@gmail.com', '2022-12-21 03:10:47', '123456789', '王尚豪', '0969124823', '1990-08-04', '嘉義縣中埔鄉吳鳳南路910號', NULL, ''),
+('linmay@gmail.com', '2022-12-21 03:12:34', '123456789', '林郁美', '0911643329', '2001-03-07', '新竹市工業園區工業區一路500號', NULL, ''),
+('bluech11@gmail.com', '2022-12-21 03:15:29', '123456789', '陳添嵐', '0980443969', '1987-01-03', '南投縣埔里鄉埔元一路147號', NULL, NULL),
+('wuwu1988@gmail.com', '2022-12-21 03:18:03', '123456789', '吳元華', '0989775237', '1988-10-05', '宜蘭縣羅東路二巷33號', NULL, NULL),
+('lowlow033@gmail.com', '2022-12-21 03:20:12', '123456789', '羅大辰', '0913576651', '1989-11-24', '苗栗縣頭份區臨頭元路29號', NULL, NULL),
+('ciihhmw@gmail.com', '2022-12-21 03:23:08', '123456789', '江奉伊', '0947216307', '2001-12-11', '雲林縣西螺鎮西湖一路751號', NULL, NULL),
+('highuu@gmail.com', '2022-12-21 03:25:41', '123456789', '高元元', '0911083475', '1985-03-17', '新北市新店區北新路三段205號10樓', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -528,7 +556,7 @@ ALTER TABLE `login_table`
 -- 資料表索引 `membership_table`
 --
 ALTER TABLE `membership_table`
-  ADD PRIMARY KEY (`member_id`);
+  ADD PRIMARY KEY (`member_addTime`);
 
 --
 -- 資料表索引 `order_detail`
