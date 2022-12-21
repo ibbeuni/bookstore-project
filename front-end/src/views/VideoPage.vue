@@ -35,7 +35,6 @@
 
             </div>
             <br><br>
-            <hr>
             <div id="pageButton">
                 <!-- <a href="#" class="previous round">&#8249;</a> -->
                 <!-- <a href="#" class="numberRound">1</a>
@@ -43,11 +42,11 @@
                     <a href="#" class="numberRound">3</a> -->
                 <!-- <a href="#" class="numberRound">3</a> -->
                 <!-- <a href="#" class="next round">&#8250;</a> -->
-                <button class="previous round">&#8249;</button>
+                <button class="previous round-left">&#8249;&#8249;</button>
                 <button @click="pageOne" class="numberRound">1</button>
-                <button @click="pageTwo" class="numberRound">2</button>
+                <button @click="pageTwo" class="numberRound border-right">2</button>
                 <!-- <button class="numberRound">3</button> -->
-                <button @click="nextPage" class="next round">&#8250;</button>
+                <button @click="nextPage" class="next round-right">&#8250;&#8250;</button>
                 <!-- <label for=""><input type="button" value="123"></label> -->
             </div>
             <br><br>
@@ -354,49 +353,74 @@ table {
 /* 換頁按鈕連結樣式 */
 #pageButton {
     text-align: center;
+    margin-top: 50px;
 }
 
 
 
 #pageButton>button:hover,
 #pageButton>a:hover {
-    background-color: #ddd;
-    color: black;
+    /* background-color: #ddd; */
+    background-color: #fff;
+    /* color: black; */
+    color: var(--neutral-color);
 }
 
 .previous {
-    background-color: #f1f1f1;
-    color: black;
+    /* background-color: #f1f1f1; */
+    background-color: #fff;
+    /* color: black; */
+    color: var(--neutral-color);
 }
 
 .next {
     /* background-color: #04AA6D;
     color: white; */
+    background-color: #fff;
+    color: var(--neutral-color);
 }
 
 .pageNumber {
     background-color: #04AA6D;
-    color: black;
+    /* color: black; */
+    color: var(--neutral-color);
 }
 
-.round {
+.round-left {
     text-decoration: none;
     display: inline-block;
-    padding: 8px 16px;
-    border-radius: 150%;
-    border: transparent;
+    /* padding: 8px 16px; */
+    padding: 8px 12px;
+    /* border-radius: 150%; */
+    border-radius: 6px 0 0 6px;
+    /* border: transparent; */
+    border: 1px solid lightgray;
+}
+
+.round-right {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 0 6px 6px 0;
+    border: 1px solid lightgray;
 }
 
 .numberRound {
     text-decoration: none;
     display: inline-block;
     padding: 8px 14px;
-    border-radius: 150%;
-    margin: 0px 5px;
-    border: transparent;
+    /* border-radius: 150%; */
+    /* margin: 0px 5px; */
+    margin: 0;
+    /* border: transparent; */
+    background-color: #fff;
+    border: 1px solid lightgray;
+    border-left: none;
+    color: var(--neutral-color);
+}
 
-
-
+.border-right {
+    border-right: none;
 }
 
 .bookInfo {

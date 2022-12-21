@@ -215,11 +215,12 @@ a {
 }
 
 .instagram {
-    background-color: #D84A62;
+    /* background-color: #f6bd5a; */
+    background-image: linear-gradient(45deg, #f6bd5a 0%, #d93066 55%, #9532b0 100%);
 }
 
 .youtube {
-    background-color: #FE0000;
+    background-color: #FB051C;
 }
 
 .find-us {
