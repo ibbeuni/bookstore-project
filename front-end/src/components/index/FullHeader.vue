@@ -165,7 +165,7 @@ export default {
     clearSearch() {
       console.log("clearSearch")
       this.searchText = ""   // 清空搜尋欄內容
-      this.$router.go(0)     // 重新整理畫面
+      // this.$router.go(0)     // 重新整理畫面
     },
     toShoppingPage() {
       this.$router.push("/home/shoppingcart");

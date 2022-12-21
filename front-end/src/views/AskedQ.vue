@@ -10,13 +10,13 @@
             <div class="card_1">
                 <div class="accordion" id="myAccordion">
                     <br><br><br>
-                    <div style="text-align:center;">
+                    <div class="title">
                         <h1>會員常見問題</h1>
                     </div>
-                    <div class="accordion-item">
+                    <div class="accordion-item border">
                         <div class="accordion-header" id="headingOne">
                             <button id="five" type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne">Ｑ : 沒有在領取的期內取貨怎麼辦？</button>
+                                data-bs-target="#collapseOne">Ｑ : 沒有在領取的期限內取貨怎麼辦？</button>
                         </div>
                         <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
                             <div class="card-body">
@@ -98,6 +98,7 @@
                         <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
                             <div class="card-body">
                                 <p>Ａ :
+                                    <br>
                                     若您收到的商品有瑕疵，或非您所訂購的商品，請趕緊於收到包裹7日內將該商品瑕疵/寄錯的細節照片Email至客服傳送給我們，並在信件內留下會員帳號/訂單資訊/手機號碼，以便客服人員確認。我們將在收到商品照片後立即為您處理。若兩日未回覆可能有漏信的情形，可請您再次來信或來電聯繫客服。
                                 </p>
                             </div>
@@ -114,8 +115,22 @@
 <script>
 </script>
 <style scoped>
+
+.title {
+    text-align:center;
+    margin-top: 50px;
+}
+
+.border {
+    margin-top: 50px;
+    border: 1px solid lightgray;
+    box-sizing: border-box;
+    border-radius: 6px 6px 0 0;
+}
+
 .card-body {
     background: rgb(255, 255, 255);
+    padding: 24px;
 }
 
 button:hover,
