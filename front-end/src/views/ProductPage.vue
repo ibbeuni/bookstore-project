@@ -239,7 +239,7 @@
                     </div>
                     <div>
                         <div class="newbooks" v-for="(item, index) in newbooks" :key="index">
-                            <a class="thisClassNewBookTag_a" href="">
+                            <a class="thisClassNewBookTag_a" :href="('/#/home/ZtTest/' + newbooks[index].product_id)">
                                 <div class="thisClassNewBookInnerDiv">
                                     <div>
                                         <img class="thisClassNewBookImg"
