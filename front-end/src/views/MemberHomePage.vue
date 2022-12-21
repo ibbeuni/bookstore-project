@@ -138,7 +138,7 @@ export default{
         
         
       }).then(res =>{
-        alert("會員資料儲存成功")
+        alert("儲存成功")
         if(res.data.status == 200){
           console.log(res.data)
           alert('儲存成功')
