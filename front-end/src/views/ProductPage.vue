@@ -1031,7 +1031,7 @@ body:has(#L4:checked) .L4 {
 
 }
 
-/* 書本詳細資料 */
+/* 書本詳細資料~~ */
 
 #tableStyle td,
 #tableStyle th {
